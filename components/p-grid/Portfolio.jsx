@@ -4,7 +4,9 @@ import React, { useEffect } from 'react';
 
 function Portfolio() {
   useEffect(() => {
-    initIsotope();
+    if (typeof window !== 'undefined') { // Check if window is defined
+      initIsotope();
+    }
   }, []);
   return (
     <section className="work-grid section-padding pb-0">
