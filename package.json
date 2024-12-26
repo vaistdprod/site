@@ -1,0 +1,34 @@
+{
+  "name": "webfolio-nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "eslint": "8.56.0",
+    "eslint-config-next": "14.1.0",
+    "gray-matter": "^4.0.3",
+    "gsap": "^3.12.5",
+    "helmet": "^8.0.0",
+    "isotope": "^1.0.0-alpha.3",
+    "isotope-layout": "^3.0.6",
+    "joi": "^17.13.3",
+    "next": "^14.2.18",
+    "nodemailer": "^6.9.16",
+    "rate-limiter-flexible": "^5.0.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-google-recaptcha": "^3.1.0",
+    "react-google-recaptcha-v3": "^1.10.1",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
+    "sanitize-html": "^2.14.0",
+    "swiper": "^8.4.7"
+  }
+}

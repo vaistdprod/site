@@ -1,0 +1,47 @@
+[
+  {
+    "img": "/assets/imgs/team/matej-vais.webp",
+    "instagram": "https://www.instagram.com/bigdogvais",
+    "email": "vais@tdprod.cz",
+    "phone": "+420 737 065 717",
+    "facebook": "https://www.facebook.com/bigdogvais",
+    "name": "Matěj Vais",
+    "subName": "Operace"
+  },
+  {
+    "img": "/assets/imgs/team/martin-studnicky.webp",
+    "instagram": "https://www.instagram.com/_martinstudnicky_/",
+    "email": "studnicky@tdprod.cz",
+    "phone": "+420 722 575 804",
+    "facebook": "https://www.facebook.com/martin.studnicky.7",
+    "name": "Martin Studnický",
+    "subName": "Produkce"
+  },
+  {
+    "img": "/assets/imgs/team/matyas-vanek.webp",
+    "instagram": "https://www.instagram.com/_v.matyas_/",
+    "email": "vanek@tdprod.cz",
+    "phone": "+420 792 770 711",
+    "facebook": "https://www.facebook.com/maty.vanek.7524",
+    "name": "Matyáš Vaněk",
+    "subName": "Design"
+  },
+  {
+    "img": "/assets/imgs/team/sebastian-vanek.webp",
+    "instagram": "https://www.instagram.com/sebe.jumps/",
+    "email": "s.vanek@tdprod.cz",
+    "phone": "+420 792 755 878",
+    "facebook": "https://www.facebook.com/profile.php?id=100016867357107",
+    "name": "Sebastian Vaněk",
+    "subName": "Marketing"
+  },
+  {
+    "img": "/assets/imgs/team/matej-turek.webp",
+    "instagram": "https://www.instagram.com/matey_shoolin/",
+    "email": "turek@tdprod.cz",
+    "phone": "+420 732 735 908",
+    "facebook": "https://www.facebook.com/matej.turek.7",
+    "name": "Matěj Turek",
+    "subName": "Sales"
+  }
+]

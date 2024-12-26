@@ -1,0 +1,50 @@
+{
+  "digitalni-marketing": {
+    "title": "Digitální marketing",
+    "subtitle": "Digitální marketing",
+    "heading": "Digitální marketing",
+    "img": "/assets/imgs/serv-icons/3.png",
+    "desc": "Nastartujeme vaši firmu v online prostředí a zajistíme, abyste vynikli mezi konkurencí.",
+    "link": "/digitalni-marketing"
+  },
+  "webove-stranky": {
+    "title": "Webové stránky",
+    "subtitle": "Webové stránky",
+    "heading": "Webové stránky",
+    "img": "/assets/imgs/serv-icons/3.png",
+    "desc": "Vytváříme responzivní, rychlé a bezpečné webové stránky, které vaše podnikání vymrští kupředu.",
+    "link": "/webove-stranky"
+  },
+  "webove-aplikace": {
+    "title": "Webové aplikace",
+    "subtitle": "Webové aplikace",
+    "heading": "Webové aplikace",
+    "img": "/assets/imgs/serv-icons/4.png",
+    "desc": "Hledáte pro vaše podnikání speciální aplikaci na míru? Řekněte nám, jak má vypadat a my ji pro vás od píky vytvoříme.",
+    "link": "/webove-aplikace"
+  },
+  "implementace-ai": {
+    "title": "Implementace AI",
+    "subtitle": "Implementace AI",
+    "heading": "Implementace AI",
+    "img": "/assets/imgs/serv-icons/5.png",
+    "desc": "Pomůžeme vám s implementací umělé inteligence pro automatizaci a efektivizaci vašich procesů.",
+    "link": "/implementace-ai"
+  },
+  "videoprodukce": {
+    "title": "Videoprodukce",
+    "subtitle": "Videoprodukce",
+    "heading": "Videoprodukce",
+    "img": "/assets/imgs/serv-icons/5.png",
+    "desc": "Produkujeme poutavá videa, která zvýší váš online dosah a pomohou vám lépe komunikovat s vašimi zákazníky.",
+    "link": "/videoprodukce"
+  },
+  "fotoprodukce": {
+    "title": "Fotoprodukce",
+    "subtitle": "Fotoprodukce",
+    "heading": "Fotoprodukce",
+    "img": "/assets/imgs/serv-icons/5.png",
+    "desc": "Potřebujete profesionální fotografie pro vaši firmu? My si dáme záležet, abychom vás zvěčnili v tom nejlepším světle.",
+    "link": "/fotoprodukce"
+  }
+}
