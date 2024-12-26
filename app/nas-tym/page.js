@@ -11,7 +11,7 @@ import Header from '@/components/page-team/Header';
 import Intro from '@/components/page-team/Intro';
 
 export const metadata = {
-  title: 'TD Productions'
+  title: 'Náš tým | TD Productions'
 };
 
 export default function Home() {

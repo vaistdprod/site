@@ -12,7 +12,7 @@ import FAQS from '@/components/page-FAQ/FAQS';
 import Numbers from '@/components/page-FAQ/Numbers';
 
 export const metadata = {
-  title: 'TD Productions'
+  title: 'FAQ | TD Productions'
 };
 
 export default function Home() {

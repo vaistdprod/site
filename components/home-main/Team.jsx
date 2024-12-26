@@ -1,5 +1,7 @@
 import React from 'react';
+import Image from 'next/image'; // Import the Next.js Image component
 import data from '@/data/team';
+
 function Team() {
   return (
     <section className="team section-padding pt-0">
@@ -27,7 +29,13 @@ function Team() {
             <div key={i} className="col-lg-4 mb-40">
               <div className="item md-mb50">
                 <div className="img">
-                  <img src={item.img} alt={item.name} />
+                  <Image
+                    src={item.img}
+                    alt={item.name}
+                    width={300} // Example width based on 3:4 aspect ratio
+                    height={400} // Example height based on 3:4 aspect ratio
+                    // You can adjust the width and height as needed
+                  />
                   <div className="info">
                     <span className="fz-12">{item.subName}</span>
                     <h6 className="fz-18">{item.name}</h6>
@@ -38,7 +46,7 @@ function Team() {
                     <a href={item.instagram} target="_blank" rel="noopener noreferrer">
                       <i className="fab fa-instagram"></i>
                     </a>
-                    <a href={`tel:${item.phone}`}>
+                    <a href={`tel:${item.phone.replace(/\s+/g, '')}`}>
                       <i className="fas fa-phone"></i>
                     </a>
                     <a href={`mailto:${item.email}`}>

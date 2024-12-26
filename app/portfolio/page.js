@@ -9,7 +9,7 @@ import Header from '@/components/p-grid/Header';
 import Portfolio from '@/components/p-grid/Portfolio';
 
 export const metadata = {
-  title: 'TD Productions'
+  title: 'Portfolio | TD Productions'
 };
 
 export default function Home() {

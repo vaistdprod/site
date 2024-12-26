@@ -9,7 +9,7 @@ import Contact from '@/components/page-contact/Contact';
 import Map from '@/components/page-contact/Map';
 
 export const metadata = {
-  title: 'TD Productions'
+  title: 'Kontakty | TD Productions'
 };
 
 export default function Home() {

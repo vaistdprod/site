@@ -20,7 +20,7 @@ export async function generateStaticParams() {
 export function generateMetadata({ params }) {
   const data = members[params.member];
   return {
-    title: data ? `TD Productions | ${data.name}` : "TD Productions"
+    title: data ? `${data.name} | TD Productions` : "Náš tým | TD Productions"
   };
 }
 

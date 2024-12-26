@@ -1,6 +1,7 @@
 'use client';
 import loadBackgroudImages from '@/common/loadBackgroudImages';
 import React, { useEffect } from 'react';
+import Image from 'next/image';
 
 function Feat() {
   useEffect(() => {
@@ -14,10 +15,10 @@ function Feat() {
             <div className="cont md-mb50">
               <h6 className="sub-title main-color mb-15">Na nás se můžete spolehnout</h6>
               <h3 className="mb-30">
-                Spojujeme energii mladých dravců se spolehlivostí ostřílených pardálů.
+                Spojujeme energii mladého talentu se spolehlivostí ostřílených pardálů.
               </h3>
               <p>
-                Podání ruky je pro nás stejně svaté jako ta nejlépe sepsaná smlouva. Pokud se na něčem společně domluvíme, bereme to jako svou morální povinnost splnit naši část dohody.
+                Podání ruky je pro nás stejně svaté jako ta nejlépe sepsaná smlouva. Pokud se na něčem domluvíme, bereme to jako absolutní povinnost splnit naši část dohody.
               </p>
               <a
                 href="/o-nas"
@@ -37,7 +38,7 @@ function Feat() {
               <div className="row">
                 <div
                   className="col-md-4 bg-img"
-                  data-background="/assets/imgs/serv-img/1.jpg"
+                  data-background="/assets/imgs/inovace.webp"
                 ></div>
                 <div className="col-md-8">
                   <div className="info">
@@ -53,7 +54,7 @@ function Feat() {
               <div className="row">
                 <div
                   className="col-md-4 bg-img"
-                  data-background="/assets/imgs/serv-img/2.jpg"
+                  data-background="/assets/imgs/podani-ruky.webp"
                 ></div>
                 <div className="col-md-8">
                   <div className="info">
@@ -69,7 +70,7 @@ function Feat() {
               <div className="row">
                 <div
                   className="col-md-4 bg-img"
-                  data-background="/assets/imgs/serv-img/3.jpg"
+                  data-background="/assets/imgs/retez.webp"
                 ></div>
                 <div className="col-md-8">
                   <div className="info">
@@ -86,7 +87,12 @@ function Feat() {
         </div>
       </div>
       <div className="circle-blur">
-        <img src="/assets/imgs/patterns/blur1.png" alt="" />
+        <Image
+            src="/assets/imgs/patterns/blur1.png"
+            alt="Blur Pattern"
+            width={692}
+            height={537}
+          />
       </div>
     </section>
   );

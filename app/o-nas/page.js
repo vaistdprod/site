@@ -5,13 +5,16 @@ import LoadingScreen from '@/components/common/loader';
 import Footer from '@/components/common/Footer';
 import Marq2 from '@/components/common/Marq2';
 import Navbar from '@/components/common/Navbar';
-import Header from '@/components/page-services-details/Header';
-import Intro from '@/components/page-services-details/Intro';
-import Feat from '@/components/page-services-details/Feat';
-import Intro2 from '@/components/home-digital-agency/Intro2';
+import Clients from '@/components/common/Clients';
+import Team from '@/components/home-main/Team';
+import Testimonials from '@/components/home-modern-studio/Testimonials';
+import Header from '@/components/page-about/Header';
+import Intro from '@/components/page-about/Intro';
+import Numbers from '@/components/page-about/Numbers';
+import Services from '@/components/page-about/Services';
 
 export const metadata = {
-  title: 'TD Productions'
+  title: 'O nás | TD Productions'
 };
 
 export default function Home() {
@@ -27,8 +30,11 @@ export default function Home() {
           <main className="main-bg o-hidden">
             <Header />
             <Intro />
-            <Feat />
-            <Intro2 />
+            <Numbers />
+            <Services />
+            <Team />
+            <Testimonials />
+            <Clients />
             <Marq2 />
           </main>
           <Footer />

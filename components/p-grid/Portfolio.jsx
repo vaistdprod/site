@@ -1,6 +1,6 @@
 'use client';
 import initIsotope from '@/common/initIsotope';
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
 
 function Portfolio() {
   useEffect(() => {

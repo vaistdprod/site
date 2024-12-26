@@ -5,7 +5,7 @@ import LoadingScreen from '@/components/common/loader';
 import Navbar from '@/components/common/Navbar';
 import Error from '@/components/page-404/Error';
 export const metadata = {
-  title: 'TD Productions'
+  title: 'Chyba 404 | TD Productions'
 };
 
 export default function Home() {

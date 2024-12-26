@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 function About() {
   return (
@@ -8,19 +9,44 @@ function About() {
           <div className="col-lg-5 valign">
             <div className="profile-img">
               <div className="img">
-                <img src="/assets/imgs/header/p2.jpg" alt="" />
+                <Image
+                  src="/assets/imgs/ostrava.webp"
+                  alt="Ostrava"
+                  width={649}
+                  height={960}
+                />
               </div>
               <span className="icon">
-                <img src="/assets/imgs/ae.svg" alt="" />
+                <Image
+                  src="/assets/imgs/ae.svg"
+                  alt="Adobe After Effects"
+                  width={75}
+                  height={75}
+                />
               </span>
               <span className="icon">
-                <img src="/assets/imgs/figma.svg" alt="" />
+                <Image
+                  src="/assets/imgs/figma.svg"
+                  alt="Figma"
+                  width={75}
+                  height={75}
+                />
               </span>
               <span className="icon">
-                <img src="/assets/imgs/react.svg" alt="" />
+                <Image
+                  src="/assets/imgs/react.svg"
+                  alt="React"
+                  width={75}
+                  height={75}
+                />
               </span>
               <span className="icon">
-                <img src="/assets/imgs/wp.svg" alt="" />
+                <Image
+                  src="/assets/imgs/wp.svg"
+                  alt="WordPress"
+                  width={75}
+                  height={75}
+                />
               </span>
             </div>
           </div>
@@ -31,7 +57,7 @@ function About() {
                 <h4 className="mb-30">
                   Jsme tým profesionálů{' '}
                   <span className="d-revert fw-200">
-                  s bohatými zkušenostmi v digitálním světě. Naší ambicí je přetvořit zdánlivě neproveditelné nápady do hmatatelné reality. Sázíme na
+                    s bohatými zkušenostmi v digitálním světě. Naší ambicí je přetvořit zdánlivě neproveditelné nápady do hmatatelné reality. Sázíme na
                   </span>{' '}
                   kreativitu, preciznost a výsledky, které mluví samy za sebe.
                 </h4>
@@ -54,7 +80,12 @@ function About() {
                         </div>
                         <div className="ml-auto">
                           <div className="icon-img-40">
-                            <img src="/assets/imgs/arw0.png" alt="" />
+                            <Image
+                              src="/assets/imgs/arw0.png"
+                              alt="Arrow Icon"
+                              width={40}
+                              height={40}
+                            />
                           </div>
                         </div>
                       </div>
@@ -69,7 +100,12 @@ function About() {
                         </div>
                         <div className="ml-auto">
                           <div className="icon-img-40">
-                            <img src="/assets/imgs/arw0.png" alt="" />
+                            <Image
+                              src="/assets/imgs/arw0.png"
+                              alt="Arrow Icon"
+                              width={40}
+                              height={40}
+                            />
                           </div>
                         </div>
                       </div>

@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect } from 'react';
+import Image from 'next/image';
 
 function Navbar() {
   function handleScroll() {
@@ -9,41 +10,40 @@ function Navbar() {
     if (bodyScroll > 300) navbar.classList.add('nav-scroll');
     else navbar.classList.remove('nav-scroll');
   }
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   function handleDropdownMouseMove(event) {
     event.currentTarget.querySelector('.dropdown-menu').classList.add('show');
   }
 
   function handleDropdownMouseLeave(event) {
-    event.currentTarget
-      .querySelector('.dropdown-menu')
-      .classList.remove('show');
+    event.currentTarget.querySelector('.dropdown-menu').classList.remove('show');
   }
+
   function handleToggleNav() {
-    if (
-      document
-        .querySelector('.navbar .navbar-collapse')
-        .classList.contains('show')
-    ) {
-      document
-        .querySelector('.navbar .navbar-collapse')
-        .classList.remove('show');
-    } else if (
-      !document
-        .querySelector('.navbar .navbar-collapse')
-        .classList.contains('show')
-    ) {
-      document.querySelector('.navbar .navbar-collapse').classList.add('show');
+    const navbarCollapse = document.querySelector('.navbar .navbar-collapse');
+    if (navbarCollapse.classList.contains('show')) {
+      navbarCollapse.classList.remove('show');
+    } else {
+      navbarCollapse.classList.add('show');
     }
   }
+
   return (
     <nav className="navbar navbar-expand-lg bord blur">
       <div className="container o-hidden">
         <a className="logo icon-img-100" href="/">
-          <img src="/assets/imgs/logo-light.svg" alt="logo" />
+          <Image
+            src="/assets/imgs/logo-light.svg"
+            alt="logo"
+            width={33}
+            height={25}
+            className="logo-image"
+          />
         </a>
 
         <button

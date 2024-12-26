@@ -13,7 +13,7 @@ import Header from "@/components/page-services/Header";
 import Numbers from "@/components/page-services/Numbers";
 
 export const metadata = {
-  title: "TD Productions"
+  title: "Naše služby | TD Productions"
 };
 
 export default function Home() {

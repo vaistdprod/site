@@ -22,8 +22,8 @@ export function generateMetadata({ params }) {
   const serviceData = services[params.service];
   return {
     title: serviceData
-      ? `TD Productions | ${serviceData.heading}`
-      : "TD Productions | Služby"
+      ? `${serviceData.heading} | TD Productions`
+      : "Naše služby | TD Productions"
   };
 }
 

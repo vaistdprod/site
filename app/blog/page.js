@@ -8,7 +8,7 @@ import Header from '@/components/blog-classic/Header';
 import Blogs from '@/components/blog-classic/Blogs';
 import { getAllPosts } from '@/lib/posts';
 export const metadata = {
-  title: 'TD Productions'
+  title: 'Blog | TD Productions'
 };
 
 export default async function BlogList({ searchParams }) {

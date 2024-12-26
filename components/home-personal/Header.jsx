@@ -2,6 +2,8 @@
 import React, { useEffect, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import loadBackgroudImages from '@/common/loadBackgroudImages';
+import Image from 'next/image';
+
 function Header() {
   useLayoutEffect(() => {
     const tl = gsap.timeline();
@@ -15,9 +17,11 @@ function Header() {
 
     return () => tl.kill();
   }, []);
+
   useEffect(() => {
     loadBackgroudImages();
   }, []);
+
   return (
     <div className="header header-personal valign relative" data-overlay-dark="6">
       <video
@@ -34,7 +38,13 @@ function Header() {
             <div className="caption">
               <h6 className="mb-15">
                 <span className="icon-img-30 mr-10">
-                  <img src="/assets/imgs/logo-light.svg" alt="" />
+                  <Image
+                    src="/assets/imgs/logo-light.svg"
+                    alt="Company Logo"
+                    width={33}
+                    height={25}
+                    className="logo-image"
+                  />
                 </span>{' '}
                 Vítejte
               </h6>
@@ -46,7 +56,7 @@ function Header() {
                 <div className="col-lg-9">
                   <div className="text mt-30">
                     <p>
-                    Inovace se u nás snoubí s profesionalitou a jednohlasným zájmem posunout váš projekt na tu nejvyšší úroveň.
+                      Inovace se u nás snoubí s profesionalitou a jednohlasným zájmem posunout váš projekt na tu nejvyšší úroveň.
                     </p>
                   </div>
                   <div className="d-flex align-items-center mt-60">
@@ -57,9 +67,12 @@ function Header() {
                       <span className="text">Kontaktujte nás</span>
                     </a>
                     <div className="icon-img-60 ml-20">
-                      <img
+                      <Image
                         src="/assets/imgs/icon-img/arrow-down-big.png"
-                        alt=""
+                        alt="Arrow Down"
+                        width={170}
+                        height={157}
+                        className="arrow-image"
                       />
                     </div>
                   </div>
