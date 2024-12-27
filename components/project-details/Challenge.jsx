@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Challenge() {
+function Challenge({ data }) {
   return (
     <section className="section-padding">
       <div className="container">
@@ -9,25 +9,25 @@ function Challenge() {
             <div className="col-md-6 col-lg-3">
               <div className="item mb-30">
                 <span className="opacity-8 mb-5">Category :</span>
-                <h6>Development</h6>
+                <h6>{data.category}</h6>
               </div>
             </div>
             <div className="col-md-6 col-lg-3">
               <div className="item mb-30">
                 <span className="opacity-8 mb-5">Client :</span>
-                <h6>Envato</h6>
+                <h6>{data.client}</h6>
               </div>
             </div>
             <div className="col-md-6 col-lg-3">
               <div className="item mb-30">
                 <span className="opacity-8 mb-5">Start Date :</span>
-                <h6>7 August 2021</h6>
+                <h6>{data.startDate}</h6>
               </div>
             </div>
             <div className="col-md-6 col-lg-3">
               <div className="item">
                 <span className="opacity-8 mb-5">Designer :</span>
-                <h6>UiCamp</h6>
+                <h6>{data.designer}</h6>
               </div>
             </div>
           </div>
@@ -36,25 +36,14 @@ function Challenge() {
           <div className="col-lg-11">
             <div className="row">
               <div className="col-lg-5">
-                <h4 className="mb-50">01 . The Challenge</h4>
+                <h4 className="mb-50">01 . {data.challenge.title}</h4>
               </div>
               <div className="col-lg-7">
                 <div className="text">
                   <h5 className="mb-30 fw-400 line-height-40">
-                    The goal is there are many variations of passages of Lorem
-                    Ipsum available, but the majority have suffered alteration
-                    in some form, by injected humour, or randomised words which
-                    don&lsquo;t look even slightly believable.
+                    {data.challenge.description}
                   </h5>
-                  <p className="fz-18">
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority have suffered alteration in some
-                    form, by injected humour, or randomised words which
-                    don&lsquo;t look even slightly believable. If you are going
-                    to use a passage of Lorem Ipsum, you need to be sure there
-                    isn&lsquo;t anything embarrassing hidden in the middle of
-                    text.
-                  </p>
+                  {/* Additional detailed information can be added here if available, add another p tag if needed */}
                 </div>
               </div>
             </div>

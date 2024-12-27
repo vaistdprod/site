@@ -1,0 +1,437 @@
+{
+    "marquess": ["Our Portfolio"],
+    "swiperItems": [
+      {
+        "id": "project-alpha",
+        "img": "/assets/imgs/portfolio/swiper1.jpg",
+        "title": "Project Alpha",
+        "subTitle": "Alpha SubTitle"
+      },
+      {
+        "id": "project-beta",
+        "img": "/assets/imgs/portfolio/swiper2.jpg",
+        "title": "Project Beta",
+        "subTitle": "Beta SubTitle"
+      },
+      {
+        "id": "project-gamma",
+        "img": "/assets/imgs/portfolio/swiper3.jpg",
+        "title": "Project Gamma",
+        "subTitle": "Gamma SubTitle"
+      },
+      {
+        "id": "project-delta",
+        "img": "/assets/imgs/portfolio/swiper4.jpg",
+        "title": "Project Delta",
+        "subTitle": "Delta SubTitle"
+      },
+      {
+        "id": "project-epsilon",
+        "img": "/assets/imgs/portfolio/swiper5.jpg",
+        "title": "Project Epsilon",
+        "subTitle": "Epsilon SubTitle"
+      },
+      {
+        "id": "project-zeta",
+        "img": "/assets/imgs/portfolio/swiper6.jpg",
+        "title": "Project Zeta",
+        "subTitle": "Zeta SubTitle"
+      },
+      {
+        "id": "project-eta",
+        "img": "/assets/imgs/portfolio/swiper7.jpg",
+        "title": "Project Eta",
+        "subTitle": "Eta SubTitle"
+      },
+      {
+        "id": "project-theta",
+        "img": "/assets/imgs/portfolio/swiper8.jpg",
+        "title": "Project Theta",
+        "subTitle": "Theta SubTitle"
+      },
+      {
+        "id": "project-iota",
+        "img": "/assets/imgs/portfolio/swiper9.jpg",
+        "title": "Project Iota",
+        "subTitle": "Iota SubTitle"
+      },
+      {
+        "id": "project-kappa",
+        "img": "/assets/imgs/portfolio/swiper10.jpg",
+        "title": "Project Kappa",
+        "subTitle": "Kappa SubTitle"
+      }
+    ],
+    "gridItems": [
+      {
+        "id": "project-alpha",
+        "img": "/assets/imgs/works/2/1.jpg",
+        "subTitle": "Web Design",
+        "title": "Figma Digital Agency",
+        "category": "design",
+        "link": "/portfolio/project-alpha"
+      },
+      {
+        "id": "project-beta",
+        "img": "/assets/imgs/works/2/2.jpg",
+        "subTitle": "Marketing Strategy",
+        "title": "Figma Digital Agency",
+        "category": "marketing",
+        "link": "/portfolio/project-beta"
+      },
+      {
+        "id": "project-gamma",
+        "img": "/assets/imgs/works/2/3.jpg",
+        "subTitle": "UI/UX Design",
+        "title": "Figma Digital Agency",
+        "category": "design",
+        "link": "/portfolio/project-gamma"
+      },
+      {
+        "id": "project-delta",
+        "img": "/assets/imgs/works/2/4.jpg",
+        "subTitle": "App Development",
+        "title": "Figma Digital Agency",
+        "category": "development",
+        "link": "/portfolio/project-delta"
+      },
+      {
+        "id": "project-epsilon",
+        "img": "/assets/imgs/works/2/5.jpg",
+        "subTitle": "Graphic Design",
+        "title": "Figma Digital Agency",
+        "category": "design",
+        "link": "/portfolio/project-epsilon"
+      },
+      {
+        "id": "project-zeta",
+        "img": "/assets/imgs/works/2/6.jpg",
+        "subTitle": "Content Marketing",
+        "title": "Figma Digital Agency",
+        "category": "marketing",
+        "link": "/portfolio/project-zeta"
+      },
+      {
+        "id": "project-eta",
+        "img": "/assets/imgs/works/2/7.jpg",
+        "subTitle": "SEO Optimization",
+        "title": "Figma Digital Agency",
+        "category": "marketing",
+        "link": "/portfolio/project-eta"
+      },
+      {
+        "id": "project-theta",
+        "img": "/assets/imgs/works/2/8.jpg",
+        "subTitle": "Backend Development",
+        "title": "Figma Digital Agency",
+        "category": "development",
+        "link": "/portfolio/project-theta"
+      },
+      {
+        "id": "project-iota",
+        "img": "/assets/imgs/works/2/9.jpg",
+        "subTitle": "Frontend Development",
+        "title": "Figma Digital Agency",
+        "category": "development",
+        "link": "/portfolio/project-iota"
+      },
+      {
+        "id": "project-kappa",
+        "img": "/assets/imgs/works/2/10.jpg",
+        "subTitle": "Mobile Design",
+        "title": "Figma Digital Agency",
+        "category": "design",
+        "link": "/portfolio/project-kappa"
+      }
+    ],
+    "categories": [
+      {
+        "name": "All",
+        "filter": "*",
+        "count": 10
+      },
+      {
+        "name": "Design",
+        "filter": ".design",
+        "count": 5
+      },
+      {
+        "name": "Development",
+        "filter": ".development",
+        "count": 3
+      },
+      {
+        "name": "Marketing",
+        "filter": ".marketing",
+        "count": 2
+      }
+    ],
+    "projects": [
+      {
+        "id": "project-alpha",
+        "title": "Technology Process",
+        "category": "Development",
+        "client": "Envato",
+        "startDate": "7 August 2021",
+        "designer": "UiCamp",
+        "challenge": {
+          "title": "The Challenge",
+          "description": "The goal is to create a seamless user experience with minimal disruptions. We needed to address the variations in user interactions and ensure the platform remains robust."
+        },
+        "solution": {
+          "title": "The Solution",
+          "description": "Implemented a modular design architecture using React and Next.js, allowing for scalable and maintainable code. Integrated advanced state management to handle complex user interactions."
+        },
+        "images": [
+          "/assets/imgs/works/3/1.jpg",
+          "/assets/imgs/works/3/2.jpg",
+          "/assets/imgs/works/3/3.jpg",
+          "/assets/imgs/works/3/6.jpg"
+        ],
+        "nextProject": {
+          "title": "TH3 Web Design",
+          "link": "/portfolio/project-beta",
+          "img": "/assets/imgs/works/3/2.jpg",
+          "direction": "right"
+        },
+        "prevProject": {
+          "title": "Project Kappa",
+          "link": "/portfolio/project-kappa",
+          "img": "/assets/imgs/works/3/1.jpg",
+          "direction": "left"
+        }
+      },
+      {
+        "id": "project-beta",
+        "title": "TH3 Web Design",
+        "category": "Marketing",
+        "client": "Envato",
+        "startDate": "15 September 2021",
+        "designer": "DesignPro",
+        "challenge": {
+          "title": "The Challenge",
+          "description": "Enhance brand visibility through targeted marketing strategies while maintaining a consistent brand identity across all channels."
+        },
+        "solution": {
+          "title": "The Solution",
+          "description": "Developed a comprehensive marketing plan leveraging SEO, content marketing, and social media engagement. Utilized analytics to track performance and adjust strategies in real-time."
+        },
+        "images": [
+          "/assets/imgs/works/3/4.jpg",
+          "/assets/imgs/works/3/5.jpg",
+          "/assets/imgs/works/3/6.jpg"
+        ],
+        "nextProject": {
+          "title": "Project Delta",
+          "link": "/portfolio/project-delta",
+          "img": "/assets/imgs/works/3/3.jpg",
+          "direction": "right"
+        },
+        "prevProject": {
+          "title": "Technology Process",
+          "link": "/portfolio/project-alpha",
+          "img": "/assets/imgs/works/3/1.jpg",
+          "direction": "left"
+        }
+      },
+      {
+        "id": "project-gamma",
+        "title": "OPT Media Agency",
+        "category": "Design",
+        "client": "Envato",
+        "startDate": "20 October 2021",
+        "designer": "CreativeMind",
+        "challenge": {
+          "title": "The Challenge",
+          "description": "Redesign the existing platform to improve user engagement and streamline the user interface without compromising functionality."
+        },
+        "solution": {
+          "title": "The Solution",
+          "description": "Conducted extensive user research to identify pain points. Redesigned the UI with a focus on simplicity and usability, and implemented A/B testing to validate design decisions."
+        },
+        "images": [
+          "/assets/imgs/works/3/7.jpg",
+          "/assets/imgs/works/3/8.jpg",
+          "/assets/imgs/works/3/9.jpg"
+        ],
+        "nextProject": {
+          "title": "Technology Process",
+          "link": "/portfolio/project-alpha",
+          "img": "/assets/imgs/works/3/1.jpg",
+          "direction": "right"
+        },
+        "prevProject": {
+          "title": "Project Theta",
+          "link": "/portfolio/project-theta",
+          "img": "/assets/imgs/works/3/2.jpg",
+          "direction": "left"
+        }
+      },
+      {
+        "id": "project-delta",
+        "title": "Project Delta",
+        "category": "Development",
+        "client": "Envato",
+        "startDate": "5 November 2021",
+        "designer": "DevSolutions",
+        "challenge": {
+          "title": "The Challenge",
+          "description": "Develop a scalable backend infrastructure to support increasing user traffic and ensure data security."
+        },
+        "solution": {
+          "title": "The Solution",
+          "description": "Utilized Node.js and MongoDB to build a robust backend. Implemented security best practices, including encryption and regular security audits, to protect user data."
+        },
+        "images": [
+          "/assets/imgs/works/3/10.jpg",
+          "/assets/imgs/works/3/11.jpg",
+          "/assets/imgs/works/3/12.jpg"
+        ],
+        "nextProject": {
+          "title": "Project Epsilon",
+          "link": "/portfolio/project-epsilon",
+          "img": "/assets/imgs/works/3/4.jpg",
+          "direction": "right"
+        },
+        "prevProject": {
+          "title": "TH3 Web Design",
+          "link": "/portfolio/project-beta",
+          "img": "/assets/imgs/works/3/2.jpg",
+          "direction": "left"
+        }
+      },
+      {
+        "id": "project-epsilon",
+        "title": "Project Epsilon",
+        "category": "Design",
+        "client": "Envato",
+        "startDate": "12 December 2021",
+        "designer": "DesignElite",
+        "challenge": {
+          "title": "The Challenge",
+          "description": "Create visually appealing graphics that align with the brand’s identity and effectively communicate the intended message."
+        },
+        "solution": {
+          "title": "The Solution",
+          "description": "Developed a cohesive design language and created a series of graphics using Adobe Illustrator and Photoshop. Ensured consistency across all marketing materials."
+        },
+        "images": [
+          "/assets/imgs/works/3/13.jpg",
+          "/assets/imgs/works/3/14.jpg",
+          "/assets/imgs/works/3/15.jpg"
+        ],
+        "nextProject": {
+          "title": "Project Zeta",
+          "link": "/portfolio/project-zeta",
+          "img": "/assets/imgs/works/3/5.jpg",
+          "direction": "right"
+        },
+        "prevProject": {
+          "title": "Project Delta",
+          "link": "/portfolio/project-delta",
+          "img": "/assets/imgs/works/3/3.jpg",
+          "direction": "left"
+        }
+      },
+      {
+        "id": "project-zeta",
+        "title": "Project Zeta",
+        "category": "Marketing",
+        "client": "Envato",
+        "startDate": "20 January 2022",
+        "designer": "MarketMasters",
+        "challenge": {
+          "title": "The Challenge",
+          "description": "Increase online presence and drive traffic to the website through effective marketing campaigns."
+        },
+        "solution": {
+          "title": "The Solution",
+          "description": "Implemented a multi-channel marketing strategy including SEO optimization, social media marketing, and email campaigns. Analyzed metrics to optimize campaign performance."
+        },
+        "images": [
+          "/assets/imgs/works/3/16.jpg",
+          "/assets/imgs/works/3/17.jpg",
+          "/assets/imgs/works/3/18.jpg"
+        ],
+        "nextProject": {
+          "title": "Project Eta",
+          "link": "/portfolio/project-eta",
+          "img": "/assets/imgs/works/3/6.jpg",
+          "direction": "right"
+        },
+        "prevProject": {
+          "title": "Project Epsilon",
+          "link": "/portfolio/project-epsilon",
+          "img": "/assets/imgs/works/3/4.jpg",
+          "direction": "left"
+        }
+      },
+      {
+        "id": "project-eta",
+        "title": "Project Eta",
+        "category": "Marketing",
+        "client": "Envato",
+        "startDate": "25 February 2022",
+        "designer": "MarketPros",
+        "challenge": {
+          "title": "The Challenge",
+          "description": "Develop a comprehensive SEO strategy to improve search engine rankings and drive organic traffic."
+        },
+        "solution": {
+          "title": "The Solution",
+          "description": "Conducted keyword research and optimized website content. Built high-quality backlinks and improved site performance to enhance SEO rankings."
+        },
+        "images": [
+          "/assets/imgs/works/3/19.jpg",
+          "/assets/imgs/works/3/20.jpg",
+          "/assets/imgs/works/3/21.jpg"
+        ],
+        "nextProject": {
+          "title": "Project Theta",
+          "link": "/portfolio/project-theta",
+          "img": "/assets/imgs/works/3/7.jpg",
+          "direction": "right"
+        },
+        "prevProject": {
+          "title": "Project Zeta",
+          "link": "/portfolio/project-zeta",
+          "img": "/assets/imgs/works/3/5.jpg",
+          "direction": "left"
+        }
+      },
+      {
+        "id": "project-theta",
+        "title": "Project Theta",
+        "category": "Development",
+        "client": "Envato",
+        "startDate": "10 March 2022",
+        "designer": "DevExperts",
+        "challenge": {
+          "title": "The Challenge",
+          "description": "Enhance the backend infrastructure to support new features and improve system reliability."
+        },
+        "solution": {
+          "title": "The Solution",
+          "description": "Refactored the existing codebase using modern frameworks and best practices. Implemented automated testing and continuous integration to ensure system stability."
+        },
+        "images": [
+          "/assets/imgs/works/3/22.jpg",
+          "/assets/imgs/works/3/23.jpg",
+          "/assets/imgs/works/3/24.jpg"
+        ],
+        "nextProject": {
+          "title": "Technology Process",
+          "link": "/portfolio/project-alpha",
+          "img": "/assets/imgs/works/3/1.jpg",
+          "direction": "right"
+        },
+        "prevProject": {
+          "title": "Project Eta",
+          "link": "/portfolio/project-eta",
+          "img": "/assets/imgs/works/3/6.jpg",
+          "direction": "left"
+        }
+      }
+    ]
+  }
+  

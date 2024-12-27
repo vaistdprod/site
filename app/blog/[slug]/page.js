@@ -1,17 +1,17 @@
 import Lines from '@/components/common/Lines';
 import ProgressScroll from '@/components/common/ProgressScroll';
-import Cursor from '@/components/common/cusor';
+import Cursor from '@/components/common/Cusor';
 import LoadingScreen from '@/components/common/loader';
 import Footer from '@/components/common/Footer';
 import Navbar from '@/components/common/Navbar';
-import Header from '@/components/blog-details/Header';
-import Blog from '@/components/blog-details/Blog';
+import Header from '@/components/blog-prispevek/Header';
+import Blog from '@/components/blog-prispevek/Blog';
 import { getAllSlugs, getPostBySlug, getAllPosts } from '@/lib/posts';
 import Head from 'next/head';
 import { notFound } from 'next/navigation';
 
 export const metadata = {
-  title: 'TD Productions'
+  title: 'TD Productions',
 };
 
 export async function generateStaticParams() {
@@ -20,12 +20,11 @@ export async function generateStaticParams() {
 }
 
 export default async function BlogPostPage({ params }) {
-  const { slug } = params;
+  // Next 15 style: await params to get the slug
+  const { slug } = await params;
   const post = await getPostBySlug(slug);
 
-  if (!post) {
-    notFound();
-  }
+  if (!post) notFound();
 
   const allPosts = await getAllPosts();
   const latestPosts = allPosts.slice(0, 3);

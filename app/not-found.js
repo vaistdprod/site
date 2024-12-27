@@ -1,9 +1,9 @@
 import Lines from '@/components/common/Lines';
 import ProgressScroll from '@/components/common/ProgressScroll';
-import Cursor from '@/components/common/cusor';
+import Cursor from '@/components/common/Cusor';
 import LoadingScreen from '@/components/common/loader';
 import Navbar from '@/components/common/Navbar';
-import Error from '@/components/page-404/Error';
+import Error from '@/components/404/Error';
 export const metadata = {
   title: 'Chyba 404 | TD Productions'
 };

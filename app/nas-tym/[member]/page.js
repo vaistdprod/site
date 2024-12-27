@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
-import members from "@/data/members.json";
+import members from "@/data/clenove-tymu.json";
 
 import Lines from "@/components/common/Lines";
 import ProgressScroll from "@/components/common/ProgressScroll";
-import Cursor from "@/components/common/cusor";
+import Cursor from "@/components/common/Cusor";
 import LoadingScreen from "@/components/common/loader";
 import Footer from "@/components/common/Footer";
 import Marq2 from "@/components/common/Marq2";
@@ -17,15 +17,16 @@ export async function generateStaticParams() {
   return Object.keys(members).map((slug) => ({ member: slug }));
 }
 
-export function generateMetadata({ params }) {
-  const data = members[params.member];
+export async function generateMetadata({ params }) {
+  const { member } = await params;
+  const data = members[member];
   return {
-    title: data ? `${data.name} | TD Productions` : "Náš tým | TD Productions"
+    title: data ? `${data.name} | TD Productions` : "Náš tým | TD Productions",
   };
 }
 
-export default function MemberPage({ params }) {
-  const { member } = params;
+export default async function MemberPage({ params }) {
+  const { member } = await params;
   const memberData = members[member];
 
   if (!memberData) return notFound();

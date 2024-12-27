@@ -1,6 +1,6 @@
 import React from 'react';
-import Image from 'next/image'; // Import the Next.js Image component
-import data from '@/data/team';
+import Image from 'next/image';
+import data from '@/data/nas-tym';
 
 function Team() {
   return (
@@ -32,9 +32,8 @@ function Team() {
                   <Image
                     src={item.img}
                     alt={item.name}
-                    width={300} // Example width based on 3:4 aspect ratio
-                    height={400} // Example height based on 3:4 aspect ratio
-                    // You can adjust the width and height as needed
+                    width={300}
+                    height={400}
                   />
                   <div className="info">
                     <span className="fz-12">{item.subName}</span>

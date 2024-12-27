@@ -1,11 +1,16 @@
 'use client';
 import React from 'react';
-import data from '@/data/portfolios/works1';
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-function Portfolio() {
-  const marquess = ['Our Portfolio'];
+import data from '@/data/portfolioData.json'; // Adjust the path as necessary
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+function PortfolioSwiper() {
+  const { marquess, swiperItems } = data;
   const AllMarquess = Array(10).fill(marquess).flat();
+
   const swiperOptions = {
     modules: [Pagination, Navigation],
     slidesPerView: 'auto',
@@ -17,12 +22,12 @@ function Portfolio() {
       el: '.work-crev .swiper-pagination',
       type: 'progressbar',
     },
-
     navigation: {
       nextEl: '.work-crev .swiper-button-next',
       prevEl: '.work-crev .swiper-button-prev',
     },
   };
+
   return (
     <section className="work-fade section-padding sub-bg bord-top-grd bord-bottom-grd">
       <div className="container position-re">
@@ -37,10 +42,7 @@ function Portfolio() {
               </h3>
             </div>
             <div className="ml-auto vi-more">
-              <a
-                href="/portfolio-gallery"
-                className="butn butn-sm butn-bord radius-30"
-              >
+              <a href="/portfolio-gallery" className="butn butn-sm butn-bord radius-30">
                 <span>View All</span>
               </a>
               <span className="icon ti-arrow-top-right"></span>
@@ -51,19 +53,19 @@ function Portfolio() {
           <div className="col-lg-2 d-flex align-items-end">
             <div className="text pb-100">
               <p>
-                We help our client suceed by creating identities, digital
-                experiences, and printmaterials that communicate clearly
+                We help our client succeed by creating identities, digital experiences,
+                and print materials that communicate clearly.
               </p>
             </div>
           </div>
           <div className="col-lg-9">
             <div className="work-swiper">
               <Swiper {...swiperOptions} className="swiper-container">
-                {data.map((item, i) => (
+                {swiperItems.map((item, i) => (
                   <SwiperSlide key={i}>
                     <div className="item">
                       <div className="img">
-                        <img src={item.img} alt="" className="radius-15" />
+                        <img src={item.img} alt={item.title} className="radius-15" />
                       </div>
                       <div className="cont">
                         <h3>
@@ -77,7 +79,7 @@ function Portfolio() {
                                 className="w-11 h-11"
                               >
                                 <path
-                                  d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
+                                  d="M11 0L0 0L0 11C0 4.92487 4.92487 0 11 0Z"
                                   fill="#141414"
                                 ></path>
                               </svg>
@@ -90,7 +92,7 @@ function Portfolio() {
                                 className="w-11 h-11"
                               >
                                 <path
-                                  d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
+                                  d="M11 0L0 0L0 11C0 4.92487 4.92487 0 11 0Z"
                                   fill="#141414"
                                 ></path>
                               </svg>
@@ -106,7 +108,7 @@ function Portfolio() {
                                 className="w-11 h-11"
                               >
                                 <path
-                                  d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
+                                  d="M11 0L0 0L0 11C0 4.92487 4.92487 0 11 0Z"
                                   fill="#141414"
                                 ></path>
                               </svg>
@@ -147,4 +149,4 @@ function Portfolio() {
   );
 }
 
-export default Portfolio;
+export default PortfolioSwiper;

@@ -1,11 +1,11 @@
 import Lines from '@/components/common/Lines';
 import ProgressScroll from '@/components/common/ProgressScroll';
-import Cursor from '@/components/common/cusor';
+import Cursor from '@/components/common/Cusor';
 import LoadingScreen from '@/components/common/loader';
 import Footer from '@/components/common/Footer';
 import Navbar from '@/components/common/Navbar';
-import Header from '@/components/blog-classic/Header';
-import Blogs from '@/components/blog-classic/Blogs';
+import Header from '@/components/blog/Header';
+import Blogs from '@/components/blog/Blogs';
 import { getAllPosts } from '@/lib/posts';
 export const metadata = {
   title: 'Blog | TD Productions'

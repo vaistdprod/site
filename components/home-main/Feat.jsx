@@ -15,7 +15,7 @@ function Feat() {
             <div className="cont md-mb50">
               <h6 className="sub-title main-color mb-15">Na nás se můžete spolehnout</h6>
               <h3 className="mb-30">
-                Spojujeme energii mladého talentu se spolehlivostí ostřílených pardálů.
+                Spojujeme energii mladého talentu se spolehlivostí ostřílených profesionálů.
               </h3>
               <p>
                 Podání ruky je pro nás stejně svaté jako ta nejlépe sepsaná smlouva. Pokud se na něčem domluvíme, bereme to jako absolutní povinnost splnit naši část dohody.

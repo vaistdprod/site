@@ -1,6 +1,6 @@
 import Lines from '@/components/common/Lines';
 import ProgressScroll from '@/components/common/ProgressScroll';
-import Cursor from '@/components/common/cusor';
+import Cursor from '@/components/common/Cusor';
 import LoadingScreen from '@/components/common/loader';
 import Footer from '@/components/common/Footer';
 import Navbar from '@/components/common/Navbar';

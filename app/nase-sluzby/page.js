@@ -1,6 +1,6 @@
 import Lines from "@/components/common/Lines";
 import ProgressScroll from "@/components/common/ProgressScroll";
-import Cursor from "@/components/common/cusor";
+import Cursor from "@/components/common/Cusor";
 import LoadingScreen from "@/components/common/loader";
 import Footer from "@/components/common/Footer";
 import Marq2 from "@/components/common/Marq2";
@@ -9,8 +9,8 @@ import Clients from "@/components/common/Clients";
 import Services from "@/components/home-main/Services";
 import Intro2 from "@/components/home-digital-agency/Intro2";
 import Testimonials from "@/components/home-digital-agency/Testimonials";
-import Header from "@/components/page-services/Header";
-import Numbers from "@/components/page-services/Numbers";
+import Header from "@/components/nase-sluzby/Header";
+import Numbers from "@/components/nase-sluzby/Numbers";
 
 export const metadata = {
   title: "Naše služby | TD Productions"

@@ -1,20 +1,19 @@
 import React from 'react';
 
-function Works() {
+function Works({ data }) {
+  // Assuming data.images is an array of image paths
+  // Displaying the second and third images
   return (
     <div className="img-column">
       <div className="container">
         <div className="row">
-          <div className="col-lg-6">
-            <div className="img md-mb30">
-              <img src="/assets/imgs/works/3/2.jpg" alt="" />
+          {data.images.slice(1, 3).map((imgSrc, index) => (
+            <div key={index} className="col-lg-6">
+              <div className="img md-mb30">
+                <img src={imgSrc} alt={`Project Image ${index + 2}`} />
+              </div>
             </div>
-          </div>
-          <div className="col-lg-6">
-            <div className="img">
-              <img src="/assets/imgs/works/3/3.jpg" alt="" />
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

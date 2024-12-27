@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import dataObj from '@/data/services';
+import dataObj from '@/data/nase-sluzby';
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 function Services() {
