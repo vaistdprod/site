@@ -1,6 +1,10 @@
-import Isotope from 'isotope-layout';
+// We do NOT import Isotope at the top-level
+// Instead, we load it inside the function so no DOM usage on the server.
 
-const initIsotope = () => {
+const initIsotope = async () => {
+  // Async import of isotope-layout
+  const Isotope = (await import('isotope-layout')).default;
+
   let iso;
   let grid = document.querySelectorAll('.gallery');
   let filtersElem = document.querySelector('.filtering');
@@ -16,18 +20,14 @@ const initIsotope = () => {
 
   if (filtersElem) {
     filtersElem.addEventListener('click', function (event) {
-      if (!matchesSelector(event.target, 'span')) {
-        return;
-      }
-      var filterValue = event.target.getAttribute('data-filter');
-      filterValue = filterValue;
+      if (!matchesSelector(event.target, 'span')) return;
+      let filterValue = event.target.getAttribute('data-filter');
       iso.arrange({ filter: filterValue });
     });
+
     const radioButtonGroup = (buttonGroup) => {
       buttonGroup.addEventListener('click', (event) => {
-        if (!matchesSelector(event.target, 'span')) {
-          return;
-        }
+        if (!matchesSelector(event.target, 'span')) return;
         buttonGroup.querySelector('.active').classList.remove('active');
         event.target.classList.add('active');
       });
@@ -40,3 +40,6 @@ const initIsotope = () => {
 };
 
 export default initIsotope;
+
+// Optional: If you see an error about matchesSelector, you can import it dynamically
+// from 'desandro-matches-selector' as well, or use event.target.matches('span').

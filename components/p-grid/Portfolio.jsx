@@ -1,12 +1,17 @@
 'use client';
+
 import React, { useEffect } from 'react';
-import initIsotope from '@/common/initIsotope';
-import data from '@/data/portfolioData.json'; // Adjust the path as necessary
+import data from '@/data/portfolioData.json';
 
 function PortfolioGrid() {
   useEffect(() => {
-    if (typeof window !== 'undefined') { // Check if window is defined
-      initIsotope();
+    // Only run Isotope in browser:
+    if (typeof window !== 'undefined') {
+      (async () => {
+        // Dynamically import initIsotope so it doesn't run on the server
+        const { default: initIsotope } = await import('@/common/initIsotope');
+        initIsotope();
+      })();
     }
   }, []);
 
@@ -29,7 +34,7 @@ function PortfolioGrid() {
                   <span
                     key={index}
                     data-filter={category.filter}
-                    className={category.name === "All" ? "active" : ""}
+                    className={category.name === 'All' ? 'active' : ''}
                     data-count={category.count}
                   >
                     {category.name}
@@ -53,7 +58,9 @@ function PortfolioGrid() {
                 </div>
                 <div className="cont d-flex align-items-end mt-30">
                   <div>
-                    <span className="p-color mb-5 sub-title">{item.subTitle}</span>
+                    <span className="p-color mb-5 sub-title">
+                      {item.subTitle}
+                    </span>
                     <h6>{item.title}</h6>
                   </div>
                   <div className="ml-auto">

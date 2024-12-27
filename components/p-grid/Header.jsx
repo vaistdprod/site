@@ -1,11 +1,12 @@
 'use client';
+
 import React, { useEffect, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import loadBackgroudImages from '@/common/loadBackgroudImages';
 
 function Header() {
   useLayoutEffect(() => {
-    if (typeof window !== 'undefined') { // Check if window is defined
+    if (typeof window !== 'undefined') {
       const tl = gsap.timeline();
       tl.fromTo('.header', { y: 200 }, { y: 0 }, '+=2.5');
       tl.fromTo(
@@ -20,13 +21,14 @@ function Header() {
   }, []);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') { // Check if window is defined
+    if (typeof window !== 'undefined') {
       loadBackgroudImages();
     }
   }, []);
+
   return (
     <div
-      className="page-header bg-img section-padding valign"
+      className="page-header bg-img section-padding valign header"
       data-background="/assets/imgs/background/bg4.jpg"
       data-overlay-dark="8"
     >
