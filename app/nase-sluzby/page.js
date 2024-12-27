@@ -1,6 +1,6 @@
 import Lines from "@/components/common/Lines";
 import ProgressScroll from "@/components/common/ProgressScroll";
-import Cursor from "@/components/common/Cusor";
+import Cursor from "@/components/common/Cursor";
 import LoadingScreen from "@/components/common/loader";
 import Footer from "@/components/common/Footer";
 import Marq2 from "@/components/common/Marq2";

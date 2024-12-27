@@ -1,10 +1,8 @@
-// app/portfolio/[id]/page.js
-
 import { notFound } from 'next/navigation';
 import portfolioData from '@/data/portfolioData.json';
 import Lines from '@/components/common/Lines';
 import ProgressScroll from '@/components/common/ProgressScroll';
-import Cursor from '@/components/common/Cusor';
+import Cursor from '@/components/common/Cursor';
 import Footer from '@/components/common/Footer';
 import Navbar from '@/components/common/Navbar';
 import Header from '@/components/project-details/Header';
@@ -19,7 +17,6 @@ export async function generateStaticParams() {
 }
 
 export default async function ProjectDetail({ params }) {
-  // Next 15 wants asynchronous access:
   const { id } = await params;
 
   const project = portfolioData.projects.find((p) => p.id === id);
