@@ -6,7 +6,6 @@ function Footer() {
     <footer className="clean-footer crev">
       <div className="container pb-40 pt-40 ontop">
         <div className="row justify-content-between">
-          {/* Logo Section */}
           <div className="col-lg-2">
             <div className="logo icon-img-100 md-mb80">
               <a href="/" aria-label="Home" className="logo-container">
@@ -21,7 +20,6 @@ function Footer() {
             </div>
           </div>
 
-          {/* Contact Section */}
           <div className="col-lg-4">
             <div className="column md-mb50">
               <h6 className="sub-title mb-30">Kontakt</h6>
@@ -31,7 +29,7 @@ function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-color underline"
-                  aria-label="View address on Google Maps"
+                  aria-label="Zobrazit na Google Maps"
                 >
                   28. října 205/45 <br /> 702 00, Ostrava
                 </a>
@@ -42,7 +40,7 @@ function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-color underline"
-                  aria-label="Send an email to info@tdprod.cz"
+                  aria-label="Odeslat email na info@tdprod.cz"
                 >
                   info@tdprod.cz
                 </a>
@@ -52,14 +50,13 @@ function Footer() {
                 className="underline"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Call +420 737 065 717"
+                aria-label="Zavolat +420 737 065 717"
               >
                 <span className="fz-22 main-color">+420 737 065 717</span>
               </a>
             </div>
           </div>
 
-          {/* Links Section */}
           <div className="col-lg-2">
             <div className="column md-mb50">
               <h6 className="sub-title mb-30">Odkazy</h6>
@@ -80,7 +77,6 @@ function Footer() {
             </div>
           </div>
 
-          {/* Newsletter and Social Media Section */}
           <div className="col-lg-3">
             <div className="column subscribe-minimal">
               <h6 className="sub-title mb-30">Newsletter</h6>
@@ -132,15 +128,13 @@ function Footer() {
           </div>
         </div>
 
-        {/* Footer Bottom */}
         <div className="pt-30 pb-30 mt-80 bord-thin-top">
           <div className="text-center">
-            <p className="fz-14">© 2024 Top Dog Enterprises s.r.o.</p>
+            <p className="fz-14">© 2025 Top Dog Enterprises s.r.o.</p>
           </div>
         </div>
       </div>
 
-      {/* Decorative Background Blur */}
       <div className="circle-blur">
         <Image
           src="/assets/imgs/patterns/blur1.png"

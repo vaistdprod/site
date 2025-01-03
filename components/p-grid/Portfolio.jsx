@@ -5,10 +5,8 @@ import data from '@/data/portfolioData.json';
 
 function PortfolioGrid() {
   useEffect(() => {
-    // Only run Isotope in browser:
     if (typeof window !== 'undefined') {
       (async () => {
-        // Dynamically import initIsotope so it doesn't run on the server
         const { default: initIsotope } = await import('@/common/initIsotope');
         initIsotope();
       })();
@@ -65,7 +63,7 @@ function PortfolioGrid() {
                   </div>
                   <div className="ml-auto">
                     <a href={item.link}>
-                      <span className="ti-arrow-top-right"></span>
+                      <span className="fas fa-arrow-right"></span>
                     </a>
                   </div>
                 </div>

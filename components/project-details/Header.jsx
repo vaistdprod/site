@@ -25,7 +25,7 @@ function Header({ data }) {
   return (
     <div
       className="header header-project bg-img d-flex align-items-end"
-      data-background={data.images[0]} // Assuming the first image is used as background
+      data-background={data.images[0]}
       data-overlay-dark="9"
     >
       <div className="container">

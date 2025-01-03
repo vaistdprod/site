@@ -141,8 +141,8 @@ function Navbar() {
                 <a className="dropdown-item" href="/nas-tym">
                   Náš tým
                 </a>
-                <a className="dropdown-item" href="/faq">
-                  FAQ
+                <a className="dropdown-item" href="/nejcastejsi-dotazy">
+                  Nejčastější dotazy
                 </a>
               </div>
             </li>

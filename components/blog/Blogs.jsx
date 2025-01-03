@@ -40,7 +40,7 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
                     <p>{post.excerpt}</p>
                     <Link href={`/blog/${post.slug}`}>
                         <span className="text mr-15">Přečíst</span>
-                        <span className="ti-arrow-top-right"></span>
+                        <span className="fas fa-arrow-right"></span>
                     </Link>
                   </div>
                 </div>
@@ -53,8 +53,8 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
                 <h6 className="title-widget">Hledáte konkrétní článek?</h6>
                 <div className="search-box">
                   <input type="text" name="search-post" placeholder="Hledat..." />
-                  <span className="icon pe-7s-search"></span>
-                </div>
+                  <span className="icon fas fa-search"></span>
+                  </div>
               </div>
               <div className="widget catogry">
                 <h6 className="title-widget">Kategorie</h6>
@@ -87,8 +87,8 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
                             />
                             <span className="date">
                               <span>
-                                {new Date(post.date).getDate()} / <br />{' '}
-                                {new Date(post.date).toLocaleString('default', { month: 'short' })}
+                                {new Date(post.date).getDate()} . <br />{' '}
+                                {new Date(post.date).toLocaleString('cs-CZ', { month: 'short' })}
                               </span>
                             </span>
                         </Link>

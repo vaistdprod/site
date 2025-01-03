@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import Image from 'next/image'
 
 function Numbers() {
   return (
@@ -12,12 +13,18 @@ function Numbers() {
                 <h6 className="p-color sub-title">Clients Satisfaction</h6>
               </div>
               <div className="ml-auto">
-                <div className="icon-img-40">
-                  <img src="/assets/imgs/arw0.png" alt="" />
+                <div className="icon-img-60">
+                  <Image
+                    src="/assets/imgs/logo-light-stroke.svg"
+                    alt="Logo"
+                    width={60}
+                    height={60}
+                  />
                 </div>
               </div>
             </div>
           </div>
+
           <div className="col-lg-4 col-md-6">
             <div className="item bord-thin-top pt-30 d-flex align-items-end mt-20 md-mb30">
               <div>
@@ -25,12 +32,18 @@ function Numbers() {
                 <h6 className="p-color sub-title">Projects Completed</h6>
               </div>
               <div className="ml-auto">
-                <div className="icon-img-40">
-                  <img src="/assets/imgs/arw0.png" alt="" />
+                <div className="icon-img-60">
+                  <Image
+                    src="/assets/imgs/logo-light-stroke.svg"
+                    alt="Logo"
+                    width={60}
+                    height={60}
+                  />
                 </div>
               </div>
             </div>
           </div>
+
           <div className="col-lg-4 col-md-6">
             <div className="item bord-thin-top pt-30 d-flex align-items-end mt-20">
               <div>
@@ -38,8 +51,13 @@ function Numbers() {
                 <h6 className="p-color sub-title">Awards achievement</h6>
               </div>
               <div className="ml-auto">
-                <div className="icon-img-40">
-                  <img src="/assets/imgs/arw0.png" alt="" />
+                <div className="icon-img-60">
+                  <Image
+                    src="/assets/imgs/logo-light-stroke.svg"
+                    alt="Logo"
+                    width={60}
+                    height={60}
+                  />
                 </div>
               </div>
             </div>
@@ -47,7 +65,7 @@ function Numbers() {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default Numbers;
+export default Numbers

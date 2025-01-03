@@ -26,7 +26,7 @@ function Feat() {
               >
                 <span className="hover-this">
                   <span className="circle hover-anim">
-                    <i className="ti-arrow-top-right"></i>
+                    <i className="fas fa-arrow-right"></i>
                   </span>
                 </span>
                 <span className="text">Více o nás</span>

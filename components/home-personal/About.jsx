@@ -79,12 +79,12 @@ function About() {
                           </h6>
                         </div>
                         <div className="ml-auto">
-                          <div className="icon-img-40">
+                          <div className="icon-img-60">
                             <Image
-                              src="/assets/imgs/arw0.png"
-                              alt="Arrow Icon"
-                              width={40}
-                              height={40}
+                              src="/assets/imgs/logo-light-stroke.svg"
+                              alt="Logo"
+                              width={60}
+                              height={60}
                             />
                           </div>
                         </div>
@@ -99,12 +99,12 @@ function About() {
                           </h6>
                         </div>
                         <div className="ml-auto">
-                          <div className="icon-img-40">
+                          <div className="icon-img-60">
                             <Image
-                              src="/assets/imgs/arw0.png"
-                              alt="Arrow Icon"
-                              width={40}
-                              height={40}
+                              src="/assets/imgs/logo-light-stroke.svg"
+                              alt="Logo"
+                              width={60}
+                              height={60}
                             />
                           </div>
                         </div>

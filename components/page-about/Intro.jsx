@@ -11,7 +11,7 @@ function Intro() {
                 <div className="col-6">
                   <img src="/assets/imgs/intro/i1.jpg" alt="" />
                   <div className="img-icon">
-                    <img src="/assets/imgs/arw0.png" alt="" />
+                    <img src="/assets/imgs/logo-light-stroke.svg" alt="Logo" />
                   </div>
                 </div>
                 <div className="col-6 mt-40">
@@ -36,7 +36,7 @@ function Intro() {
               </p>
               <a href="/page-services" className="underline main-color mt-40">
                 <span className="text">
-                  Our Services <i className="ti-arrow-top-right"></i>
+                  Our Services <i className="fas fa-arrow-right"></i>
                 </span>
               </a>
             </div>

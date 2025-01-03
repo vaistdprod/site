@@ -1,6 +1,6 @@
 {
-  "name": "webfolio-nextjs",
-  "version": "0.1.0",
+  "name": "td-productions",
+  "version": "1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

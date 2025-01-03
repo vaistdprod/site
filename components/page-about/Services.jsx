@@ -21,7 +21,7 @@ function Services() {
               >
                 <span>View All</span>
               </a>
-              <span className="icon ti-arrow-top-right"></span>
+              <span className="icon fas fa-arrow-right"></span>
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@ function Services() {
               <div className="img fit-img">
                 <img src="/assets/imgs/serv-img/1.jpg" alt="" />
                 <a href="/page-services-details">
-                  <span className="ti-arrow-top-right"></span>
+                  <span className="fas fa-arrow-right"></span>
                 </a>
               </div>
             </div>
@@ -81,7 +81,7 @@ function Services() {
               <div className="img fit-img">
                 <img src="/assets/imgs/serv-img/2.jpg" alt="" />
                 <a href="/page-services-details">
-                  <span className="ti-arrow-top-right"></span>
+                  <span className="fas fa-arrow-right"></span>
                 </a>
               </div>
             </div>
@@ -112,7 +112,7 @@ function Services() {
               <div className="img fit-img">
                 <img src="/assets/imgs/serv-img/3.jpg" alt="" />
                 <a href="/page-services-details">
-                  <span className="ti-arrow-top-right"></span>
+                  <span className="fas fa-arrow-right"></span>
                 </a>
               </div>
             </div>

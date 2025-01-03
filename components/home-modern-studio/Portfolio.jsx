@@ -40,10 +40,10 @@ function Portfolio() {
             <div className="ml-auto">
               <div className="swiper-arrow-control">
                 <div className="swiper-button-prev">
-                  <span className="ti-arrow-left"></span>
+                  <span className="fas fa-arrow-left"></span>
                 </div>
                 <div className="swiper-button-next">
-                  <span className="ti-arrow-right"></span>
+                  <span className="fas fa-arrow-right"></span>
                 </div>
               </div>
             </div>
@@ -65,7 +65,7 @@ function Portfolio() {
                     >
                       <span className="hover-this">
                         <span className="circle hover-anim">
-                          <i className="ti-arrow-top-right"></i>
+                          <i className="fas fa-arrow-right"></i>
                         </span>
                       </span>
                       <span className="text">View Project</span>

@@ -1,15 +1,14 @@
 import Lines from '@/components/common/Lines';
 import ProgressScroll from '@/components/common/ProgressScroll';
 import Cursor from '@/components/common/Cursor';
-import LoadingScreen from '@/components/common/loader';
+import LoadingScreen from '@/components/common/Loader';
 import Footer from '@/components/common/Footer';
 import Marq2 from '@/components/common/Marq2';
 import Navbar from '@/components/common/Navbar';
-import Header from '@/components/p-grid/Header';
-import Portfolio from '@/components/p-grid/Portfolio';
+import Construction from '@/components/common/Construction';
 
 export const metadata = {
-  title: 'Portfolio | TD Productions'
+  title: 'Portfolio | TD Productions',
 };
 
 export default function Home() {
@@ -23,8 +22,7 @@ export default function Home() {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main className="main-bg o-hidden">
-            <Header />
-            <Portfolio />
+            <Construction />
             <Marq2 />
           </main>
           <Footer />

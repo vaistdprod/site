@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import Image from 'next/image'
 
 function Services() {
   return (
@@ -19,6 +20,7 @@ function Services() {
           </div>
         </div>
       </div>
+
       <div className="container section-padding bord-bottom-grd pt-0">
         <div className="sec-head mb-80">
           <div className="d-flex align-items-center">
@@ -37,15 +39,21 @@ function Services() {
               >
                 <span>Zobrazit všechny</span>
               </a>
-              <span className="icon ti-arrow-top-right"></span>
+              <span className="icon fas fa-arrow-right"></span>
             </div>
           </div>
         </div>
+
         <div className="row mb-40">
           <div className="col-lg-4">
             <div className="item sub-bg md-mb30">
               <div className="icon-img-60 opacity-5 mb-40">
-                <img src="/assets/imgs/serv-icons/3.png" alt="" />
+                <Image
+                  src="/assets/imgs/ikony/ikona-new-4.svg"
+                  alt=""
+                  width={60}
+                  height={60}
+                />
               </div>
               <h5>Digitální marketing</h5>
               <div className="text mt-40">
@@ -58,14 +66,20 @@ function Services() {
                 </p>
               </div>
               <a href="/nase-sluzby/digitalni-marketing" className="mt-40">
-                <span className="ti-arrow-top-right"></span>
+                <span className="fas fa-arrow-right"></span>
               </a>
             </div>
           </div>
+
           <div className="col-lg-4">
             <div className="item sub-bg md-mb30">
               <div className="icon-img-60 opacity-5 mb-40">
-                <img src="/assets/imgs/serv-icons/4.png" alt="" />
+                <Image
+                  src="/assets/imgs/ikony/ikona-new-5.svg"
+                  alt=""
+                  width={60}
+                  height={60}
+                />
               </div>
               <h5>Webové stránky</h5>
               <div className="text mt-40">
@@ -78,14 +92,20 @@ function Services() {
                 </p>
               </div>
               <a href="/nase-sluzby/webove-stranky" className="mt-40">
-                <span className="ti-arrow-top-right"></span>
+                <span className="fas fa-arrow-right"></span>
               </a>
             </div>
           </div>
+
           <div className="col-lg-4">
             <div className="item sub-bg">
               <div className="icon-img-60 opacity-5 mb-40">
-                <img src="/assets/imgs/serv-icons/5.png" alt="" />
+                <Image
+                  src="/assets/imgs/ikony/ikona-new-3.svg"
+                  alt=""
+                  width={60}
+                  height={60}
+                />
               </div>
               <h5>Webové aplikace</h5>
               <div className="text mt-40">
@@ -98,16 +118,22 @@ function Services() {
                 </p>
               </div>
               <a href="/nase-sluzby/webove-aplikace" className="mt-40">
-                <span className="ti-arrow-top-right"></span>
+                <span className="fas fa-arrow-right"></span>
               </a>
             </div>
           </div>
         </div>
+
         <div className="row">
           <div className="col-lg-4">
             <div className="item sub-bg md-mb30">
               <div className="icon-img-60 opacity-5 mb-40">
-                <img src="/assets/imgs/serv-icons/3.png" alt="" />
+                <Image
+                  src="/assets/imgs/ikony/ikona-new-6.svg"
+                  alt=""
+                  width={60}
+                  height={60}
+                />
               </div>
               <h5>Implementace AI</h5>
               <div className="text mt-40">
@@ -120,14 +146,20 @@ function Services() {
                 </p>
               </div>
               <a href="/nase-sluzby/implementace-ai" className="mt-40">
-                <span className="ti-arrow-top-right"></span>
+                <span className="fas fa-arrow-right"></span>
               </a>
             </div>
           </div>
+
           <div className="col-lg-4">
             <div className="item sub-bg md-mb30">
               <div className="icon-img-60 opacity-5 mb-40">
-                <img src="/assets/imgs/serv-icons/4.png" alt="" />
+                <Image
+                  src="/assets/imgs/ikony/ikona-new.svg"
+                  alt=""
+                  width={60}
+                  height={60}
+                />
               </div>
               <h5>Videoprodukce</h5>
               <div className="text mt-40">
@@ -140,34 +172,39 @@ function Services() {
                 </p>
               </div>
               <a href="/nase-sluzby/videoprodukce" className="mt-40">
-                <span className="ti-arrow-top-right"></span>
+                <span className="fas fa-arrow-right"></span>
               </a>
             </div>
           </div>
+
           <div className="col-lg-4">
             <div className="item sub-bg">
               <div className="icon-img-60 opacity-5 mb-40">
-                <img src="/assets/imgs/serv-icons/5.png" alt="" />
+                <Image
+                  src="/assets/imgs/ikony/ikona-new-2.svg"
+                  alt=""
+                  width={60}
+                  height={60}
+                />
               </div>
               <h5>Fotoprodukce</h5>
               <div className="text mt-40">
                 <div className="mb-10">
-                  <span className="tag">Soukromé akce</span>
-                  <span className="tag">Kulturní akce</span>
+                  <span className="tag">Soukromé i kulturní akce</span>
                 </div>
                 <p>
-                  Potřebujete pro vaši firmu profesionální fotografie? My si dáme záležet, abychom vás zvěčnili v tom nejlepším světle.
+                  Potřebujete pro vaši firmu profi fotografie? My si dáme záležet, abychom vás zvěčnili v tom nejlepším světle.
                 </p>
               </div>
               <a href="/nase-sluzby/fotoprodukce" className="mt-40">
-                <span className="ti-arrow-top-right"></span>
+                <span className="fas fa-arrow-right"></span>
               </a>
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default Services;
+export default Services

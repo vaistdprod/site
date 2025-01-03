@@ -23,7 +23,7 @@ function Blog({ posts = [] }) {
               <Link href="/blog" className="butn butn-sm butn-bord radius-30">
                 <span>Zobrazit vše</span>
               </Link>
-              <span className="icon ti-arrow-top-right"></span>
+              <span className="icon fas fa-arrow-right"></span>
             </div>
           </div>
           <h6 className="sub-title main-color d-flex align-items-center">
@@ -47,7 +47,7 @@ function Blog({ posts = [] }) {
                 <div className="cont pt-40">
                   <div className="info sub-title p-color d-flex align-items-center mb-15">
                     <div>
-                      <Link href={`/blog/${post.slug}`}>By : {post.author}</Link>
+                      <Link href={`/blog/${post.slug}`}>By : {post.author.name}</Link>
                     </div>
                     <div className="ml-30">
                       {new Date(post.date).toLocaleDateString()}
@@ -60,7 +60,7 @@ function Blog({ posts = [] }) {
                   >
                     <span className="hover-this">
                       <span className="circle hover-anim">
-                        <i className="ti-arrow-top-right"></i>
+                        <i className="fas fa-arrow-right"></i>
                       </span>
                     </span>
                     <span className="text">Přečíst</span>

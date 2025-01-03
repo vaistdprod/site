@@ -1,8 +1,4 @@
-// We do NOT import Isotope at the top-level
-// Instead, we load it inside the function so no DOM usage on the server.
-
 const initIsotope = async () => {
-  // Async import of isotope-layout
   const Isotope = (await import('isotope-layout')).default;
 
   let iso;
@@ -40,6 +36,3 @@ const initIsotope = async () => {
 };
 
 export default initIsotope;
-
-// Optional: If you see an error about matchesSelector, you can import it dynamically
-// from 'desandro-matches-selector' as well, or use event.target.matches('span').

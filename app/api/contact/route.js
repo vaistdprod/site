@@ -48,7 +48,7 @@ export default async function handler(req, res) {
   })(req, res, () => {});
 
   if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method Not Allowed' });
+    return res.status(405).json({ message: 'Metoda nepovolena' });
   }
 
   try {
@@ -105,17 +105,17 @@ export default async function handler(req, res) {
     const captchaData = await captchaResponse.json();
 
     if (!captchaData.success) {
-      return res.status(400).json({ message: 'reCAPTCHA verification failed.' });
+      return res.status(400).json({ message: 'Ověření reCAPTCHA selhalo.' });
     }
 
     const MIN_SCORE = 0.5;
     if (captchaData.score < MIN_SCORE) {
-      return res.status(400).json({ message: 'Low reCAPTCHA score. Are you a robot?' });
+      return res.status(400).json({ message: 'Nízké reCAPTCHA skóre. Jste robot?' });
     }
 
     const expectedAction = 'contact_form_submission';
     if (captchaData.action !== expectedAction) {
-      return res.status(400).json({ message: 'reCAPTCHA action mismatch.' });
+      return res.status(400).json({ message: 'Neshoda v reCAPTCHA.' });
     }
 
     const sanitizedJmeno = sanitizeHtml(value.jmeno);
@@ -152,7 +152,7 @@ export default async function handler(req, res) {
       subject: 'Potvrzení o přijetí vaší zprávy',
       html: `
         <p>Dobrý den ${sanitizedJmeno},</p>
-        <p>Děkujeme vám za vaši zprávu. Ta byla úspěšně doručena a my se vám na ni co nejdříve ozveme zpět.</p>
+        <p>Děkujeme vám za vaši zprávu. Ta byla úspěšně doručena a my vám na ni co nejdříve odpovíme.</p>
         <p><strong>Vaše zpráva:</strong></p>
         <p>${sanitizedZprava.replace(/\n/g, '<br>')}</p>
         <p>S pozdravem</p>

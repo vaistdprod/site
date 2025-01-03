@@ -27,7 +27,7 @@ function Intro() {
 
                   <a href="/page-about" className="underline main-color mt-40">
                     <span className="text">
-                      More About Us <i className="ti-arrow-top-right"></i>
+                      More About Us <i className="fas fa-arrow-right"></i>
                     </span>
                   </a>
                 </div>
@@ -44,8 +44,8 @@ function Intro() {
                       </h6>
                     </div>
                     <div className="ml-auto">
-                      <div className="icon-img-40">
-                        <img src="/assets/imgs/arw0.png" alt="" />
+                      <div className="icon-img-60">
+                        <img src="/assets/imgs/logo-light-stroke.svg" alt="Logo" />
                       </div>
                     </div>
                   </div>
@@ -57,8 +57,8 @@ function Intro() {
                       <h6 className="p-color sub-title">Projects Completed</h6>
                     </div>
                     <div className="ml-auto">
-                      <div className="icon-img-40">
-                        <img src="/assets/imgs/arw0.png" alt="" />
+                      <div className="icon-img-60">
+                        <img src="/assets/imgs/logo-light-stroke.svg" alt="Logo" />
                       </div>
                     </div>
                   </div>

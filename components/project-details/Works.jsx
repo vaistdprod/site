@@ -1,8 +1,6 @@
 import React from 'react';
 
 function Works({ data }) {
-  // Assuming data.images is an array of image paths
-  // Displaying the second and third images
   return (
     <div className="img-column">
       <div className="container">

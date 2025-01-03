@@ -15,7 +15,7 @@ function Services() {
               >
                 <span className="hover-this">
                   <span className="circle hover-anim">
-                    <i className="ti-arrow-top-right"></i>
+                    <i className="fas fa-arrow-right"></i>
                   </span>
                 </span>
                 <span className="text">Learn more</span>
@@ -33,7 +33,7 @@ function Services() {
               </div>
               <div className="ml-auto">
                 <a href="/page-services-details">
-                  Learn more <span className="ti-arrow-top-right ml-10"></span>
+                  Learn more <span className="fas fa-arrow-right ml-10"></span>
                 </a>
               </div>
             </div>
@@ -47,7 +47,7 @@ function Services() {
               </div>
               <div className="ml-auto">
                 <a href="/page-services-details">
-                  Learn more <span className="ti-arrow-top-right ml-10"></span>
+                  Learn more <span className="fas fa-arrow-right ml-10"></span>
                 </a>
               </div>
             </div>
@@ -61,7 +61,7 @@ function Services() {
               </div>
               <div className="ml-auto">
                 <a href="/page-services-details">
-                  Learn more <span className="ti-arrow-top-right ml-10"></span>
+                  Learn more <span className="fas fa-arrow-right ml-10"></span>
                 </a>
               </div>
             </div>
@@ -75,7 +75,7 @@ function Services() {
               </div>
               <div className="ml-auto">
                 <a href="/page-services-details">
-                  Learn more <span className="ti-arrow-top-right ml-10"></span>
+                  Learn more <span className="fas fa-arrow-right ml-10"></span>
                 </a>
               </div>
             </div>

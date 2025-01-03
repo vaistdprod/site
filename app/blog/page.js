@@ -1,23 +1,35 @@
 import Lines from '@/components/common/Lines';
 import ProgressScroll from '@/components/common/ProgressScroll';
 import Cursor from '@/components/common/Cursor';
-import LoadingScreen from '@/components/common/loader';
+import LoadingScreen from '@/components/common/Loader';
 import Footer from '@/components/common/Footer';
 import Navbar from '@/components/common/Navbar';
-import Header from '@/components/blog/Header';
+import Intro from '@/components/blog/Intro';
 import Blogs from '@/components/blog/Blogs';
 import { getAllPosts } from '@/lib/posts';
+
 export const metadata = {
-  title: 'Blog | TD Productions'
+  title: 'Blog | TD Productions',
 };
 
 export default async function BlogList({ searchParams }) {
   const tag = searchParams.tag;
+  const searchQuery = searchParams.search;
 
   let posts = await getAllPosts();
 
   if (tag) {
     posts = posts.filter((post) => post.tags.includes(tag));
+  }
+
+  if (searchQuery) {
+    const query = searchQuery.toLowerCase();
+    posts = posts.filter(
+      (post) =>
+        post.title.toLowerCase().includes(query) ||
+        post.excerpt.toLowerCase().includes(query) ||
+        post.content.toLowerCase().includes(query)
+    );
   }
 
   const allPosts = await getAllPosts();
@@ -40,8 +52,14 @@ export default async function BlogList({ searchParams }) {
         <Navbar />
         <div id="smooth-content">
           <main className="main-bg">
-            <Header />
-            <Blogs posts={posts} tagCounts={tagCounts} uniqueTags={uniqueTags} />
+            <Intro />
+            {posts.length > 0 ? (
+              <Blogs posts={posts} tagCounts={tagCounts} uniqueTags={uniqueTags} />
+            ) : (
+              <div className="no-results mt-80 text-center">
+                <h3>No results found for "{searchQuery}".</h3>
+              </div>
+            )}
           </main>
           <Footer />
         </div>

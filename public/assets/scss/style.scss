@@ -1,21 +1,19 @@
 /*-----------------------------------------------------------------------------------
 
-    Theme Name: Webfolio
+    Theme Name: TD Productions
     Theme URI: http://
-    Description: Creative Agency & Portfolio
-    Author: UiCamp
-    Author URI: http://themeforest.net/user/UiCamp
+    Description: Marketingová agentura
+    Author: Top Dog Enterprises s.r.o.
+    Author URI: https://tdprod.cz
     Version: 1.0
 
 -----------------------------------------------------------------------------------*/
 
-// utility
 @import 'utility/animation.scss';
 @import 'utility/mixin.scss';
 @import 'utility/theme-dark.scss';
 @import 'utility/variables.scss';
 
-// components
 @import 'components/typography.scss';
 @import 'components/buttons.scss';
 @import 'components/cursor.scss';
@@ -27,7 +25,6 @@
 @import 'components/modal.scss';
 @import 'components/title.scss';
 
-// layout
 @import 'layout/about.scss';
 @import 'layout/awards.scss';
 @import 'layout/blog.scss';
@@ -51,5 +48,4 @@
 @import 'layout/video.scss';
 @import 'layout/shop.scss';
 
-// responsive
 @import 'utility/responsive.scss';

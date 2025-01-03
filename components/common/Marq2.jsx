@@ -1,10 +1,11 @@
-import React from 'react';
+import React from 'react'
+import Image from 'next/image'
 
 function Marq2() {
-  const marquess = ['Spojte se s námi'];
-  const AllMarquess = Array(6).fill(marquess).flat();
-  const contact = ['Kontaktujte nás'];
-  const AllContact = Array(6).fill(contact).flat();
+  const marquess = ['Spojte se s námi']
+  const AllMarquess = Array(6).fill(marquess).flat()
+  const contact = ['Kontaktujte nás']
+  const AllContact = Array(6).fill(contact).flat()
 
   return (
     <section className="call-marq section-padding o-hidden">
@@ -16,7 +17,12 @@ function Marq2() {
                 <h4 className="d-flex align-items-center">
                   <span>{item}</span>
                   <span className="icon-img-50 ml-40">
-                    <img src="/assets/imgs/logo-light.svg" alt="" />
+                    <Image
+                      src="/assets/imgs/logo-light.svg"
+                      alt=""
+                      width={50}
+                      height={50}
+                    />
                   </span>
                 </h4>
               </div>
@@ -26,16 +32,21 @@ function Marq2() {
                 <h4 className="d-flex align-items-center">
                   <span>{item}</span>
                   <span className="icon-img-50 ml-40">
-                    <img src="/assets/imgs/logo-light.svg" alt="" />
+                    <Image
+                      src="/assets/imgs/logo-light.svg"
+                      alt=""
+                      width={50}
+                      height={50}
+                    />
                   </span>
                 </h4>
               </div>
             ))}
           </div>
-
           <a href="/kontakty" className="overlay-link"></a>
         </div>
       </div>
+
       <div className="main-marq bord-item">
         <div className="slide-har st2">
           <div className="box">
@@ -56,12 +67,11 @@ function Marq2() {
               </div>
             ))}
           </div>
-
           <a href="/kontakty" className="overlay-link"></a>
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default Marq2;
+export default Marq2

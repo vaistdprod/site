@@ -68,7 +68,7 @@ function Portfolio() {
               >
                 <span>View All</span>
               </a>
-              <span className="icon ti-arrow-top-right"></span>
+              <span className="icon fas fa-arrow-right"></span>
             </div>
           </div>
         </div>
@@ -95,7 +95,7 @@ function Portfolio() {
                     </p>
                     <a href="/project-details" className="underline mt-15">
                       <span className="text main-color sub-title">
-                        View Details <i className="ti-arrow-top-right"></i>
+                        View Details <i className="fas fa-arrow-right"></i>
                       </span>
                     </a>
                   </div>
@@ -130,7 +130,7 @@ function Portfolio() {
                     </p>
                     <a href="/project-details" className="underline mt-15">
                       <span className="text main-color sub-title">
-                        View Details <i className="ti-arrow-top-right"></i>
+                        View Details <i className="fas fa-arrow-right"></i>
                       </span>
                     </a>
                   </div>
@@ -165,7 +165,7 @@ function Portfolio() {
                     </p>
                     <a href="/project-details" className="underline mt-15">
                       <span className="text main-color sub-title">
-                        View Details <i className="ti-arrow-top-right"></i>
+                        View Details <i className="fas fa-arrow-right"></i>
                       </span>
                     </a>
                   </div>
@@ -200,7 +200,7 @@ function Portfolio() {
                     </p>
                     <a href="/project-details" className="underline mt-15">
                       <span className="text main-color sub-title">
-                        View Details <i className="ti-arrow-top-right"></i>
+                        View Details <i className="fas fa-arrow-right"></i>
                       </span>
                     </a>
                   </div>
@@ -235,7 +235,7 @@ function Portfolio() {
                     </p>
                     <a href="/project-details" className="underline mt-15">
                       <span className="text main-color sub-title">
-                        View Details <i className="ti-arrow-top-right"></i>
+                        View Details <i className="fas fa-arrow-right"></i>
                       </span>
                     </a>
                   </div>

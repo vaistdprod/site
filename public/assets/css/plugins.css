@@ -10,7 +10,7 @@
 -----------------------------------------------------------------------------------*/
 
 /* ----------------------------------------------------------------
-			[ All Css Plugins & Helper Classes File ]
+			[ CSS Plugins & Helper Files ]
 -----------------------------------------------------------------*/
 
 /* == bootstrap == */
@@ -18,21 +18,6 @@
 
 /* == animate css == */
 @import url('plugins/animate.min.css');
-
-/* == ionicons icon font == */
-@import url('plugins/themify-icons.css');
-
-/* == pe-icon-7-stroke == */
-@import url('plugins/pe-icon-7-stroke.css');
-
-/* == justifiedGallery.min == */
-@import url('plugins/justifiedGallery.min.css');
-
-/* == magnific-popup == */
-@import url('plugins/magnific-popup.css');
-
-/* == YouTubePopUp == */
-@import url('plugins/YouTubePopUp.css');
 
 /* == swiper.min font == */
 @import url('plugins/swiper.min.css');

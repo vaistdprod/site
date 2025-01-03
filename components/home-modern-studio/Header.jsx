@@ -151,7 +151,7 @@ function Header() {
                 >
                   <span className="hover-this">
                     <span className="circle hover-anim">
-                      <i className="ti-arrow-top-right"></i>
+                      <i className="fas fa-arrow-right"></i>
                     </span>
                   </span>
                   <span className="text">View Project</span>
@@ -170,7 +170,7 @@ function Header() {
                 >
                   <span className="hover-this">
                     <span className="circle hover-anim">
-                      <i className="ti-arrow-top-right"></i>
+                      <i className="fas fa-arrow-right"></i>
                     </span>
                   </span>
                   <span className="text">View Project</span>
@@ -189,7 +189,7 @@ function Header() {
                 >
                   <span className="hover-this">
                     <span className="circle hover-anim">
-                      <i className="ti-arrow-top-right"></i>
+                      <i className="fas fa-arrow-right"></i>
                     </span>
                   </span>
                   <span className="text">View Project</span>

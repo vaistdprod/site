@@ -40,7 +40,7 @@ function Header() {
                 <span className="icon-img-30 mr-10">
                   <Image
                     src="/assets/imgs/logo-light.svg"
-                    alt="Company Logo"
+                    alt="Logo"
                     width={33}
                     height={25}
                     className="logo-image"
@@ -69,7 +69,7 @@ function Header() {
                     <div className="icon-img-60 ml-20">
                       <Image
                         src="/assets/imgs/icon-img/arrow-down-big.png"
-                        alt="Arrow Down"
+                        alt="Šipka"
                         width={170}
                         height={157}
                         className="arrow-image"

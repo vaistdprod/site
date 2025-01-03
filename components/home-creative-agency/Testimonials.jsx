@@ -145,10 +145,10 @@ function Testimonials() {
             </div>
             <div className="swiper-arrow-control control-abslout">
               <div className="swiper-button-prev">
-                <span className="ti-arrow-left"></span>
+                <span className="fas fa-arrow-left"></span>
               </div>
               <div className="swiper-button-next">
-                <span className="ti-arrow-right"></span>
+                <span className="fas fa-arrow-right"></span>
               </div>
             </div>
           </div>

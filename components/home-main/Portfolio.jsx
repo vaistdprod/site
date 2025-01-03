@@ -45,7 +45,7 @@ function PortfolioSwiper() {
               <a href="/portfolio-gallery" className="butn butn-sm butn-bord radius-30">
                 <span>View All</span>
               </a>
-              <span className="icon ti-arrow-top-right"></span>
+              <span className="icon fas fa-arrow-right"></span>
             </div>
           </div>
         </div>
