@@ -2,7 +2,6 @@
 const path = require('path');
 
 const nextConfig = {
-
   reactStrictMode: false,
   sassOptions: {
     includePaths: [path.join(__dirname, 'css')],
@@ -13,6 +12,13 @@ const nextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: false,
+  },
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname),
+    };
+    return config;
   },
 };
 
