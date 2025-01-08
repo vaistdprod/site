@@ -1,15 +1,12 @@
-// app/api/comments/route.js
-
-let comments = []; // In-memory store for comments
+let comments = [];
 
 export async function POST(request) {
   try {
     const { name, email, message, slug } = await request.json();
 
-    // Basic validation
     if (!name || !email || !message || !slug) {
       return new Response(
-        JSON.stringify({ error: 'All fields are required.' }),
+        JSON.stringify({ error: 'Jsou vyžadována všechna pole.' }),
         { status: 400, headers: { 'Content-Type': 'application/json' } }
       );
     }
@@ -26,12 +23,12 @@ export async function POST(request) {
     comments.push(newComment);
 
     return new Response(
-      JSON.stringify({ message: 'Comment added successfully!', comment: newComment }),
+      JSON.stringify({ message: 'Komentář byl úspěšně přidán.', comment: newComment }),
       { status: 201, headers: { 'Content-Type': 'application/json' } }
     );
   } catch (error) {
     return new Response(
-      JSON.stringify({ error: 'Invalid request body.' }),
+      JSON.stringify({ error: 'Neplatný požadavek.' }),
       { status: 400, headers: { 'Content-Type': 'application/json' } }
     );
   }
@@ -44,7 +41,7 @@ export async function GET(request) {
 
     if (!slug) {
       return new Response(
-        JSON.stringify({ error: 'Slug parameter is required.' }),
+        JSON.stringify({ error: 'Je vyžadován parametr za URL.' }),
         { status: 400, headers: { 'Content-Type': 'application/json' } }
       );
     }
@@ -57,7 +54,7 @@ export async function GET(request) {
     );
   } catch (error) {
     return new Response(
-      JSON.stringify({ error: 'Failed to fetch comments.' }),
+      JSON.stringify({ error: 'Nepovedlo se zobrazit komentáře.' }),
       { status: 500, headers: { 'Content-Type': 'application/json' } }
     );
   }

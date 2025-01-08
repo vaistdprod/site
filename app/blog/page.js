@@ -1,7 +1,7 @@
 import Lines from '@/components/common/Lines';
 import ProgressScroll from '@/components/common/ProgressScroll';
 import Cursor from '@/components/common/Cursor';
-import LoadingScreen from '@/components/common/Loader';
+import LoadingScreen from '../../components/common/LoadingScreen';
 import Footer from '@/components/common/Footer';
 import Navbar from '@/components/common/Navbar';
 import Intro from '@/components/blog/Intro';
@@ -57,7 +57,7 @@ export default async function BlogList({ searchParams }) {
               <Blogs posts={posts} tagCounts={tagCounts} uniqueTags={uniqueTags} />
             ) : (
               <div className="no-results mt-80 text-center">
-                <h3>No results found for "{searchQuery}".</h3>
+                <h3>Nenalezeny žádné výsledky obsahující "{searchQuery}".</h3>
               </div>
             )}
           </main>
