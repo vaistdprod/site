@@ -1,8 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
-import data from '@/data/nas-tym';
+import Image from 'next/image';
 
-function Team() {
+function Team({ members = [] }) {
+
+  if (!Array.isArray(members)) {
+    console.error("Byly očekávaní 'members' v řadě, namísto toho jsou zde:", members);
+    return null;
+  }
+
   return (
     <section className="team-crev section-padding">
       <div className="container">
@@ -27,44 +33,62 @@ function Team() {
         </div>
 
         <div className="row">
-          {data.slice(0, 5).map((item, i) => (
-            <div key={i} className="col-lg-3 col-md-6">
+          {members.slice(0, 5).map((member) => (
+            <div key={member.slug} className="col-lg-3 col-md-6">
               <div className="item md-mb50">
                 <div className="cont text-center pt-30 pb-30">
-                  <Link href={`/nas-tym/${item.slug}`}>
+                  <Link href={`/nas-tym/${member.slug}`}>
                     <div className="info">
-                      <h6>{item.name}</h6>
-                      <span className="fz-14 p-color mt-10">{item.subName}</span>
+                      <h6>{member.name}</h6>
+                      <span className="fz-14 p-color mt-10">{member.role}</span>
                     </div>
                   </Link>
 
                   <div className="social mt-20">
                     <div className="links">
-                      <Link
-                        href={item.instagram}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <i className="fab fa-instagram"></i>
-                      </Link>
-                      <Link href={`tel:${item.phone.replace(/\s+/g, '')}`}>
-                        <i className="fas fa-phone"></i>
-                      </Link>
-                      <Link href={`mailto:${item.email}`}>
-                        <i className="fas fa-envelope"></i>
-                      </Link>
+                      {member.instagram && (
+                        <Link
+                          href={member.instagram}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${member.name} Instagram`}
+                        >
+                          <i className="fab fa-instagram"></i>
+                        </Link>
+                      )}
+                      {member.facebook && (
+                        <Link
+                          href={member.facebook}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${member.name} Facebook`}
+                        >
+                          <i className="fab fa-facebook-f"></i>
+                        </Link>
+                      )}
+                      {member.phone && (
+                        <Link href={`tel:${member.phone.replace(/\s+/g, '')}`} aria-label={`${member.name} Phone`}>
+                          <i className="fas fa-phone"></i>
+                        </Link>
+                      )}
+                      {member.email && (
+                        <Link href={`mailto:${member.email}`} aria-label={`${member.name} Email`}>
+                          <i className="fas fa-envelope"></i>
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </div>
 
                 <div className="img">
-                  <Link href={`/nas-tym/${item.slug}`}>
-                    <img src={item.img} alt={item.name} />
+                  <Link href={`/nas-tym/${member.slug}`}>
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={300}
+                      height={300}
+                    />
                   </Link>
-                </div>
-
-                <div className="circle-blur">
-                  <img src="/assets/imgs/patterns/blur1.png" alt="" />
                 </div>
               </div>
             </div>

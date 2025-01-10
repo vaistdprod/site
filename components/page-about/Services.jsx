@@ -7,10 +7,10 @@ function Services() {
         <div className="sec-head mb-80">
           <div className="d-flex align-items-center">
             <div>
-              <span className="sub-title main-color mb-5">Our Specialize</span>
+              <span className="sub-title main-color mb-5">Naše specializace</span>
               <h3 className="fw-600 fz-50 text-u d-rotate wow">
                 <span className="rotate-text">
-                  Featured <span className="fw-200">Services.</span>
+                  Vybrané služby <span className="fw-200">služby</span>
                 </span>
               </h3>
             </div>
@@ -19,7 +19,7 @@ function Services() {
                 href="/page-services"
                 className="butn butn-sm butn-bord radius-30"
               >
-                <span>View All</span>
+                <span>Zobrazit</span>
               </a>
               <span className="icon fas fa-arrow-right"></span>
             </div>

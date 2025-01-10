@@ -5,7 +5,7 @@ function Construction() {
   const AllMarquess = Array(8).fill(marquess).flat();
 
   return (
-    <section className="page-error section-padding valign">
+    <section className="page-error construction section-padding valign">
       <div className="container">
         <div className="text-center">
           <h1>Stavíme</h1>

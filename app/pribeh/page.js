@@ -5,13 +5,10 @@ import LoadingScreen from '@/components/common/LoadingScreen';
 import Footer from '@/components/common/Footer';
 import Marq2 from '@/components/common/Marq2';
 import Navbar from '@/components/common/Navbar';
-import Header from '@/components/page-about/Header';
-import Intro from '@/components/page-about/Intro';
-import Numbers from '@/components/common/Numbers';
-import Services from '@/components/page-about/Services';
+import Construction from '@/components/common/Construction';
 
 export const metadata = {
-  title: 'Příběh | TD Productions'
+  title: 'Portfolio | TD Productions',
 };
 
 export default function Home() {
@@ -25,10 +22,7 @@ export default function Home() {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main className="main-bg o-hidden">
-            <Header />
-            <Intro />
-            <Numbers />
-            <Services />
+            <Construction />
             <Marq2 />
           </main>
           <Footer />

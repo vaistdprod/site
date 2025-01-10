@@ -15,7 +15,6 @@ function Marq() {
     <section className="marq">
       <div className="main-marq lrg sub-bg pt-20 pb-20 shadow-off">
         <div className="slide-har st1">
-          {/* First Slide Box */}
           <div className="box">
             {items.map((item, i) => (
               <div key={i} className="item">
@@ -27,14 +26,12 @@ function Marq() {
                       alt="Logo"
                       width={33}
                       height={25}
-                      className="mb-10"
                     />
                   </span>
                 </h4>
               </div>
             ))}
           </div>
-          {/* Second Slide Box */}
           <div className="box">
             {items.map((item, i) => (
               <div key={i} className="item">
@@ -46,7 +43,6 @@ function Marq() {
                       alt="Logo"
                       width={33}
                       height={25}
-                      className="mb-10"
                     />
                   </span>
                 </h4>

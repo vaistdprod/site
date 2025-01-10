@@ -57,7 +57,6 @@ export default async function BlogList({ searchParams }) {
               <Blogs posts={posts} tagCounts={tagCounts} uniqueTags={uniqueTags} />
             ) : (
               <div className="no-results mt-80 text-center">
-                {/* Fixed line with escaped double quotes */}
                 <h3>Nenalezeny žádné výsledky obsahující &quot;{searchQuery}&quot;.</h3>
               </div>
             )}

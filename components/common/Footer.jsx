@@ -8,10 +8,10 @@ function Footer() {
         <div className="row justify-content-between">
           <div className="col-lg-2">
             <div className="logo icon-img-100 md-mb80">
-              <a href="/" aria-label="Home" className="logo-container">
+              <a href="/" aria-label="Domů" className="logo-container">
                 <Image
                   src="/assets/imgs/logo-light.svg"
-                  alt="Company Logo"
+                  alt="Logo"
                   width={33}
                   height={25}
                   className="logo-image"
@@ -62,10 +62,10 @@ function Footer() {
               <h6 className="sub-title mb-30">Odkazy</h6>
               <ul className="rest fz-14 opacity-7">
                 <li className="mb-15">
-                  <a href="/o-nas">O nás</a>
+                  <a href="/nase-sluzby">Naše služby</a>
                 </li>
                 <li className="mb-15">
-                  <a href="/nase-sluzby">Naše služby</a>
+                  <a href="/nas-tym">Náš tým</a>
                 </li>
                 <li className="mb-15">
                   <a href="/blog">Blog</a>

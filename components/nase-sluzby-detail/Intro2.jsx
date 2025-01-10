@@ -26,7 +26,7 @@ function Intro2({ serviceData }) {
             <div>
               <div className="sec-head mb-50">
                 <h6 className="sub-title main-color mb-15">
-                  {serviceData.intro2?.whyTitle || "Why choose us?"}
+                  {serviceData.intro2?.whyTitle || "Proč zvolit TD Productions?"}
                 </h6>
                 <h3>
                   The creative process behind <br /> our digital marketing.
@@ -56,11 +56,11 @@ function Intro2({ serviceData }) {
                 )) || (
                   <div className="item active wow fadeInUp">
                     <div className="title" onClick={openAccordion}>
-                      <h6>Default Title</h6>
+                      <h6>Výchozí nadpis</h6>
                       <span className="ico ti-plus"></span>
                     </div>
                     <div className="accordion-info active" style={{ maxHeight: "300px" }}>
-                      <p>No accordion data found.</p>
+                      <p>Nejsou zde žádná data.</p>
                     </div>
                   </div>
                 )}

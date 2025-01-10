@@ -9,15 +9,6 @@
 
 -----------------------------------------------------------------------------------*/
 
-/* ----------------------------------------------------------------
-			[ CSS Plugins & Helper Files ]
------------------------------------------------------------------*/
-
-/* == bootstrap == */
 @import url('plugins/bootstrap.min.css');
-
-/* == animate css == */
 @import url('plugins/animate.min.css');
-
-/* == swiper.min font == */
 @import url('plugins/swiper.min.css');

@@ -5,17 +5,20 @@ import LoadingScreen from '@/components/common/LoadingScreen';
 import Footer from "@/components/common/Footer";
 import Marq2 from "@/components/common/Marq2";
 import Navbar from "@/components/common/Navbar";
-import Services from "@/components/home-personal/Services";
-import Intro2 from "@/components/home-digital-agency/Intro2";
+import Services from "@/components/nase-sluzby/Services";
+import Faq from "@/components/nase-sluzby/Faq";
 import Testimonials from "@/components/home-main/Testimonials";
 import Header from "@/components/nase-sluzby/Header";
-import Numbers from "@/components/common/Numbers";
+import Numbers from "@/components/nase-sluzby/Numbers";
+import { getLightServices } from '@/lib/nase-sluzby';
 
 export const metadata = {
   title: "Naše služby | TD Productions"
 };
 
-export default function Home() {
+export default async function ServicesPage() {
+  const services = getLightServices();
+
   return (
     <>
       <LoadingScreen />
@@ -27,9 +30,9 @@ export default function Home() {
         <div id="smooth-content">
           <main className="main-bg o-hidden">
             <Header />
+            <Services services={services} />
             <Numbers />
-            <Services />
-            {/* <Intro2 /> */}
+            <Faq />
             {/* <Testimonials /> */}
             <Marq2 />
           </main>

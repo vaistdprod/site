@@ -9,20 +9,17 @@ function Intro({ serviceData }) {
             <div className="row lg-marg">
               <div className="col-md-6">
                 <div>
-                  <h6 className="sub-title main-color mb-15">Description</h6>
+                  <h6 className="sub-title main-color mb-15">
+                    {serviceData.title} s TD Productions
+                  </h6>
                   <h3 className="mb-30">
-                    We believe in the power of <span className="fw-300">individual</span>{" "}
-                    <span className="fw-300">contribution.</span>
+                    Věříme<br />v individualizované<span className="block fw-300">služby pro každého.</span>
                   </h3>
                 </div>
               </div>
               <div className="col-md-6">
                 <div className="text">
                   <p className="mb-15">{serviceData.desc}</p>
-                  <p>
-                    Taken possession of my entire soul, like these sweet
-                    mornings of spring which i enjoy with my whole.
-                  </p>
                   <div className="mt-30">
                     <ul className="rest dot-list">
                       {serviceData.bullets?.map((bullet, idx) => (

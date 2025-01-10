@@ -4,18 +4,20 @@ import Cursor from '@/components/common/Cursor';
 import LoadingScreen from '@/components/common/LoadingScreen';
 import Footer from '@/components/common/Footer';
 import Marq2 from '@/components/common/Marq2';
-import Feat from '@/components/home-main/Feat';
+import Feat from '@/components/home/Feat';
 import Marq from '@/components/common/Marq';
 import Navbar from '@/components/common/Navbar';
-import Services from '@/components/home-personal/Services';
+import Services from '@/components/home/Services';
 import Portfolio from '@/components/home-main/Portfolio';
 import Team from '@/components/home-creative-agency/Team';
 import Testimonials from '@/components/home-main/Testimonials';
-import Clients from '@/components/home-main/Clients';
-import Blog from '@/components/home-creative-agency/Blog';
-import Header from '@/components/home-personal/Header';
-import About from '@/components/home-personal/About';
+import Clients from '@/components/home/Clients';
+import Blog from '@/components/home/Blog';
+import Header from '@/components/home/Header';
+import About from '@/components/home/About';
 import { getAllPosts } from '@/lib/posts';
+import { getMemberList } from "@/lib/nas-tym";
+import { getLightServices } from '@/lib/nase-sluzby';
 
 export const metadata = {
   title: 'TD Productions'
@@ -23,6 +25,8 @@ export const metadata = {
 
 export default async function Home() {
   const posts = await getAllPosts();
+  const members = getMemberList();
+  const services = getLightServices();
 
   return (
     <>
@@ -37,10 +41,10 @@ export default async function Home() {
             <Header />
             <Marq />
             <About />
-            <Services />
+            <Services services={services} />
             {/* <Portfolio /> */}
             <Feat />
-            <Team />
+            <Team members={members} />
             {/* <Testimonials /> */}
             {/* <Clients /> */}
             <Blog posts={posts} />

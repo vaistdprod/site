@@ -1,6 +1,26 @@
 "use client";
 import React, { useEffect } from "react";
 import isInView from "@/common/isInView";
+import Image from 'next/image';
+
+const SOCIAL_MEDIA = {
+  facebook: {
+    icon: "fab fa-facebook-f",
+    url: "facebook",
+  },
+  twitter: {
+    icon: "fab fa-x-twitter",
+    url: "twitter",
+  },
+  instagram: {
+    icon: "fab fa-instagram",
+    url: "instagram",
+  },
+  linkedin: {
+    icon: "fab fa-linkedin-in",
+    url: "linkedin",
+  },
+};
 
 function Intro({ memberData }) {
   function handleShowProgressValues() {
@@ -15,6 +35,7 @@ function Intro({ memberData }) {
 
   useEffect(() => {
     window.addEventListener("scroll", handleShowProgressValues);
+    handleShowProgressValues();
     return () => window.removeEventListener("scroll", handleShowProgressValues);
   }, []);
 
@@ -24,7 +45,12 @@ function Intro({ memberData }) {
         <div className="row md-marg justify-content-around bord">
           <div className="col-lg-5">
             <div className="img md-mb50">
-              <img src={memberData.image} alt={memberData.name} />
+              <Image
+                src={memberData.image}
+                alt={memberData.name}
+                width={500}
+                height={500}
+              />
             </div>
           </div>
           <div className="col-lg-6 valign">
@@ -37,24 +63,16 @@ function Intro({ memberData }) {
               <div className="info mt-30">
                 <ul className="rest">
                   <li className="mb-25 fz-18">
-                    <span className="sub-title mr-15">RESPONSIBILITY :</span>
-                    {memberData.role}
-                  </li>
-                  <li className="mb-25 fz-18">
-                    <span className="sub-title mr-15">Experiences :</span>
-                    {memberData.experience}
-                  </li>
-                  <li className="mb-25 fz-18">
-                    <span className="sub-title mr-15">Date Of Birth :</span>
-                    {memberData.dob}
-                  </li>
-                  <li className="mb-25 fz-18">
-                    <span className="sub-title mr-15">Email :</span>
-                    {memberData.email}
+                    <span className="sub-title mr-15">Email:</span>
+                    <a href={`mailto:${memberData.email}`}>
+                      {memberData.email}
+                    </a>
                   </li>
                   <li className="fz-18">
-                    <span className="sub-title mr-15">Phone :</span>
-                    {memberData.phone}
+                    <span className="sub-title mr-15">Telefon:</span>
+                    <a href={`tel:${memberData.phone}`}>
+                      {memberData.phone}
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -64,52 +82,40 @@ function Intro({ memberData }) {
         <div className="row md-marg justify-content-around mt-80">
           <div className="col-lg-6 valign">
             <div className="text md-mb50">
-              <h4 className="mb-15">About Me</h4>
+              <h4 className="mb-15">O mně</h4>
               <p>{memberData.about}</p>
               <ul className="rest mt-30 social-icon d-flex align-items-center">
-                <li className="hover-this cursor-pointer">
-                  <a href="#0" className="hover-anim">
-                    <i className="fab fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li className="hover-this cursor-pointer ml-10">
-                  <a href="#0" className="hover-anim">
-                    <i className="fab fa-dribbble"></i>
-                  </a>
-                </li>
-                <li className="hover-this cursor-pointer ml-10">
-                  <a href="#0" className="hover-anim">
-                    <i className="fab fa-linkedin-in"></i>
-                  </a>
-                </li>
-                <li className="hover-this cursor-pointer ml-10">
-                  <a href="#0" className="hover-anim">
-                    <i className="fab fa-instagram"></i>
-                  </a>
-                </li>
+                {Object.keys(SOCIAL_MEDIA).map((platform) => {
+                  const link = memberData[platform];
+                  if (!link) return null;
+
+                  return (
+                    <li key={platform} className="hover-this cursor-pointer ml-10">
+                      <a href={link} target="_blank" rel="noopener noreferrer" className="hover-anim">
+                        <i className={SOCIAL_MEDIA[platform].icon}></i>
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
           <div className="col-lg-5">
             <div className="skills-box">
-              <div className="skill-item mb-30">
-                <h5 className="sub-title mb-15">UI / UX Design 90%</h5>
-                <div className="skill-progress">
-                  <div className="progres" data-value="90%"></div>
-                </div>
-              </div>
-              <div className="skill-item mb-30">
-                <h5 className="sub-title mb-15">Digital Marketing 80%</h5>
-                <div className="skill-progress">
-                  <div className="progres" data-value="80%"></div>
-                </div>
-              </div>
-              <div className="skill-item">
-                <h5 className="sub-title mb-15">Development 85%</h5>
-                <div className="skill-progress">
-                  <div className="progres" data-value="85%"></div>
-                </div>
-              </div>
+              {memberData.skills && memberData.skills.length > 0 ? (
+                memberData.skills.map((skill, index) => (
+                  <div className="skill-item mb-30" key={index}>
+                    <h5 className="sub-title mb-15">
+                      {skill.name} {skill.value}
+                    </h5>
+                    <div className="skill-progress">
+                      <div className="progres" data-value={skill.value}></div>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <p>Žádný obsah</p>
+              )}
             </div>
           </div>
         </div>

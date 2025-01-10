@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import servicesDetails from "@/data/nase-sluzby-detail";
+import { getHeavyService } from "@/lib/nase-sluzby";
 import Lines from "@/components/common/Lines";
 import ProgressScroll from "@/components/common/ProgressScroll";
 import Cursor from "@/components/common/Cursor";
@@ -13,12 +13,14 @@ import Feat from "@/components/nase-sluzby-detail/Feat";
 import Intro2 from "@/components/nase-sluzby-detail/Intro2";
 
 export async function generateStaticParams() {
-  return Object.keys(servicesDetails).map((service) => ({ service }));
+  const lightServices = await import('@/data/mergedServices.json');
+  return Object.keys(lightServices.default).map((service) => ({ service }));
 }
 
 export async function generateMetadata({ params }) {
-  const { service } = params;
-  const serviceData = servicesDetails[service];
+  const { service } = await params;
+  const serviceData = getHeavyService(service);
+
   return {
     title: serviceData
       ? `${serviceData.title} | TD Productions`
@@ -27,8 +29,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function ServicePage({ params }) {
-  const { service } = params;
-  const serviceData = servicesDetails[service];
+  const { service } = await params;
+  const serviceData = getHeavyService(service);
 
   if (!serviceData) return notFound();
 
@@ -45,7 +47,7 @@ export default async function ServicePage({ params }) {
             <Header serviceData={serviceData} />
             <Intro serviceData={serviceData} />
             <Feat serviceData={serviceData} />
-            <Intro2 serviceData={serviceData} />
+            {/* <Intro2 serviceData={serviceData} /> */}
             <Marq2 />
           </main>
           <Footer />

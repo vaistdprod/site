@@ -27,12 +27,6 @@ function LoadingScreen() {
         });
         tl.to('.loader-wrap', { y: -1500 });
         tl.to('.loader-wrap', { zIndex: -1, display: 'none' });
-        tl.from('header', { y: 200 }, '-=1.5');
-        tl.from(
-          'header .container',
-          { y: 40, opacity: 0, delay: 0.3 },
-          '-=1.5'
-        );
       }
     }, 100);
   }, []);

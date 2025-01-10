@@ -23,7 +23,7 @@ function Blog({ post, latestPosts }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus('Submitting...');
+    setStatus('Publikuji...');
     try {
       const res = await fetch('/api/comments', {
         method: 'POST',
@@ -90,15 +90,6 @@ function Blog({ post, latestPosts }) {
                     dangerouslySetInnerHTML={{ __html: post.content }}
                   />
                 </article>
-
-                <div className="post-qoute mt-50">
-                  <h6 className="fz-20">
-                    <span className="l-block">
-                      Pomáháme vám posouvat hranice digitální inovace.
-                    </span>
-                    <span className="sub-title mt-20 mb-0"> - TD Productions</span>
-                  </h6>
-                </div>
 
                 <div className="info-area flex pt-50 bord-thin-top">
                   <div>
@@ -192,10 +183,10 @@ function Blog({ post, latestPosts }) {
                     <div className="col-lg-6">
                       <div className="form-group mb-30">
                         <input
-                          id="form_name"
+                          id="form_jmeno"
                           type="text"
-                          name="name"
-                          placeholder="Name"
+                          name="jmeno"
+                          placeholder="Jméno"
                           value={formData.name}
                           onChange={handleChange}
                           required
@@ -209,7 +200,7 @@ function Blog({ post, latestPosts }) {
                           id="form_email"
                           type="email"
                           name="email"
-                          placeholder="Email"
+                          placeholder="E-mail"
                           value={formData.email}
                           onChange={handleChange}
                           required
@@ -220,9 +211,9 @@ function Blog({ post, latestPosts }) {
                     <div className="col-12">
                       <div className="form-group">
                         <textarea
-                          id="form_message"
-                          name="message"
-                          placeholder="Message"
+                          id="form_komentar"
+                          name="komentar"
+                          placeholder="Komentář"
                           rows="4"
                           value={formData.message}
                           onChange={handleChange}

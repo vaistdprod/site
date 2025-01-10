@@ -9,12 +9,15 @@ import Team from '@/components/home-creative-agency/Team';
 import Numbers from '@/components/common/Numbers';
 import Header from '@/components/nas-tym/Header';
 import Intro from '@/components/nas-tym/Intro';
+import { getMemberList } from "@/lib/nas-tym";
 
 export const metadata = {
   title: 'Náš tým | TD Productions'
 };
 
 export default function Home() {
+const members = getMemberList();
+
   return (
     <>
       <LoadingScreen />
@@ -26,9 +29,9 @@ export default function Home() {
         <div id="smooth-content">
           <main className="main-bg o-hidden">
             <Header />
-            {/* <Intro /> */}
-            <Team />
+            <Team members={members} />
             <Numbers />
+            <Intro />
             <Marq2 />
           </main>
           <Footer />
