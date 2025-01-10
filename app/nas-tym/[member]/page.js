@@ -7,7 +7,7 @@ import LoadingScreen from '@/components/common/LoadingScreen';
 import Footer from "@/components/common/Footer";
 import Marq2 from "@/components/common/Marq2";
 import Navbar from "@/components/common/Navbar";
-import Intro from "@/components/nas-tym-detail/Intro";
+import Intro from "@/components/team-details/Intro";
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
@@ -17,9 +17,47 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { member } = await params;
   const data = getMemberBySlug(member);
+  if (!data) {
+    return {
+      title: "Náš tým | TD Productions",
+      description: "Seznamte se se členy týmu TD Productions."
+    }
+  }
+
   return {
-    title: data ? `${data.name} | TD Productions` : "Náš tým | TD Productions",
-  };
+    title: `${data.name} | TD Productions`,
+    description: `${data.name} je součástí našeho ostravského týmu.`,
+    keywords: [
+      data.name,
+      "TD Productions",
+      "tým",
+      "digitální inovace",
+      "profesionálové"
+    ],
+    openGraph: {
+      type: "profile",
+      url: `https://tdprod.cz/nas-tym/${member}`,
+      title: `${data.name} | TD Productions`,
+      description: `${data.name} je součástí našeho ostravského týmu.`,
+      images: [
+        {
+          url: "https://tdprod.cz/assets/imgs/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: `${data.name} z týmu marketingové agentury TD Productions.`
+        }
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${data.name} | TD Productions`,
+      description: `${data.name} je součástí našeho ostravského týmu.`,
+      images: ["https://tdprod.cz/assets/imgs/og-image.jpg"]
+    },
+    alternates: {
+      canonical: `https://tdprod.cz/nas-tym/${member}`
+    }
+  }
 }
 
 export default async function MemberPage({ params }) {

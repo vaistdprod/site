@@ -1,4 +1,5 @@
-import React from "react";
+import React from "react"
+import Image from "next/image"
 
 function Intro({ serviceData }) {
   return (
@@ -13,7 +14,8 @@ function Intro({ serviceData }) {
                     {serviceData.title} s TD Productions
                   </h6>
                   <h3 className="mb-30">
-                    Věříme<br />v individualizované<span className="block fw-300">služby pro každého.</span>
+                    Věříme<br />v individualizované
+                    <span className="block fw-300">služby pro každého.</span>
                   </h3>
                 </div>
               </div>
@@ -44,7 +46,12 @@ function Intro({ serviceData }) {
                       </div>
                       <div className="ml-auto">
                         <div className="icon-img-60">
-                          <img src="/assets/imgs/logo-light-stroke.svg" alt="logo" />
+                          <Image
+                            src="/assets/imgs/logo-light-stroke.svg"
+                            alt="logo"
+                            width={60}
+                            height={60}
+                          />
                         </div>
                       </div>
                     </div>
@@ -56,13 +63,18 @@ function Intro({ serviceData }) {
 
           <div className="col-lg-4">
             <div className="img-full fit-img">
-              <img src={serviceData.img} alt={serviceData.title} />
+              <Image
+                src={serviceData.img}
+                alt={serviceData.title}
+                width={696}
+                height={696}
+              />
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default Intro;
+export default Intro

@@ -1,9 +1,10 @@
 import './globals.css';
 import Script from 'next/script';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata = {
-  title: 'TD Productions',
-  description: 'Posouváme hranice digitální inovace.',
+  title: 'TD Productions | Posouváme hranice digitální inovace',
+  description: 'Inovace se u nás snoubí s profesionalitou a jednohlasným zájmem posunout váš projekt na tu nejvyšší úroveň. Kontaktujte nás ještě dnes a získejte nabídku.',
   icons: {
     icon: '/assets/imgs/favicon.ico',
     shortcut: '/assets/imgs/favicon.ico',
@@ -26,18 +27,6 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
         <Script
-          src="/assets/js/TweenMax.min.js"
-          strategy="afterInteractive"
-        />
-        <Script
-          src="/assets/js/charming.min.js"
-          strategy="afterInteractive"
-        />
-        <Script
-          src="/assets/js/countdown.js"
-          strategy="afterInteractive"
-        />
-        <Script
           src="/assets/js/gsap.min.js"
           strategy="afterInteractive"
         />
@@ -50,15 +39,7 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
         <Script
-          src="/assets/js/splitting.min.js"
-          strategy="afterInteractive"
-        />
-        <Script
           src="/assets/js/isotope.pkgd.min.js"
-          strategy="afterInteractive"
-        />
-        <Script
-          src="/assets/js/imagesloaded.pkgd.min.js"
           strategy="afterInteractive"
         />
         <Script
@@ -70,6 +51,7 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );

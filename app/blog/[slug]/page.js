@@ -1,44 +1,69 @@
-import Lines from '@/components/common/Lines';
-import ProgressScroll from '@/components/common/ProgressScroll';
-import Cursor from '@/components/common/Cursor';
-import LoadingScreen from '@/components/common/LoadingScreen';
-import Footer from '@/components/common/Footer';
-import Navbar from '@/components/common/Navbar';
-import Intro from '@/components/blog-detail/Intro';
-import Blog from '@/components/blog-detail/Blog';
-import { getAllSlugs, getPostBySlug, getAllPosts } from '@/lib/posts';
-import Head from 'next/head';
-import { notFound } from 'next/navigation';
-
-export const metadata = {
-  title: 'TD Productions',
-};
+import { notFound } from 'next/navigation'
+import Lines from '@/components/common/Lines'
+import ProgressScroll from '@/components/common/ProgressScroll'
+import Cursor from '@/components/common/Cursor'
+import LoadingScreen from '@/components/common/LoadingScreen'
+import Footer from '@/components/common/Footer'
+import Navbar from '@/components/common/Navbar'
+import Intro from '@/components/blog-details/Intro'
+import Blog from '@/components/blog-details/Blog'
+import { getAllSlugs, getPostBySlug, getAllPosts } from '@/lib/posts'
 
 export async function generateStaticParams() {
-  const slugs = getAllSlugs();
-  return slugs.map((slug) => ({ slug }));
+  const slugs = getAllSlugs()
+  return slugs.map((slug) => ({ slug }))
+}
+
+export async function generateMetadata({ params }) {
+  const { slug } = params
+  const post = await getPostBySlug(slug)
+
+  if (!post) {
+    return {
+      title: 'TD Productions',
+      description: 'Nenalezli jsme tento článek. Zkuste to znovu.',
+    }
+  }
+
+  return {
+    title: `${post.title} | TD Productions`,
+    description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `https://tdprod.cz/blog/${slug}`,
+      images: [
+        {
+          url: post.coverImage,
+          width: 1200,
+          height: 630,
+          alt: post.title
+        }
+      ]
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [post.coverImage]
+    },
+    alternates: {
+      canonical: `https://tdprod.cz/blog/${slug}`
+    }
+  }
 }
 
 export default async function BlogPostPage({ params }) {
-  const { slug } = params;
-  const post = await getPostBySlug(slug);
+  const { slug } = params
+  const post = await getPostBySlug(slug)
 
-  if (!post) notFound();
+  if (!post) notFound()
 
-  const allPosts = await getAllPosts();
-  const latestPosts = allPosts.slice(0, 3);
+  const allPosts = await getAllPosts()
+  const latestPosts = allPosts.slice(0, 3)
 
   return (
     <>
-      <Head>
-        <title>{post.title} | TD Productions</title>
-        <meta name="description" content={post.excerpt} />
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.excerpt} />
-        <meta property="og:image" content={post.coverImage} />
-        <meta property="og:url" content={`https://tdprod.cz/blog/${post.slug}`} />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
       <LoadingScreen />
       <Cursor />
       <ProgressScroll />
@@ -61,5 +86,5 @@ export default async function BlogPostPage({ params }) {
         </div>
       </div>
     </>
-  );
+  )
 }
