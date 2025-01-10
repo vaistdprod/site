@@ -6,22 +6,26 @@ export default function Map() {
   const mapRef = useRef(null);
 
   useEffect(() => {
+    // Define initMap on window for the Google callback
     window.initMap = () => {
       if (window.google && mapRef.current) {
         const { Map } = google.maps;
         const { AdvancedMarkerElement } = google.maps.marker;
 
+        // Create a new map
         const map = new Map(mapRef.current, {
           center: { lat: 49.83393862369578, lng: 18.29108796768538 },
           zoom: 16,
         });
 
+        // Create an AdvancedMarkerElement (instead of the deprecated google.maps.Marker)
         const marker = new AdvancedMarkerElement({
           position: { lat: 49.83393862369578, lng: 18.29108796768538 },
           map,
           title: 'TD Productions',
         });
 
+        // Create an InfoWindow
         const contentString = `
           <div style="font-family: Plus Jakarta Sans;">
             <h6 class="mb-5 text-black">TD Productions</h6>
@@ -30,6 +34,7 @@ export default function Map() {
         `;
         const infoWindow = new google.maps.InfoWindow({ content: contentString });
 
+        // Open the InfoWindow by default
         infoWindow.open({ anchor: marker, map });
       }
     };
@@ -37,9 +42,16 @@ export default function Map() {
 
   return (
     <>
+      {/*
+        - async + defer helps ensure the script is loaded asynchronously.
+        - callback=initMap will call window.initMap() once the script loads.
+        - libraries=marker is required for google.maps.marker.AdvancedMarkerElement
+      */}
       <Script
         src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&callback=initMap&libraries=marker`}
         strategy="afterInteractive"
+        async
+        defer
       />
       <div
         ref={mapRef}
