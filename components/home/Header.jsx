@@ -26,13 +26,15 @@ function Header() {
     <div className="header header-personal valign position-relative overflow-hidden" data-overlay-dark="6">
       <video
         className="position-absolute top-0 start-0 w-100 h-100"
-        src="/assets/imgs/tdprod-promo.webm"
         autoPlay
         loop
         muted
         playsInline
-        style={{ objectFit: 'cover', zIndex: -1 }}
-      />
+        style={{ objectFit: "cover", zIndex: -1 }}
+      >
+        <source src="/assets/imgs/tdprod-promo.webm" type="video/webm" />
+        <source src="/assets/imgs/tdprod-promo.mp4" type="video/mp4" />
+      </video>
 
       <div className="container ontop">
         <div className="row">
