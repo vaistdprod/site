@@ -30,7 +30,7 @@ function Header() {
         loop
         muted
         playsInline
-        style={{ objectFit: "cover", zIndex: 11 }}
+        style={{ objectFit: "cover", zIndex: -1 }}
       >
         <source src="/assets/imgs/tdprod-promo.webm" type="video/webm" />
         <source src="/assets/imgs/tdprod-promo.mp4" type="video/mp4" />
