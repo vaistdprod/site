@@ -21,11 +21,6 @@ export default function ClientScripts() {
       />
       <Script src="/assets/js/plugins.js" strategy="afterInteractive" />
       <Script src="/assets/js/gsap.min.js" strategy="afterInteractive" />
-      <Script
-        src="//js-eu1.hs-scripts.com/145304620.js"
-        id="hubspot-script-loader"
-        strategy="afterInteractive"
-      />
       {isNonTouch && (
         <>
           <Script src="/assets/js/ScrollTrigger.min.js" strategy="afterInteractive" />
