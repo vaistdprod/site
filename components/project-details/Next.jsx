@@ -60,7 +60,7 @@ function Next({ data }) {
         </div>
       </div>
       <div>
-        <Link href="/portfolio" className="all-works-butn text-center">
+        <Link href="/portfolio" className="all-works-btn text-center">
           <span className="ti-view-grid fz-24 mb-10"></span>
           <span className="d-block fz-12 text-u ls1">Všechny projekty</span>
         </Link>

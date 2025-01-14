@@ -12,7 +12,7 @@ function Construction() {
           <p>Na této stránce se momentálně pracuje.</p>
           <a
             href="/"
-            className="butn butn-md butn-bg main-colorbg radius-30 mt-30"
+            className="btn btn-md btn-bg main-colorbg radius-30 mt-30"
           >
             <span className="text">Zpět domů</span>
           </a>

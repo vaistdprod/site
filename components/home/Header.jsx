@@ -64,7 +64,7 @@ function Header() {
                   <div className="d-flex align-items-center mt-60">
                     <a
                       href="/kontakty"
-                      className="butn butn-md butn-bord radius-30"
+                      className="btn btn-md btn-bord radius-30"
                     >
                       <span className="text">Kontaktujte nás</span>
                     </a>

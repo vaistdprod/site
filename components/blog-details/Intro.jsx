@@ -51,8 +51,8 @@ function Intro({ title, author, date, comments, coverImage, tags }) {
                           src={author.avatar}
                           alt={author.name}
                           className="circle-img"
-                          width={60}
-                          height={60}
+                          width={240}
+                          height={240}
                         />
                       </Link>
                       <div className="ml-20">

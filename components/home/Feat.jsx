@@ -22,7 +22,7 @@ function Feat() {
               </p>
               <a
                 href="/o-nas"
-                className="butn-crev d-flex align-items-center mt-40"
+                className="btn-crev d-flex align-items-center mt-40"
               >
                 <span className="hover-this">
                   <span className="circle hover-anim">

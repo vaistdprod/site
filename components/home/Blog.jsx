@@ -20,7 +20,7 @@ function Blog({ posts = [] }) {
               </span>
             </h2>
             <div className="ml-auto vi-more">
-              <Link href="/blog" className="butn butn-sm butn-bord radius-30">
+              <Link href="/blog" className="btn btn-sm btn-bord radius-30">
                 <span>Zobrazit vše</span>
               </Link>
               <span className="icon fas fa-arrow-right"></span>
@@ -56,7 +56,7 @@ function Blog({ posts = [] }) {
                   <h4>{post.title}</h4>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="butn-crev d-flex align-items-center mt-40"
+                    className="btn-crev d-flex align-items-center mt-40"
                   >
                     <span className="hover-this">
                       <span className="circle hover-anim">

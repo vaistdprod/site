@@ -254,7 +254,7 @@ function ContactForm() {
                     <div className="mt-30">
                       <button
                         type="submit"
-                        className="butn butn-full butn-bord radius-30"
+                        className="btn btn-full btn-bord radius-30"
                       >
                         <span className="text">Odeslat</span>
                       </button>

@@ -167,7 +167,7 @@ function Navbar() {
         <div className="contact-button">
           <a
             href="/kontakty"
-            className="butn butn-sm butn-bg main-colorbg radius-5"
+            className="btn btn-sm btn-bg main-colorbg radius-5"
           >
             <span className="text">Kontaktujte nás</span>
           </a>

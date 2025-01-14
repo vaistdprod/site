@@ -38,7 +38,7 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
                       </Link>
                     </h3>
                     <p>{post.excerpt}</p>
-                    <Link href={`/blog/${post.slug}`}>
+                    <Link href={`/blog/${post.slug}`} className="d-flex align-items-center main-color mt-40">
                         <span className="text mr-15">Přečíst</span>
                         <span className="fas fa-arrow-right"></span>
                     </Link>

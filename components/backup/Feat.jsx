@@ -17,7 +17,7 @@ function Feat() {
             <div className="ml-auto vi-more">
               <a
                 href="/page-services"
-                className="butn butn-sm butn-bord radius-30"
+                className="btn btn-sm btn-bord radius-30"
               >
                 <span>View All</span>
               </a>

@@ -34,7 +34,7 @@ function Services({ services }) {
             <div className="ml-auto vi-more">
               <a
                 href="/nase-sluzby"
-                className="butn butn-sm butn-bord radius-30"
+                className="btn btn-sm btn-bord radius-30"
               >
                 <span>Zobrazit všechny</span>
               </a>

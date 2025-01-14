@@ -60,7 +60,7 @@ function Portfolio() {
                     </h2>
                     <a
                       href="/project-details"
-                      className="butn-crev d-flex align-items-center mt-30"
+                      className="btn-crev d-flex align-items-center mt-30"
                     >
                       <span className="hover-this">
                         <span className="circle hover-anim">

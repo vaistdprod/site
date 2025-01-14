@@ -12,7 +12,7 @@ function Feat({ serviceData }) {
               </span>
             </h2>
             <div className="ml-auto vi-more">
-              <a href="/kontakty" className="butn butn-sm butn-bord radius-30">
+              <a href="/kontakty" className="btn btn-sm btn-bord radius-30">
                 <span>Kontaktujte nás</span>
               </a>
               <span className="icon fas fa-arrow-right"></span>

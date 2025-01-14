@@ -11,7 +11,7 @@ function Services() {
               <h2>The Best Solution For Your Business</h2>
               <a
                 href="/page-services"
-                className="butn-crev d-flex align-items-center mt-30"
+                className="btn-crev d-flex align-items-center mt-30"
               >
                 <span className="hover-this">
                   <span className="circle hover-anim">

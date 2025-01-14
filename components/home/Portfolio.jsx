@@ -42,7 +42,7 @@ function PortfolioSwiper() {
               </h3>
             </div>
             <div className="ml-auto vi-more">
-              <a href="/portfolio-gallery" className="butn butn-sm butn-bord radius-30">
+              <a href="/portfolio-gallery" className="btn btn-sm btn-bord radius-30">
                 <span>View All</span>
               </a>
               <span className="icon fas fa-arrow-right"></span>
