@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { getAllPosts } from '@/lib/posts'; 
 import ClientBlogList from '@/components/blog/ClientBlogList';
 
@@ -44,5 +45,9 @@ export const metadata = {
 export default async function BlogPage() {
   const allPosts = await getAllPosts();
 
-  return <ClientBlogList allPosts={allPosts} />;
+  return (
+    <Suspense fallback={<div>Načítání informací o blogu...</div>}>
+      <ClientBlogList allPosts={allPosts} />
+    </Suspense>
+  );
 }
