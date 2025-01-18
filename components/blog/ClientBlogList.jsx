@@ -1,7 +1,5 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
-import { useMemo } from 'react';
 import Intro from '@/components/blog/Intro';
 import Blogs from '@/components/blog/Blogs';
 import Navbar from '@/components/common/Navbar';
@@ -10,30 +8,13 @@ import Lines from '@/components/common/Lines';
 import ProgressScroll from '@/components/common/ProgressScroll';
 import Cursor from '@/components/common/Cursor';
 import LoadingScreen from '@/components/common/LoadingScreen';
+import { useMemo } from 'react';
 
-export default function ClientBlogList({ allPosts }) {
-  const searchParams = useSearchParams();
-  const tag = searchParams.get('tag');
-  const searchQuery = searchParams.get('search');
+export default function ClientBlogList({ allPosts, tag, searchQuery }) {
+  // We already have the final, filtered posts from the server.
+  // No need to re-filter, but if you want to do something else, you can.
 
-  const posts = useMemo(() => {
-    let filtered = [...allPosts];
-    if (tag) {
-      filtered = filtered.filter((p) => p.tags.includes(tag));
-    }
-    if (searchQuery) {
-      const q = searchQuery.toLowerCase();
-      filtered = filtered.filter(
-        (p) =>
-          p.title.toLowerCase().includes(q) ||
-          p.excerpt.toLowerCase().includes(q) ||
-          p.content.toLowerCase().includes(q)
-      );
-    }
-    return filtered;
-  }, [allPosts, tag, searchQuery]);
-
-  // Tag counts
+  // If you still want to compute tagCounts for UI, do it here:
   const tagCounts = useMemo(() => {
     return allPosts.reduce((acc, post) => {
       post.tags.forEach((t) => {
@@ -56,12 +37,19 @@ export default function ClientBlogList({ allPosts }) {
         <div id="smooth-content">
           <main className="main-bg">
             <Intro />
-            {posts.length > 0 ? (
-              <Blogs posts={posts} tagCounts={tagCounts} uniqueTags={uniqueTags} />
+            {allPosts.length > 0 ? (
+              <Blogs
+                posts={allPosts}
+                tagCounts={tagCounts}
+                uniqueTags={uniqueTags}
+                tag={tag}
+                searchQuery={searchQuery}
+              />
             ) : (
               <div className="no-results mt-80 text-center">
                 <h3>
-                  Nenalezeny žádné výsledky obsahující &quot;{searchQuery}&quot;.
+                  Nenalezeny žádné výsledky 
+                  {searchQuery ? <> obsahující "{searchQuery}"</> : null}.
                 </h3>
               </div>
             )}

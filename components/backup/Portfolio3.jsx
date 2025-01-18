@@ -1,28 +1,34 @@
-'use client';
-import React from 'react';
-import { Mousewheel, Navigation, Pagination } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+"use client";
+import React from "react";
+import portfolioData from "@/data/portfolioData.json"; // <== import JSON here
+import { Mousewheel, Navigation, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 function Portfolio() {
+  // Pull out swiperItems from your JSON
+  const { swiperItems } = portfolioData;
+
   const swiperOptions = {
     modules: [Pagination, Navigation, Mousewheel],
-    slidesPerView: 'auto',
+    slidesPerView: "auto",
     spaceBetween: 80,
     mousewheel: true,
-
     loop: true,
     touchRatio: 0.2,
     speed: 1500,
     pagination: {
-      el: '.work-crev .swiper-pagination',
-      type: 'progressbar',
+      el: ".work-crev .swiper-pagination",
+      type: "progressbar",
     },
-
     navigation: {
-      nextEl: '.work-crev .swiper-button-next',
-      prevEl: '.work-crev .swiper-button-prev',
+      nextEl: ".work-crev .swiper-button-next",
+      prevEl: ".work-crev .swiper-button-prev",
     },
   };
+
   return (
     <section className="work-crev sub-bg">
       <div className="container section-padding position-re bord-top-grd bord-bottom-grd">
@@ -50,7 +56,7 @@ function Portfolio() {
         </div>
         <div className="work-swiper out-right">
           <Swiper {...swiperOptions}>
-            {data.map((item, i) => (
+            {swiperItems.map((item, i) => (
               <SwiperSlide key={i}>
                 <div className="item d-flex align-items-center">
                   <div className="cont">
@@ -77,6 +83,7 @@ function Portfolio() {
               </SwiperSlide>
             ))}
           </Swiper>
+          <div className="swiper-pagination"></div>
         </div>
       </div>
     </section>

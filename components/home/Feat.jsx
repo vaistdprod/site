@@ -2,6 +2,7 @@
 import loadBackgroudImages from '@/common/loadBackgroudImages';
 import React, { useEffect } from 'react';
 import Image from 'next/image';
+import Link from "next/link";
 
 function Feat() {
   useEffect(() => {
@@ -20,7 +21,7 @@ function Feat() {
               <p>
                 Podání ruky je pro nás stejně svaté jako ta nejlépe sepsaná smlouva. Pokud se na něčem domluvíme, bereme to jako absolutní povinnost splnit naši část dohody.
               </p>
-              <a
+              <Link
                 href="/o-nas"
                 className="btn-crev d-flex align-items-center mt-40"
               >
@@ -30,7 +31,7 @@ function Feat() {
                   </span>
                 </span>
                 <span className="text">Více o nás</span>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="col-lg-6 offset-lg-1">

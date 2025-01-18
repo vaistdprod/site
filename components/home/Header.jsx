@@ -3,6 +3,7 @@ import React, { useEffect, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import loadBackgroudImages from '@/common/loadBackgroudImages';
 import Image from 'next/image';
+import Link from "next/link";
 
 function Header() {
   useLayoutEffect(() => {
@@ -23,7 +24,7 @@ function Header() {
   }, []);
 
   return (
-    <div className="header header-personal valign position-relative overflow-hidden" data-overlay-dark="6">
+    <div className="header header-personal valign position-re overflow-hidden" data-overlay-dark="6">
       <video
         className="position-absolute top-0 start-0 w-100 h-100"
         src="/assets/imgs/tdprod-promo.mp4"
@@ -62,12 +63,12 @@ function Header() {
                     </p>
                   </div>
                   <div className="d-flex align-items-center mt-60">
-                    <a
+                    <Link
                       href="/kontakty"
                       className="btn btn-md btn-bord radius-30"
                     >
                       <span className="text">Kontaktujte nás</span>
-                    </a>
+                    </Link>
                     <div className="icon-img-60 ml-20">
                       <Image
                         src="/assets/imgs/icon-img/arrow-down-big.png"
@@ -88,36 +89,36 @@ function Header() {
         <div className="info d-flex align-items-center justify-content-end mt-100">
           <div className="item">
             <h6 className="sub-title mb-10">Email:</h6>
-            <a
+            <Link
               href="mailto:info@tdprod.cz"
               className="p-color"
               target="_blank"
               rel="noopener noreferrer"
             >
               info@tdprod.cz
-            </a>
+            </Link>
           </div>
           <div className="item">
             <h6 className="sub-title mb-10">Telefon:</h6>
-            <a
+            <Link
               href="tel:+420737065717"
               className="p-color"
               target="_blank"
               rel="noopener noreferrer"
             >
               +420 737 065 717
-            </a>
+            </Link>
           </div>
           <div className="item">
             <h6 className="sub-title mb-10">Adresa:</h6>
-            <a
+            <Link
               href="https://maps.app.goo.gl/ZrSaQYLotGqCciX79"
               className="p-color"
               target="_blank"
               rel="noopener noreferrer"
             >
               28. října 205/45, 702 00 Ostrava
-            </a>
+            </Link>
           </div>
         </div>
       </div>

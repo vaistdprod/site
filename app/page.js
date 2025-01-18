@@ -81,8 +81,8 @@ export default async function Home() {
             {/* <Portfolio /> */}
             <Feat />
             <Team members={members} />
-            {/* <Testimonials /> */}
-            {/* <Clients /> */}
+            {/* <Testimonials />
+            <Clients /> */} 
             <Blog posts={posts} />
             <Marq2 />
           </main>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 
 function Error() {
   const marquess = ['Stránka nenalezena'];
@@ -10,12 +11,12 @@ function Error() {
         <div className="text-center">
           <h1>404</h1>
           <p>Stránka, kterou hledáte, byla přesunuta, přejmenována nebo neexistuje.</p>
-          <a
+          <Link
             href="/"
             className="btn btn-md btn-bg main-colorbg radius-30 mt-30"
           >
             <span className="text">Zpět domů</span>
-          </a>
+          </Link>
         </div>
       </div>
       <div className="marq">

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 
 function Services({ services }) {
   return (
@@ -32,12 +33,12 @@ function Services({ services }) {
               </h3>
             </div>
             <div className="ml-auto vi-more">
-              <a
+              <Link
                 href="/nase-sluzby"
                 className="btn btn-sm btn-bord radius-30"
               >
                 <span>Zobrazit všechny</span>
-              </a>
+              </Link>
               <span className="icon fas fa-arrow-right"></span>
             </div>
           </div>
@@ -60,13 +61,16 @@ function Services({ services }) {
                   </div>
                   <p>{service.desc}</p>
                 </div>
-                <a href={service.link} className="mt-40">
+                <Link href={service.link} className="mt-40">
                   <span className="fas fa-arrow-right"></span>
-                </a>
+                </Link>
               </div>
             </div>
           ))}
         </div>
+      </div>
+      <div className="circle-blur">
+        <img src="/assets/imgs/patterns/blur1.png" alt="" />
       </div>
     </section>
   );

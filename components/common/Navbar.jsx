@@ -1,6 +1,8 @@
 'use client';
 import React, { useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import RollingText from '@/common/rolling'; // << Adjust path if needed
 
 function Navbar() {
   function handleScroll() {
@@ -36,7 +38,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bord blur">
       <div className="container o-hidden">
-        <a className="logo icon-img-100" href="/">
+        <Link className="logo icon-img-100" href="/">
           <Image
             src="/assets/imgs/logo-light.svg"
             alt="logo"
@@ -44,7 +46,7 @@ function Navbar() {
             height={25}
             className="logo-image"
           />
-        </a>
+        </Link>
 
         <button
           className="navbar-toggler"
@@ -66,12 +68,13 @@ function Navbar() {
           id="navbarSupportedContent"
         >
           <ul className="navbar-nav">
+            {/* ===== [ Naše služby ] ===== */}
             <li
               onMouseLeave={handleDropdownMouseLeave}
               onMouseMove={handleDropdownMouseMove}
               className="nav-item dropdown"
             >
-              <a
+              <Link
                 className="nav-link dropdown-toggle"
                 data-toggle="dropdown"
                 href="#"
@@ -79,52 +82,68 @@ function Navbar() {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                <span className="rolling-text">Naše služby</span>
-              </a>
+                {/* RollingText on the top-level link */}
+                <RollingText text="Naše služby" />
+              </Link>
               <ul className="dropdown-menu">
+                {/* Plain text for dropdown items */}
                 <li>
-                  <a className="dropdown-item" href="/nase-sluzby">
+                  <Link className="dropdown-item" href="/nase-sluzby">
                     Vše
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/nase-sluzby/webove-stranky">
+                  <Link
+                    className="dropdown-item"
+                    href="/nase-sluzby/webove-stranky"
+                  >
                     Webové stránky
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/nase-sluzby/webove-aplikace">
+                  <Link
+                    className="dropdown-item"
+                    href="/nase-sluzby/webove-aplikace"
+                  >
                     Webové aplikace
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/nase-sluzby/digitalni-marketing">
+                  <Link
+                    className="dropdown-item"
+                    href="/nase-sluzby/digitalni-marketing"
+                  >
                     Digitální marketing
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/nase-sluzby/implementace-ai">
+                  <Link
+                    className="dropdown-item"
+                    href="/nase-sluzby/implementace-ai"
+                  >
                     Implementace AI
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/nase-sluzby/videoprodukce">
+                  <Link className="dropdown-item" href="/nase-sluzby/videoprodukce">
                     Videoprodukce
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/nase-sluzby/fotoprodukce">
+                  <Link className="dropdown-item" href="/nase-sluzby/fotoprodukce">
                     Fotoprodukce
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
+
+            {/* ===== [ O nás ] ===== */}
             <li
               onMouseLeave={handleDropdownMouseLeave}
               onMouseMove={handleDropdownMouseMove}
               className="nav-item dropdown"
             >
-              <a
+              <Link
                 className="nav-link dropdown-toggle"
                 data-toggle="dropdown"
                 href="#"
@@ -132,45 +151,54 @@ function Navbar() {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                <span className="rolling-text">O nás</span>
-              </a>
+                {/* RollingText on the top-level link */}
+                <RollingText text="O nás" />
+              </Link>
               <div className="dropdown-menu">
-                <a className="dropdown-item" href="/pribeh">
+                {/* Plain text for dropdown items */}
+                <Link className="dropdown-item" href="/pribeh">
                   Příběh
-                </a>
-                <a className="dropdown-item" href="/nas-tym">
+                </Link>
+                <Link className="dropdown-item" href="/nas-tym">
                   Náš tým
-                </a>
-                <a className="dropdown-item" href="/nejcastejsi-dotazy">
+                </Link>
+                <Link className="dropdown-item" href="/nejcastejsi-dotazy">
                   Nejčastější dotazy
-                </a>
+                </Link>
               </div>
             </li>
+
+            {/* ===== [ Portfolio ] ===== */}
             <li className="nav-item">
-              <a className="nav-link" href="/portfolio">
-                <span className="rolling-text">Portfolio</span>
-              </a>
+              <Link className="nav-link" href="/portfolio">
+                <RollingText text="Portfolio" />
+              </Link>
             </li>
+
+            {/* ===== [ Blog ] ===== */}
             <li className="nav-item">
-              <a className="nav-link" href="/blog">
-                <span className="rolling-text">Blog</span>
-              </a>
+              <Link className="nav-link" href="/blog">
+                <RollingText text="Blog" />
+              </Link>
             </li>
+
+            {/* ===== [ Kontakty ] ===== */}
             <li className="nav-item">
-              <a className="nav-link" href="/kontakty">
-                <span className="rolling-text">Kontakty</span>
-              </a>
+              <Link className="nav-link" href="/kontakty">
+                <RollingText text="Kontakty" />
+              </Link>
             </li>
           </ul>
         </div>
 
+        {/* Plain text CTA button */}
         <div className="contact-button">
-          <a
+          <Link
             href="/kontakty"
             className="btn btn-sm btn-bg main-colorbg radius-5"
           >
-            <span className="text">Kontaktujte nás</span>
-          </a>
+            Kontaktujte nás
+          </Link>
         </div>
       </div>
     </nav>

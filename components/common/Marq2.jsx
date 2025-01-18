@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from "next/link";
 
 function Marq2() {
   const marquess = ['Spojte se s námi']
@@ -43,7 +44,7 @@ function Marq2() {
               </div>
             ))}
           </div>
-          <a href="/kontakty" className="overlay-link"></a>
+          <Link href="/kontakty" className="overlay-link"></Link>
         </div>
       </div>
 
@@ -67,7 +68,7 @@ function Marq2() {
               </div>
             ))}
           </div>
-          <a href="/kontakty" className="overlay-link"></a>
+          <Link href="/kontakty" className="overlay-link"></Link>
         </div>
       </div>
     </section>

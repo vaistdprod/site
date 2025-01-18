@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const servicesData = [
   {
@@ -42,12 +43,12 @@ function Services() {
               </h3>
             </div>
             <div className="ml-auto vi-more">
-              <a
+              <Link
                 href="/page-services"
                 className="btn btn-sm btn-bord radius-30"
               >
                 <span>View All</span>
-              </a>
+              </Link>
               <span className="icon fas fa-arrow-right"></span>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 
 function Services() {
   return (
@@ -15,12 +16,12 @@ function Services() {
               </h3>
             </div>
             <div className="ml-auto vi-more">
-              <a
+              <Link
                 href="/page-services"
                 className="btn btn-sm btn-bord radius-30"
               >
                 <span>Zobrazit</span>
-              </a>
+              </Link>
               <span className="icon fas fa-arrow-right"></span>
             </div>
           </div>
@@ -49,9 +50,9 @@ function Services() {
             <div className="col-lg-4">
               <div className="img fit-img">
                 <img src="/assets/imgs/serv-img/1.jpg" alt="" />
-                <a href="/page-services-details">
+                <Link href="/page-services-details">
                   <span className="fas fa-arrow-right"></span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -80,9 +81,9 @@ function Services() {
             <div className="col-lg-4">
               <div className="img fit-img">
                 <img src="/assets/imgs/serv-img/2.jpg" alt="" />
-                <a href="/page-services-details">
+                <Link href="/page-services-details">
                   <span className="fas fa-arrow-right"></span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -111,9 +112,9 @@ function Services() {
             <div className="col-lg-4">
               <div className="img fit-img">
                 <img src="/assets/imgs/serv-img/3.jpg" alt="" />
-                <a href="/page-services-details">
+                <Link href="/page-services-details">
                   <span className="fas fa-arrow-right"></span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

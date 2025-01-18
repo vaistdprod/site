@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 function Feat({ serviceData }) {
   return (
@@ -12,9 +13,9 @@ function Feat({ serviceData }) {
               </span>
             </h2>
             <div className="ml-auto vi-more">
-              <a href="/kontakty" className="btn btn-sm btn-bord radius-30">
+              <Link href="/kontakty" className="btn btn-sm btn-bord radius-30">
                 <span>Kontaktujte nás</span>
-              </a>
+              </Link>
               <span className="icon fas fa-arrow-right"></span>
             </div>
           </div>

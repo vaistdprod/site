@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 
 function Intro() {
   return (
@@ -34,11 +35,11 @@ function Intro() {
                 become an international seller. Your customers will enjoy
                 shopping online!
               </p>
-              <a href="/page-services" className="underline main-color mt-40">
+              <Link href="/page-services" className="underline main-color mt-40">
                 <span className="text">
                   Our Services <i className="fas fa-arrow-right"></i>
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -21,7 +21,7 @@ const scrollToTop = () => {
     updateProgress();
     window.addEventListener('scroll', updateProgress);
     window.addEventListener('scroll', function () {
-      if (window.pageYOffset > offset) {
+      if (window.scrollY > offset) {
         progressWrap.classList.add('active-progress');
       } else {
         document

@@ -1,5 +1,4 @@
-import { Suspense } from 'react';
-import { getAllPosts } from '@/lib/posts'; 
+import { getAllPosts } from '@/lib/posts';
 import ClientBlogList from '@/components/blog/ClientBlogList';
 
 export const metadata = {
@@ -42,12 +41,35 @@ export const metadata = {
   }
 };
 
-export default async function BlogPage() {
-  const allPosts = await getAllPosts();
+export default async function BlogPage({ searchParams }) {
+  const tag = searchParams?.tag || null;
+  const searchQuery = searchParams?.search || null;
 
+  // 1) Fetch all posts (server-side).
+  let allPosts = await getAllPosts();
+
+  // 2) Filter by tag (server-side).
+  if (tag) {
+    allPosts = allPosts.filter((post) => post.tags.includes(tag));
+  }
+
+  // 3) Filter by search query (server-side).
+  if (searchQuery) {
+    const q = searchQuery.toLowerCase();
+    allPosts = allPosts.filter(
+      (post) =>
+        post.title.toLowerCase().includes(q) ||
+        post.excerpt.toLowerCase().includes(q) ||
+        post.content.toLowerCase().includes(q)
+    );
+  }
+
+  // 4) Render the client component with final, filtered posts.
   return (
-    <Suspense fallback={<div>Načítání informací o blogu...</div>}>
-      <ClientBlogList allPosts={allPosts} />
-    </Suspense>
+    <ClientBlogList 
+      allPosts={allPosts}
+      tag={tag}
+      searchQuery={searchQuery}
+    />
   );
 }

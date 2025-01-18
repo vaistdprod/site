@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 
 function Construction() {
   const marquess = ['Stránka ve výstavbě'];
@@ -10,12 +11,12 @@ function Construction() {
         <div className="text-center">
           <h1>Stavíme</h1>
           <p>Na této stránce se momentálně pracuje.</p>
-          <a
+          <Link
             href="/"
             className="btn btn-md btn-bg main-colorbg radius-30 mt-30"
           >
             <span className="text">Zpět domů</span>
-          </a>
+          </Link>
         </div>
       </div>
 

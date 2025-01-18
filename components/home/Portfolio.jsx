@@ -1,15 +1,22 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import portfolioData from '@/data/portfolioData.json';
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import data from '@/data/portfolioData.json'; // Adjust the path as necessary
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-function PortfolioSwiper() {
-  const { marquess, swiperItems } = data;
-  const AllMarquess = Array(10).fill(marquess).flat();
+function Portfolio() {
+  const { portfolio } = portfolioData;
+  const { items, showcaseIds } = portfolio;
+
+  // Map those IDs into actual items from "items"
+  const swiperItems = showcaseIds.map(id => items.find(obj => obj.id === id));
+
+  const [realIndex, setRealIndex] = useState(0);
 
   const swiperOptions = {
     modules: [Pagination, Navigation],
@@ -26,127 +33,89 @@ function PortfolioSwiper() {
       nextEl: '.work-crev .swiper-button-next',
       prevEl: '.work-crev .swiper-button-prev',
     },
+    onSlideChange: (swiper) => setRealIndex(swiper.realIndex),
   };
 
   return (
-    <section className="work-fade section-padding sub-bg bord-top-grd bord-bottom-grd">
-      <div className="container position-re">
+    <section className="work-crev section-padding">
+      <div className="container position-re pb-80">
         <div className="sec-head mb-80">
           <div className="d-flex align-items-center">
             <div>
-              <span className="sub-title main-color mb-5">Our Portfolio</span>
+              <span className="sub-title main-color mb-5">Naše portfolio</span>
               <h3 className="fw-600 fz-50 text-u d-rotate wow">
                 <span className="rotate-text">
-                  Selected <span className="fw-200">Works.</span>
+                  Vybrané <span className="fw-200">projekty</span>
                 </span>
               </h3>
             </div>
-            <div className="ml-auto vi-more">
-              <a href="/portfolio-gallery" className="btn btn-sm btn-bord radius-30">
-                <span>View All</span>
-              </a>
-              <span className="icon fas fa-arrow-right"></span>
+            <div className="ml-auto">
+              <div className="swiper-arrow-control">
+                <div className="swiper-button-prev">
+                  <span className="fas fa-arrow-left"></span>
+                </div>
+                <div className="swiper-button-next">
+                  <span className="fas fa-arrow-right"></span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="row">
-          <div className="col-lg-2 d-flex align-items-end">
-            <div className="text pb-100">
-              <p>
-                We help our client succeed by creating identities, digital experiences,
-                and print materials that communicate clearly.
-              </p>
-            </div>
-          </div>
-          <div className="col-lg-9">
-            <div className="work-swiper">
-              <Swiper {...swiperOptions} className="swiper-container">
-                {swiperItems.map((item, i) => (
-                  <SwiperSlide key={i}>
-                    <div className="item">
-                      <div className="img">
-                        <img src={item.img} alt={item.title} className="radius-15" />
-                      </div>
-                      <div className="cont">
-                        <h3>
-                          <span className="text sub-bg">
-                            {item.title}
-                            <span className="shap-left-top">
-                              <svg
-                                viewBox="0 0 11 11"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="w-11 h-11"
-                              >
-                                <path
-                                  d="M11 0L0 0L0 11C0 4.92487 4.92487 0 11 0Z"
-                                  fill="#141414"
-                                ></path>
-                              </svg>
-                            </span>
-                            <span className="shap-right-bottom">
-                              <svg
-                                viewBox="0 0 11 11"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="w-11 h-11"
-                              >
-                                <path
-                                  d="M11 0L0 0L0 11C0 4.92487 4.92487 0 11 0Z"
-                                  fill="#141414"
-                                ></path>
-                              </svg>
-                            </span>
+
+        <div className="work-swiper out-right">
+          <Swiper {...swiperOptions} className="swiper-container">
+            {swiperItems.map((item, i) => {
+              if (!item) return null; // safe check
+              const isActive = i === realIndex;
+              return (
+                <SwiperSlide
+                  key={item.id}
+                  tabIndex={isActive ? 0 : -1}
+                  aria-hidden={!isActive}
+                >
+                  <div className="item d-flex align-items-center">
+                    <div className="cont">
+                      <Link href={`/portfolio/${item.id}`}>
+                        <h6 className="sub-title main-color mb-15">
+                          {item.category}
+                        </h6>
+                        <h2>
+                          {item.title} <br /> {item.subTitle}
+                        </h2>
+                      </Link>
+                      <Link
+                        href={`/portfolio/${item.id}`}
+                        className="btn-crev d-flex align-items-center mt-30"
+                      >
+                        <span className="hover-this">
+                          <span className="circle hover-anim">
+                            <i className="fas fa-arrow-right"></i>
                           </span>
-                          <span className="text sub-bg">
-                            {item.subTitle}
-                            <span className="shap-left-bottom">
-                              <svg
-                                viewBox="0 0 11 11"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="w-11 h-11"
-                              >
-                                <path
-                                  d="M11 0L0 0L0 11C0 4.92487 4.92487 0 11 0Z"
-                                  fill="#141414"
-                                ></path>
-                              </svg>
-                            </span>
-                          </span>
-                        </h3>
-                      </div>
+                        </span>
+                        <span className="text">Zobrazit detail</span>
+                      </Link>
                     </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
-          </div>
-        </div>
-        <div className="swiper-pagination"></div>
-      </div>
-      <div className="marq-head">
-        <div className="main-marq xlrg text-u o-hidden">
-          <div className="slide-har st1">
-            <div className="box">
-              {AllMarquess.map((item, i) => (
-                <div key={i} className="item">
-                  <h4>{item}</h4>
-                </div>
-              ))}
-            </div>
-            <div className="box">
-              {AllMarquess.map((item, i) => (
-                <div key={i} className="item">
-                  <h4>{item}</h4>
-                </div>
-              ))}
-            </div>
-          </div>
+                    <div className="img">
+                      <Link href={`/portfolio/${item.id}`}>
+                        <Image
+                          src={item.img}
+                          alt={item.alt}
+                          width={1154}
+                          height={607}
+                          className="radius-15"
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+          <div className="swiper-pagination"></div>
         </div>
       </div>
     </section>
   );
 }
 
-export default PortfolioSwiper;
+export default Portfolio;

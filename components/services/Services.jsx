@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 
 function Services({ services }) {
   return (
@@ -34,9 +35,9 @@ function Services({ services }) {
                   </div>
                   <p>{service.desc}</p>
                 </div>
-                <a href={`/nase-sluzby${service.link}`} className="mt-40">
+                <Link href={`/nase-sluzby${service.link}`} className="mt-40">
                   <span className="fas fa-arrow-right"></span>
-                </a>
+                </Link>
               </div>
             </div>
           ))}

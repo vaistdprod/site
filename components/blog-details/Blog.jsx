@@ -183,9 +183,9 @@ function Blog({ post, latestPosts }) {
                     <div className="col-lg-6">
                       <div className="form-group mb-30">
                         <input
-                          id="form_jmeno"
+                          id="form_name"
                           type="text"
-                          name="jmeno"
+                          name="name"
                           placeholder="Jméno"
                           value={formData.name}
                           onChange={handleChange}
@@ -211,8 +211,8 @@ function Blog({ post, latestPosts }) {
                     <div className="col-12">
                       <div className="form-group">
                         <textarea
-                          id="form_komentar"
-                          name="komentar"
+                          id="form_message"
+                          name="message"
                           placeholder="Komentář"
                           rows="4"
                           value={formData.message}

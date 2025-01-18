@@ -6,7 +6,7 @@ function Works2({ data }) {
       <div className="container">
         {data.images[3] && (
           <div className="img">
-            <img src={data.images[3]} alt="Project Additional Image" />
+            <img src={data.images[3]} alt="Další foto projektu" />
           </div>
         )}
       </div>

@@ -24,7 +24,7 @@ const RollingText = ({ text = 'home' }) => {
     });
   }, [text]);
 
-  return <span class="rolling-text" ref={elementRef} />;
+  return <span className="rolling-text" ref={elementRef}></span>;
 };
 
 export default RollingText;
