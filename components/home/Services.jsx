@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from "next/link";
+import Image from 'next/image';
 
 function Services({ services }) {
   return (
@@ -70,8 +71,13 @@ function Services({ services }) {
         </div>
       </div>
       <div className="circle-blur">
-        <img src="/assets/imgs/patterns/blur1.png" alt="" />
-      </div>
+      <Image
+        src="/assets/imgs/patterns/blur1.png"
+        alt=""
+        width={692}
+        height={537}
+      />
+    </div>
     </section>
   );
 }

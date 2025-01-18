@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 function ContactForm() {
@@ -88,7 +88,7 @@ function ContactForm() {
     }
   };
 
-  const handleReCaptchaVerify = async () => {
+  const handleReCaptchaVerify = useCallback(async () => {
     if (!executeRecaptcha) {
       console.log('Execute recaptcha not yet available');
       return;
@@ -102,14 +102,11 @@ function ContactForm() {
       console.error('ReCAPTCHA error:', error);
       setErrors((prev) => ({ ...prev, captcha: 'ReCAPTCHA verification failed.' }));
     }
-  };
+  }, [executeRecaptcha]);
 
-  // Execute ReCAPTCHA when the component mounts
   useEffect(() => {
     handleReCaptchaVerify();
-    // Optionally, you can execute recaptcha before form submission instead
-    // to get the latest token
-  }, [executeRecaptcha]);
+  }, [handleReCaptchaVerify]);
 
   return (
     <section className="contact section-padding">
@@ -247,7 +244,6 @@ function ContactForm() {
                         <p className="error-text">{errors.zprava}</p>
                       )}
                     </div>
-                    {/* No visible ReCAPTCHA component needed for v3 */}
                     {errors.captcha && (
                       <p className="error-text">{errors.captcha}</p>
                     )}

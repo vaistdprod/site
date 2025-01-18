@@ -11,10 +11,6 @@ import LoadingScreen from '@/components/common/LoadingScreen';
 import { useMemo } from 'react';
 
 export default function ClientBlogList({ allPosts, tag, searchQuery }) {
-  // We already have the final, filtered posts from the server.
-  // No need to re-filter, but if you want to do something else, you can.
-
-  // If you still want to compute tagCounts for UI, do it here:
   const tagCounts = useMemo(() => {
     return allPosts.reduce((acc, post) => {
       post.tags.forEach((t) => {
@@ -48,8 +44,8 @@ export default function ClientBlogList({ allPosts, tag, searchQuery }) {
             ) : (
               <div className="no-results mt-80 text-center">
                 <h3>
-                  Nenalezeny žádné výsledky 
-                  {searchQuery ? <> obsahující "{searchQuery}"</> : null}.
+                  Nenalezeny žádné výsledky
+                  {searchQuery ? <> obsahující &quot;{searchQuery}&quot;</> : null}.
                 </h3>
               </div>
             )}

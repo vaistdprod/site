@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
 
 function CommentsList({ slug }) {
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchComments = async () => {
+  const fetchComments = useCallback(async () => {
     try {
       const res = await fetch(`/api/comments?slug=${encodeURIComponent(slug)}`);
       const data = await res.json();
@@ -21,11 +21,11 @@ function CommentsList({ slug }) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [slug]);
 
   useEffect(() => {
     fetchComments();
-  }, [slug]);
+  }, [fetchComments]);
 
   if (loading) {
     return <p>Načítám komentáře...</p>;
