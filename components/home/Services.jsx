@@ -62,7 +62,7 @@ function Services({ services }) {
                   </div>
                   <p>{service.desc}</p>
                 </div>
-                <Link href={service.link} className="mt-40">
+                <Link href={`/nase-sluzby/${service.link}`} className="mt-40">
                   <span className="fas fa-arrow-right"></span>
                 </Link>
               </div>

@@ -22,7 +22,7 @@ function Feat() {
                 Podání ruky je pro nás stejně svaté jako ta nejlépe sepsaná smlouva. Pokud se na něčem domluvíme, bereme to jako absolutní povinnost splnit naši část dohody.
               </p>
               <Link
-                href="/o-nas"
+                href="/pribeh"
                 className="btn-crev d-flex align-items-center mt-40"
               >
                 <span className="hover-this">
