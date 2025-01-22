@@ -12,16 +12,16 @@ function LoadingScreen() {
         const flat = 'M0 2S175 1 500 1s500 1 500 1V0H0Z';
 
         tl.to('.loader-wrap-heading .load-text , .loader-wrap-heading .cont', {
-          delay: 1.5,
+          delay: 1.2,
           y: -100,
           opacity: 0,
         });
         tl.to(svg, {
-          duration: 0.5,
+          duration: 0.4,
           attr: { d: curve },
           ease: 'power2.easeIn',
         }).to(svg, {
-          duration: 0.5,
+          duration: 0.4,
           attr: { d: flat },
           ease: 'power2.easeOut',
         });

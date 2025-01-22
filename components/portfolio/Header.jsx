@@ -8,7 +8,7 @@ function Header() {
   useLayoutEffect(() => {
     if (typeof window !== 'undefined') {
       const tl = gsap.timeline();
-      tl.fromTo('.header', { y: 200 }, { y: 0 }, '+=2.5');
+      tl.fromTo('.header', { y: 200 }, { y: 0 }, '+=2');
       tl.fromTo(
         '.header .container',
         { opacity: 0, translateY: 40 },
