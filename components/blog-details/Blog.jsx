@@ -91,7 +91,7 @@ function Blog({ post, latestPosts }) {
                   />
                 </article>
 
-                <div className="info-area flex pt-50 bord-thin-top">
+                <div className="info-area mt-30 flex pt-50 bord-thin-top">
                   <div>
                     <div className="tags flex">
                       <div className="valign">

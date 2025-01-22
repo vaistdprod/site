@@ -8,12 +8,10 @@ function PortfolioGrid() {
   const { portfolio } = portfolioData;
   const { items, showcaseIds, categories } = portfolio;
 
-  // Convert IDs into item objects
   const gridItems = showcaseIds.map((id) => items.find((obj) => obj.id === id));
 
-  // Dynamic category counts
   const categoryCountMap = gridItems.reduce((acc, item) => {
-    const catKey = item.category.replace(/\s+/g, '-'); // e.g. "Webové-stránky"
+    const catKey = item.category.replace(/\s+/g, '-');
     if (!acc[catKey]) acc[catKey] = 0;
     acc[catKey]++;
     return acc;
@@ -34,8 +32,8 @@ function PortfolioGrid() {
         <div className="row mb-80">
           <div className="col-lg-4">
             <div className="sec-head">
-              <h6 className="sub-title main-color mb-10">DISCOVER OUR CASES</h6>
-              <h3>Latest Projects</h3>
+              <h6 className="sub-title main-color mb-10">Prohlédněte naše reference</h6>
+              <h3>Poslední projekty</h3>
             </div>
           </div>
           <div className="filtering col-lg-8 d-flex justify-content-end align-items-end">

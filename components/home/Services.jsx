@@ -14,7 +14,7 @@ function Services({ services }) {
             <div className="col-lg-8">
               <div className="text">
                 <h4>
-                  Jsme Vašimi partnery od prvotního plánování projektu až po jeho finální spuštění a následnou údržbu.
+                  Jsme vašimi partnery od prvotního plánování projektu až po jeho finální spuštění a následnou údržbu.
                 </h4>
               </div>
             </div>
@@ -73,7 +73,7 @@ function Services({ services }) {
       <div className="circle-blur">
       <Image
         src="/assets/imgs/patterns/blur1.png"
-        alt=""
+        alt="Efekt rozmazání"
         width={692}
         height={537}
       />

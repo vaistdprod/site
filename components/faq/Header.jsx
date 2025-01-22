@@ -21,15 +21,15 @@ function Header() {
   return (
     <div
       className="header page-header bg-img section-padding valign"
-      data-background="/assets/imgs/background/bg4.jpg"
-      data-overlay-dark="8"
+      data-background="/assets/imgs/bg3.webp"
+      data-overlay-dark="3"
     >
       <div className="container pt-80">
         <div className="row">
           <div className="col-12">
             <div className="text-center">
               <h1 className="text-u ls1 fz-80">
-                Freq<span className="fw-200">uency</span>
+                Nejčastější<span className="fw-200">dotazy</span>
               </h1>
             </div>
           </div>

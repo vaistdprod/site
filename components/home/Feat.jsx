@@ -22,7 +22,7 @@ function Feat() {
                 Podání ruky je pro nás stejně svaté jako ta nejlépe sepsaná smlouva. Pokud se na něčem domluvíme, bereme to jako absolutní povinnost splnit naši část dohody.
               </p>
               <Link
-                href="/pribeh"
+                href="/o-nas"
                 className="btn-crev d-flex align-items-center mt-40"
               >
                 <span className="hover-this">
@@ -39,7 +39,7 @@ function Feat() {
               <div className="row">
                 <div
                   className="col-md-4 bg-img"
-                  data-background="/assets/imgs/inovace.webp"
+                  data-background="/assets/imgs/fotoprodukce.jpg"
                 ></div>
                 <div className="col-md-8">
                   <div className="info">
@@ -55,7 +55,7 @@ function Feat() {
               <div className="row">
                 <div
                   className="col-md-4 bg-img"
-                  data-background="/assets/imgs/podani-ruky.webp"
+                  data-background="/assets/imgs/sebastian-2.jpg"
                 ></div>
                 <div className="col-md-8">
                   <div className="info">
@@ -71,7 +71,7 @@ function Feat() {
               <div className="row">
                 <div
                   className="col-md-4 bg-img"
-                  data-background="/assets/imgs/retez.webp"
+                  data-background="/assets/imgs/klient.jpg"
                 ></div>
                 <div className="col-md-8">
                   <div className="info">

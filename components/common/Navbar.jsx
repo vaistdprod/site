@@ -41,7 +41,7 @@ function Navbar() {
         <Link className="logo icon-img-100" href="/">
           <Image
             src="/assets/imgs/logo-light.svg"
-            alt="logo"
+            alt="Logo TD Productions"
             width={33}
             height={25}
             className="logo-image"
@@ -156,8 +156,8 @@ function Navbar() {
               </Link>
               <div className="dropdown-menu">
                 {/* Plain text for dropdown items */}
-                <Link className="dropdown-item" href="/pribeh">
-                  Příběh
+                <Link className="dropdown-item" href="/o-nas">
+                  O nás
                 </Link>
                 <Link className="dropdown-item" href="/nas-tym">
                   Náš tým

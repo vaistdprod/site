@@ -23,7 +23,7 @@ function Marq() {
                   <span className="icon-img-50 ml-60">
                     <Image
                       src="/assets/imgs/logo-light.svg"
-                      alt="Logo"
+                      alt="Logo TD Productions"
                       width={33}
                       height={25}
                     />
@@ -40,7 +40,7 @@ function Marq() {
                   <span className="icon-img-50 ml-60">
                     <Image
                       src="/assets/imgs/logo-light.svg"
-                      alt="Logo"
+                      alt="Logo TD Productions"
                       width={33}
                       height={25}
                     />

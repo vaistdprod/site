@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getMemberBySlug, getAllSlugs } from "@/lib/nas-tym";
+import { getMemberBySlug, getAllSlugs } from "@/lib/team";
 import Lines from "@/components/common/Lines";
 import ProgressScroll from "@/components/common/ProgressScroll";
 import Cursor from "@/components/common/Cursor";

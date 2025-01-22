@@ -29,8 +29,8 @@ function Header() {
   return (
     <div
       className="page-header bg-img section-padding valign header"
-      data-background="/assets/imgs/background/bg4.jpg"
-      data-overlay-dark="8"
+      data-background="/assets/imgs/bg3.webp"
+      data-overlay-dark="4"
     >
       <div className="container pt-80">
         <div className="row">

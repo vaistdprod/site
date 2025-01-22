@@ -9,7 +9,7 @@ import Team from '@/components/home/Team';
 import Numbers from '@/components/common/Numbers';
 import Header from '@/components/team/Header';
 import Intro from '@/components/team/Intro';
-import { getMemberList } from "@/lib/nas-tym";
+import { getMemberList } from "@/lib/team";
 
 export const metadata = {
   title: "Náš tým | TD Productions | Posouváme hranice digitální inovace",

@@ -1,0 +1,106 @@
+[
+    {
+      "question": "Co vše umí vaše digitální marketingové služby?",
+      "answer": "Poskytujeme komplexní online strategie, správu sociálních sítí, PPC kampaně, obsahový marketing i SEO optimalizaci. Každou kampaň přizpůsobujeme specifickým cílům a rozpočtu klienta."
+    },
+    {
+      "question": "Jak tvoříte webové stránky na míru?",
+      "answer": "Nejprve s vámi probereme obchodní cíle, navrhneme strukturu a design. Poté přichází implementace v Reactu, WordPressu nebo jiných platformách, testování a finální spuštění."
+    },
+    {
+      "question": "Jak spolupracujete s klienty během vývoje webových aplikací?",
+      "answer": "Udržujeme pravidelnou komunikaci. Nasloucháme potřebám, posíláme ukázky pokroku a sbíráme zpětnou vazbu, aby byl konečný produkt maximálně funkční a uživatelsky přívětivý."
+    },
+    {
+      "question": "Nabízíte také údržbu a servis po spuštění projektu?",
+      "answer": "Ano, zajišťujeme dlouhodobou podporu, bezpečnostní aktualizace, výkonnostní optimalizace i další rozvoj nových funkcí, pokud je to potřeba."
+    },
+    {
+      "question": "Jak zvládáte zakázky na videoprodukci?",
+      "answer": "Od přípravy scénáře přes natáčení až po střih a finální postprodukci. Pomáháme také s distribucí videa na platformy, kde dosáhnete nejvyššího zásahu publika."
+    },
+    {
+      "question": "Jak probíhá focení a fotoprodukce s vaší firmou?",
+      "answer": "Nejprve se domluvíme na stylu, lokalitě a celkovém záměru. Poté zajistíme profesionální fotografa, případně stylistu a postaráme se o finální úpravy fotek."
+    },
+    {
+      "question": "Co všechno spadá do implementace umělé inteligence (AI)?",
+      "answer": "Může jít o chatboty, strojové učení pro analýzu dat, personalizaci obsahu i automatizaci procesů. Cílem je, aby AI řešení skutečně zefektivnilo vaše podnikání."
+    },
+    {
+      "question": "Jakou technologii preferujete pro webové aplikace?",
+      "answer": "Nejčastěji sáhneme po Reactu, Next.js nebo Node.js, ale vždy záleží na konkrétních požadavcích projektu. Používáme to, co je pro vás ideální."
+    },
+    {
+      "question": "Umožňujete outsourcing vývojových prací?",
+      "answer": "Ano, můžeme se stát prodlouženou rukou vašeho týmu. Nabízíme flexibilní modely spolupráce, podle toho, co vám nejvíc vyhovuje."
+    },
+    {
+      "question": "Jakým způsobem zajišťujete SEO pro weby?",
+      "answer": "Analyzujeme klíčová slova, zlepšujeme technické aspekty webu, píšeme kvalitní obsah a budujeme odkazový profil. Neustále pak sledujeme vývoj pozic ve vyhledávačích."
+    },
+    {
+      "question": "Jak řešíte otázky bezpečnosti a ochrany dat?",
+      "answer": "Implementujeme šifrované přenosy (HTTPS), databázovou ochranu, bezpečnostní aktualizace a doporučujeme další moderní nástroje, které minimalizují možná rizika."
+    },
+    {
+      "question": "V čem spočívá správa sociálních sítí z vaší strany?",
+      "answer": "Tvoříme obsahový plán, design i copywriting, publikujeme v ideální dobu a pomáháme se zapojením publika. Samozřejmostí je následná analýza výsledků."
+    },
+    {
+      "question": "Jak dlouho trvá běžně vyrobit jednoduchý promo video?",
+      "answer": "Zhruba týden až dva, záleží na délce videa, komplexitě střihu a požadovaných efektech. Vždycky se snažíme přizpůsobit termínům klienta."
+    },
+    {
+      "question": "Můžete upravovat již existující web od jiného dodavatele?",
+      "answer": "Ano, dokážeme převzít a vylepšit i projekt, který nevznikl u nás. Nejdříve se s kódem seznámíme, navrhneme optimalizace a pustíme se do práce."
+    },
+    {
+      "question": "Víte si rady s e-commerce řešeními?",
+      "answer": "Samozřejmě. Umíme Shopify, WooCommerce i custom řešení na míru. Přidáme platební brány, fakturaci, napojení na sklad i další nezbytnosti."
+    },
+    {
+      "question": "Poskytujete i poradenství, pokud váhám mezi různými platformami?",
+      "answer": "Jistě. Projdeme si výhody a nevýhody jednotlivých platforem, abyste se mohli kvalifikovaně rozhodnout, co je pro váš projekt nejvýhodnější."
+    },
+    {
+      "question": "Jaký je váš přístup ke kreativnímu designu?",
+      "answer": "Design pro nás znamená nejen estetiku, ale i funkčnost. Vycházíme z uživatelských testů a aktuálních trendů, aby výsledek byl jak hezký na pohled, tak přínosný pro byznys."
+    },
+    {
+      "question": "Děláte i průzkum trhu a konkurence před spuštěním kampaně?",
+      "answer": "Ano. Před každou kampaní zkoumáme, co dělají konkurenti, a hledáme příležitosti, které lze využít ve váš prospěch."
+    },
+    {
+      "question": "Dokážete navrhnout komplexní brand identity?",
+      "answer": "Ano, od loga přes barvy, typografii a tone of voice. Branding je klíč k vybudování silné značky, proto mu dáváme speciální pozornost."
+    },
+    {
+      "question": "Jak se můžu s vámi spojit, když chci začít projekt?",
+      "answer": "Nejrychleji na e-mail info@tdprod.cz nebo na telefonu +420 737 065 717. Sídlíme v Ostravě, ale pracujeme i s klienty z celé republiky i ze zahraničí."
+    },
+    {
+      "question": "Poskytujete předem odhad cen a časové náročnosti?",
+      "answer": "Jasně. Po úvodní konzultaci připravíme cenovou nabídku i hrubý časový plán, abyste přesně věděli, co můžete očekávat."
+    },
+    {
+      "question": "Můžete zajistit i hosting a správu domén?",
+      "answer": "Ano. Pokud potřebujete komplexní službu, postaráme se také o zajištění hostingu, nastavení serveru, emailové služby či SSL certifikát."
+    },
+    {
+      "question": "Jak zvládáte velké a komplexní projekty?",
+      "answer": "Máme zkušenosti i se škálovatelnými enterprise řešeními. Rozložíme projekt na dílčí fáze, nasadíme projektový management a přidáme adekvátní lidské zdroje."
+    },
+    {
+      "question": "Používáte agilní metody vývoje?",
+      "answer": "Podle potřeby využíváme scrum či kanban, abychom zůstali flexibilní a efektivní během vývoje i testování."
+    },
+    {
+      "question": "Navrhujete také UI/UX pro mobilní aplikace?",
+      "answer": "Ano. Kromě webů a webových aplikací jsme schopni navrhnout i uživatelské rozhraní pro mobilní aplikace. Vždy myslíme na responzivitu a intuitivnost."
+    },
+    {
+      "question": "Jak řešíte mezinárodní projekty a lokalizace?",
+      "answer": "Umíme více jazykových verzí a zajistíme optimalizaci i pro zahraniční trhy. Podle potřeby spolupracujeme s profesionálními překladateli."
+    }
+]  

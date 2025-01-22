@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getHeavyService } from "@/lib/nase-sluzby";
+import { getHeavyService } from "@/lib/services";
 import Lines from "@/components/common/Lines";
 import ProgressScroll from "@/components/common/ProgressScroll";
 import Cursor from "@/components/common/Cursor";

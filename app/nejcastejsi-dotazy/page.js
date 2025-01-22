@@ -1,3 +1,4 @@
+import React from 'react';
 import Lines from '@/components/common/Lines';
 import ProgressScroll from '@/components/common/ProgressScroll';
 import Cursor from '@/components/common/Cursor';
@@ -5,7 +6,11 @@ import LoadingScreen from '@/components/common/LoadingScreen';
 import Footer from '@/components/common/Footer';
 import Marq2 from '@/components/common/Marq2';
 import Navbar from '@/components/common/Navbar';
-import Construction from '@/components/common/Construction';
+import Clients from '@/components/home/Clients';
+import Testimonials from '@/components/home/Testimonials';
+import Header from '@/components/faq/Header';
+import FAQS from '@/components/faq/FAQS';
+import Numbers from '@/components/common/Numbers';
 
 export const metadata = {
   title: "FAQ | TD Productions | Posouváme hranice digitální inovace",
@@ -47,7 +52,7 @@ export const metadata = {
   }
 };
 
-export default function Home() {
+export default function FAQPage() {
   return (
     <>
       <LoadingScreen />
@@ -58,7 +63,11 @@ export default function Home() {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main className="main-bg o-hidden">
-            <Construction />
+            <Header />
+            <FAQS />
+            <Numbers />
+            {/* <Testimonials />
+            <Clients /> */}
             <Marq2 />
           </main>
           <Footer />

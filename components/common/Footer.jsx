@@ -49,7 +49,7 @@ function Footer() {
               <Link href="/" aria-label="Domů" className="logo-container">
                 <Image
                   src="/assets/imgs/logo-light.svg"
-                  alt="Logo"
+                  alt="Logo TD Productions"
                   width={33}
                   height={25}
                   className="logo-image"
@@ -129,7 +129,7 @@ function Footer() {
                   <Link href="/nas-tym">Náš tým</Link>
                 </li>
                 <li className="mb-15">
-                  <Link href="/pribeh">Příběh</Link>
+                  <Link href="/o-nas">O nás</Link>
                 </li>
                 <li className="mb-15">
                   <Link href="/nejcastejsi-dotazy">Nejčastější dotazy</Link>
@@ -155,7 +155,7 @@ function Footer() {
                   <input
                     type="text"
                     name="subscribe"
-                    placeholder="Váš email"
+                    placeholder="váš email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -228,7 +228,7 @@ function Footer() {
       <div className="circle-blur">
         <Image
           src="/assets/imgs/patterns/blur1.png"
-          alt=""
+          alt="Efekt rozmazání"
           width={692}
           height={537}
           className="blur-image"

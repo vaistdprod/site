@@ -147,7 +147,6 @@
       "Zmapujeme vaše požadavky a navrheme optimální řešení",
       "V prvotní fázi začneme MVP, které dále rozšiřujeme do finálního produktu",
       "Agilní metodika vývoje a CI / CD pro efektivní a rychlý výsledek, věrný vašim požadavkům",
-      "",
       "Když potřebujete růst, zařídíme plynulé škálování"
     ],
     "stats": [
@@ -212,9 +211,9 @@
     ],
     "bullets": [
       "Extrahujeme data a získáme z nich co nejvíce",
-      "Zavedeme strojové učení, které myslí za vás, 24/7",
+      "Zavedeme strojové učení, které pracuje za vás",
       "Dodáme chatbota, který do práce nikdy nepřijde pozdě",
-      "Prediktivní analýzy, abyste se vždycky strefili",
+      "Prediktivní analýzy, abyste vždy zvolili správně",
       "Monitorujeme výsledky a ladíme, dokud nejste spokojeni"
     ],
     "stats": [
@@ -241,7 +240,7 @@
       {
         "step": "03",
         "title": "Validace & testy",
-        "desc": "Prověříme chyby a zkreslení, aby vám zůstal akurátní a pečlivý robot."
+        "desc": "Prověříme chyby a zkreslení, aby vám zůstal přesný a pečlivý robot."
       },
       {
         "step": "04",
@@ -280,7 +279,7 @@
     "bullets": [
       "Námět, který divákům nedá spát",
       "Natáčení plné nápadů i adrenalinu",
-      "Postprodukce, kde ladíme každý pixel",
+      "Postprodukce, kde vyladíme každý detail",
       "Efekty, které strhnou pozornost a nepustí",
       "Dosah na všech kanálech"
     ],
@@ -298,12 +297,12 @@
       {
         "step": "01",
         "title": "Kreativní koncept",
-        "desc": "Sepíšeme scénář & storyboard a společně doladíme detaily."
+        "desc": "Sepíšeme scénář & storyboard a společně vyladíme detaily."
       },
       {
         "step": "02",
         "title": "Produkce",
-        "desc": "Zajistíme techniku, tým a kulisy. Připravíme scény a jdeme na věc."
+        "desc": "Zajistíme techniku, tým a kulisy. Připravíme scény a jdeme natáčet."
       },
       {
         "step": "03",
@@ -341,7 +340,8 @@
     "desc": "Chcete profesionální fotografie, které vystihnou vaši značku? Zvládneme vše od produktových snímků až po lifestyle fotky pro sociální sítě.",
     "link": "/fotoprodukce",
     "tags": [
-      "Soukromé i kulturní akce"
+      "Soukromé akce",
+      "Kulturní akce"
     ],
     "bullets": [
       "Styling, co fotkám nasadí korunu",
@@ -364,7 +364,7 @@
       {
         "step": "01",
         "title": "Příprava scény",
-        "desc": "Volíme lokaci, světla a styl, aby měly fotky tu správnou náladu."
+        "desc": "Zvolíme lokaci, světla a styl, aby byly fotky dle vašich představ."
       },
       {
         "step": "02",
@@ -374,7 +374,7 @@
       {
         "step": "03",
         "title": "Postprodukce",
-        "desc": "Retušujeme, ladíme barvy – každá fotka zachycuje tisíc slov."
+        "desc": "Retušujeme, ladíme barvy – každá fotka zachytí tisíc slov."
       },
       {
         "step": "04",

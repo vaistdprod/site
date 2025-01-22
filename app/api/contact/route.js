@@ -153,7 +153,7 @@ export default async function handler(req, res) {
       html: `
         <p>Dobrý den ${sanitizedJmeno},</p>
         <p>Děkujeme vám za vaši zprávu. Ta byla úspěšně doručena a my vám na ni co nejdříve odpovíme.</p>
-        <p><strong>Vaše zpráva:</strong></p>
+        <p><strong>vaše zpráva:</strong></p>
         <p>${sanitizedZprava.replace(/\n/g, '<br>')}</p>
         <p>S pozdravem</p>
         <p>TD Productions</p>

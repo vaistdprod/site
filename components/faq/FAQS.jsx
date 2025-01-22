@@ -1,5 +1,7 @@
 'use client';
 import React from 'react';
+import Head from 'next/head';
+import faqData from '@/data/faqData';
 
 function FAQS() {
   function openAccordion(event) {
@@ -12,85 +14,66 @@ function FAQS() {
     event.currentTarget.nextElementSibling.style.maxHeight = '300px';
     event.currentTarget.nextElementSibling.classList.add('active');
   }
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.map((item) => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
+
   return (
-    <section className="page-faqs section-padding pb-0 position-re">
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-lg-6">
-            <div>
-              <div className="sec-head mb-50">
-                <h6 className="sub-title main-color mb-15">Why choose us?</h6>
-                <h3>
-                  Zodpovídáme nejčastější dotazy <br /> na nás a naše služby.
-                </h3>
-              </div>
-              <div className="accordion bord">
-                <div className="item active wow fadeInUp" data-wow-delay=".1s">
-                  <div onClick={openAccordion} className="title">
-                    <h6>Designing Content With AI Power</h6>
-                    <span className="ico ti-plus"></span>
-                  </div>
-                  <div className="accordion-info">
-                    <p className="">
-                      Taken possession of my entire soul, like these sweet
-                      mornings of spring which i enjoy with my whole.
-                    </p>
-                  </div>
-                </div>
+    <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      </Head>
 
-                <div className="item wow fadeInUp" data-wow-delay=".3s">
-                  <div onClick={openAccordion} className="title">
-                    <h6>Talented, Professional & Expert Team</h6>
-                    <span className="ico ti-plus"></span>
-                  </div>
-                  <div className="accordion-info">
-                    <p className="">
-                      Taken possession of my entire soul, like these sweet
-                      mornings of spring which i enjoy with my whole.
-                    </p>
-                  </div>
+      <section className="page-faqs section-padding pb-0 position-re">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-lg-10">
+              <div>
+                <div className="sec-head mb-50">
+                  <h6 className="sub-title main-color mb-15">Nejčastější dotazy</h6>
+                  <h3>
+                    Zajímá vás víc? Projděte si naši sekci často kladených otázek.
+                  </h3>
                 </div>
-
-                <div className="item wow fadeInUp" data-wow-delay=".5s">
-                  <div onClick={openAccordion} className="title">
-                    <h6>We Build and Activate Brands</h6>
-                    <span className="ico ti-plus"></span>
-                  </div>
-                  <div className="accordion-info">
-                    <p className="">
-                      Taken possession of my entire soul, like these sweet
-                      mornings of spring which i enjoy with my whole.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="item wow fadeInUp" data-wow-delay=".7s">
-                  <div onClick={openAccordion} className="title">
-                    <h6>We Build and Activate Brands</h6>
-                    <span className="ico ti-plus"></span>
-                  </div>
-                  <div className="accordion-info">
-                    <p className="">
-                      Taken possession of my entire soul, like these sweet
-                      mornings of spring which i enjoy with my whole.
-                    </p>
-                  </div>
+                <div className="accordion bord">
+                  {faqData.map((item, idx) => (
+                    <div
+                      className={`item ${idx === 0 ? 'active' : ''} wow fadeInUp`}
+                      data-wow-delay={`${0.1 + (idx * 0.2)}s`}
+                      key={idx}
+                    >
+                      <div onClick={openAccordion} className="title">
+                        <h6>{item.question}</h6>
+                        <span className="ico ti-plus"></span>
+                      </div>
+                      <div
+                        className={`accordion-info ${idx === 0 ? 'active' : ''}`}
+                        style={{ maxHeight: idx === 0 ? '300px' : '0px' }}
+                      >
+                        <p>{item.answer}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="img1">
-        <img src="/assets/imgs/intro/03.jpg" alt="" />
-      </div>
-      <div className="img2">
-        <img src="/assets/imgs/logo-light-stroke.svg" alt="Logo" />
-      </div>
-      <div className="img3">
-        <img src="/assets/imgs/intro/04.jpg" alt="" />
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 

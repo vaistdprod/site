@@ -10,7 +10,7 @@ import Faq from "@/components/services/Faq";
 import Testimonials from "@/components/home/Testimonials";
 import Header from "@/components/services/Header";
 import Numbers from "@/components/services/Numbers";
-import { getLightServices } from '@/lib/nase-sluzby';
+import { getLightServices } from '@/lib/services';
 
 export const metadata = {
   title: "Služby | TD Productions | Posouváme hranice digitální inovace",

@@ -1,15 +1,14 @@
+// Next.jsx
 'use client';
 
 import loadBackgroudImages from '@/common/loadBackgroudImages';
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 
-function Next({ data }) {
+function Next({ nextProject, prevProject }) {
   useEffect(() => {
     loadBackgroudImages();
   }, []);
-
-  const { nextProject, prevProject } = data;
 
   return (
     <section className="next-project sub-bg">
@@ -27,7 +26,10 @@ function Next({ data }) {
                   </div>
                   <div>
                     <h6 className="sub-title fz-16 mb-5">Předchozí projekt</h6>
-                    <Link href={prevProject.link} className="fz-40 fw-600 stroke">
+                    <Link
+                      href={`/portfolio/${prevProject.id}`}
+                      className="fz-40 fw-600 stroke"
+                    >
                       {prevProject.title}
                     </Link>
                   </div>
@@ -45,7 +47,10 @@ function Next({ data }) {
                   <div className="cont d-flex align-items-center">
                     <div>
                       <h6 className="sub-title fz-16 mb-5">Další projekt</h6>
-                      <Link href={nextProject.link} className="fz-40 fw-600 stroke">
+                      <Link
+                        href={`/portfolio/${nextProject.id}`}
+                        className="fz-40 fw-600 stroke"
+                      >
                         {nextProject.title}
                       </Link>
                     </div>

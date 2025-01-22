@@ -5,7 +5,8 @@ import LoadingScreen from '@/components/common/LoadingScreen';
 import Footer from '@/components/common/Footer';
 import Marq2 from '@/components/common/Marq2';
 import Navbar from '@/components/common/Navbar';
-import Construction from '@/components/common/Construction';
+import Header from '@/components/portfolio/Header';
+import Portfolio from '@/components/portfolio/Portfolio';
 
 export const metadata = {
   title: "Portfolio | TD Productions | Posouváme hranice digitální inovace",
@@ -47,6 +48,10 @@ export const metadata = {
   }
 };
 
+export async function generateStaticParams() {
+  return [];
+}
+
 export default function Home() {
   return (
     <>
@@ -58,7 +63,8 @@ export default function Home() {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main className="main-bg o-hidden">
-            <Construction />
+            <Header />
+            <Portfolio />
             <Marq2 />
           </main>
           <Footer />

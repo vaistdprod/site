@@ -84,7 +84,7 @@ function About() {
                           <div className="icon-img-60">
                             <Image
                               src="/assets/imgs/logo-light-stroke.svg"
-                              alt="Logo"
+                              alt="Logo TD Productions"
                               width={60}
                               height={60}
                             />
@@ -104,7 +104,7 @@ function About() {
                           <div className="icon-img-60">
                             <Image
                               src="/assets/imgs/logo-light-stroke.svg"
-                              alt="Logo"
+                              alt="Logo TD Productions"
                               width={60}
                               height={60}
                             />

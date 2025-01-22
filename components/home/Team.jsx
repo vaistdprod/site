@@ -20,7 +20,7 @@ function Team({ members = [] }) {
               </span>
             </h2>
             <div className="ml-auto vi-more">
-              <Link href="/pribeh" className="btn btn-sm btn-bord radius-30">
+              <Link href="/o-nas" className="btn btn-sm btn-bord radius-30">
                 <span>O nás</span>
               </Link>
               <span className="icon fas fa-arrow-right"></span>

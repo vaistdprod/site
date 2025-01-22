@@ -16,8 +16,8 @@ import Blog from '@/components/home/Blog'
 import Header from '@/components/home/Header'
 import About from '@/components/home/About'
 import { getAllPosts } from '@/lib/posts'
-import { getMemberList } from "@/lib/nas-tym"
-import { getLightServices } from '@/lib/nase-sluzby'
+import { getMemberList } from "@/lib/team"
+import { getLightServices } from '@/lib/services'
 
 export const metadata = {
   title: 'TD Productions | Posouváme hranice digitální inovace',
@@ -78,7 +78,7 @@ export default async function Home() {
             <Marq />
             <About />
             <Services services={services} />
-            {/* <Portfolio /> */}
+            <Portfolio />
             <Feat />
             <Team members={members} />
             {/* <Testimonials />

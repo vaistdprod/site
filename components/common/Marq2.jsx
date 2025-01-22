@@ -20,7 +20,7 @@ function Marq2() {
                   <span className="icon-img-50 ml-40">
                     <Image
                       src="/assets/imgs/logo-light.svg"
-                      alt="Logo"
+                      alt="Logo TD Productions"
                       width={50}
                       height={50}
                     />
@@ -35,7 +35,7 @@ function Marq2() {
                   <span className="icon-img-50 ml-40">
                     <Image
                       src="/assets/imgs/logo-light.svg"
-                      alt="Logo"
+                      alt="Logo TD Productions"
                       width={50}
                       height={50}
                     />

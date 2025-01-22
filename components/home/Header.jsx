@@ -27,7 +27,7 @@ function Header() {
     <div className="header header-personal valign position-re overflow-hidden" data-overlay-dark="6">
       <video
         className="position-absolute top-0 start-0 w-100 h-100"
-        src="/assets/imgs/tdprod-promo.mp4"
+        src="/assets/imgs/tdprod-promo.webm"
         autoPlay
         loop
         muted
@@ -43,7 +43,7 @@ function Header() {
                 <span className="icon-img-30 mr-10">
                   <Image
                     src="/assets/imgs/logo-light.svg"
-                    alt="Logo"
+                    alt="Logo TD Productions"
                     width={33}
                     height={25}
                     className="logo-image"
