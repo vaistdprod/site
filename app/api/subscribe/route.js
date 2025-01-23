@@ -9,13 +9,13 @@ export async function POST(request) {
 
     if (!email || !email.includes("@")) {
       return NextResponse.json(
-        { success: false, message: "Invalid email" },
+        { success: false, message: "Neplatný e-mail" },
         { status: 400 }
       );
     }
 
     const resp = await loops.createContact(email, {
-      source: "Website signup",
+      source: "Přihlášení na webu",
     });
 
     return NextResponse.json({ success: resp.success });

@@ -6,32 +6,27 @@ import LoadingScreen from '@/components/common/LoadingScreen';
 import Footer from '@/components/common/Footer';
 import Marq2 from '@/components/common/Marq2';
 import Navbar from '@/components/common/Navbar';
-import Clients from '@/components/home/Clients';
-import Testimonials from '@/components/home/Testimonials';
+// import Clients from '@/components/home/Clients';
+// import Testimonials from '@/components/home/Testimonials';
 import Header from '@/components/faq/Header';
 import FAQS from '@/components/faq/FAQS';
-import Numbers from '@/components/common/Numbers';
 
 export const metadata = {
   title: "FAQ | TD Productions | Posouváme hranice digitální inovace",
-  description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Vylaďte svoje podnikání s TD Productions a nastartujte rok 2025 naplno. Kontaktujte nás ještě dnes.",
+  description: "Objevte odpovědi na nejčastější dotazy k webových stránkám, správě sociálních médií a dalším marketingovým službám společnosti TD Productions.",
   keywords: [
-    'TD Productions',
-    'webové stránky Ostrava',
-    'webové aplikace Ostrava',
-    'web design Ostrava',
-    'digitální marketing Ostrava',
-    'weby Ostrava',
-    'marketingová agentura Ostrava',
-    'web na míru Ostrava',
-    'tvorba webových stránek ostrava',
-    'tvorba webu na míru ostrava',
+    "jednoduché webové stránky za nejlepší ceny ostrava​",
+    "tvorba webových stránek cena​",
+    "cena tvorby webových stránek",
+    "cena za tvorbu webových stránek",
+    "cena za tvorbu webových stránek uživatel​",
+    "cena tvorba webových stránek​"
   ],
   openGraph: {
     type: "website",
     url: "https://tdprod.cz/nejcastejsi-dotazy",
     title: "FAQ | TD Productions | Posouváme hranice digitální inovace",
-    description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Vylaďte svoje podnikání s TD Productions a nastartujte rok 2025 naplno. Kontaktujte nás ještě dnes.",
+    description: "Objevte odpovědi na nejčastější dotazy k webových stránkám, správě sociálních médií a dalším marketingovým službám společnosti TD Productions.",
     images: [
       {
         url: "https://tdprod.cz/assets/imgs/og-image.jpg",
@@ -44,7 +39,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "FAQ | TD Productions | Posouváme hranice digitální inovace",
-    description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Vylaďte svoje podnikání s TD Productions a nastartujte rok 2025 naplno. Kontaktujte nás ještě dnes.",
+    description: "Objevte odpovědi na nejčastější dotazy k webových stránkám, správě sociálních médií a dalším marketingovým službám společnosti TD Productions.",
     images: ["https://tdprod.cz/assets/imgs/og-image.jpg"]
   },
   alternates: {
@@ -65,7 +60,6 @@ export default function FAQPage() {
           <main className="main-bg o-hidden">
             <Header />
             <FAQS />
-            <Numbers />
             {/* <Testimonials />
             <Clients /> */}
             <Marq2 />

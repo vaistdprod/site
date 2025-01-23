@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Services({ services }) {
   return (
-    <section className="services-clas section-padding">
+    <section className="services-class section-padding">
       <div className="container">
         <div className="sec-head mb-80">
           <div className="d-flex align-items-center">

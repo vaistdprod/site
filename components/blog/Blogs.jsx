@@ -52,9 +52,22 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
               <div className="widget">
                 <h6 className="title-widget">Hledáte konkrétní článek?</h6>
                 <div className="search-box">
-                  <input type="text" name="search-post" placeholder="Hledat..." />
-                  <span className="icon fas fa-search"></span>
-                  </div>
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      const query = e.target.elements['search-post'].value;
+                      router.push(`/blog?search=${encodeURIComponent(query)}`);
+                    }}
+                  >
+                    <input
+                      type="text"
+                      name="search-post"
+                      placeholder="Hledat..."
+                      required
+                    />
+                    <button type="submit" className="icon fas fa-search"></button>
+                  </form>
+                </div>
               </div>
               <div className="widget catogry">
                 <h6 className="title-widget">Kategorie</h6>

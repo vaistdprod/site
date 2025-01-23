@@ -10,7 +10,7 @@ import Map from '@/components/contacts/Map';
 
 export const metadata = {
   title: "Kontakty | TD Productions | Posouváme hranice digitální inovace",
-  description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Vylaďte svoje podnikání s TD Productions a nastartujte rok 2025 naplno. Kontaktujte nás ještě dnes.",
+  description: "Potřebujete nový web, správu sociálních sítí nebo reklamu? Zavolejte na 737 065 717, napište na info@tdprod.cz nebo vyplňte náš kontaktní formulář na webu.",
   keywords: [
     'TD Productions',
     'webové stránky Ostrava',
@@ -27,7 +27,7 @@ export const metadata = {
     type: "website",
     url: "https://tdprod.cz/kontakty",
     title: "Kontakty | TD Productions | Posouváme hranice digitální inovace",
-    description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Vylaďte svoje podnikání s TD Productions a nastartujte rok 2025 naplno. Kontaktujte nás ještě dnes.",
+    description: "Potřebujete nový web, správu sociálních sítí nebo reklamu? Zavolejte na 737 065 717, napište na info@tdprod.cz nebo vyplňte náš kontaktní formulář na webu.",
     images: [
       {
         url: "https://tdprod.cz/assets/imgs/og-image.jpg",
@@ -40,7 +40,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Kontakty | TD Productions | Posouváme hranice digitální inovace",
-    description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Vylaďte svoje podnikání s TD Productions a nastartujte rok 2025 naplno. Kontaktujte nás ještě dnes.",
+    description: "Potřebujete nový web, správu sociálních sítí nebo reklamu? Zavolejte na 737 065 717, napište na info@tdprod.cz nebo vyplňte náš kontaktní formulář na webu.",
     images: ["https://tdprod.cz/assets/imgs/og-image.jpg"]
   },
   alternates: {

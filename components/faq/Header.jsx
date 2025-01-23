@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
-import loadBackgroudImages from '@/common/loadBackgroudImages';
+import loadBackgroundImages from '@/common/loadBackgroundImages';
 function Header() {
   useLayoutEffect(() => {
     const tl = gsap.timeline();
@@ -16,7 +16,7 @@ function Header() {
     return () => tl.kill();
   }, []);
   useEffect(() => {
-    loadBackgroudImages();
+    loadBackgroundImages();
   }, []);
   return (
     <div
@@ -29,7 +29,7 @@ function Header() {
           <div className="col-12">
             <div className="text-center">
               <h1 className="text-u ls1 fz-80">
-                Nejčastější<span className="fw-200">dotazy</span>
+                Nejčastější <span className="fw-200">dotazy</span>
               </h1>
             </div>
           </div>

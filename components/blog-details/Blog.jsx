@@ -238,8 +238,8 @@ function Blog({ post, latestPosts }) {
           <div className="col-lg-4">
             <div className="sidebar">
               <div className="widget">
-                <h6 className="title-widget">Hledat</h6>
-                <div className="search-box">
+              <h6 className="title-widget">Hledáte konkrétní článek?</h6>
+              <div className="search-box">
                   <form
                     onSubmit={(e) => {
                       e.preventDefault();
@@ -250,7 +250,7 @@ function Blog({ post, latestPosts }) {
                     <input
                       type="text"
                       name="search-post"
-                      placeholder="Search"
+                      placeholder="Hledat..."
                       required
                     />
                     <button type="submit" className="icon fas fa-search"></button>
@@ -259,7 +259,7 @@ function Blog({ post, latestPosts }) {
               </div>
 
               <div className="widget category">
-                <h6 className="title-widget">Kategorie</h6>
+                <h6 className="title-widget">Článek je v kategoriích:</h6>
                 <ul className="rest">
                   {post.tags.map((tag) => (
                     <li key={tag}>

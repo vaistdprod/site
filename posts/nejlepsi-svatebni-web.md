@@ -4,6 +4,7 @@ title: "Nejlepší svatební web: váš průvodce k dokonalému svatebnímu dnu"
 date: "2025-01-01"
 authorId: "matej_vais"
 tags: ["Webové stránky", "Promo", "Soukromé akce"]
+keywords: ["svatební web", "svatební plánování", "webdesign na míru"]
 excerpt: "Objevte, proč je svatební web klíčovým pomocníkem při plánování vašeho velkého dne, a inspirujte se tipy na originální design a praktický obsah."
 coverImage: "/assets/imgs/blog/svatebni-dort.jpg"
 comments: 0

@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
-import loadBackgroudImages from '@/common/loadBackgroudImages';
+import loadBackgroundImages from '@/common/loadBackgroundImages';
 function Header() {
   useLayoutEffect(() => {
     const tl = gsap.timeline();
@@ -16,7 +16,7 @@ function Header() {
     return () => tl.kill();
   }, []);
   useEffect(() => {
-    loadBackgroudImages();
+    loadBackgroundImages();
   }, []);
   return (
     <div

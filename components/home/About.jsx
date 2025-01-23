@@ -11,7 +11,7 @@ function About() {
               <div className="img">
                 <Image
                   src="/assets/imgs/ostrava.webp"
-                  alt="Ostrava"
+                  alt="Centrum Ostravy, nedaleko ulice 28. října, na které sídlí společnost TD Productions."
                   width={649}
                   height={960}
                 />
@@ -19,7 +19,7 @@ function About() {
               <span className="icon">
                 <Image
                   src="/assets/imgs/ae.svg"
-                  alt="Adobe After Effects"
+                  alt="Logo programu Adobe After Effects"
                   width={75}
                   height={75}
                 />
@@ -27,7 +27,7 @@ function About() {
               <span className="icon">
                 <Image
                   src="/assets/imgs/figma.svg"
-                  alt="Figma"
+                  alt="Logo programu Figma"
                   width={75}
                   height={75}
                 />
@@ -35,7 +35,7 @@ function About() {
               <span className="icon">
                 <Image
                   src="/assets/imgs/react.svg"
-                  alt="React"
+                  alt="Logo knihovny React"
                   width={75}
                   height={75}
                 />
@@ -43,7 +43,7 @@ function About() {
               <span className="icon">
                 <Image
                   src="/assets/imgs/wp.svg"
-                  alt="WordPress"
+                  alt="Logo CMS WordPress"
                   width={75}
                   height={75}
                 />

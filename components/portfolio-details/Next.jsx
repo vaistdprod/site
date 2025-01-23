@@ -1,13 +1,13 @@
 // Next.jsx
 'use client';
 
-import loadBackgroudImages from '@/common/loadBackgroudImages';
+import loadBackgroundImages from '@/common/loadBackgroundImages';
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 
 function Next({ nextProject, prevProject }) {
   useEffect(() => {
-    loadBackgroudImages();
+    loadBackgroundImages();
   }, []);
 
   return (

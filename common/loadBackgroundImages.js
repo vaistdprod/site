@@ -1,4 +1,4 @@
-export default function loadBackgroudImages() {
+export default function loadBackgroundImages() {
   let backgroudImages = document.querySelectorAll("[data-background]");
 
   if (backgroudImages.length > 0) {

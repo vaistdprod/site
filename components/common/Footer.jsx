@@ -129,9 +129,6 @@ function Footer() {
                   <Link href="/nas-tym">Náš tým</Link>
                 </li>
                 <li className="mb-15">
-                  <Link href="/o-nas">O nás</Link>
-                </li>
-                <li className="mb-15">
                   <Link href="/nejcastejsi-dotazy">Nejčastější dotazy</Link>
                 </li>
                 <li className="mb-15">

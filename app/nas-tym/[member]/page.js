@@ -19,39 +19,37 @@ export async function generateMetadata({ params }) {
   const data = getMemberBySlug(member);
   if (!data) {
     return {
-      title: "Náš tým | TD Productions",
-      description: "Seznamte se se členy týmu TD Productions."
+      title: "Náš tým | TD Productions | Posouváme hranice digitální inovace",
+      description: "Seznamte se s expertním týmem TD Productions. Objevte, kdo stojí za realizací webů a marketingu a zjistěte, jak našim klientům pomáháme k úspěchu.",
     }
   }
 
   return {
-    title: `${data.name} | TD Productions`,
-    description: `${data.name} je součástí našeho ostravského týmu.`,
+    title: `${data.name} | TD Productions | Posouváme hranice digitální inovace`,
+    description: `${data.about}`,
     keywords: [
       data.name,
       "TD Productions",
       "tým",
-      "digitální inovace",
-      "profesionálové"
     ],
     openGraph: {
       type: "profile",
       url: `https://tdprod.cz/nas-tym/${member}`,
-      title: `${data.name} | TD Productions`,
-      description: `${data.name} je součástí našeho ostravského týmu.`,
+      title: `${data.name} | TD Productions | Posouváme hranice digitální inovace`,
+      description: `${data.about}`,
       images: [
         {
           url: "https://tdprod.cz/assets/imgs/og-image.jpg",
           width: 1200,
           height: 630,
-          alt: `${data.name} z týmu marketingové agentury TD Productions.`
+          alt: `${data.about}`,
         }
       ]
     },
     twitter: {
       card: "summary_large_image",
-      title: `${data.name} | TD Productions`,
-      description: `${data.name} je součástí našeho ostravského týmu.`,
+      title: `${data.name} | TD Productions | Posouváme hranice digitální inovace`,
+      description: `${data.about}`,
       images: ["https://tdprod.cz/assets/imgs/og-image.jpg"]
     },
     alternates: {

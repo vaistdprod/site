@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import RollingText from '@/common/rolling'; // << Adjust path if needed
+import RollingText from '@/common/rolling';
 
 function Navbar() {
   function handleScroll() {
@@ -68,7 +68,6 @@ function Navbar() {
           id="navbarSupportedContent"
         >
           <ul className="navbar-nav">
-            {/* ===== [ Naše služby ] ===== */}
             <li
               onMouseLeave={handleDropdownMouseLeave}
               onMouseMove={handleDropdownMouseMove}
@@ -82,11 +81,9 @@ function Navbar() {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                {/* RollingText on the top-level link */}
                 <RollingText text="Naše služby" />
               </Link>
               <ul className="dropdown-menu">
-                {/* Plain text for dropdown items */}
                 <li>
                   <Link className="dropdown-item" href="/nase-sluzby">
                     Vše
@@ -137,7 +134,6 @@ function Navbar() {
               </ul>
             </li>
 
-            {/* ===== [ O nás ] ===== */}
             <li
               onMouseLeave={handleDropdownMouseLeave}
               onMouseMove={handleDropdownMouseMove}
@@ -151,14 +147,9 @@ function Navbar() {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                {/* RollingText on the top-level link */}
                 <RollingText text="O nás" />
               </Link>
               <div className="dropdown-menu">
-                {/* Plain text for dropdown items */}
-                <Link className="dropdown-item" href="/o-nas">
-                  O nás
-                </Link>
                 <Link className="dropdown-item" href="/nas-tym">
                   Náš tým
                 </Link>
@@ -168,21 +159,18 @@ function Navbar() {
               </div>
             </li>
 
-            {/* ===== [ Portfolio ] ===== */}
             <li className="nav-item">
             <a className="nav-link" href="/portfolio">
             <RollingText text="Portfolio" />
               </a>
             </li>
 
-            {/* ===== [ Blog ] ===== */}
             <li className="nav-item">
               <Link className="nav-link" href="/blog">
                 <RollingText text="Blog" />
               </Link>
             </li>
 
-            {/* ===== [ Kontakty ] ===== */}
             <li className="nav-item">
               <Link className="nav-link" href="/kontakty">
                 <RollingText text="Kontakty" />
@@ -191,7 +179,6 @@ function Navbar() {
           </ul>
         </div>
 
-        {/* Plain text CTA button */}
         <div className="contact-button">
           <Link
             href="/kontakty"

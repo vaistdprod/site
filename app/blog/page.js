@@ -3,24 +3,17 @@ import ClientBlogList from '@/components/blog/ClientBlogList';
 
 export const metadata = {
   title: "Blog | TD Productions | Posouváme hranice digitální inovace",
-  description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Vylaďte svoje podnikání s TD Productions a nastartujte rok 2025 naplno. Kontaktujte nás ještě dnes.",
+  description: "Čtěte novinky a tipy ze světa digitálního marketingu, sociálních médií, tvorby webů a AI řešení od TD Productions.",
   keywords: [
-    'TD Productions',
-    'webové stránky Ostrava',
-    'webové aplikace Ostrava',
-    'web design Ostrava',
-    'digitální marketing Ostrava',
-    'weby Ostrava',
-    'marketingová agentura Ostrava',
-    'web na míru Ostrava',
-    'tvorba webových stránek ostrava',
-    'tvorba webu na míru ostrava',
+    'blog td productions',
+    'marketingové tipy',
+    'ai v podnikání'
   ],
   openGraph: {
     type: "website",
     url: "https://tdprod.cz/blog",
     title: "Blog | TD Productions | Posouváme hranice digitální inovace",
-    description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Vylaďte svoje podnikání s TD Productions a nastartujte rok 2025 naplno. Kontaktujte nás ještě dnes.",
+    description: "Čtěte novinky a tipy ze světa digitálního marketingu, sociálních médií, tvorby webů a AI řešení od TD Productions.",
     images: [
       {
         url: "https://tdprod.cz/assets/imgs/og-image.jpg",
@@ -33,7 +26,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Blog | TD Productions | Posouváme hranice digitální inovace",
-    description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Vylaďte svoje podnikání s TD Productions a nastartujte rok 2025 naplno. Kontaktujte nás ještě dnes.",
+    description: "Čtěte novinky a tipy ze světa digitálního marketingu, sociálních médií, tvorby webů a AI řešení od TD Productions.",
     images: ["https://tdprod.cz/assets/imgs/og-image.jpg"]
   },
   alternates: {
@@ -41,7 +34,8 @@ export const metadata = {
   }
 };
 
-export default async function BlogPage({ searchParams }) {
+export default async function BlogPage(props) {
+  const searchParams = await props.searchParams;
   const tag = searchParams?.tag || null;
   const searchQuery = searchParams?.search || null;
 

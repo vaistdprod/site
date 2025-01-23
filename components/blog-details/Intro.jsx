@@ -2,7 +2,7 @@
 
 import React, { useEffect, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
-import loadBackgroudImages from '@/common/loadBackgroudImages';
+import loadBackgroundImages from '@/common/loadBackgroundImages';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -21,7 +21,7 @@ function Intro({ title, author, date, comments, coverImage, tags }) {
   }, []);
 
   useEffect(() => {
-    loadBackgroudImages();
+    loadBackgroundImages();
   }, []);
 
   return (

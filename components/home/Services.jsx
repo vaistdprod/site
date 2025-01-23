@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 function Services({ services }) {
   return (
-    <section className="services-clas">
+    <section className="services-class">
       <div className="container">
         <div className="sec-head mb-80">
           <div className="row">

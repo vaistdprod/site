@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useLayoutEffect } from "react";
 import { gsap } from "gsap";
-import loadBackgroudImages from "@/common/loadBackgroudImages";
+import loadBackgroundImages from "@/common/loadBackgroundImages";
 
 function Header({ serviceData }) {
   useLayoutEffect(() => {
@@ -17,7 +17,7 @@ function Header({ serviceData }) {
   }, []);
 
   useEffect(() => {
-    loadBackgroudImages();
+    loadBackgroundImages();
   }, []);
 
   return (

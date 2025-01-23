@@ -1,64 +1,50 @@
-'use client';
-import isInView from '@/common/isInView';
-import React, { useEffect } from 'react';
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 function Intro() {
-  function handleShowProgressValues() {
-    isInView({
-      selector: '.skill-progress .progres',
-      isElements: true,
-      callback: (element) => {
-        element.style.width = element.getAttribute('data-value');
-      },
-    });
-  }
-  useEffect(() => {
-    window.addEventListener('scroll', handleShowProgressValues);
-    return () => window.removeEventListener('scroll', handleShowProgressValues);
-  }, []);
   return (
-    <section className="intro-skill section-padding pb-0">
-      <div className="container pt-80 pb-80">
+    <section className="page-intro section-padding pb-0">
+      <div className="container">
         <div className="row md-marg">
-          <div className="col-lg-6">
-            <div className="cont">
-              <h6 className="sub-title main-color mb-15">About Us</h6>
-              <h2 className="mb-15">Best creative & modern digital agency.</h2>
-              <p>
-                Driven professional dedicated to making a lasting impact through
-                innovative solutions and unwavering excellence.
-              </p>
-              <div className="skills-box row mt-80">
-                <div className="col-md-6">
-                  <div className="skill-item sm-mb30">
-                    <h5 className="sub-title mb-15">UI / UX Design 90%</h5>
-                    <div className="skill-progress">
-                      <div className="progres" data-value="90%"></div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="skill-item">
-                    <h5 className="sub-title mb-15">Development 80%</h5>
-                    <div className="skill-progress">
-                      <div className="progres" data-value="80%"></div>
-                    </div>
+          <div className="col-lg-6 valign">
+            <div className="img md-mb80">
+              <div className="row">
+                <div className="col-12">
+                  <Image
+                    src="/assets/imgs/klient.jpg"
+                    alt="Jednatel společnosti TD Productions, Matěj Vais, si podává ruku s klientem."
+                    width={617}
+                    height={347}
+                  />
+                  <div className="img-icon">
+                    <Image
+                      src="/assets/imgs/logo-light-stroke.svg"
+                      alt="Logo TD Productions"
+                      width={25}
+                      height={19}
+                    />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-lg-6">
-            <div className="imgs">
-              <div className="img1">
-                <img src="/assets/imgs/intro/2.jpg" alt="" />
-              </div>
-              <div className="img2">
-                <img src="/assets/imgs/intro/03.jpg" alt="" />
-              </div>
-              <div className="img3">
-                <img src="/assets/imgs/intro/04.jpg" alt="" />
-              </div>
+          <div className="col-lg-6 valign">
+            <div className="cont">
+              <h3 className="mb-30">
+                <span className="fw-200">Marketingová agentura</span>, která
+                vám pomáhá <span className="fw-200">růst.</span>
+              </h3>
+              <p>
+                Jsme mladý, ambiciózní tým a do každého projektu vkládáme maximum.
+                V rámci spolupráce fungujeme s naprostou precizností a profesionalitou. Neúnavně bojujeme za vaše výsledky.
+                Neustále posouváme hranice a věříme, že tvrdá práce a odhodlání jsou klíčem k úspěchu. Z naší spolupráce tak vždycky vzejde to nejlepší.
+              </p>
+              <Link href="/nase-sluzby" className="underline main-color mt-40">
+                <span className="text">
+                  Naše služby <i className="fas fa-arrow-right"></i>
+                </span>
+              </Link>
             </div>
           </div>
         </div>

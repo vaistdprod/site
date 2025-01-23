@@ -6,13 +6,13 @@ import Navbar from '@/components/common/Navbar';
 import Error from '@/components/404/Error';
 
 export const metadata = {
-  title: '404 | TD Productions | Posouváme hranice digitální inovace',
-  description: 'Tuto stránku jsme nenašli. Zkontrolujte prosím URL adresu a zkuste to znovu.',
+  title: 'Chyba 404 | TD Productions | Posouváme hranice digitální inovace',
+  description: 'Tato stránka na našem webu neexistuje. Zkontrolujte prosím URL adresu, případně nám napište, pokud myslíte, že jde o chybu.',
   openGraph: {
     type: 'website',
     url: 'https://tdprod.cz/', 
-    title: '404 | TD Productions | Posouváme hranice digitální inovace',
-    description: 'Tuto stránku jsme nenašli. Zkontrolujte prosím URL adresu a zkuste to znovu.',
+    title: 'Chyba 404 | TD Productions | Posouváme hranice digitální inovace',
+    description: 'Tato stránka na našem webu neexistuje. Zkontrolujte prosím URL adresu, případně nám napište, pokud myslíte, že jde o chybu.',
     images: [
       {
         url: 'https://tdprod.cz/assets/imgs/og-image.jpg',
@@ -24,8 +24,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '404 | TD Productions | Posouváme hranice digitální inovace',
-    description: 'Tuto stránku jsme nenašli. Zkontrolujte prosím URL adresu a zkuste to znovu.',
+    title: 'Chyba 404 | TD Productions | Posouváme hranice digitální inovace',
+    description: 'Tato stránka na našem webu neexistuje. Zkontrolujte prosím URL adresu, případně nám napište, pokud myslíte, že jde o chybu.',
     images: ['https://tdprod.cz/assets/imgs/og-image.jpg']
   },
   alternates: {

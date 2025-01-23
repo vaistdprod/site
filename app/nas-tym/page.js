@@ -6,31 +6,29 @@ import Footer from '@/components/common/Footer';
 import Marq2 from '@/components/common/Marq2';
 import Navbar from '@/components/common/Navbar';
 import Team from '@/components/home/Team';
-import Numbers from '@/components/common/Numbers';
 import Header from '@/components/team/Header';
+// import Outro from '@/components/team/Outro';
 import Intro from '@/components/team/Intro';
+import Numbers from '@/components/common/Numbers';
 import { getMemberList } from "@/lib/team";
 
 export const metadata = {
   title: "Náš tým | TD Productions | Posouváme hranice digitální inovace",
-  description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Vylaďte svoje podnikání s TD Productions a nastartujte rok 2025 naplno. Kontaktujte nás ještě dnes.",
+  description: "Seznamte se s expertním týmem TD Productions. Objevte, kdo stojí za realizací webů a marketingu a zjistěte, jak našim klientům pomáháme k úspěchu.",
   keywords: [
-    'TD Productions',
-    'webové stránky Ostrava',
-    'webové aplikace Ostrava',
-    'web design Ostrava',
-    'digitální marketing Ostrava',
-    'weby Ostrava',
-    'marketingová agentura Ostrava',
-    'web na míru Ostrava',
-    'tvorba webových stránek ostrava',
-    'tvorba webu na míru ostrava',
+    'Matěj Vais',
+    'Martin Studnický',
+    'Matyáš Vaněk',
+    'Sebastian Vaněk',
+    'Matěj Turek',
+    'kdo je td productions',
+    'co je td productions'
   ],
   openGraph: {
     type: "website",
     url: "https://tdprod.cz/nas-tym",
     title: "Náš tým | TD Productions | Posouváme hranice digitální inovace",
-    description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Vylaďte svoje podnikání s TD Productions a nastartujte rok 2025 naplno. Kontaktujte nás ještě dnes.",
+    description: "Seznamte se s expertním týmem TD Productions. Objevte, kdo stojí za realizací webů a marketingu a zjistěte, jak našim klientům pomáháme k úspěchu.",
     images: [
       {
         url: "https://tdprod.cz/assets/imgs/og-image.jpg",
@@ -43,7 +41,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Náš tým | TD Productions | Posouváme hranice digitální inovace",
-    description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Vylaďte svoje podnikání s TD Productions a nastartujte rok 2025 naplno. Kontaktujte nás ještě dnes.",
+    description: "Seznamte se s expertním týmem TD Productions. Objevte, kdo stojí za realizací webů a marketingu a zjistěte, jak našim klientům pomáháme k úspěchu.",
     images: ["https://tdprod.cz/assets/imgs/og-image.jpg"]
   },
   alternates: {
@@ -65,9 +63,10 @@ const members = getMemberList();
         <div id="smooth-content">
           <main className="main-bg o-hidden">
             <Header />
-            <Team members={members} />
+            <Intro />
             <Numbers />
-            {/* <Intro /> */}
+            <Team members={members} />
+            {/* <Intro2 /> */}
             <Marq2 />
           </main>
           <Footer />

@@ -90,7 +90,7 @@ function ContactForm() {
 
   const handleReCaptchaVerify = useCallback(async () => {
     if (!executeRecaptcha) {
-      console.log('Execute recaptcha not yet available');
+      console.log('executeRecaptcha není dostupné.');
       return;
     }
 
@@ -100,7 +100,7 @@ function ContactForm() {
       setErrors((prev) => ({ ...prev, captcha: null }));
     } catch (error) {
       console.error('ReCAPTCHA error:', error);
-      setErrors((prev) => ({ ...prev, captcha: 'ReCAPTCHA verification failed.' }));
+      setErrors((prev) => ({ ...prev, captcha: 'Ověření ReCAPTCHA selhalo.' }));
     }
   }, [executeRecaptcha]);
 
@@ -264,13 +264,6 @@ function ContactForm() {
           </div>
         </div>
       </div>
-      <style jsx>{`
-        .error-text {
-          color: red;
-          font-size: 0.875rem;
-          margin-top: 5px;
-        }
-      `}</style>
     </section>
   );
 }

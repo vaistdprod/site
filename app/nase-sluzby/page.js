@@ -7,31 +7,31 @@ import Marq2 from "@/components/common/Marq2";
 import Navbar from "@/components/common/Navbar";
 import Services from "@/components/services/Services";
 import Faq from "@/components/services/Faq";
-import Testimonials from "@/components/home/Testimonials";
+// import Testimonials from "@/components/home/Testimonials";
 import Header from "@/components/services/Header";
 import Numbers from "@/components/services/Numbers";
 import { getLightServices } from '@/lib/services';
 
 export const metadata = {
   title: "Služby | TD Productions | Posouváme hranice digitální inovace",
-  description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Vylaďte svoje podnikání s TD Productions a nastartujte rok 2025 naplno. Kontaktujte nás ještě dnes.",
+  description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Kontaktujte nás ještě dnes a vylaďte svoje podnikání s TD Productions. Sídlíme v Ostravě.",
   keywords: [
-    'TD Productions',
-    'webové stránky Ostrava',
-    'webové aplikace Ostrava',
-    'web design Ostrava',
-    'digitální marketing Ostrava',
-    'weby Ostrava',
-    'marketingová agentura Ostrava',
-    'web na míru Ostrava',
-    'tvorba webových stránek ostrava',
-    'tvorba webu na míru ostrava',
+    "digitální marketing ostrava",
+    "implementace AI ostrava",
+    "umělá inteligence ostrava",
+    "chatbot ostrava",
+    "videoprodukce ostrava",
+    "fotoprodukce ostrava",
+    "sociální sítě ostrava",
+    "ppc reklamy ostrava",
+    "seo optimalizace ostrava",
+    "správa sociálních sítí"
   ],
   openGraph: {
     type: "website",
     url: "https://tdprod.cz/nase-sluzby",
     title: "Naše služby | TD Productions | Posouváme hranice digitální inovace",
-    description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Vylaďte svoje podnikání s TD Productions a nastartujte rok 2025 naplno. Kontaktujte nás ještě dnes.",
+    description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Kontaktujte nás ještě dnes a vylaďte svoje podnikání s TD Productions. Sídlíme v Ostravě.",
     images: [
       {
         url: "https://tdprod.cz/assets/imgs/og-image.jpg",
@@ -44,7 +44,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Naše služby | TD Productions | Posouváme hranice digitální inovace",
-    description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Vylaďte svoje podnikání s TD Productions a nastartujte rok 2025 naplno. Kontaktujte nás ještě dnes.",
+    description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Kontaktujte nás ještě dnes a vylaďte svoje podnikání s TD Productions. Sídlíme v Ostravě.",
     images: ["https://tdprod.cz/assets/imgs/og-image.jpg"]
   },
   alternates: {

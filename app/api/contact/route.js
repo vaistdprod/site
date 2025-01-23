@@ -78,7 +78,7 @@ export async function POST(request) {
 
     const MIN_SCORE = 0.5;
     if (captchaData.score < MIN_SCORE) {
-      return NextResponse.json({ message: 'Nízké reCAPTCHA skóre. Jste robot?' }, { status: 400 });
+      return NextResponse.json({ message: 'Nízké reCAPTCHA skóre. Zkuste to prosím znovu.' }, { status: 400 });
     }
 
     const expectedAction = 'contact_form_submission';
@@ -120,11 +120,11 @@ export async function POST(request) {
       subject: 'Potvrzení o přijetí vaší zprávy',
       html: `
         <p>Dobrý den ${sanitizedJmeno},</p>
-        <p>Děkujeme vám za vaši zprávu. Ta byla úspěšně doručena a my vám na ni co nejdříve odpovíme.</p>
-        <p><strong>vaše zpráva:</strong></p>
+        <p>Děkujeme vám za vaši zprávu. Co nejdříve se vám ozveme zpátky.</p>
+        <p><strong>Vaše zpráva:</strong></p>
         <p>${sanitizedZprava.replace(/\n/g, '<br>')}</p>
         <p>S pozdravem</p>
-        <p>TD Productions</p>
+        <p>Tým TD Productions</p>
       `,
     };
 

@@ -1,5 +1,5 @@
 'use client';
-import loadBackgroudImages from '@/common/loadBackgroudImages';
+import loadBackgroundImages from '@/common/loadBackgroundImages';
 import React, { useEffect } from 'react';
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -20,7 +20,7 @@ function Testimonials() {
     },
   };
   useEffect(() => {
-    loadBackgroudImages();
+    loadBackgroundImages();
   }, []);
   return (
     <section

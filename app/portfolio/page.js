@@ -10,24 +10,18 @@ import Portfolio from '@/components/portfolio/Portfolio';
 
 export const metadata = {
   title: "Portfolio | TD Productions | Posouváme hranice digitální inovace",
-  description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Vylaďte svoje podnikání s TD Productions a nastartujte rok 2025 naplno. Kontaktujte nás ještě dnes.",
+  description: "Prohlédněte si projekty, které našim klientům pomohly dostat se na novou úroveň. Nenechte si rok 2025 proklouznout mezi prsty, kontaktujte nás ještě dnes.",
   keywords: [
-    'TD Productions',
-    'webové stránky Ostrava',
-    'webové aplikace Ostrava',
-    'web design Ostrava',
-    'digitální marketing Ostrava',
-    'weby Ostrava',
-    'marketingová agentura Ostrava',
-    'web na míru Ostrava',
-    'tvorba webových stránek ostrava',
-    'tvorba webu na míru ostrava',
+    "portfolio td productions",
+    "digitální marketing reference",
+    "vývoj webů ukázky",
+    "kreativní projekty"
   ],
   openGraph: {
     type: "website",
     url: "https://tdprod.cz/portfolio",
     title: "Portfolio | TD Productions | Posouváme hranice digitální inovace",
-    description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Vylaďte svoje podnikání s TD Productions a nastartujte rok 2025 naplno. Kontaktujte nás ještě dnes.",
+    description: "Prohlédněte si projekty, které našim klientům pomohly dostat se na novou úroveň. Nenechte si rok 2025 proklouznout mezi prsty, kontaktujte nás ještě dnes.",
     images: [
       {
         url: "https://tdprod.cz/assets/imgs/og-image.jpg",
@@ -40,7 +34,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Portfolio | TD Productions | Posouváme hranice digitální inovace",
-    description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Vylaďte svoje podnikání s TD Productions a nastartujte rok 2025 naplno. Kontaktujte nás ještě dnes.",
+    description: "Prohlédněte si projekty, které našim klientům pomohly dostat se na novou úroveň. Nenechte si rok 2025 proklouznout mezi prsty, kontaktujte nás ještě dnes.",
     images: ["https://tdprod.cz/assets/imgs/og-image.jpg"]
   },
   alternates: {

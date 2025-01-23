@@ -2,7 +2,7 @@
 
 import React, { useEffect, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
-import loadBackgroudImages from '@/common/loadBackgroudImages';
+import loadBackgroundImages from '@/common/loadBackgroundImages';
 
 function Header({ data }) {
   useLayoutEffect(() => {
@@ -19,7 +19,7 @@ function Header({ data }) {
   }, []);
 
   useEffect(() => {
-    loadBackgroudImages();
+    loadBackgroundImages();
   }, []);
 
   return (

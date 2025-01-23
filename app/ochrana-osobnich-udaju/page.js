@@ -9,42 +9,41 @@ import Header from '@/components/gdpr/Header'
 import PrivacyPolicy from '@/components/gdpr/Gdpr';
 
 export const metadata = {
-  title: "FAQ | TD Productions | Posouváme hranice digitální inovace",
-  description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Vylaďte svoje podnikání s TD Productions a nastartujte rok 2025 naplno. Kontaktujte nás ještě dnes.",
+  title: "Ochrana osobních údajů | TD Productions | Posouváme hranice digitální inovace",
+  description: "Zjistěte, jak TD Productions nakládá s osobními údaji v souladu s GDPR. Čtěte o našich zásadách, bezpečnostních opatřeních i vašich právech.",
   keywords: [
     'TD Productions',
-    'webové stránky Ostrava',
-    'webové aplikace Ostrava',
-    'web design Ostrava',
-    'digitální marketing Ostrava',
-    'weby Ostrava',
+    'pověřenec ochrany osobních údajů Ostrava',
+    'ochrana osobních údajů Ostrava',
+    'gdpr Ostrava',
+    'úřad pro ochranu osobních údajů Ostrava',
+    'dpo Ostrava gdpr',
     'marketingová agentura Ostrava',
-    'web na míru Ostrava',
-    'tvorba webových stránek ostrava',
-    'tvorba webu na míru ostrava',
-  ],
+    'úřad na ochranu osobních údajů Ostrava',
+    'cookies Ostrava'
+    ],
   openGraph: {
     type: "website",
-    url: "https://tdprod.cz/nejcastejsi-dotazy",
-    title: "FAQ | TD Productions | Posouváme hranice digitální inovace",
-    description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Vylaďte svoje podnikání s TD Productions a nastartujte rok 2025 naplno. Kontaktujte nás ještě dnes.",
+    url: "https://tdprod.cz/ochrana-osobnich-udaju",
+    title: "Ochrana osobních údajů | TD Productions | Posouváme hranice digitální inovace",
+    description: "Zjistěte, jak TD Productions nakládá s osobními údaji v souladu s GDPR. Čtěte o našich zásadách, bezpečnostních opatřeních i vašich právech.",
     images: [
       {
         url: "https://tdprod.cz/assets/imgs/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Marketingová agentura TD Productions zodpovídá nejčastější otázky, které dostává od klientů."
+        alt: "TD Productions nakládá s osobními údaji v souladu s GDPR."
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "FAQ | TD Productions | Posouváme hranice digitální inovace",
-    description: "Pokrýváme digitální marketing, vývoj webů i AI řešení. Vylaďte svoje podnikání s TD Productions a nastartujte rok 2025 naplno. Kontaktujte nás ještě dnes.",
+    title: "Ochrana osobních údajů | TD Productions | Posouváme hranice digitální inovace",
+    description: "Zjistěte, jak TD Productions nakládá s osobními údaji v souladu s GDPR. Čtěte o našich zásadách, bezpečnostních opatřeních i vašich právech.",
     images: ["https://tdprod.cz/assets/imgs/og-image.jpg"]
   },
   alternates: {
-    canonical: "https://tdprod.cz/nejcastejsi-dotazy"
+    canonical: "https://tdprod.cz/ochrana-osobnich-udaju"
   }
 };
 

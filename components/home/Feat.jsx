@@ -1,12 +1,12 @@
 'use client';
-import loadBackgroudImages from '@/common/loadBackgroudImages';
+import loadBackgroundImages from '@/common/loadBackgroundImages';
 import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Link from "next/link";
 
 function Feat() {
   useEffect(() => {
-    loadBackgroudImages();
+    loadBackgroundImages();
   }, []);
   return (
     <section className="feat section-padding">
@@ -22,7 +22,7 @@ function Feat() {
                 Podání ruky je pro nás stejně svaté jako ta nejlépe sepsaná smlouva. Pokud se na něčem domluvíme, bereme to jako absolutní povinnost splnit naši část dohody.
               </p>
               <Link
-                href="/o-nas"
+                href="/nas-tym"
                 className="btn-crev d-flex align-items-center mt-40"
               >
                 <span className="hover-this">
@@ -90,7 +90,7 @@ function Feat() {
       <div className="circle-blur">
         <Image
             src="/assets/imgs/patterns/blur1.png"
-            alt="Blur Pattern"
+            alt="Efekt rozmazání"
             width={692}
             height={537}
           />

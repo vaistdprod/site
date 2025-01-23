@@ -14,13 +14,19 @@ export async function generateMetadata({ params }) {
   if (!post) {
     return {
       title: 'TD Productions',
-      description: 'Nenalezli jsme tento článek. Zkuste to znovu.'
+      description: 'Tento článek na našem webu neexistuje. Zkontrolujte prosím URL adresu, případně nám napište, pokud myslíte, že jde o chybu.',
     };
   }
+
+  const dynamicKeywords =
+  post.keywords && post.keywords.length > 0
+    ? post.keywords
+    : ["TD Productions", "Blog"];
 
   return {
     title: `${post.title} | TD Productions`,
     description: post.excerpt,
+    keywords: dynamicKeywords,
     openGraph: {
       title: post.title,
       description: post.excerpt,
