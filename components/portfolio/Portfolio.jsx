@@ -2,6 +2,7 @@
 
 import React, { useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import portfolioData from '@/data/portfolioData.json';
 
 function PortfolioGrid() {
@@ -76,8 +77,14 @@ function PortfolioGrid() {
               >
                 <div className="item mb-50">
                   <div className="img">
-                    <Link href={`/portfolio/${item.id}`}>
-                      <img src={item.img} alt={item.alt} />
+                  <Link href={`/portfolio/${item.id}`}>
+                      <Image
+                        src={item.img}
+                        alt={item.alt}
+                        width={2880}
+                        height={2160}
+                        style={{ width: '100%', height: 'auto' }}
+                      />
                     </Link>
                   </div>
                   <div className="cont d-flex align-items-end mt-30">
