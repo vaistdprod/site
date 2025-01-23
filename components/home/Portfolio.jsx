@@ -13,7 +13,6 @@ function Portfolio() {
   const { portfolio } = portfolioData;
   const { items, showcaseIds } = portfolio;
 
-  // Map those IDs into actual items from "items"
   const swiperItems = showcaseIds.map(id => items.find(obj => obj.id === id));
 
   const [realIndex, setRealIndex] = useState(0);
@@ -73,15 +72,18 @@ function Portfolio() {
                   tabIndex={isActive ? 0 : -1}
                   aria-hidden={!isActive}
                 >
-                  <div className="item d-flex align-items-center">
-                    <div className="cont">
+                  <div className="item d-flex">
+                    <div className="cont col-lg-6">
                       <Link href={`/portfolio/${item.id}`}>
                         <h6 className="sub-title main-color mb-15">
                           {item.category}
                         </h6>
-                        <h2>
-                          {item.title} <br /> {item.subTitle}
+                        <h2 className="mb-5">
+                          {item.title}
                         </h2>
+                        <h3>
+                          {item.subTitle}
+                        </h3>
                       </Link>
                       <Link
                         href={`/portfolio/${item.id}`}
@@ -95,7 +97,7 @@ function Portfolio() {
                         <span className="text">Zobrazit detail</span>
                       </Link>
                     </div>
-                    <div className="img">
+                    <div className="img col-lg-6">
                       <Link href={`/portfolio/${item.id}`}>
                         <Image
                           src={item.img}

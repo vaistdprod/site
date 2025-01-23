@@ -5,7 +5,7 @@
     "items": [
       {
         "id": "mcdental",
-        "img": "/assets/imgs/portfolio/mcdental/1.png",
+        "img": "/assets/imgs/portfolio/mcdental.png",
         "alt": "Náhled webu Zubní klinika MCDental",
         "title": "Zubní klinika MCDental",
         "subTitle": "Moderní web pro zubaře",
@@ -13,23 +13,108 @@
       },
       {
         "id": "petr-sojak",
-        "img": "/assets/imgs/portfolio/petrsojak/1.png",
-        "alt": "Náhled webu Mgr. Petr Soják Ph.D.",
-        "title": "Mgr. Petr Soják Ph.D.",
+        "img": "/assets/imgs/portfolio/petr-sojak.png",
+        "alt": "Náhled webu Mgr. Petr Soják, Ph.D.",
+        "title": "Petr Soják",
         "subTitle": "Podpora pomáhajících profesí",
         "category": "Webové stránky"
       },
       {
-        "id": "jneprojekt-cz",
-        "img": "/assets/imgs/portfolio/jn-eprojekt/1.png",
-        "alt": "Náhled webu Elektroprojekce jneprojekt-cz",
-        "title": "Elektroprojekce jneprojekt-cz",
-        "subTitle": "Elektrifikující design",
+        "id": "ak-kolarova",
+        "img": "/assets/imgs/portfolio/ak-kolarova.png",
+        "alt": "Náhled webu AK Kolařová",
+        "title": "AK Kolářová",
+        "subTitle": "Advokacie profesionálně a lidsky",
+        "category": "Webové stránky"
+      },
+      {
+        "id": "akmff",
+        "img": "/assets/imgs/portfolio/akmff.png",
+        "alt": "Náhled webu AK MFF",
+        "title": "AKMFF",
+        "subTitle": "Právo lidsky a s citem",
+        "category": "Webové stránky"
+      },
+      {
+        "id": "centrum-apolena",
+        "img": "/assets/imgs/portfolio/centrum-apolena.png",
+        "alt": "Náhled webu Centrum Apolena",
+        "title": "Centrum Apolena",
+        "subTitle": "Komplexní zdravotní péče",
+        "category": "Webové stránky"
+      },
+      {
+        "id": "dr-david",
+        "img": "/assets/imgs/portfolio/dr-david.png",
+        "alt": "Náhled webu Dr. David",
+        "title": "Dr. David",
+        "subTitle": "Moderní pediatrická ordinace",
+        "category": "Webové stránky"
+      },
+      {
+        "id": "exiure",
+        "img": "/assets/imgs/portfolio/exiure.png",
+        "alt": "Náhled webu Exiure",
+        "title": "Exiure",
+        "subTitle": "Na základě práva",
+        "category": "Webové stránky"
+      },
+      {
+        "id": "intechi",
+        "img": "/assets/imgs/portfolio/intechi.png",
+        "alt": "Náhled webu Intechi",
+        "title": "INTECHI",
+        "subTitle": "Integrované technické služby",
+        "category": "Webové stránky"
+      },
+      {
+        "id": "orchas",
+        "img": "/assets/imgs/portfolio/orchas.png",
+        "alt": "Náhled webu Orchas",
+        "title": "OR CHAS",
+        "subTitle": "Ortopedická ambulance",
+        "category": "Webové stránky"
+      },
+      {
+        "id": "rehabilitace-ostrava",
+        "img": "/assets/imgs/portfolio/rehabilitace-ostrava.png",
+        "alt": "Náhled webu Rehab Ostrava",
+        "title": "Rehab Ostrava",
+        "subTitle": "Fyzioterapie a rehabilitace",
+        "category": "Webové stránky"
+      },
+      {
+        "id": "sylvie-tichotova",
+        "img": "/assets/imgs/portfolio/sylvie-tichotova.png",
+        "alt": "Náhled webu Sylvie Tichotová",
+        "title": "Sylvie Tichotová",
+        "subTitle": "Psychoterapie a supervize",
+        "category": "Webové stránky"
+      },
+      {
+        "id": "ortopedie-vinohrady",
+        "img": "/assets/imgs/portfolio/vinohrady.png",
+        "alt": "Náhled webu Ortopedie Vinohrady",
+        "title": "Ortopedie Vinohrady",
+        "subTitle": "Odborná ortopedická péče",
         "category": "Webové stránky"
       }
     ],
 
-    "showcaseIds": ["mcdental", "petr-sojak", "jneprojekt-cz"],
+    "showcaseIds": [
+      "mcdental",
+      "petr-sojak",
+      "ak-kolarova",
+      "akmff",
+      "centrum-apolena",
+      "dr-david",
+      "exiure",
+      "intech",
+      "orchas",
+      "rehabilitace-ostrava",
+      "sylvie-tichotova",
+      "vinohrady"
+    ],
 
     "categories": [
       { "name": "Vše", "filter": "*" },
@@ -54,9 +139,7 @@
           "description": "Naším cílem bylo ..."
         },
         "images": [
-          "/assets/imgs/portfolio/mcdental/1.png",
-          "/assets/imgs/portfolio/mcdental/2.png",
-          "/assets/imgs/portfolio/mcdental/3.png"
+          "/assets/imgs/portfolio/mcdental.png"
         ]
       },
       {
@@ -75,30 +158,197 @@
           "description": "Při tvorbě nového webu ..."
         },
         "images": [
-          "/assets/imgs/portfolio/petrsojak/1.png",
-          "/assets/imgs/portfolio/petrsojak/2.png",
-          "/assets/imgs/portfolio/petrsojak/3.png"
+          "/assets/imgs/portfolio/petr-sojak.png"
         ]
       },
       {
-        "id": "jneprojekt-cz",
-        "title": "Elektroprojekce jneprojekt-cz",
+        "id": "ak-kolarova",
+        "title": "AK Kolařová",
         "category": "Webové stránky",
-        "client": "jneprojekt-cz s.r.o.",
-        "startDate": "10 May 2025",
+        "client": "AK Kolařová s.r.o.",
+        "startDate": "1 June 2025",
         "designer": "TD Productions",
         "challenge": {
           "title": "Výzva",
-          "description": "Odvážné a netradiční ..."
+          "description": "Rychlý popis výchozí situace..."
         },
         "solution": {
           "title": "Řešení",
-          "description": "Projekt pro pana Nohela ..."
+          "description": "Rychlý popis řešení..."
         },
         "images": [
-          "/assets/imgs/portfolio/jn-eprojekt/1.png",
-          "/assets/imgs/portfolio/jn-eprojekt/2.png",
-          "/assets/imgs/portfolio/jn-eprojekt/3.png"
+          "/assets/imgs/portfolio/ak-kolarova.png"
+        ]
+      },
+      {
+        "id": "akmff",
+        "title": "AK MFF",
+        "category": "Webové stránky",
+        "client": "AK MFF s.r.o.",
+        "startDate": "2 June 2025",
+        "designer": "TD Productions",
+        "challenge": {
+          "title": "Výzva",
+          "description": "Rychlý popis výchozí situace..."
+        },
+        "solution": {
+          "title": "Řešení",
+          "description": "Rychlý popis řešení..."
+        },
+        "images": [
+          "/assets/imgs/portfolio/akmff.png"
+        ]
+      },
+      {
+        "id": "centrum-apolena",
+        "title": "Centrum Apolena",
+        "category": "Webové stránky",
+        "client": "Centrum Apolena s.r.o.",
+        "startDate": "3 June 2025",
+        "designer": "TD Productions",
+        "challenge": {
+          "title": "Výzva",
+          "description": "Rychlý popis výchozí situace..."
+        },
+        "solution": {
+          "title": "Řešení",
+          "description": "Rychlý popis řešení..."
+        },
+        "images": [
+          "/assets/imgs/portfolio/centrum-apolena.png"
+        ]
+      },
+      {
+        "id": "dr-david",
+        "title": "Dr. David",
+        "category": "Webové stránky",
+        "client": "Dr. David",
+        "startDate": "4 June 2025",
+        "designer": "TD Productions",
+        "challenge": {
+          "title": "Výzva",
+          "description": "Rychlý popis výchozí situace..."
+        },
+        "solution": {
+          "title": "Řešení",
+          "description": "Rychlý popis řešení..."
+        },
+        "images": [
+          "/assets/imgs/portfolio/dr-david.png"
+        ]
+      },
+      {
+        "id": "exiure",
+        "title": "Exiure",
+        "category": "Webové stránky",
+        "client": "Exiure s.r.o.",
+        "startDate": "5 June 2025",
+        "designer": "TD Productions",
+        "challenge": {
+          "title": "Výzva",
+          "description": "Rychlý popis výchozí situace..."
+        },
+        "solution": {
+          "title": "Řešení",
+          "description": "Rychlý popis řešení..."
+        },
+        "images": [
+          "/assets/imgs/portfolio/exiure.png"
+        ]
+      },
+      {
+        "id": "intech",
+        "title": "Intech",
+        "category": "Webové stránky",
+        "client": "Intech s.r.o.",
+        "startDate": "6 June 2025",
+        "designer": "TD Productions",
+        "challenge": {
+          "title": "Výzva",
+          "description": "Rychlý popis výchozí situace..."
+        },
+        "solution": {
+          "title": "Řešení",
+          "description": "Rychlý popis řešení..."
+        },
+        "images": [
+          "/assets/imgs/portfolio/intech.png"
+        ]
+      },
+      {
+        "id": "orchas",
+        "title": "Orchas",
+        "category": "Webové stránky",
+        "client": "Orchas s.r.o.",
+        "startDate": "7 June 2025",
+        "designer": "TD Productions",
+        "challenge": {
+          "title": "Výzva",
+          "description": "Rychlý popis výchozí situace..."
+        },
+        "solution": {
+          "title": "Řešení",
+          "description": "Rychlý popis řešení..."
+        },
+        "images": [
+          "/assets/imgs/portfolio/orchas.png"
+        ]
+      },
+      {
+        "id": "rehabilitace-ostrava",
+        "title": "Rehabilitace Ostrava",
+        "category": "Webové stránky",
+        "client": "Rehabilitace Ostrava s.r.o.",
+        "startDate": "8 June 2025",
+        "designer": "TD Productions",
+        "challenge": {
+          "title": "Výzva",
+          "description": "Rychlý popis výchozí situace..."
+        },
+        "solution": {
+          "title": "Řešení",
+          "description": "Rychlý popis řešení..."
+        },
+        "images": [
+          "/assets/imgs/portfolio/rehabilitace-ostrava.png"
+        ]
+      },
+      {
+        "id": "sylvie-tichotova",
+        "title": "Sylvie Tichotová",
+        "category": "Webové stránky",
+        "client": "Sylvie Tichotová",
+        "startDate": "9 June 2025",
+        "designer": "TD Productions",
+        "challenge": {
+          "title": "Výzva",
+          "description": "Rychlý popis výchozí situace..."
+        },
+        "solution": {
+          "title": "Řešení",
+          "description": "Rychlý popis řešení..."
+        },
+        "images": [
+          "/assets/imgs/portfolio/sylvie-tichotova.png"
+        ]
+      },
+      {
+        "id": "vinohrady",
+        "title": "Vinohrady",
+        "category": "Webové stránky",
+        "client": "Vinohrady s.r.o.",
+        "startDate": "11 June 2025",
+        "designer": "TD Productions",
+        "challenge": {
+          "title": "Výzva",
+          "description": "Rychlý popis výchozí situace..."
+        },
+        "solution": {
+          "title": "Řešení",
+          "description": "Rychlý popis řešení..."
+        },
+        "images": [
+          "/assets/imgs/portfolio/vinohrady.png"
         ]
       }
     ]
