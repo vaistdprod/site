@@ -170,8 +170,8 @@ function Navbar() {
 
             {/* ===== [ Portfolio ] ===== */}
             <li className="nav-item">
-              <Link className="nav-link" href="/portfolio">
-                <RollingText text="Portfolio" />
+            <Link className="nav-link" href="/portfolio" as={`/portfolio`} prefetch={false}>
+            <RollingText text="Portfolio" />
               </Link>
             </li>
 
