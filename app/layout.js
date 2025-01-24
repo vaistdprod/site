@@ -1,5 +1,4 @@
 import "./globals.css";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import ClientScripts from "./client-scripts";
 import Script from "next/script";
 
@@ -47,7 +46,6 @@ export default function RootLayout({ children }) {
         </noscript>
         {children}
         <ClientScripts />
-        <SpeedInsights />
       </body>
     </html>
   );
