@@ -1,6 +1,7 @@
 import "./globals.css";
 import ClientScripts from "./client-scripts";
 import GTMRouteListener from "./gtm-route-listener"
+import { Suspense } from 'react'
 import Script from "next/script";
 
 export const metadata = {
