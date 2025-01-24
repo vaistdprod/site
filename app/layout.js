@@ -45,7 +45,9 @@ export default function RootLayout({ children }) {
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        <GTMRouteListener />
+        <Suspense fallback={<div>Načítám...</div>}>
+          <GTMRouteListener />
+        </Suspense>
         {children}
         <ClientScripts />
       </body>
