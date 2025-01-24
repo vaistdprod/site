@@ -1,5 +1,6 @@
 import "./globals.css";
 import ClientScripts from "./client-scripts";
+import GTMRouteListener from "./gtm-route-listener"
 import Script from "next/script";
 
 export const metadata = {
@@ -44,6 +45,7 @@ export default function RootLayout({ children }) {
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+        <GTMRouteListener />
         {children}
         <ClientScripts />
       </body>
