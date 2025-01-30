@@ -62,7 +62,11 @@ function Services({ services }) {
                   </div>
                   <p>{service.desc}</p>
                 </div>
-                <Link href={`/nase-sluzby/${service.link}`} className="mt-40">
+                <Link
+                  href={`/nase-sluzby${service.link}`}
+                  className="mt-40"
+                  aria-label={`Více o ${service.title}`}
+                >
                   <span className="fas fa-arrow-right"></span>
                 </Link>
               </div>

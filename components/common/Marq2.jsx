@@ -44,7 +44,11 @@ function Marq2() {
               </div>
             ))}
           </div>
-          <Link href="/kontakty" className="overlay-link"></Link>
+          <Link 
+            href="/kontakty" 
+            className="overlay-link"
+            aria-label="Přejít na stránku kontaktů"
+          ></Link>
         </div>
       </div>
 
@@ -68,7 +72,11 @@ function Marq2() {
               </div>
             ))}
           </div>
-          <Link href="/kontakty" className="overlay-link"></Link>
+          <Link 
+            href="/kontakty" 
+            className="overlay-link"
+            aria-label="Přejít na stránku kontaktů"
+          ></Link>
         </div>
       </div>
     </section>

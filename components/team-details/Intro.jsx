@@ -1,24 +1,24 @@
 "use client";
 import React, { useEffect } from "react";
 import isInView from "@/common/isInView";
-import Image from 'next/image';
+import Image from "next/image";
 
 const SOCIAL_MEDIA = {
   facebook: {
     icon: "fab fa-facebook-f",
-    url: "facebook",
+    label: "Facebook"
   },
   twitter: {
     icon: "fab fa-x-twitter",
-    url: "twitter",
+    label: "X"
   },
   instagram: {
     icon: "fab fa-instagram",
-    url: "instagram",
+    label: "Instagram"
   },
   linkedin: {
     icon: "fab fa-linkedin-in",
-    url: "linkedin",
+    label: "LinkedIn"
   },
 };
 
@@ -85,14 +85,20 @@ function Intro({ memberData }) {
               <h4 className="mb-15">O mně</h4>
               <p>{memberData.about}</p>
               <ul className="rest mt-30 social-icon d-flex align-items-center">
-                {Object.keys(SOCIAL_MEDIA).map((platform) => {
-                  const link = memberData[platform];
+                {Object.entries(SOCIAL_MEDIA).map(([platformKey, { icon, label }]) => {
+                  const link = memberData[platformKey];
                   if (!link) return null;
 
                   return (
-                    <li key={platform} className="hover-this cursor-pointer ml-10">
-                      <a href={link} target="_blank" rel="noopener noreferrer" className="hover-anim">
-                        <i className={SOCIAL_MEDIA[platform].icon}></i>
+                    <li key={platformKey} className="hover-this cursor-pointer ml-10">
+                      <a
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover-anim"
+                        aria-label={`Otevřít profil na ${label}`}
+                      >
+                        <i className={icon} aria-hidden="true"></i>
                       </a>
                     </li>
                   );
@@ -109,7 +115,10 @@ function Intro({ memberData }) {
                       {skill.name} {skill.value}
                     </h5>
                     <div className="skill-progress">
-                      <div className="progres" data-value={skill.value}></div>
+                      <div
+                        className="progres"
+                        data-value={skill.value}
+                      ></div>
                     </div>
                   </div>
                 ))

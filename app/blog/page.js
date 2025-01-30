@@ -1,6 +1,7 @@
 import { getAllPosts } from '@/lib/posts';
 import ClientBlogList from '@/components/blog/ClientBlogList';
 
+export const dynamic = 'force-dynamic';
 export const metadata = {
   title: "Blog | TD Productions | Posouváme hranice digitální inovace",
   description: "Čtěte novinky a tipy ze světa digitálního marketingu, sociálních médií, tvorby webů a AI řešení od TD Productions.",

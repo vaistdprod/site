@@ -135,17 +135,29 @@ function ContactForm() {
               </div>
 
               <div className="social-icon mt-50">
-                <a href="https://facebook.com/tdprod.cz/">
-                  <i className="fab fa-facebook-f"></i>
+                <a 
+                  href="https://facebook.com/tdprod.cz/" 
+                  aria-label="Navštivte náš Facebook"
+                >
+                  <i className="fab fa-facebook-f" aria-hidden="true"></i>
                 </a>
-                <a href="https://x.com/tdprodcz/">
-                  <i className="fab fa-x-twitter"></i>
+                <a 
+                  href="https://x.com/tdprodcz/" 
+                  aria-label="Navštivte naše X"
+                >
+                  <i className="fab fa-x-twitter" aria-hidden="true"></i>
                 </a>
-                <a href="https://linkedin.com/in/tdprod.cz/">
-                  <i className="fab fa-linkedin"></i>
+                <a 
+                  href="https://linkedin.com/in/tdprod.cz/" 
+                  aria-label="Navštivte náš LinkedIn"
+                >
+                  <i className="fab fa-linkedin" aria-hidden="true"></i>
                 </a>
-                <a href="https://instagram.com/tdprod.cz/">
-                  <i className="fab fa-instagram"></i>
+                <a 
+                  href="https://instagram.com/tdprod.cz/" 
+                  aria-label="Navštivte náš Instagram"
+                >
+                  <i className="fab fa-instagram" aria-hidden="true"></i>
                 </a>
               </div>
             </div>

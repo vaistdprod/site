@@ -152,7 +152,7 @@ function Footer() {
                   <input
                     type="text"
                     name="subscribe"
-                    placeholder="váš email"
+                    placeholder="Váš email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />

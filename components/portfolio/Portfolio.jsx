@@ -97,9 +97,12 @@ function PortfolioGrid() {
                       </Link>
                     </div>
                     <div className="ml-auto">
-                      <Link href={`/portfolio/${item.id}`}>
-                        <span className="fas fa-arrow-right"></span>
-                      </Link>
+                    <Link 
+                      href={`/portfolio/${item.id}`} 
+                      aria-label={`Detail projektu: ${item.title}`}
+                    >
+                      <span className="fas fa-arrow-right"></span>
+                    </Link>
                     </div>
                   </div>
                 </div>

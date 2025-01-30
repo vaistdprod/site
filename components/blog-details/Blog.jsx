@@ -253,7 +253,13 @@ function Blog({ post, latestPosts }) {
                       placeholder="Hledat..."
                       required
                     />
-                    <button type="submit" className="icon fas fa-search"></button>
+                    <button 
+                      type="submit" 
+                      aria-label="Vyhledat" 
+                      className="icon"
+                    >
+                      <span className="fas fa-search" aria-hidden="true" />
+                    </button>
                   </form>
                 </div>
               </div>

@@ -1,8 +1,12 @@
+"use client";
+
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 
 function Blogs({ posts, tagCounts, uniqueTags }) {
+  const router = useRouter();
   return (
     <section className="blog-main section-padding">
       <div className="container">
@@ -65,7 +69,13 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
                       placeholder="Hledat..."
                       required
                     />
-                    <button type="submit" className="icon fas fa-search"></button>
+                    <button 
+                      type="submit" 
+                      aria-label="Vyhledat" 
+                      className="icon"
+                    >
+                      <span className="fas fa-search" aria-hidden="true" />
+                    </button>
                   </form>
                 </div>
               </div>
