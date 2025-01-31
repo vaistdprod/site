@@ -62,13 +62,16 @@ function Intro({ serviceData }) {
           </div>
 
           <div className="col-lg-4">
-            <div className="img-full fit-img">
+            <div
+              className="img-full fit-img"
+              style={{ position: "relative" }}
+            >
               <Image
                 src={serviceData.img}
                 alt={serviceData.title}
-                width={696}
-                height={696}
-              />
+                fill
+                style={{ objectFit: "cover" }}
+                />
             </div>
           </div>
         </div>

@@ -1,12 +1,11 @@
 'use client';
 
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
-import loadBackgroundImages from '@/common/loadBackgroundImages';
 import Image from 'next/image';
 import Link from 'next/link';
 
-function Intro({ title, author, date, comments, coverImage, tags }) {
+function Header({ title, author, date, comments, coverImage, tags }) {
   useLayoutEffect(() => {
     const tl = gsap.timeline();
     tl.fromTo('.header', { y: 200 }, { y: 0 }, '+=2');
@@ -18,10 +17,6 @@ function Intro({ title, author, date, comments, coverImage, tags }) {
     );
 
     return () => tl.kill();
-  }, []);
-
-  useEffect(() => {
-    loadBackgroundImages();
   }, []);
 
   return (
@@ -45,14 +40,18 @@ function Intro({ title, author, date, comments, coverImage, tags }) {
               <div className="left-info">
                 <div className="d-flex align-items-center">
                   <div className="author-info">
-                    <div className="d-flex align-items-center">
-                      <Link href={`/nas-tym/${encodeURIComponent(author.slug)}`} className="circle-60">
+                    <div
+                    className="d-flex align-items-center"
+                    style={{ position: 'relative' }}
+                    >
+                      <Link href={`/nas-tym/${encodeURIComponent(author.slug)}`} className="circle-60 d-inline-flex">
                         <Image
                           src={author.avatar}
                           alt={author.name}
                           className="circle-img"
-                          width={240}
-                          height={240}
+                          width={60}
+                          height={60}
+                          style={{ objectFit: 'cover', objectPosition: '50% 10%' }}
                         />
                       </Link>
                       <div className="ml-20">
@@ -84,13 +83,19 @@ function Intro({ title, author, date, comments, coverImage, tags }) {
         </div>
       </div>
       {coverImage && (
-        <div
-          className="background bg-img mt-80"
-          style={{ backgroundImage: `url(${coverImage})` }}
-        ></div>
+        <div 
+          className="background bg-img mt-80 position-re"
+        >
+          <Image
+            fill
+            src={coverImage}
+            alt={`Obrázek k článku: ${title}`}
+            style={{ objectFit: "cover" }}
+          />
+        </div>
       )}
     </div>
   );
 }
 
-export default Intro;
+export default Header;

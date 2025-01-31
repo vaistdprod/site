@@ -1,7 +1,6 @@
 'use client';
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
-import loadBackgroundImages from '@/common/loadBackgroundImages';
 import Image from 'next/image';
 import Link from "next/link";
 
@@ -19,12 +18,10 @@ function Header() {
     return () => tl.kill();
   }, []);
 
-  useEffect(() => {
-    loadBackgroundImages();
-  }, []);
-
   return (
-    <div className="header header-personal valign position-re overflow-hidden" data-overlay-dark="6">
+    <div 
+      className="header header-personal valign position-re overflow-hidden"
+      data-overlay-dark="6">
       <video
         className="position-absolute top-0 start-0 w-100 h-100"
         src="/assets/imgs/tdprod-promo.webm"

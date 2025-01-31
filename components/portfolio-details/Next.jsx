@@ -1,15 +1,10 @@
-// Next.jsx
 'use client';
 
-import loadBackgroundImages from '@/common/loadBackgroundImages';
-import React, { useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 function Next({ nextProject, prevProject }) {
-  useEffect(() => {
-    loadBackgroundImages();
-  }, []);
-
   return (
     <section className="next-project sub-bg">
       <div className="container-fluid rest">
@@ -17,10 +12,20 @@ function Next({ nextProject, prevProject }) {
           {prevProject && (
             <div className="col-md-6 rest">
               <div
-                className="text-left box bg-img"
-                data-background={prevProject.img}
+                className="text-left box"
+                style={{ position: 'relative', overflow: 'hidden' }}
               >
-                <div className="cont d-flex align-items-center">
+                <Image
+                  src={prevProject.img}
+                  alt=""
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  priority
+                />
+                <div
+                  className="cont d-flex align-items-center"
+                  style={{ position: 'relative', zIndex: 2 }}
+                >
                   <div>
                     <span className="mr-30 fz-30 fas fa-arrow-left"></span>
                   </div>
@@ -37,13 +42,24 @@ function Next({ nextProject, prevProject }) {
               </div>
             </div>
           )}
+
           {nextProject && (
             <div className="col-md-6 rest">
               <div
-                className="text-right d-flex box bg-img"
-                data-background={nextProject.img}
+                className="text-right d-flex box"
+                style={{ position: 'relative', overflow: 'hidden' }}
               >
-                <div className="ml-auto">
+                <Image
+                  src={nextProject.img}
+                  alt=""
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  priority
+                />
+                <div
+                  className="ml-auto"
+                  style={{ position: 'relative', zIndex: 2 }}
+                >
                   <div className="cont d-flex align-items-center">
                     <div>
                       <h6 className="sub-title fz-16 mb-5">Další projekt</h6>
@@ -64,6 +80,7 @@ function Next({ nextProject, prevProject }) {
           )}
         </div>
       </div>
+
       <div>
         <Link href="/portfolio" className="all-works-btn text-center">
           <span className="ti-view-grid fz-24 mb-10"></span>

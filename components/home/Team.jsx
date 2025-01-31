@@ -1,9 +1,9 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+"use client";
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 function Team({ members = [] }) {
-
   if (!Array.isArray(members)) {
     console.error("Byly očekávaní 'members' v řadě, namísto toho jsou zde:", members);
     return null;
@@ -67,12 +67,18 @@ function Team({ members = [] }) {
                         </Link>
                       )}
                       {member.phone && (
-                        <Link href={`tel:${member.phone.replace(/\s+/g, '')}`} aria-label={`${member.name} Phone`}>
+                        <Link
+                          href={`tel:${member.phone.replace(/\s+/g, "")}`}
+                          aria-label={`${member.name} Phone`}
+                        >
                           <i className="fas fa-phone"></i>
                         </Link>
                       )}
                       {member.email && (
-                        <Link href={`mailto:${member.email}`} aria-label={`${member.name} Email`}>
+                        <Link
+                          href={`mailto:${member.email}`}
+                          aria-label={`${member.name} Email`}
+                        >
                           <i className="fas fa-envelope"></i>
                         </Link>
                       )}
@@ -80,13 +86,16 @@ function Team({ members = [] }) {
                   </div>
                 </div>
 
-                <div className="img">
+                <div
+                  className="img"
+                  style={{ position: "relative" }}
+                >
                   <Link href={`/nas-tym/${member.slug}`}>
                     <Image
+                      fill
                       src={member.image}
                       alt={member.name}
-                      width={300}
-                      height={300}
+                      style={{ objectFit: "cover" }}
                     />
                   </Link>
                 </div>

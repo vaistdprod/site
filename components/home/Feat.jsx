@@ -1,13 +1,10 @@
 'use client';
-import loadBackgroundImages from '@/common/loadBackgroundImages';
-import React, { useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from "next/link";
 
 function Feat() {
-  useEffect(() => {
-    loadBackgroundImages();
-  }, []);
+
   return (
     <section className="feat section-padding">
       <div className="container ontop">
@@ -34,51 +31,75 @@ function Feat() {
               </Link>
             </div>
           </div>
+
           <div className="col-lg-6 offset-lg-1">
             <div className="item mb-30">
               <div className="row">
                 <div
-                  className="col-md-4 bg-img"
-                  data-background="/assets/imgs/fotoprodukce.jpg"
-                ></div>
+                  className="col-md-4"
+                  style={{ position: "relative" }}
+                >
+                  <Image
+                    fill
+                    src="/assets/imgs/fotoprodukce.jpg"
+                    alt="Dlouhodobé vztahy"
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
                 <div className="col-md-8">
                   <div className="info">
                     <h5 className="mb-15">Inovativní řešení</h5>
                     <p>
-                    Navrhneme pro vás řešení, které předbíhá svou dobu a které vás dostane do popředí vašeho oboru.
+                      Navrhneme pro vás řešení, které předbíhá svou dobu a které vás dostane do popředí vašeho oboru.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
+
             <div className="item mb-30">
               <div className="row">
                 <div
-                  className="col-md-4 bg-img"
-                  data-background="/assets/imgs/sebastian-2.jpg"
-                ></div>
+                  className="col-md-4"
+                  style={{ position: "relative" }}
+                >
+                  <Image
+                    fill
+                    src="/assets/imgs/sebastian-2.jpg"
+                    alt="Dlouhodobé vztahy"
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
                 <div className="col-md-8">
                   <div className="info">
                     <h5 className="mb-15">Profesionální přístup</h5>
                     <p>
-                    Inovace má u nás sice své důležité místo, ale nikdy ne na úkor profesionality a dobré morálky.
+                      Inovace má u nás sice své důležité místo, ale nikdy ne na úkor profesionality a dobré morálky.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
+
             <div className="item">
               <div className="row">
                 <div
-                  className="col-md-4 bg-img"
-                  data-background="/assets/imgs/klient.jpg"
-                ></div>
+                  className="col-md-4"
+                  style={{ position: "relative" }}
+                >
+                  <Image
+                    fill
+                    src="/assets/imgs/schuzka-2.jpg"
+                    alt="Dlouhodobé vztahy"
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
                 <div className="col-md-8">
                   <div className="info">
                     <h5 className="mb-15">Dlouhodobé vztahy</h5>
                     <p>
-                    Zaměřujeme se na utváření silných a dlouhodobých vztahů s našimi klienty.
-                    Naší ambicí je zajistit, aby každá vaše interakce s námi posunula vaše podnikání vpřed.
+                      Zaměřujeme se na utváření silných a dlouhodobých vztahů s našimi klienty.
+                      Naší ambicí je zajistit, aby každá vaše interakce s námi posunula vaše podnikání vpřed.
                     </p>
                   </div>
                 </div>
@@ -87,13 +108,14 @@ function Feat() {
           </div>
         </div>
       </div>
+
       <div className="circle-blur">
         <Image
-            src="/assets/imgs/patterns/blur1.png"
-            alt="Efekt rozmazání"
-            width={692}
-            height={537}
-          />
+          src="/assets/imgs/patterns/blur1.png"
+          alt="Efekt rozmazání"
+          width={692}
+          height={537}
+        />
       </div>
     </section>
   );

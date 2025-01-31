@@ -6,7 +6,7 @@ import Cursor from '@/components/common/Cursor';
 import LoadingScreen from '@/components/common/LoadingScreen';
 import Footer from '@/components/common/Footer';
 import Navbar from '@/components/common/Navbar';
-import Intro from '@/components/blog-details/Intro';
+import Header from '@/components/blog-details/Header';
 import Blog from '@/components/blog-details/Blog';
 
 export default function ClientBlogPostPage({ post, latestPosts }) {
@@ -20,7 +20,7 @@ export default function ClientBlogPostPage({ post, latestPosts }) {
         <Navbar />
         <div id="smooth-content">
           <main className="main-bg">
-            <Intro
+            <Header
               title={post.title}
               author={post.author}
               date={post.date}

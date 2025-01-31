@@ -1,36 +1,36 @@
-'use client';
-import React, { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import portfolioData from '@/data/portfolioData.json';
-import { Navigation, Pagination } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+"use client";
+import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import portfolioData from "@/data/portfolioData.json";
+import { Navigation, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 function Portfolio() {
   const { portfolio } = portfolioData;
   const { items, showcaseIds } = portfolio;
 
-  const swiperItems = showcaseIds.map(id => items.find(obj => obj.id === id));
+  const swiperItems = showcaseIds.map((id) => items.find((obj) => obj.id === id));
 
   const [realIndex, setRealIndex] = useState(0);
 
   const swiperOptions = {
     modules: [Pagination, Navigation],
-    slidesPerView: 'auto',
+    slidesPerView: "auto",
     spaceBetween: 80,
     loop: true,
     touchRatio: 0.2,
     speed: 1500,
     pagination: {
-      el: '.work-crev .swiper-pagination',
-      type: 'progressbar',
+      el: ".work-crev .swiper-pagination",
+      type: "progressbar",
     },
     navigation: {
-      nextEl: '.work-crev .swiper-button-next',
-      prevEl: '.work-crev .swiper-button-prev',
+      nextEl: ".work-crev .swiper-button-next",
+      prevEl: ".work-crev .swiper-button-prev",
     },
     onSlideChange: (swiper) => setRealIndex(swiper.realIndex),
   };
@@ -72,18 +72,12 @@ function Portfolio() {
                   tabIndex={isActive ? 0 : -1}
                   aria-hidden={!isActive}
                 >
-                  <div className="item d-flex">
+                  <div className="item d-flex justify-content-between">
                     <div className="cont col-lg-6">
                       <Link href={`/portfolio/${item.id}`}>
-                        <h6 className="sub-title main-color mb-15">
-                          {item.category}
-                        </h6>
-                        <h2 className="mb-5">
-                          {item.title}
-                        </h2>
-                        <h3>
-                          {item.subTitle}
-                        </h3>
+                        <h6 className="sub-title main-color mb-15">{item.category}</h6>
+                        <h2 className="mb-5">{item.title}</h2>
+                        <h3>{item.subTitle}</h3>
                       </Link>
                       <Link
                         href={`/portfolio/${item.id}`}
@@ -97,14 +91,17 @@ function Portfolio() {
                         <span className="text">Zobrazit detail</span>
                       </Link>
                     </div>
-                    <div className="img col-lg-6">
+                    <div
+                      className="img col-lg-6"
+                      style={{ position: "relative" }}
+                    >
                       <Link href={`/portfolio/${item.id}`}>
                         <Image
+                          fill
                           src={item.img}
                           alt={item.alt}
-                          width={1154}
-                          height={607}
                           className="radius-15"
+                          style={{ objectFit: "cover" }}
                         />
                       </Link>
                     </div>

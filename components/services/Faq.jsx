@@ -19,12 +19,15 @@ export default function Faq() {
       <div className="container ontop">
         <div className="row xlg-marg">
           <div className="col-lg-6">
-            <div className="img md-mb50 full-height">
+            <div
+              className="img md-mb50 full-height"
+              style={{ position: "relative" }}
+            >
               <Image
                 src="/assets/imgs/fotoprodukce.jpg"
                 alt="Fotoprodukce"
-                width={1200}
-                height={1200}
+                fill
+                style={{ objectFit: "cover" }}
                 className="circle-img"
               />
             </div>

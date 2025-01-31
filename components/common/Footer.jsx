@@ -217,7 +217,7 @@ function Footer() {
 
         <div className="pt-30 pb-30 mt-80 bord-thin-top">
           <div className="text-center">
-            <p className="fz-14">© 2025 Top Dog Enterprises s.r.o.</p>
+            <p className="fz-14">© 2025 Top Dog Enterprises, s.r.o.</p>
           </div>
         </div>
       </div>

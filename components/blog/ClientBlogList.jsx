@@ -1,6 +1,6 @@
 'use client';
 
-import Intro from '@/components/blog/Intro';
+import Header from '@/components/blog/Header';
 import Blogs from '@/components/blog/Blogs';
 import Navbar from '@/components/common/Navbar';
 import Footer from '@/components/common/Footer';
@@ -32,7 +32,7 @@ export default function ClientBlogList({ allPosts, tag, searchQuery }) {
         <Navbar />
         <div id="smooth-content">
           <main className="main-bg">
-            <Intro />
+            <Header />
             {allPosts.length > 0 ? (
               <Blogs
                 posts={allPosts}

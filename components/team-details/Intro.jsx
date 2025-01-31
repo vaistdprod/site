@@ -44,13 +44,16 @@ function Intro({ memberData }) {
       <div className="container">
         <div className="row md-marg justify-content-around bord">
           <div className="col-lg-5">
-            <div className="img md-mb50">
+            <div
+              className="img md-mb50"
+              style={{ position: "relative" }}
+            >
               <Image
                 src={memberData.image}
                 alt={memberData.name}
-                width={500}
-                height={500}
-              />
+                fill
+                style={{ objectFit: "cover" }}
+                />
             </div>
           </div>
           <div className="col-lg-6 valign">

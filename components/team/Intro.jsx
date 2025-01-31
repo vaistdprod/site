@@ -4,19 +4,22 @@ import Link from 'next/link';
 
 function Intro() {
   return (
-    <section className="page-intro section-padding pb-0">
+    <section className="page-intro section-padding">
       <div className="container">
         <div className="row md-marg">
-          <div className="col-lg-6 valign">
+          <div className="col-lg-6 d-flex">
             <div className="img md-mb80">
-              <div className="row">
-                <div className="col-12">
+              <div className="row col-12">
+                <div
+                  className=""
+                  style={{ position: "relative", height: "400px" }}
+                >
                   <Image
                     src="/assets/imgs/klient.jpg"
                     alt="Jednatel společnosti TD Productions, Matěj Vais, si podává ruku s klientem."
-                    width={617}
-                    height={347}
-                  />
+                    fill
+                    style={{ objectFit: "cover", objectPosition: "55% 50%" }}
+                    />
                   <div className="img-icon">
                     <Image
                       src="/assets/imgs/logo-light-stroke.svg"

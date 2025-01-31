@@ -1,7 +1,7 @@
 "use client";
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useLayoutEffect } from "react";
 import { gsap } from "gsap";
-import loadBackgroundImages from "@/common/loadBackgroundImages";
+import Image from "next/image";
 
 function Header({ serviceData }) {
   useLayoutEffect(() => {
@@ -16,16 +16,19 @@ function Header({ serviceData }) {
     return () => tl.kill();
   }, []);
 
-  useEffect(() => {
-    loadBackgroundImages();
-  }, []);
-
   return (
     <div
-      className="header page-header bg-img section-padding valign"
-      data-background="/assets/imgs/bg4.webp"
+      className="header page-header section-padding valign position-re"
       data-overlay-dark="3"
     >
+      <Image
+        src="/assets/imgs/bg4.webp"
+        alt=""
+        fill
+        style={{ objectFit: "cover" }}
+        priority
+      />
+
       <div className="container pt-80">
         <div className="row">
           <div className="col-12">

@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
-import loadBackgroundImages from '@/common/loadBackgroundImages';
+import Image from 'next/image';
 
 function Header({ data }) {
   useLayoutEffect(() => {
@@ -18,16 +18,19 @@ function Header({ data }) {
     return () => tl.kill();
   }, []);
 
-  useEffect(() => {
-    loadBackgroundImages();
-  }, []);
-
   return (
     <div
-      className="header header-project bg-img d-flex align-items-end"
-      data-background={data.images[0]}
-      data-overlay-dark="9"
+      className="header header-project d-flex align-items-end position-re"
+      data-overlay-dark="3"
     >
+      <Image
+        src={data.images[0]}
+        alt=""
+        fill
+        style={{ objectFit: 'cover' }}
+        priority
+      />
+
       <div className="container">
         <div className="row">
           <div className="col-12">

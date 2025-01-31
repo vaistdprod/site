@@ -3,10 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 function Blog({ posts = [] }) {
-  // If no posts, bail
   if (!posts.length) return null;
 
-  // Show however many you want — here, two
   const topPosts = posts.slice(0, 2);
 
   return (
@@ -35,13 +33,16 @@ function Blog({ posts = [] }) {
           {topPosts.map((post, idx) => (
             <div key={post.slug} className={`col-lg-6 ${idx === 0 ? 'md-mb50' : ''}`}>
               <div className="item">
-                <div className="img fit-img">
+                <div
+                  className="img fit-img"
+                  style={{ position: 'relative' }}
+                >
                   <Image
+                    fill
                     src={post.coverImage}
                     alt={post.title}
-                    width={800}
-                    height={500}
                     className="img-fluid"
+                    style={{ objectFit: 'cover' }}
                   />
                 </div>
                 <div className="cont pt-40">

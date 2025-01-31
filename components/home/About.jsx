@@ -8,12 +8,15 @@ function About() {
         <div className="row lg-marg">
           <div className="col-lg-5 valign">
             <div className="profile-img">
-              <div className="img">
+              <div
+                className="img"
+                style={{ position: "relative" }}
+              >
                 <Image
-                  src="/assets/imgs/ostrava.webp"
+                  fill
+                  src="/assets/imgs/ostrava.jpg"
                   alt="Centrum Ostravy, nedaleko ulice 28. října, na které sídlí společnost TD Productions."
-                  width={649}
-                  height={960}
+                  style={{ objectFit: "cover" }}
                 />
               </div>
               <span className="icon">

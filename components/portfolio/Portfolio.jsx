@@ -76,19 +76,22 @@ function PortfolioGrid() {
                 className={`col-lg-4 col-md-6 items ${className}`}
               >
                 <div className="item mb-50">
-                  <div className="img">
-                  <Link href={`/portfolio/${item.id}`}>
+                  <div
+                    className="img"
+                    style={{ position: 'relative', height: '300px' }}
+                  >
+                    <Link href={`/portfolio/${item.id}`}>
                       <Image
+                        fill
                         src={item.img}
                         alt={item.alt}
-                        width={2880}
-                        height={2160}
-                        style={{ width: '100%', height: 'auto' }}
+                        className="img-fluid"
+                        style={{ objectFit: 'cover' }}
                       />
                     </Link>
                   </div>
                   <div className="cont d-flex align-items-end mt-30">
-                    <div>
+                    <div className="">
                       <span className="p-color mb-5 sub-title full-width">
                         {item.subTitle}
                       </span>
@@ -99,7 +102,7 @@ function PortfolioGrid() {
                     <div className="ml-auto">
                     <Link 
                       href={`/portfolio/${item.id}`} 
-                      aria-label={`Detail projektu: ${item.title}`}
+                      aria-label={`Detail projektu "${item.title}"`}
                     >
                       <span className="fas fa-arrow-right"></span>
                     </Link>

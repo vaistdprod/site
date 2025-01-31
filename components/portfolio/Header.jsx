@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
-import loadBackgroundImages from '@/common/loadBackgroundImages';
+import Image from 'next/image';
 
 function Header() {
   useLayoutEffect(() => {
@@ -15,23 +15,22 @@ function Header() {
         { opacity: 1, translateY: 0 },
         '-=0'
       );
-
       return () => tl.kill();
-    }
-  }, []);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      loadBackgroundImages();
     }
   }, []);
 
   return (
     <div
-      className="page-header bg-img section-padding valign header"
-      data-background="/assets/imgs/bg3.webp"
+      className="page-header section-padding valign header position-re"
       data-overlay-dark="4"
     >
+      <Image
+        src="/assets/imgs/bg3.webp"
+        alt=""
+        fill
+        style={{ objectFit: 'cover' }}
+        priority
+      />
       <div className="container pt-80">
         <div className="row">
           <div className="col-12">

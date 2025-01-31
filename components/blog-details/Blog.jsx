@@ -74,12 +74,15 @@ function Blog({ post, latestPosts }) {
               <div className="item pb-60">
                 <article>
                   {post.coverImage && (
-                    <div className="img mb-30">
+                    <div
+                      className="img mb-30"
+                      style={{ position: "relative" }}
+                    >
                       <Image
                         src={post.coverImage}
                         alt={post.title}
-                        width={800}
-                        height={500}
+                        fill
+                        style={{ objectFit: "cover" }}
                         className="img-fluid"
                       />
                     </div>
@@ -152,13 +155,16 @@ function Blog({ post, latestPosts }) {
                 <div className="author-area mt-50 bord-thin-bottom">
                   <div className="flex">
                     <div className="author-img mr-30">
-                      <div className="img">
+                      <div
+                        className="img"
+                        style={{ position: "relative" }}
+                      >
                         <Image
                           src={post.author.avatar}
                           alt={post.author.name}
+                          fill
+                          style={{ objectFit: "cover" }}
                           className="circle-img"
-                          width={240}
-                          height={240}
                         />
                       </div>
                     </div>
@@ -287,13 +293,16 @@ function Blog({ post, latestPosts }) {
                 {latestPosts.map((latestPost) => (
                   <div key={latestPost.slug} className="item d-flex align-items-center">
                     <div>
-                      <div className="img">
+                      <div
+                        className="img"
+                        style={{ position: "relative" }}
+                      >
                         <Link href={`/blog/${latestPost.slug}`}>
                           <Image
                             src={latestPost.coverImage}
                             alt={latestPost.title}
-                            width={240}
-                            height={240}
+                            fill
+                            style={{ objectFit: "cover" }}
                             className="img-fluid"
                           />
                           <span className="date">
