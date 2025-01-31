@@ -156,8 +156,8 @@ function Footer() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
-                  <button type="submit">
-                    <span className="fa fa-send-o"></span>
+                  <button type="submit" aria-label="Přihlásit se k odběru">
+                    <span className="fa fa-send-o" aria-hidden="true"></span>
                   </button>
                   <div className="agree-form mt-20">
                     <input

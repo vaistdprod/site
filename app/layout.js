@@ -3,6 +3,13 @@ import ClientScripts from "./client-scripts";
 import GTMRouteListener from "./gtm-route-listener"
 import { Suspense } from 'react'
 import Script from "next/script";
+import { Plus_Jakarta_Sans } from "next/font/google";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata = {
   title: "TD Productions | Posouváme hranice digitální inovace",
@@ -16,7 +23,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="cs">
+    <html lang="cs" className={plusJakartaSans.className}>
       <head>
         <Script
           id="google-tag-manager"

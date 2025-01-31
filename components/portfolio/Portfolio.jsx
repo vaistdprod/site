@@ -80,7 +80,10 @@ function PortfolioGrid() {
                     className="img"
                     style={{ position: 'relative', height: '300px' }}
                   >
-                    <Link href={`/portfolio/${item.id}`}>
+                    <Link
+                      href={`/portfolio/${item.id}`}
+                      style={{ position: 'relative', height: '100%', width: '100%' }}
+                    >
                       <Image
                         fill
                         src={item.img}
