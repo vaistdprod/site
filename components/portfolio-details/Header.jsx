@@ -21,7 +21,7 @@ function Header({ data }) {
   return (
     <div
       className="header header-project d-flex align-items-end position-re"
-      data-overlay-dark="3"
+      data-overlay-dark="5"
     >
       <Image
         src={data.images[0]}

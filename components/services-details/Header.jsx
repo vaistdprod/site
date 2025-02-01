@@ -19,10 +19,10 @@ function Header({ serviceData }) {
   return (
     <div
       className="header page-header section-padding valign position-re"
-      data-overlay-dark="3"
+      data-overlay-dark="5"
     >
       <Image
-        src="/assets/imgs/bg4.webp"
+        src="/assets/imgs/bg/bg30.jpg"
         alt=""
         fill
         style={{ objectFit: "cover" }}

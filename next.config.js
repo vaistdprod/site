@@ -10,15 +10,10 @@ const contentSecurityPolicy = `
     blob:
     https://*.google.com 
     https://*.google.cz
-    https://*.googleadservices.com
-    https://*.googletagmanager.com 
-    https://*.google-analytics.com 
-    https://*.analytics.google.com 
-    https://*.doubleclick.net 
     https://*.googleapis.com 
     https://*.gstatic.com
+    https://va.vercel-scripts.com
     https://kit.fontawesome.com
-    https://ct.leady.com
     https://ka-f.fontawesome.com;
   
   style-src 
@@ -40,25 +35,19 @@ const contentSecurityPolicy = `
     https://ka-f.fontawesome.com;
 
   connect-src 
-    'self' 
+    'self'
+    data:
     https://*.google.com
     https://*.google.cz
-    https://*.googleadservices.com
-    https://*.googletagmanager.com
-    https://*.google-analytics.com
-    https://*.analytics.google.com
-    https://*.doubleclick.net
     https://*.googleapis.com
     https://*.gstatic.com
+    https://va.vercel-scripts.com
     https://kit.fontawesome.com
-    https://ct.leady.com
     https://ka-f.fontawesome.com;
 
   frame-src 
     'self'
-    https://*.google.com
-    https://*.googletagmanager.com
-    https://*.doubleclick.net;
+    https://*.google.com;
 
   worker-src 
     'self'
@@ -103,7 +92,7 @@ const securityHeaders = [
   },
   {
     key: 'Permissions-Policy',
-    value: 'camera=(), microphone=()',
+    value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()'
   },
   {
     key: 'Cross-Origin-Opener-Policy',
@@ -113,6 +102,18 @@ const securityHeaders = [
     key: 'Cross-Origin-Resource-Policy',
     value: 'same-origin',
   },
+  {
+    key: 'Access-Control-Allow-Origin',
+    value: '*',
+  },
+  {
+    key: 'Access-Control-Allow-Methods',
+    value: 'GET, POST, PUT, DELETE, OPTIONS',
+  },
+  {
+    key: 'Access-Control-Allow-Headers',
+    value: 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+  }
 ];
 
 const nextConfig = {

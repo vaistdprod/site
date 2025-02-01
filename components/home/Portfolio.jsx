@@ -95,7 +95,10 @@ function Portfolio() {
                       className="img col-lg-6"
                       style={{ position: "relative" }}
                     >
-                      <Link href={`/portfolio/${item.id}`}>
+                      <Link
+                        href={`/portfolio/${item.id}`}
+                        style={{ position: 'relative', height: '100%', width: '100%' }}
+                      >
                         <Image
                           fill
                           src={item.img}

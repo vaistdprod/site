@@ -22,10 +22,10 @@ function Header() {
   return (
     <div
       className="page-header section-padding valign header position-re"
-      data-overlay-dark="4"
+      data-overlay-dark="5"
     >
       <Image
-        src="/assets/imgs/bg3.webp"
+        src="/assets/imgs/bg/bg24.jpg"
         alt=""
         fill
         style={{ objectFit: 'cover' }}
