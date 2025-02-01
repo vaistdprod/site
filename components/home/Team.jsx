@@ -1,7 +1,10 @@
-"use client";
+'use client';
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faInstagram, faFacebookF } from "@fortawesome/free-brands-svg-icons";
 
 function Team({ members = [] }) {
   if (!Array.isArray(members)) {
@@ -23,7 +26,7 @@ function Team({ members = [] }) {
               <Link href="/nas-tym" className="btn btn-sm btn-bord radius-30">
                 <span>O nás</span>
               </Link>
-              <span className="icon fas fa-arrow-right"></span>
+              <FontAwesomeIcon icon={faArrowRight} className="icon" />
             </div>
           </div>
           <h6 className="sub-title main-color d-flex align-items-center">
@@ -53,7 +56,7 @@ function Team({ members = [] }) {
                           rel="noopener noreferrer"
                           aria-label={`${member.name} Instagram`}
                         >
-                          <i className="fab fa-instagram"></i>
+                          <FontAwesomeIcon icon={faInstagram} />
                         </Link>
                       )}
                       {member.facebook && (
@@ -63,7 +66,7 @@ function Team({ members = [] }) {
                           rel="noopener noreferrer"
                           aria-label={`${member.name} Facebook`}
                         >
-                          <i className="fab fa-facebook-f"></i>
+                          <FontAwesomeIcon icon={faFacebookF} />
                         </Link>
                       )}
                       {member.phone && (
@@ -71,7 +74,7 @@ function Team({ members = [] }) {
                           href={`tel:${member.phone.replace(/\s+/g, "")}`}
                           aria-label={`${member.name} Phone`}
                         >
-                          <i className="fas fa-phone"></i>
+                          <FontAwesomeIcon icon={faPhone} />
                         </Link>
                       )}
                       {member.email && (
@@ -79,23 +82,21 @@ function Team({ members = [] }) {
                           href={`mailto:${member.email}`}
                           aria-label={`${member.name} Email`}
                         >
-                          <i className="fas fa-envelope"></i>
+                          <FontAwesomeIcon icon={faEnvelope} />
                         </Link>
                       )}
                     </div>
                   </div>
                 </div>
 
-                <div
-                  className="img"
-                  style={{ position: "relative" }}
-                >
-                  <Link href={`/nas-tym/${member.slug}`}>
+                <div className="img" style={{ position: "relative" }}>
+                  <Link href={`/nas-tym/${member.slug}`} style={{ position: "relative", height: "100%", width: "100%" }}>
                     <Image
                       fill
                       src={member.image}
                       alt={member.name}
                       style={{ objectFit: "cover" }}
+                      sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 25vw"
                     />
                   </Link>
                 </div>

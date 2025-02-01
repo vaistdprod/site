@@ -71,7 +71,8 @@ function Intro({ serviceData }) {
                 alt={serviceData.title}
                 fill
                 style={{ objectFit: "cover" }}
-                />
+                sizes="(max-width: 991px) 100vw, 33vw"
+              />
             </div>
           </div>
         </div>

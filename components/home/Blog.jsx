@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 function Blog({ posts = [] }) {
   if (!posts.length) return null;
@@ -21,7 +23,7 @@ function Blog({ posts = [] }) {
               <Link href="/blog" className="btn btn-sm btn-bord radius-30">
                 <span>Zobrazit vše</span>
               </Link>
-              <span className="icon fas fa-arrow-right"></span>
+              <FontAwesomeIcon icon={faArrowRight} className="icon" />
             </div>
           </div>
           <h6 className="sub-title main-color d-flex align-items-center">
@@ -33,16 +35,14 @@ function Blog({ posts = [] }) {
           {topPosts.map((post, idx) => (
             <div key={post.slug} className={`col-lg-6 ${idx === 0 ? 'md-mb50' : ''}`}>
               <div className="item">
-                <div
-                  className="img fit-img"
-                  style={{ position: 'relative' }}
-                >
+                <div className="img fit-img" style={{ position: 'relative' }}>
                   <Image
                     fill
                     src={post.coverImage}
                     alt={post.title}
                     className="img-fluid"
                     style={{ objectFit: 'cover' }}
+                    sizes="(max-width: 991px) 100vw, 50vw"
                   />
                 </div>
                 <div className="cont pt-40">
@@ -55,13 +55,10 @@ function Blog({ posts = [] }) {
                     </div>
                   </div>
                   <h4>{post.title}</h4>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="btn-crev d-flex align-items-center mt-40"
-                  >
+                  <Link href={`/blog/${post.slug}`} className="btn-crev d-flex align-items-center mt-40">
                     <span className="hover-this">
                       <span className="circle hover-anim">
-                        <i className="fas fa-arrow-right"></i>
+                        <FontAwesomeIcon icon={faArrowRight} />
                       </span>
                     </span>
                     <span className="text">Přečíst</span>

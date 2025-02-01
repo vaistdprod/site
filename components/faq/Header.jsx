@@ -27,7 +27,6 @@ function Header() {
         alt=""
         fill
         style={{ objectFit: 'cover' }}
-        priority
       />
       <div className="container pt-80">
         <div className="row">

@@ -82,7 +82,6 @@ function Header() {
           </div>
         </div>
 
-        {/* Contact Info */}
         <div className="info d-flex align-items-center justify-content-end mt-100">
           <div className="item">
             <h6 className="sub-title mb-10">Email:</h6>

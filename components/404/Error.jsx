@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from "next/link";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 
 function Error() {
   const marquess = ['Stránka nenalezena'];
@@ -11,10 +13,7 @@ function Error() {
         <div className="text-center">
           <h1>404</h1>
           <p>Stránka, kterou hledáte, byla přesunuta, přejmenována nebo neexistuje.</p>
-          <Link
-            href="/"
-            className="btn btn-md btn-bg main-colorbg radius-30 mt-30"
-          >
+          <Link href="/" className="btn btn-md btn-bg main-colorbg radius-30 mt-30">
             <span className="text">Zpět domů</span>
           </Link>
         </div>
@@ -28,7 +27,7 @@ function Error() {
                   <h4 className="d-flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
-                      <i className="fas fa-exclamation-triangle"></i>
+                      <FontAwesomeIcon icon={faExclamationTriangle} />
                     </span>
                   </h4>
                 </div>
@@ -40,7 +39,7 @@ function Error() {
                   <h4 className="d-flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
-                      <i className="fas fa-exclamation-triangle"></i>
+                      <FontAwesomeIcon icon={faExclamationTriangle} />
                     </span>
                   </h4>
                 </div>
@@ -58,7 +57,7 @@ function Error() {
                   <h4 className="d-flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
-                      <i className="fas fa-exclamation-triangle"></i>
+                      <FontAwesomeIcon icon={faExclamationTriangle} />
                     </span>
                   </h4>
                 </div>
@@ -70,7 +69,7 @@ function Error() {
                   <h4 className="d-flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
-                      <i className="fas fa-exclamation-triangle"></i>
+                      <FontAwesomeIcon icon={faExclamationTriangle} />
                     </span>
                   </h4>
                 </div>
@@ -88,7 +87,7 @@ function Error() {
                   <h4 className="d-flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
-                      <i className="fas fa-exclamation-triangle"></i>
+                      <FontAwesomeIcon icon={faExclamationTriangle} />
                     </span>
                   </h4>
                 </div>
@@ -100,7 +99,7 @@ function Error() {
                   <h4 className="d-flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
-                      <i className="fas fa-exclamation-triangle"></i>
+                      <FontAwesomeIcon icon={faExclamationTriangle} />
                     </span>
                   </h4>
                 </div>
@@ -118,7 +117,7 @@ function Error() {
                   <h4 className="d-flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
-                      <i className="fas fa-exclamation-triangle"></i>
+                      <FontAwesomeIcon icon={faExclamationTriangle} />
                     </span>
                   </h4>
                 </div>
@@ -130,7 +129,7 @@ function Error() {
                   <h4 className="d-flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
-                      <i className="fas fa-exclamation-triangle"></i>
+                      <FontAwesomeIcon icon={faExclamationTriangle} />
                     </span>
                   </h4>
                 </div>

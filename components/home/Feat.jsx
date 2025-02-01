@@ -1,10 +1,11 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import Link from "next/link";
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 function Feat() {
-
   return (
     <section className="feat section-padding">
       <div className="container ontop">
@@ -18,33 +19,27 @@ function Feat() {
               <p>
                 Podání ruky je pro nás stejně svaté jako ta nejlépe sepsaná smlouva. Pokud se na něčem domluvíme, bereme to jako absolutní povinnost splnit naši část dohody.
               </p>
-              <Link
-                href="/nas-tym"
-                className="btn-crev d-flex align-items-center mt-40"
-              >
+              <Link href="/nas-tym" className="btn-crev d-flex align-items-center mt-40">
                 <span className="hover-this">
                   <span className="circle hover-anim">
-                    <i className="fas fa-arrow-right"></i>
+                    <FontAwesomeIcon icon={faArrowRight} />
                   </span>
                 </span>
                 <span className="text">Více o nás</span>
               </Link>
             </div>
           </div>
-
           <div className="col-lg-6 offset-lg-1">
             <div className="item mb-30">
               <div className="row">
-                <div
-                  className="col-md-4"
-                  style={{ position: "relative" }}
-                >
+                <div className="col-md-4" style={{ position: 'relative' }}>
                   <Image
                     fill
                     src="/assets/imgs/fotoprodukce.jpg"
                     alt="Dlouhodobé vztahy"
-                    style={{ objectFit: "cover" }}
-                  />
+                    style={{ objectFit: 'cover' }}
+                    sizes="(max-width: 767px) 100vw, (max-width: 991px) 33vw, 16vw"
+                    />
                 </div>
                 <div className="col-md-8">
                   <div className="info">
@@ -56,18 +51,15 @@ function Feat() {
                 </div>
               </div>
             </div>
-
             <div className="item mb-30">
               <div className="row">
-                <div
-                  className="col-md-4"
-                  style={{ position: "relative" }}
-                >
+                <div className="col-md-4" style={{ position: 'relative' }}>
                   <Image
                     fill
                     src="/assets/imgs/sebastian-2.jpg"
                     alt="Dlouhodobé vztahy"
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: 'cover' }}
+                    sizes="(max-width: 767px) 100vw, (max-width: 991px) 33vw, 16vw"
                   />
                 </div>
                 <div className="col-md-8">
@@ -80,18 +72,15 @@ function Feat() {
                 </div>
               </div>
             </div>
-
             <div className="item">
               <div className="row">
-                <div
-                  className="col-md-4"
-                  style={{ position: "relative" }}
-                >
+                <div className="col-md-4" style={{ position: 'relative' }}>
                   <Image
                     fill
                     src="/assets/imgs/schuzka-2.jpg"
                     alt="Dlouhodobé vztahy"
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: 'cover' }}
+                    sizes="(max-width: 767px) 100vw, (max-width: 991px) 33vw, 16vw"
                   />
                 </div>
                 <div className="col-md-8">
@@ -108,7 +97,6 @@ function Feat() {
           </div>
         </div>
       </div>
-
       <div className="circle-blur">
         <Image
           src="/assets/imgs/patterns/blur1.png"

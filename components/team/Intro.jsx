@@ -1,6 +1,9 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+'use client';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 function Intro() {
   return (
@@ -11,7 +14,6 @@ function Intro() {
             <div className="img md-mb80">
               <div className="row col-12">
                 <div
-                  className=""
                   style={{ position: "relative", height: "400px" }}
                 >
                   <Image
@@ -19,7 +21,8 @@ function Intro() {
                     alt="Jednatel společnosti TD Productions, Matěj Vais, si podává ruku s klientem."
                     fill
                     style={{ objectFit: "cover", objectPosition: "55% 50%" }}
-                    />
+                    sizes="(max-width: 991px) 100vw, 50vw"
+                  />
                   <div className="img-icon">
                     <Image
                       src="/assets/imgs/logo-light-stroke.svg"
@@ -45,7 +48,7 @@ function Intro() {
               </p>
               <Link href="/nase-sluzby" className="underline main-color mt-40">
                 <span className="text">
-                  Naše služby <i className="fas fa-arrow-right"></i>
+                  Naše služby <FontAwesomeIcon icon={faArrowRight} />
                 </span>
               </Link>
             </div>

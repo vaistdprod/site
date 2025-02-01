@@ -3,12 +3,13 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import RollingText from '@/common/rolling';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
   function handleScroll() {
     const bodyScroll = window.scrollY;
     const navbar = document.querySelector('.navbar');
-
     if (bodyScroll > 300) navbar.classList.add('nav-scroll');
     else navbar.classList.remove('nav-scroll');
   }
@@ -47,7 +48,6 @@ function Navbar() {
             className="logo-image"
           />
         </Link>
-
         <button
           className="navbar-toggler"
           type="button"
@@ -59,10 +59,9 @@ function Navbar() {
           onClick={handleToggleNav}
         >
           <span className="icon-bar">
-            <i className="fas fa-bars"></i>
+            <FontAwesomeIcon icon={faBars} />
           </span>
         </button>
-
         <div
           className="collapse navbar-collapse justify-content-center"
           id="navbarSupportedContent"
@@ -90,34 +89,22 @@ function Navbar() {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    className="dropdown-item"
-                    href="/nase-sluzby/webove-stranky"
-                  >
+                  <Link className="dropdown-item" href="/nase-sluzby/webove-stranky">
                     Webové stránky
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    className="dropdown-item"
-                    href="/nase-sluzby/webove-aplikace"
-                  >
+                  <Link className="dropdown-item" href="/nase-sluzby/webove-aplikace">
                     Webové aplikace
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    className="dropdown-item"
-                    href="/nase-sluzby/digitalni-marketing"
-                  >
+                  <Link className="dropdown-item" href="/nase-sluzby/digitalni-marketing">
                     Digitální marketing
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    className="dropdown-item"
-                    href="/nase-sluzby/implementace-ai"
-                  >
+                  <Link className="dropdown-item" href="/nase-sluzby/implementace-ai">
                     Implementace AI
                   </Link>
                 </li>
@@ -133,7 +120,6 @@ function Navbar() {
                 </li>
               </ul>
             </li>
-
             <li
               onMouseLeave={handleDropdownMouseLeave}
               onMouseMove={handleDropdownMouseMove}
@@ -158,19 +144,16 @@ function Navbar() {
                 </Link>
               </div>
             </li>
-
             <li className="nav-item">
-            <a className="nav-link" href="/portfolio">
-            <RollingText text="Portfolio" />
+              <a className="nav-link" href="/portfolio">
+                <RollingText text="Portfolio" />
               </a>
             </li>
-
             <li className="nav-item">
               <Link className="nav-link" href="/blog">
                 <RollingText text="Blog" />
               </Link>
             </li>
-
             <li className="nav-item">
               <Link className="nav-link" href="/kontakty">
                 <RollingText text="Kontakty" />
@@ -178,7 +161,6 @@ function Navbar() {
             </li>
           </ul>
         </div>
-
         <div className="contact-button">
           <Link
             href="/kontakty"

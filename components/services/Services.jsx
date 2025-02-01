@@ -1,5 +1,8 @@
+'use client';
 import React from 'react';
-import Link from "next/link";
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 function Services({ services }) {
   return (
@@ -40,7 +43,7 @@ function Services({ services }) {
                   className="mt-40"
                   aria-label={`Více o ${service.title}`}
                 >
-                  <span className="fas fa-arrow-right"></span>
+                  <FontAwesomeIcon icon={faArrowRight} />
                 </Link>
               </div>
             </div>

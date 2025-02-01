@@ -1,7 +1,7 @@
 const scrollToTop = () => {
   let offset = 150;
   let progressWrap = document.querySelector('.progress-wrap');
-  let progressPath = document.querySelector('.progress-wrap path');
+  let progressPath = document.querySelector('.progress-wrap .progress-path');
   let pathLength = progressPath.getTotalLength();
   const updateProgress = () => {
     let scroll = window.scrollY;

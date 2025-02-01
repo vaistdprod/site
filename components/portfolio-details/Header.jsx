@@ -28,7 +28,6 @@ function Header({ data }) {
         alt=""
         fill
         style={{ objectFit: 'cover' }}
-        priority
       />
 
       <div className="container">

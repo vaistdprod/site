@@ -17,6 +17,7 @@ function About() {
                   src="/assets/imgs/ostrava.jpg"
                   alt="Centrum Ostravy, nedaleko ulice 28. října, na které sídlí společnost TD Productions."
                   style={{ objectFit: "cover" }}
+                  sizes="(max-width: 991px) 100vw, 50vw"
                 />
               </div>
               <span className="icon">

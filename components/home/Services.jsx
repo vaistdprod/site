@@ -1,6 +1,9 @@
+'use client';
 import React from 'react';
 import Link from "next/link";
 import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 function Services({ services }) {
   return (
@@ -34,13 +37,10 @@ function Services({ services }) {
               </h3>
             </div>
             <div className="ml-auto vi-more">
-              <Link
-                href="/nase-sluzby"
-                className="btn btn-sm btn-bord radius-30"
-              >
+              <Link href="/nase-sluzby" className="btn btn-sm btn-bord radius-30">
                 <span>Zobrazit všechny</span>
               </Link>
-              <span className="icon fas fa-arrow-right"></span>
+              <FontAwesomeIcon icon={faArrowRight} className="icon" />
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@ function Services({ services }) {
                   className="mt-40"
                   aria-label={`Více o ${service.title}`}
                 >
-                  <span className="fas fa-arrow-right"></span>
+                  <FontAwesomeIcon icon={faArrowRight} />
                 </Link>
               </div>
             </div>
@@ -75,13 +75,13 @@ function Services({ services }) {
         </div>
       </div>
       <div className="circle-blur">
-      <Image
-        src="/assets/imgs/patterns/blur1.png"
-        alt="Efekt rozmazání"
-        width={692}
-        height={537}
-      />
-    </div>
+        <Image
+          src="/assets/imgs/patterns/blur1.png"
+          alt="Efekt rozmazání"
+          width={692}
+          height={537}
+        />
+      </div>
     </section>
   );
 }

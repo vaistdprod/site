@@ -4,6 +4,8 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCommentAlt, faArrowRight, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 function Blogs({ posts, tagCounts, uniqueTags }) {
   const router = useRouter();
@@ -13,41 +15,40 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
         <div className="row lg-marg justify-content-around">
           <div className="col-lg-8">
             <div className="md-mb80">
-            {posts.map((post) => (
+              {posts.map((post) => (
                 <div key={post.slug} className="item mb-80">
-                  <div
-                    className="img"
-                    style={{ position: "relative" }}
-                  >
+                  <div className="img" style={{ position: "relative" }}>
                     <Image
                       src={post.coverImage}
                       alt={post.title}
                       fill
                       style={{ objectFit: "cover" }}
                       className="img-fluid"
+                      sizes="(max-width: 991px) 100vw, 67vw"
                     />
                   </div>
                   <div className="content">
                     <div className="d-flex align-items-center mb-15">
                       <div className="post-date">
-                        {new Date(post.date).toLocaleDateString()}</div>
+                        {new Date(post.date).toLocaleDateString()}
+                      </div>
                       <div className="commt opacity-7 fz-13">
-                        <span className="ti-comment-alt mr-10"></span>
+                        <FontAwesomeIcon icon={faCommentAlt} className="mr-10" />
                         {post.comments} komentářů
                       </div>
                     </div>
                     <h3 className="mb-15">
                       <Link href={`/blog/${post.slug}`}>
-                          {post.title.split(' ').slice(0, 2).join(' ')}{' '}
-                          <span className="fw-200">
-                            {post.title.split(' ').slice(2).join(' ')}
-                          </span>
+                        {post.title.split(' ').slice(0, 2).join(' ')}{' '}
+                        <span className="fw-200">
+                          {post.title.split(' ').slice(2).join(' ')}
+                        </span>
                       </Link>
                     </h3>
                     <p>{post.excerpt}</p>
                     <Link href={`/blog/${post.slug}`} className="d-flex align-items-center main-color mt-40">
-                        <span className="text mr-15">Přečíst</span>
-                        <span className="fas fa-arrow-right"></span>
+                      <span className="text mr-15">Přečíst</span>
+                      <FontAwesomeIcon icon={faArrowRight} />
                     </Link>
                   </div>
                 </div>
@@ -72,12 +73,8 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
                       placeholder="Hledat..."
                       required
                     />
-                    <button 
-                      type="submit" 
-                      aria-label="Vyhledat" 
-                      className="icon"
-                    >
-                      <span className="fas fa-search" aria-hidden="true" />
+                    <button type="submit" aria-label="Vyhledat" className="icon">
+                      <FontAwesomeIcon icon={faSearch} aria-hidden="true" />
                     </button>
                   </form>
                 </div>
@@ -85,7 +82,7 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
               <div className="widget catogry">
                 <h6 className="title-widget">Kategorie</h6>
                 <ul className="rest">
-                {uniqueTags.map((tag) => (
+                  {uniqueTags.map((tag) => (
                     <li key={tag}>
                       <span>
                         <Link href={`/blog?tag=${encodeURIComponent(tag)}`}>
@@ -102,24 +99,22 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
                 {posts.slice(0, 3).map((post) => (
                   <div key={post.slug} className="item d-flex align-items-center">
                     <div>
-                      <div
-                        className="img"
-                        style={{ position: "relative" }}
-                      >
+                      <div className="img" style={{ position: "relative" }}>
                         <Link href={`/blog/${post.slug}`}>
-                            <Image
-                              src={post.coverImage}
-                              alt={post.title}
-                              fill
-                              style={{ objectFit: "cover" }}
-                              className="img-fluid"
-                            />
-                            <span className="date">
-                              <span>
-                                {new Date(post.date).getDate()} . <br />{' '}
-                                {new Date(post.date).toLocaleString('cs-CZ', { month: 'short' })}
-                              </span>
+                          <Image
+                            src={post.coverImage}
+                            alt={post.title}
+                            width={90}
+                            height={100}
+                            style={{ objectFit: "cover" }}
+                            className="img-fluid"
+                          />
+                          <span className="date">
+                            <span>
+                              {new Date(post.date).getDate()} . <br />{' '}
+                              {new Date(post.date).toLocaleString('cs-CZ', { month: 'short' })}
                             </span>
+                          </span>
                         </Link>
                       </div>
                     </div>

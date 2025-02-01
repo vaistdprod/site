@@ -4,6 +4,8 @@ import React, { useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComment } from '@fortawesome/free-solid-svg-icons';
 
 function Header({ title, author, date, comments, coverImage, tags }) {
   useLayoutEffect(() => {
@@ -15,7 +17,6 @@ function Header({ title, author, date, comments, coverImage, tags }) {
       { opacity: 1, translateY: 0 },
       '-=0'
     );
-
     return () => tl.kill();
   }, []);
 
@@ -26,13 +27,17 @@ function Header({ title, author, date, comments, coverImage, tags }) {
           <div className="col-lg-11">
             <div className="caption">
               <div className="sub-title fz-12">
-                {tags && tags.slice(0, 2).map((tag, index) => (
-                  <React.Fragment key={tag}>
-                    <Link href={`/blog?tag=${encodeURIComponent(tag)}`}>
-                      <span>{tag}{index < 1 ? ', ' : ''}</span>
-                    </Link>
-                  </React.Fragment>
-                ))}
+                {tags &&
+                  tags.slice(0, 2).map((tag, index) => (
+                    <React.Fragment key={tag}>
+                      <Link href={`/blog?tag=${encodeURIComponent(tag)}`}>
+                        <span>
+                          {tag}
+                          {index < 1 ? ', ' : ''}
+                        </span>
+                      </Link>
+                    </React.Fragment>
+                  ))}
               </div>
               <h1 className="fz-55 mt-30">{title}</h1>
             </div>
@@ -40,10 +45,7 @@ function Header({ title, author, date, comments, coverImage, tags }) {
               <div className="left-info">
                 <div className="d-flex align-items-center">
                   <div className="author-info">
-                    <div
-                    className="d-flex align-items-center"
-                    style={{ position: 'relative' }}
-                    >
+                    <div className="d-flex align-items-center" style={{ position: 'relative' }}>
                       <Link href={`/nas-tym/${encodeURIComponent(author.slug)}`} className="circle-60 d-inline-flex">
                         <Image
                           src={author.avatar}
@@ -74,7 +76,7 @@ function Header({ title, author, date, comments, coverImage, tags }) {
               </div>
               <div className="right-info ml-auto">
                 <div>
-                  <span className="fas fa-comment fz-18 mr-10"></span>
+                  <FontAwesomeIcon icon={faComment} className="fz-18 mr-10" />
                   <span className="opacity-7">{comments} komentářů</span>
                 </div>
               </div>
@@ -83,14 +85,13 @@ function Header({ title, author, date, comments, coverImage, tags }) {
         </div>
       </div>
       {coverImage && (
-        <div 
-          className="background bg-img mt-80 position-re"
-        >
+        <div className="background bg-img mt-80 position-re">
           <Image
             fill
             src={coverImage}
             alt={`Obrázek k článku: ${title}`}
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: 'cover' }}
+            sizes="100vw"
           />
         </div>
       )}

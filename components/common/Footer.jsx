@@ -3,6 +3,9 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { faFacebookF, faXTwitter, faLinkedinIn, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
   const [email, setEmail] = useState("");
@@ -57,7 +60,6 @@ function Footer() {
               </Link>
             </div>
           </div>
-
           <div className="col-lg-3">
             <div className="column md-mb50">
               <h6 className="sub-title mb-30">Kontakt</h6>
@@ -94,7 +96,6 @@ function Footer() {
               </a>
             </div>
           </div>
-
           <div className="col-lg-2">
             <div className="column md-mb50">
               <h6 className="sub-title mb-30">Naše služby</h6>
@@ -120,7 +121,6 @@ function Footer() {
               </ul>
             </div>
           </div>
-
           <div className="col-lg-2">
             <div className="column md-mb50">
               <h6 className="sub-title mb-30">Odkazy</h6>
@@ -143,7 +143,6 @@ function Footer() {
               </ul>
             </div>
           </div>
-
           <div className="col-lg-3">
             <div className="column subscribe-minimal">
               <h6 className="sub-title mb-30">Newsletter</h6>
@@ -157,7 +156,7 @@ function Footer() {
                     onChange={(e) => setEmail(e.target.value)}
                   />
                   <button type="submit" aria-label="Přihlásit se k odběru">
-                    <span className="fa fa-send-o" aria-hidden="true"></span>
+                    <FontAwesomeIcon icon={faPaperPlane} aria-hidden="true" />
                   </button>
                   <div className="agree-form mt-20">
                     <input
@@ -180,7 +179,7 @@ function Footer() {
                     className="hover-anim"
                     aria-label="Facebook"
                   >
-                    <i className="fab fa-facebook-f"></i>
+                    <FontAwesomeIcon icon={faFacebookF} />
                   </a>
                 </li>
                 <li className="hover-this cursor-pointer ml-10">
@@ -189,7 +188,7 @@ function Footer() {
                     className="hover-anim"
                     aria-label="X"
                   >
-                    <i className="fab fa-x-twitter"></i>
+                    <FontAwesomeIcon icon={faXTwitter} />
                   </a>
                 </li>
                 <li className="hover-this cursor-pointer ml-10">
@@ -198,7 +197,7 @@ function Footer() {
                     className="hover-anim"
                     aria-label="LinkedIn"
                   >
-                    <i className="fab fa-linkedin-in"></i>
+                    <FontAwesomeIcon icon={faLinkedinIn} />
                   </a>
                 </li>
                 <li className="hover-this cursor-pointer ml-10">
@@ -207,21 +206,19 @@ function Footer() {
                     className="hover-anim"
                     aria-label="Instagram"
                   >
-                    <i className="fab fa-instagram"></i>
+                    <FontAwesomeIcon icon={faInstagram} />
                   </a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-
         <div className="pt-30 pb-30 mt-80 bord-thin-top">
           <div className="text-center">
             <p className="fz-14">© 2025 Top Dog Enterprises, s.r.o.</p>
           </div>
         </div>
       </div>
-
       <div className="circle-blur">
         <Image
           src="/assets/imgs/patterns/blur1.png"

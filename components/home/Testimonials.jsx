@@ -3,6 +3,12 @@ import React from 'react';
 import data from '@/data/testimonials';
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 function Testimonials() {
   const swiperOptions = {
     modules: [Pagination, Navigation],
@@ -12,12 +18,12 @@ function Testimonials() {
       el: '.testimonials-minim .swiper-pagination',
       clickable: true,
     },
-
     navigation: {
       nextEl: '.testimonials-minim .swiper-button-next',
       prevEl: '.testimonials-minim .swiper-button-prev',
     },
   };
+
   return (
     <section className="testimonials">
       <div className="container section-padding bord-top-grd">
@@ -51,7 +57,7 @@ function Testimonials() {
                       <div className="item">
                         <div className="content">
                           <div className="text">
-                            <p className="fz-30">{item.desc} </p>
+                            <p className="fz-30">{item.desc}</p>
                           </div>
                           <div className="info d-flex align-items-center pt-40 mt-40 bord-thin-top">
                             <div>
@@ -91,10 +97,10 @@ function Testimonials() {
               </div>
               <div className="swiper-arrow-control control-abslout">
                 <div className="swiper-button-prev">
-                  <span className="fas fa-arrow-left"></span>
+                  <FontAwesomeIcon icon={faArrowLeft} />
                 </div>
                 <div className="swiper-button-next">
-                  <span className="fas fa-arrow-right"></span>
+                  <FontAwesomeIcon icon={faArrowRight} />
                 </div>
               </div>
               <div className="circle-blur">

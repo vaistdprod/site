@@ -1,5 +1,8 @@
+'use client';
 import React from 'react';
-import Link from "next/link";
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 function Services() {
   return (
@@ -16,16 +19,14 @@ function Services() {
               </h3>
             </div>
             <div className="ml-auto vi-more">
-              <Link
-                href="/page-services"
-                className="btn btn-sm btn-bord radius-30"
-              >
+              <Link href="/page-services" className="btn btn-sm btn-bord radius-30">
                 <span>Zobrazit</span>
               </Link>
-              <span className="icon fas fa-arrow-right"></span>
+              <FontAwesomeIcon icon={faArrowRight} className="icon" />
             </div>
           </div>
         </div>
+
         <div className="item">
           <div className="row md-marg align-items-end">
             <div className="col-lg-4">
@@ -42,8 +43,7 @@ function Services() {
             <div className="col-lg-4">
               <div className="text md-mb80">
                 <p>
-                  We help our client suceed by creating identities, digital
-                  experiences, and printmaterials that communicate clearly
+                  We help our client suceed by creating identities, digital experiences, and printmaterials that communicate clearly
                 </p>
               </div>
             </div>
@@ -51,12 +51,13 @@ function Services() {
               <div className="img fit-img">
                 <img src="/assets/imgs/serv-img/1.jpg" alt="" />
                 <Link href="/page-services-details">
-                  <span className="fas fa-arrow-right"></span>
+                  <FontAwesomeIcon icon={faArrowRight} />
                 </Link>
               </div>
             </div>
           </div>
         </div>
+
         <div className="item">
           <div className="row md-marg align-items-end">
             <div className="col-lg-4">
@@ -73,8 +74,7 @@ function Services() {
             <div className="col-lg-4">
               <div className="text md-mb80">
                 <p>
-                  We help our client suceed by creating identities, digital
-                  experiences, and printmaterials that communicate clearly
+                  We help our client suceed by creating identities, digital experiences, and printmaterials that communicate clearly
                 </p>
               </div>
             </div>
@@ -82,12 +82,13 @@ function Services() {
               <div className="img fit-img">
                 <img src="/assets/imgs/serv-img/2.jpg" alt="" />
                 <Link href="/page-services-details">
-                  <span className="fas fa-arrow-right"></span>
+                  <FontAwesomeIcon icon={faArrowRight} />
                 </Link>
               </div>
             </div>
           </div>
         </div>
+
         <div className="item pb-0">
           <div className="row md-marg align-items-end">
             <div className="col-lg-4">
@@ -104,8 +105,7 @@ function Services() {
             <div className="col-lg-4">
               <div className="text md-mb80">
                 <p>
-                  We help our client suceed by creating identities, digital
-                  experiences, and printmaterials that communicate clearly
+                  We help our client suceed by creating identities, digital experiences, and printmaterials that communicate clearly
                 </p>
               </div>
             </div>
@@ -113,7 +113,7 @@ function Services() {
               <div className="img fit-img">
                 <img src="/assets/imgs/serv-img/3.jpg" alt="" />
                 <Link href="/page-services-details">
-                  <span className="fas fa-arrow-right"></span>
+                  <FontAwesomeIcon icon={faArrowRight} />
                 </Link>
               </div>
             </div>

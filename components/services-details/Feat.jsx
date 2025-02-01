@@ -1,5 +1,8 @@
+'use client';
 import React from "react";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 function Feat({ serviceData }) {
   return (
@@ -16,7 +19,7 @@ function Feat({ serviceData }) {
               <Link href="/kontakty" className="btn btn-sm btn-bord radius-30">
                 <span>Kontaktujte nás</span>
               </Link>
-              <span className="icon fas fa-arrow-right"></span>
+              <FontAwesomeIcon icon={faArrowRight} className="icon" />
             </div>
           </div>
           <h6 className="sub-title main-color d-flex align-items-center">
@@ -24,7 +27,6 @@ function Feat({ serviceData }) {
             <span className="thin"></span>
           </h6>
         </div>
-
         <div className="row">
           {serviceData.feat?.map((item, idx) => (
             <div className="col-lg-3 col-md-6" key={idx}>

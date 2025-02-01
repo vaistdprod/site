@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,15 +8,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 function Portfolio() {
   const { portfolio } = portfolioData;
   const { items, showcaseIds } = portfolio;
-
   const swiperItems = showcaseIds.map((id) => items.find((obj) => obj.id === id));
-
   const [realIndex, setRealIndex] = useState(0);
-
   const swiperOptions = {
     modules: [Pagination, Navigation],
     slidesPerView: "auto",
@@ -34,7 +33,6 @@ function Portfolio() {
     },
     onSlideChange: (swiper) => setRealIndex(swiper.realIndex),
   };
-
   return (
     <section className="work-crev section-padding">
       <div className="container position-re pb-80">
@@ -51,27 +49,22 @@ function Portfolio() {
             <div className="ml-auto">
               <div className="swiper-arrow-control">
                 <div className="swiper-button-prev">
-                  <span className="fas fa-arrow-left"></span>
+                  <FontAwesomeIcon icon={faArrowLeft} />
                 </div>
                 <div className="swiper-button-next">
-                  <span className="fas fa-arrow-right"></span>
+                  <FontAwesomeIcon icon={faArrowRight} />
                 </div>
               </div>
             </div>
           </div>
         </div>
-
         <div className="work-swiper out-right">
           <Swiper {...swiperOptions} className="swiper-container">
             {swiperItems.map((item, i) => {
-              if (!item) return null; // safe check
+              if (!item) return null;
               const isActive = i === realIndex;
               return (
-                <SwiperSlide
-                  key={item.id}
-                  tabIndex={isActive ? 0 : -1}
-                  aria-hidden={!isActive}
-                >
+                <SwiperSlide key={item.id} tabIndex={isActive ? 0 : -1} aria-hidden={!isActive}>
                   <div className="item d-flex justify-content-between">
                     <div className="cont col-lg-6">
                       <Link href={`/portfolio/${item.id}`}>
@@ -79,32 +72,24 @@ function Portfolio() {
                         <h2 className="mb-5">{item.title}</h2>
                         <h3>{item.subTitle}</h3>
                       </Link>
-                      <Link
-                        href={`/portfolio/${item.id}`}
-                        className="btn-crev d-flex align-items-center mt-30"
-                      >
+                      <Link href={`/portfolio/${item.id}`} className="btn-crev d-flex align-items-center mt-30">
                         <span className="hover-this">
                           <span className="circle hover-anim">
-                            <i className="fas fa-arrow-right"></i>
+                            <FontAwesomeIcon icon={faArrowRight} />
                           </span>
                         </span>
                         <span className="text">Zobrazit detail</span>
                       </Link>
                     </div>
-                    <div
-                      className="img col-lg-6"
-                      style={{ position: "relative" }}
-                    >
-                      <Link
-                        href={`/portfolio/${item.id}`}
-                        style={{ position: 'relative', height: '100%', width: '100%' }}
-                      >
+                    <div className="img col-lg-6" style={{ position: "relative" }}>
+                      <Link href={`/portfolio/${item.id}`} style={{ position: "relative", height: "100%", width: "100%" }}>
                         <Image
                           fill
                           src={item.img}
                           alt={item.alt}
                           className="radius-15"
                           style={{ objectFit: "cover" }}
+                          sizes="(max-width: 991px) 100vw, 50vw"
                         />
                       </Link>
                     </div>

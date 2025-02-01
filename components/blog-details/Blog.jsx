@@ -5,6 +5,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import CommentsList from './CommentsList';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookF, faLinkedinIn, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 
 function Blog({ post, latestPosts }) {
   const router = useRouter();
@@ -56,8 +59,6 @@ function Blog({ post, latestPosts }) {
         return `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
       case 'linkedin':
         return `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}`;
-      case 'instagram':
-        return '#';
       case 'twitter':
         return `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`;
       default:
@@ -73,27 +74,8 @@ function Blog({ post, latestPosts }) {
             <div className="main-post">
               <div className="item pb-60">
                 <article>
-                  {post.coverImage && (
-                    <div
-                      className="img mb-30"
-                      style={{ position: "relative" }}
-                    >
-                      <Image
-                        src={post.coverImage}
-                        alt={post.title}
-                        fill
-                        style={{ objectFit: "cover" }}
-                        className="img-fluid"
-                      />
-                    </div>
-                  )}
-
-                  <div
-                    className="text"
-                    dangerouslySetInnerHTML={{ __html: post.content }}
-                  />
+                  <div className="text" dangerouslySetInnerHTML={{ __html: post.content }} />
                 </article>
-
                 <div className="info-area mt-30 flex pt-50 bord-thin-top">
                   <div>
                     <div className="tags flex">
@@ -124,45 +106,35 @@ function Blog({ post, latestPosts }) {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <i className="fab fa-facebook-f"></i>
+                          <FontAwesomeIcon icon={faFacebookF} />
                         </a>
                         <a
                           href={generateShareUrl('linkedin')}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <i className="fab fa-linkedin-in"></i>
-                        </a>
-                        <a
-                          href={generateShareUrl('instagram')}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <i className="fab fa-instagram"></i>
+                          <FontAwesomeIcon icon={faLinkedinIn} />
                         </a>
                         <a
                           href={generateShareUrl('twitter')}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <i className="fab fa-x-twitter"></i>
+                          <FontAwesomeIcon icon={faXTwitter} />
                         </a>
                       </div>
                     </div>
                   </div>
                 </div>
-
                 <div className="author-area mt-50 bord-thin-bottom">
                   <div className="flex">
                     <div className="author-img mr-30">
-                      <div
-                        className="img"
-                        style={{ position: "relative" }}
-                      >
+                      <div className="img position-re">
                         <Image
                           src={post.author.avatar}
                           alt={post.author.name}
-                          fill
+                          height={60}
+                          width={60}
                           style={{ objectFit: "cover" }}
                           className="circle-img"
                         />
@@ -177,14 +149,12 @@ function Blog({ post, latestPosts }) {
                   </div>
                 </div>
               </div>
-
               <div className="comments-form mt-80">
                 <div className="mb-60">
                   <h3>Zanechte komentář</h3>
                 </div>
                 <form onSubmit={handleSubmit}>
                   <div className="messages">{status}</div>
-
                   <div className="controls row">
                     <div className="col-lg-6">
                       <div className="form-group mb-30">
@@ -199,7 +169,6 @@ function Blog({ post, latestPosts }) {
                         />
                       </div>
                     </div>
-
                     <div className="col-lg-6">
                       <div className="form-group mb-30">
                         <input
@@ -213,7 +182,6 @@ function Blog({ post, latestPosts }) {
                         />
                       </div>
                     </div>
-
                     <div className="col-12">
                       <div className="form-group">
                         <textarea
@@ -240,12 +208,11 @@ function Blog({ post, latestPosts }) {
               </div>
             </div>
           </div>
-
           <div className="col-lg-4">
             <div className="sidebar">
               <div className="widget">
-              <h6 className="title-widget">Hledáte konkrétní článek?</h6>
-              <div className="search-box">
+                <h6 className="title-widget">Hledáte konkrétní článek?</h6>
+                <div className="search-box">
                   <form
                     onSubmit={(e) => {
                       e.preventDefault();
@@ -259,17 +226,12 @@ function Blog({ post, latestPosts }) {
                       placeholder="Hledat..."
                       required
                     />
-                    <button 
-                      type="submit" 
-                      aria-label="Vyhledat" 
-                      className="icon"
-                    >
-                      <span className="fas fa-search" aria-hidden="true" />
+                    <button type="submit" aria-label="Vyhledat" className="icon">
+                      <FontAwesomeIcon icon={faSearch} aria-hidden="true" />
                     </button>
                   </form>
                 </div>
               </div>
-
               <div className="widget category">
                 <h6 className="title-widget">Článek je v kategoriích:</h6>
                 <ul className="rest">
@@ -287,21 +249,18 @@ function Blog({ post, latestPosts }) {
                   ))}
                 </ul>
               </div>
-
               <div className="widget last-post-thum">
                 <h6 className="title-widget">Nejnovější příspěvky</h6>
                 {latestPosts.map((latestPost) => (
                   <div key={latestPost.slug} className="item d-flex align-items-center">
                     <div>
-                      <div
-                        className="img"
-                        style={{ position: "relative" }}
-                      >
-                        <Link href={`/blog/${latestPost.slug}`}>
+                      <div className="img position-re">
+                        <Link href={`/blog/${latestPost.slug}`} style={{ position: "relative", height: "100%", width: "100%" }}>
                           <Image
                             src={latestPost.coverImage}
                             alt={latestPost.title}
-                            fill
+                            width={90}
+                            height={100}
                             style={{ objectFit: "cover" }}
                             className="img-fluid"
                           />
@@ -336,7 +295,6 @@ function Blog({ post, latestPosts }) {
                   </div>
                 ))}
               </div>
-
               <div className="widget tags">
                 <h6 className="title-widget">Štítky</h6>
                 <div className="tags-list">

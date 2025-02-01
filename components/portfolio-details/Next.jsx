@@ -1,8 +1,9 @@
 'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 function Next({ nextProject, prevProject }) {
   return (
@@ -11,23 +12,19 @@ function Next({ nextProject, prevProject }) {
         <div className="row">
           {prevProject && (
             <div className="col-md-6 rest">
-              <div
-                className="text-left box"
-                style={{ position: 'relative', overflow: 'hidden' }}
-              >
+              <div className="text-left box" style={{ position: 'relative', overflow: 'hidden' }}>
                 <Image
                   src={prevProject.img}
                   alt=""
                   fill
                   style={{ objectFit: 'cover' }}
-                  priority
                 />
                 <div
                   className="cont d-flex align-items-center"
                   style={{ position: 'relative', zIndex: 2 }}
                 >
                   <div>
-                    <span className="mr-30 fz-30 fas fa-arrow-left"></span>
+                    <FontAwesomeIcon icon={faArrowLeft} className="mr-30 fz-30" />
                   </div>
                   <div>
                     <h6 className="sub-title fz-16 mb-5">Předchozí projekt</h6>
@@ -42,7 +39,6 @@ function Next({ nextProject, prevProject }) {
               </div>
             </div>
           )}
-
           {nextProject && (
             <div className="col-md-6 rest">
               <div
@@ -54,7 +50,6 @@ function Next({ nextProject, prevProject }) {
                   alt=""
                   fill
                   style={{ objectFit: 'cover' }}
-                  priority
                 />
                 <div
                   className="ml-auto"
@@ -71,7 +66,7 @@ function Next({ nextProject, prevProject }) {
                       </Link>
                     </div>
                     <div>
-                      <span className="ml-30 fz-30 fas fa-arrow-right"></span>
+                      <FontAwesomeIcon icon={faArrowRight} className="ml-30 fz-30" />
                     </div>
                   </div>
                 </div>
@@ -80,7 +75,6 @@ function Next({ nextProject, prevProject }) {
           )}
         </div>
       </div>
-
       <div>
         <Link href="/portfolio" className="all-works-btn text-center">
           <span className="ti-view-grid fz-24 mb-10"></span>

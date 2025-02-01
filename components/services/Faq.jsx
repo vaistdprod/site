@@ -29,6 +29,7 @@ export default function Faq() {
                 fill
                 style={{ objectFit: "cover" }}
                 className="circle-img"
+                sizes="(max-width: 991px) 100vw, 50vw"
               />
             </div>
           </div>

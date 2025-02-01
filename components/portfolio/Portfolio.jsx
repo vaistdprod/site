@@ -1,9 +1,10 @@
 'use client';
-
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import portfolioData from '@/data/portfolioData.json';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 function PortfolioGrid() {
   const { portfolio } = portfolioData;
@@ -44,10 +45,7 @@ function PortfolioGrid() {
                   const isAll = cat.filter === '*';
                   const catName = cat.name;
                   const catClassName = catName.replace(/\s+/g, '-');
-                  const count = isAll
-                    ? gridItems.length
-                    : categoryCountMap[catClassName] || 0;
-
+                  const count = isAll ? gridItems.length : categoryCountMap[catClassName] || 0;
                   return (
                     <span
                       key={idx}
@@ -71,10 +69,7 @@ function PortfolioGrid() {
             if (!item) return null;
             const className = item.category.replace(/\s+/g, '-');
             return (
-              <div
-                key={item.id}
-                className={`col-lg-4 col-md-6 items ${className}`}
-              >
+              <div key={item.id} className={`col-lg-4 col-md-6 items ${className}`}>
                 <div className="item mb-50">
                   <div
                     className="img"
@@ -90,6 +85,7 @@ function PortfolioGrid() {
                         alt={item.alt}
                         className="img-fluid"
                         style={{ objectFit: 'cover' }}
+                        sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 33vw"
                       />
                     </Link>
                   </div>
@@ -103,12 +99,12 @@ function PortfolioGrid() {
                       </Link>
                     </div>
                     <div className="ml-auto">
-                    <Link 
-                      href={`/portfolio/${item.id}`} 
-                      aria-label={`Detail projektu "${item.title}"`}
-                    >
-                      <span className="fas fa-arrow-right"></span>
-                    </Link>
+                      <Link
+                        href={`/portfolio/${item.id}`}
+                        aria-label={`Detail projektu "${item.title}"`}
+                      >
+                        <FontAwesomeIcon icon={faArrowRight} />
+                      </Link>
                     </div>
                   </div>
                 </div>

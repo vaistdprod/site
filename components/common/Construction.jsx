@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from "next/link";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 
 function Construction() {
   const marquess = ['Stránka ve výstavbě'];
@@ -11,15 +13,11 @@ function Construction() {
         <div className="text-center">
           <h1>Stavíme</h1>
           <p>Na této stránce se momentálně pracuje.</p>
-          <Link
-            href="/"
-            className="btn btn-md btn-bg main-colorbg radius-30 mt-30"
-          >
+          <Link href="/" className="btn btn-md btn-bg main-colorbg radius-30 mt-30">
             <span className="text">Zpět domů</span>
           </Link>
         </div>
       </div>
-
       <div className="marq">
         <div className="main-marq">
           <div className="slide-har st1 strok">
@@ -29,7 +27,7 @@ function Construction() {
                   <h4 className="d-flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
-                      <i className="fas fa-exclamation-triangle"></i>
+                      <FontAwesomeIcon icon={faExclamationTriangle} />
                     </span>
                   </h4>
                 </div>
@@ -41,7 +39,7 @@ function Construction() {
                   <h4 className="d-flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
-                      <i className="fas fa-exclamation-triangle"></i>
+                      <FontAwesomeIcon icon={faExclamationTriangle} />
                     </span>
                   </h4>
                 </div>
@@ -50,7 +48,6 @@ function Construction() {
           </div>
         </div>
       </div>
-
       <div className="marq">
         <div className="main-marq">
           <div className="slide-har st2 non-strok">
@@ -60,7 +57,7 @@ function Construction() {
                   <h4 className="d-flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
-                      <i className="fas fa-exclamation-triangle"></i>
+                      <FontAwesomeIcon icon={faExclamationTriangle} />
                     </span>
                   </h4>
                 </div>
@@ -72,7 +69,7 @@ function Construction() {
                   <h4 className="d-flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
-                      <i className="fas fa-exclamation-triangle"></i>
+                      <FontAwesomeIcon icon={faExclamationTriangle} />
                     </span>
                   </h4>
                 </div>
@@ -81,7 +78,6 @@ function Construction() {
           </div>
         </div>
       </div>
-
       <div className="marq">
         <div className="main-marq">
           <div className="slide-har st1 strok">
@@ -91,7 +87,7 @@ function Construction() {
                   <h4 className="d-flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
-                      <i className="fas fa-exclamation-triangle"></i>
+                      <FontAwesomeIcon icon={faExclamationTriangle} />
                     </span>
                   </h4>
                 </div>
@@ -103,7 +99,7 @@ function Construction() {
                   <h4 className="d-flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
-                      <i className="fas fa-exclamation-triangle"></i>
+                      <FontAwesomeIcon icon={faExclamationTriangle} />
                     </span>
                   </h4>
                 </div>
@@ -112,7 +108,6 @@ function Construction() {
           </div>
         </div>
       </div>
-
       <div className="marq">
         <div className="main-marq">
           <div className="slide-har st2 non-strok">
@@ -122,7 +117,7 @@ function Construction() {
                   <h4 className="d-flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
-                      <i className="fas fa-exclamation-triangle"></i>
+                      <FontAwesomeIcon icon={faExclamationTriangle} />
                     </span>
                   </h4>
                 </div>
@@ -134,7 +129,7 @@ function Construction() {
                   <h4 className="d-flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
-                      <i className="fas fa-exclamation-triangle"></i>
+                      <FontAwesomeIcon icon={faExclamationTriangle} />
                     </span>
                   </h4>
                 </div>

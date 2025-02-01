@@ -1,7 +1,8 @@
 'use client';
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faXTwitter, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 function ContactForm() {
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -52,32 +53,20 @@ function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus(null);
-
     if (!validateForm()) {
       return;
     }
-
     setStatus('Odesílání...');
-
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...formData, captchaToken }),
       });
-
       const data = await res.json();
-
       if (res.ok) {
         setStatus('Zpráva úspěšně odeslána!');
-        setFormData({
-          jmeno: '',
-          email: '',
-          potrebuji: [],
-          zprava: '',
-        });
+        setFormData({ jmeno: '', email: '', potrebuji: [], zprava: '' });
         setCaptchaToken(null);
       } else {
         setStatus(data.message || 'Nepodařilo se odeslat zprávu.');
@@ -93,7 +82,6 @@ function ContactForm() {
       console.log('executeRecaptcha není dostupné.');
       return;
     }
-
     try {
       const token = await executeRecaptcha('contact_form_submission');
       setCaptchaToken(token);
@@ -133,36 +121,22 @@ function ContactForm() {
                 <h6 className="mb-15">Email</h6>
                 <a href="mailto:info@tdprod.cz">info@tdprod.cz</a>
               </div>
-
               <div className="social-icon mt-50">
-                <a 
-                  href="https://facebook.com/tdprod.cz/" 
-                  aria-label="Navštivte náš Facebook"
-                >
-                  <i className="fab fa-facebook-f" aria-hidden="true"></i>
+                <a href="https://facebook.com/tdprod.cz/" aria-label="Navštivte náš Facebook">
+                  <FontAwesomeIcon icon={faFacebookF} aria-hidden="true" />
                 </a>
-                <a 
-                  href="https://x.com/tdprodcz/" 
-                  aria-label="Navštivte naše X"
-                >
-                  <i className="fab fa-x-twitter" aria-hidden="true"></i>
+                <a href="https://x.com/tdprodcz/" aria-label="Navštivte naše X">
+                  <FontAwesomeIcon icon={faXTwitter} aria-hidden="true" />
                 </a>
-                <a 
-                  href="https://linkedin.com/in/tdprod.cz/" 
-                  aria-label="Navštivte náš LinkedIn"
-                >
-                  <i className="fab fa-linkedin" aria-hidden="true"></i>
+                <a href="https://linkedin.com/in/tdprod.cz/" aria-label="Navštivte náš LinkedIn">
+                  <FontAwesomeIcon icon={faLinkedin} aria-hidden="true" />
                 </a>
-                <a 
-                  href="https://instagram.com/tdprod.cz/" 
-                  aria-label="Navštivte náš Instagram"
-                >
-                  <i className="fab fa-instagram" aria-hidden="true"></i>
+                <a href="https://instagram.com/tdprod.cz/" aria-label="Navštivte náš Instagram">
+                  <FontAwesomeIcon icon={faInstagram} aria-hidden="true" />
                 </a>
               </div>
             </div>
           </div>
-
           <div className="col-lg-7 offset-lg-1 valign">
             <div className="full-width">
               <div className="sec-head mb-50">
@@ -185,12 +159,9 @@ function ContactForm() {
                         onChange={handleChange}
                         required
                       />
-                      {errors.jmeno && (
-                        <p className="error-text">{errors.jmeno}</p>
-                      )}
+                      {errors.jmeno && <p className="error-text">{errors.jmeno}</p>}
                     </div>
                   </div>
-
                   <div className="col-lg-6">
                     <div className="form-group mb-30">
                       <input
@@ -202,12 +173,9 @@ function ContactForm() {
                         onChange={handleChange}
                         required
                       />
-                      {errors.email && (
-                        <p className="error-text">{errors.email}</p>
-                      )}
+                      {errors.email && <p className="error-text">{errors.email}</p>}
                     </div>
                   </div>
-
                   <div className="col-12">
                     <div className="form-group mb-30">
                       <label>Potřebuji pomoct s...</label>
@@ -229,10 +197,7 @@ function ContactForm() {
                               checked={formData.potrebuji.includes(item)}
                               onChange={handleChange}
                             />
-                            <label
-                              className="form-check-label"
-                              htmlFor={`formular_potrebuji${index + 1}`}
-                            >
+                            <label className="form-check-label" htmlFor={`formular_potrebuji${index + 1}`}>
                               {item}
                             </label>
                           </div>
@@ -240,7 +205,6 @@ function ContactForm() {
                       </div>
                     </div>
                   </div>
-
                   <div className="col-12">
                     <div className="form-group">
                       <textarea
@@ -252,19 +216,11 @@ function ContactForm() {
                         onChange={handleChange}
                         required
                       ></textarea>
-                      {errors.zprava && (
-                        <p className="error-text">{errors.zprava}</p>
-                      )}
+                      {errors.zprava && <p className="error-text">{errors.zprava}</p>}
                     </div>
-                    {errors.captcha && (
-                      <p className="error-text">{errors.captcha}</p>
-                    )}
+                    {errors.captcha && <p className="error-text">{errors.captcha}</p>}
                     <div className="mt-30">
-                      <button
-                        type="submit"
-                        className="btn btn-full btn-bord radius-30"
-                        id="odeslat-kontaktni-formular"
-                      >
+                      <button type="submit" className="btn btn-full btn-bord radius-30" id="odeslat-kontaktni-formular">
                         <span className="text">Odeslat</span>
                       </button>
                     </div>

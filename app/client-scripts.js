@@ -14,11 +14,6 @@ export default function ClientScripts() {
 
   return (
     <>
-      <Script
-        src="https://kit.fontawesome.com/e630efef3e.js"
-        crossOrigin="anonymous"
-        strategy="afterInteractive"
-      />
       <Script src="/assets/js/plugins.js" strategy="afterInteractive" />
       <Script src="/assets/js/gsap.min.js" strategy="afterInteractive" />
       {isNonTouch && (

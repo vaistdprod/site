@@ -1,25 +1,27 @@
-"use client";
+'use client';
 import React, { useEffect } from "react";
 import isInView from "@/common/isInView";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF, faXTwitter, faInstagram, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
 const SOCIAL_MEDIA = {
   facebook: {
-    icon: "fab fa-facebook-f",
+    icon: faFacebookF,
     label: "Facebook"
   },
   twitter: {
-    icon: "fab fa-x-twitter",
+    icon: faXTwitter,
     label: "X"
   },
   instagram: {
-    icon: "fab fa-instagram",
+    icon: faInstagram,
     label: "Instagram"
   },
   linkedin: {
-    icon: "fab fa-linkedin-in",
+    icon: faLinkedinIn,
     label: "LinkedIn"
-  },
+  }
 };
 
 function Intro({ memberData }) {
@@ -29,7 +31,7 @@ function Intro({ memberData }) {
       isElements: true,
       callback: (element) => {
         element.style.width = element.getAttribute("data-value");
-      },
+      }
     });
   }
 
@@ -44,16 +46,14 @@ function Intro({ memberData }) {
       <div className="container">
         <div className="row md-marg justify-content-around bord">
           <div className="col-lg-5">
-            <div
-              className="img md-mb50"
-              style={{ position: "relative" }}
-            >
+            <div className="img md-mb50" style={{ position: "relative" }}>
               <Image
                 src={memberData.image}
                 alt={memberData.name}
                 fill
                 style={{ objectFit: "cover" }}
-                />
+                sizes="(max-width: 991px) 100vw, 42vw"
+              />
             </div>
           </div>
           <div className="col-lg-6 valign">
@@ -67,15 +67,11 @@ function Intro({ memberData }) {
                 <ul className="rest">
                   <li className="mb-25 fz-18">
                     <span className="sub-title mr-15">Email:</span>
-                    <a href={`mailto:${memberData.email}`}>
-                      {memberData.email}
-                    </a>
+                    <a href={`mailto:${memberData.email}`}>{memberData.email}</a>
                   </li>
                   <li className="fz-18">
                     <span className="sub-title mr-15">Telefon:</span>
-                    <a href={`tel:${memberData.phone}`}>
-                      {memberData.phone}
-                    </a>
+                    <a href={`tel:${memberData.phone}`}>{memberData.phone}</a>
                   </li>
                 </ul>
               </div>
@@ -91,7 +87,6 @@ function Intro({ memberData }) {
                 {Object.entries(SOCIAL_MEDIA).map(([platformKey, { icon, label }]) => {
                   const link = memberData[platformKey];
                   if (!link) return null;
-
                   return (
                     <li key={platformKey} className="hover-this cursor-pointer ml-10">
                       <a
@@ -101,7 +96,7 @@ function Intro({ memberData }) {
                         className="hover-anim"
                         aria-label={`Otevřít profil na ${label}`}
                       >
-                        <i className={icon} aria-hidden="true"></i>
+                        <FontAwesomeIcon icon={icon} aria-hidden="true" />
                       </a>
                     </li>
                   );
@@ -118,10 +113,7 @@ function Intro({ memberData }) {
                       {skill.name} {skill.value}
                     </h5>
                     <div className="skill-progress">
-                      <div
-                        className="progres"
-                        data-value={skill.value}
-                      ></div>
+                      <div className="progres" data-value={skill.value}></div>
                     </div>
                   </div>
                 ))
