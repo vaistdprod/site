@@ -67,12 +67,12 @@ function Portfolio() {
                 <SwiperSlide key={item.id} tabIndex={isActive ? 0 : -1} aria-hidden={!isActive}>
                   <div className="item d-flex justify-content-between">
                     <div className="cont col-lg-6">
-                      <Link href={`/portfolio/${item.id}`}>
+                      <Link href={`/portfolio/${item.id}`} tabIndex={isActive ? 0 : -1}>
                         <h6 className="sub-title main-color mb-15">{item.category}</h6>
                         <h2 className="mb-5">{item.title}</h2>
                         <h3>{item.subTitle}</h3>
                       </Link>
-                      <Link href={`/portfolio/${item.id}`} className="btn-crev d-flex align-items-center mt-30">
+                      <Link href={`/portfolio/${item.id}`} className="btn-crev d-flex align-items-center mt-30" tabIndex={isActive ? 0 : -1}>
                         <span className="hover-this">
                           <span className="circle hover-anim">
                             <FontAwesomeIcon icon={faArrowRight} />
@@ -82,7 +82,7 @@ function Portfolio() {
                       </Link>
                     </div>
                     <div className="img col-lg-6" style={{ position: "relative" }}>
-                      <Link href={`/portfolio/${item.id}`} style={{ position: "relative", height: "100%", width: "100%" }}>
+                      <Link href={`/portfolio/${item.id}`} style={{ position: "relative", height: "100%", width: "100%" }} tabIndex={isActive ? 0 : -1}>
                         <Image
                           fill
                           src={item.img}

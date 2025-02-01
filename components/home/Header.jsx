@@ -24,7 +24,7 @@ function Header() {
       data-overlay-dark="6">
       <video
         className="position-absolute top-0 start-0 w-100 h-100"
-        src="/assets/imgs/tdprod-promo.webm"
+        src="/assets/imgs/tdprod-promo.mp4"
         autoPlay
         loop
         muted

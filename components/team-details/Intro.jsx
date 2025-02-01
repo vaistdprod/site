@@ -53,6 +53,7 @@ function Intro({ memberData }) {
                 fill
                 style={{ objectFit: "cover" }}
                 sizes="(max-width: 991px) 100vw, 42vw"
+                priority
               />
             </div>
           </div>

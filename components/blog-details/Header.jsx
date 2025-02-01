@@ -92,6 +92,7 @@ function Header({ title, author, date, comments, coverImage, tags }) {
             alt={`Obrázek k článku: ${title}`}
             style={{ objectFit: 'cover' }}
             sizes="100vw"
+            priority
           />
         </div>
       )}
