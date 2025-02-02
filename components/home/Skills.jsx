@@ -2,7 +2,7 @@ import React from 'react';
 
 function Skills() {
   return (
-    <section className="my-skills section-padding">
+    <section className="my-skills relative section-padding">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-6 col-md-10">

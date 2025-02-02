@@ -15,21 +15,21 @@ function Testimonials() {
     spaceBetween: 30,
     loop: true,
     pagination: {
-      el: '.testimonials-minim .swiper-pagination',
+      el: '.testimonials .swiper-pagination',
       clickable: true,
     },
     navigation: {
-      nextEl: '.testimonials-minim .swiper-button-next',
-      prevEl: '.testimonials-minim .swiper-button-prev',
+      nextEl: '.testimonials .swiper-button-next',
+      prevEl: '.testimonials .swiper-button-prev',
     },
   };
 
   return (
-    <section className="testimonials">
-      <div className="container section-padding bord-top-grd">
+    <section className="testimonials relative">
+      <div className="container section-padding bord-top-grd relative">
         <div className="row">
           <div className="col-lg-4 md-mb50">
-            <div className="img-full">
+            <div className="img-full relative h-100">
               <div className="fit-img">
                 <img src="/assets/imgs/testim/bg.jpg" alt="" />
               </div>
@@ -39,7 +39,7 @@ function Testimonials() {
             </div>
           </div>
           <div className="col-lg-8">
-            <div className="cont-full">
+            <div className="cont-full relative">
               <div
                 className="testim-swiper"
                 data-carousel="swiper"
@@ -95,7 +95,7 @@ function Testimonials() {
                   ></path>
                 </svg>
               </div>
-              <div className="swiper-arrow-control control-abslout">
+              <div className="swiper-arrow-control control-absolute">
                 <div className="swiper-button-prev">
                   <FontAwesomeIcon icon={faArrowLeft} />
                 </div>

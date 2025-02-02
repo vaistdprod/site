@@ -35,7 +35,7 @@ function Portfolio() {
   };
   return (
     <section className="work-crev section-padding">
-      <div className="container position-re pb-80">
+      <div className="container relative pb-80">
         <div className="sec-head mb-80">
           <div className="d-flex align-items-center">
             <div>
@@ -87,8 +87,7 @@ function Portfolio() {
                           fill
                           src={item.img}
                           alt={item.alt}
-                          className="radius-15"
-                          style={{ objectFit: "cover" }}
+                          className="radius-15 object-cover"
                           sizes="(max-width: 991px) 100vw, 50vw"
                         />
                       </Link>

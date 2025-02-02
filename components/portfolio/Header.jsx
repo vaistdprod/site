@@ -21,7 +21,7 @@ function Header() {
 
   return (
     <div
-      className="page-header section-padding valign header position-re"
+      className="page-header section-padding valign header relative"
       data-overlay-dark="5"
     >
       <Image

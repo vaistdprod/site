@@ -11,7 +11,7 @@ function Construction() {
     <section className="page-error construction section-padding valign">
       <div className="container">
         <div className="text-center">
-          <h1>Stavíme</h1>
+          <h1 className="fw-700">Stavíme</h1>
           <p>Na této stránce se momentálně pracuje.</p>
           <Link href="/" className="btn btn-md btn-bg main-colorbg radius-30 mt-30">
             <span className="text">Zpět domů</span>
@@ -20,7 +20,7 @@ function Construction() {
       </div>
       <div className="marq">
         <div className="main-marq">
-          <div className="slide-har st1 strok">
+          <div className="slide-bar st1 strok">
             <div className="box">
               {AllMarquess.map((item, i) => (
                 <div key={i} className="item">
@@ -50,7 +50,7 @@ function Construction() {
       </div>
       <div className="marq">
         <div className="main-marq">
-          <div className="slide-har st2 non-strok">
+          <div className="slide-bar st2 non-stroke">
             <div className="box">
               {AllMarquess.map((item, i) => (
                 <div key={i} className="item">
@@ -80,7 +80,7 @@ function Construction() {
       </div>
       <div className="marq">
         <div className="main-marq">
-          <div className="slide-har st1 strok">
+          <div className="slide-bar st1 strok">
             <div className="box">
               {AllMarquess.map((item, i) => (
                 <div key={i} className="item">
@@ -110,7 +110,7 @@ function Construction() {
       </div>
       <div className="marq">
         <div className="main-marq">
-          <div className="slide-har st2 non-strok">
+          <div className="slide-bar st2 non-stroke">
             <div className="box">
               {AllMarquess.map((item, i) => (
                 <div key={i} className="item">

@@ -39,7 +39,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bord blur">
       <div className="container o-hidden">
-        <Link className="logo icon-img-100" href="/">
+        <Link className="logo relative icon-img-100" href="/">
           <Image
             src="/assets/imgs/logo-light.svg"
             alt="Logo TD Productions"
@@ -70,7 +70,7 @@ function Navbar() {
             <li
               onMouseLeave={handleDropdownMouseLeave}
               onMouseMove={handleDropdownMouseMove}
-              className="nav-item dropdown"
+              className="nav-item dropdown relative"
             >
               <Link
                 className="nav-link dropdown-toggle"
@@ -82,7 +82,7 @@ function Navbar() {
               >
                 <RollingText text="Naše služby" />
               </Link>
-              <ul className="dropdown-menu">
+              <ul className="dropdown-menu radius-5">
                 <li>
                   <Link className="dropdown-item" href="/nase-sluzby">
                     Vše
@@ -123,7 +123,7 @@ function Navbar() {
             <li
               onMouseLeave={handleDropdownMouseLeave}
               onMouseMove={handleDropdownMouseMove}
-              className="nav-item dropdown"
+              className="nav-item dropdown relative"
             >
               <Link
                 className="nav-link dropdown-toggle"
@@ -135,7 +135,7 @@ function Navbar() {
               >
                 <RollingText text="O nás" />
               </Link>
-              <div className="dropdown-menu">
+              <div className="dropdown-menu radius-5">
                 <Link className="dropdown-item" href="/nas-tym">
                   Náš tým
                 </Link>
@@ -161,7 +161,7 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <div className="contact-button">
+        <div className="contact-button relative">
           <Link
             href="/kontakty"
             className="btn btn-sm btn-bg main-colorbg radius-5"

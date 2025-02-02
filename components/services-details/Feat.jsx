@@ -6,7 +6,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 function Feat({ serviceData }) {
   return (
-    <section className="feat">
+    <section className="feat relative">
       <div className="container">
         <div className="sec-head mb-80">
           <div className="d-flex align-items-center mb-30">

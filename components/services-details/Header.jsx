@@ -18,14 +18,13 @@ function Header({ serviceData }) {
 
   return (
     <div
-      className="header page-header section-padding valign position-re"
+      className="header page-header section-padding valign relative"
       data-overlay-dark="5"
     >
       <Image
         src="/assets/imgs/bg/bg30.jpg"
         alt=""
         fill
-        style={{ objectFit: "cover" }}
         priority
       />
 

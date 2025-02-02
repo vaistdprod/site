@@ -129,19 +129,18 @@ function Blog({ post, latestPosts }) {
                 <div className="author-area mt-50 bord-thin-bottom">
                   <div className="flex">
                     <div className="author-img mr-30">
-                      <div className="img position-re">
+                      <div className="img relative">
                         <Image
                           src={post.author.avatar}
                           alt={post.author.name}
                           height={60}
                           width={60}
-                          style={{ objectFit: "cover" }}
-                          className="circle-img"
+                          className="circle-img object-cover"
                         />
                       </div>
                     </div>
                     <div className="cont valign">
-                      <div className="full-width">
+                      <div className="w-100">
                         <h6 className="fw-600 mb-10">{post.author.name}</h6>
                         <p>{post.author.bio}</p>
                       </div>
@@ -212,7 +211,7 @@ function Blog({ post, latestPosts }) {
             <div className="sidebar">
               <div className="widget">
                 <h6 className="title-widget">Hledáte konkrétní článek?</h6>
-                <div className="search-box">
+                <div className="search-box relative">
                   <form
                     onSubmit={(e) => {
                       e.preventDefault();
@@ -225,6 +224,7 @@ function Blog({ post, latestPosts }) {
                       name="search-post"
                       placeholder="Hledat..."
                       required
+                      className="radius-5"
                     />
                     <button type="submit" aria-label="Vyhledat" className="icon">
                       <FontAwesomeIcon icon={faSearch} aria-hidden="true" />
@@ -254,15 +254,14 @@ function Blog({ post, latestPosts }) {
                 {latestPosts.map((latestPost) => (
                   <div key={latestPost.slug} className="item d-flex align-items-center">
                     <div>
-                      <div className="img position-re">
+                      <div className="img relative">
                         <Link href={`/blog/${latestPost.slug}`} style={{ position: "relative", height: "100%", width: "100%" }}>
                           <Image
                             src={latestPost.coverImage}
                             alt={latestPost.title}
                             width={90}
                             height={100}
-                            style={{ objectFit: "cover" }}
-                            className="img-fluid"
+                            className="img-fluid object-cover"
                           />
                           <span className="date">
                             <span>

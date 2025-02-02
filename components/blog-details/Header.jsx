@@ -85,7 +85,7 @@ function Header({ title, author, date, comments, coverImage, tags }) {
         </div>
       </div>
       {coverImage && (
-        <div className="background bg-img mt-80 position-re">
+        <div className="background bg-img mt-80 relative">
           <Image
             fill
             src={coverImage}

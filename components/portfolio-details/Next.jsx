@@ -7,12 +7,12 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 function Next({ nextProject, prevProject }) {
   return (
-    <section className="next-project sub-bg">
+    <section className="next-project relative sub-bg">
       <div className="container-fluid rest">
         <div className="row">
           {prevProject && (
             <div className="col-md-6 rest">
-              <div className="text-left box" style={{ position: 'relative', overflow: 'hidden' }}>
+              <div className="text-left box relative" style={{ position: 'relative', overflow: 'hidden' }}>
                 <Image
                   src={prevProject.img}
                   alt=""
@@ -20,7 +20,7 @@ function Next({ nextProject, prevProject }) {
                   style={{ objectFit: 'cover' }}
                 />
                 <div
-                  className="cont d-flex align-items-center"
+                  className="cont relative d-flex align-items-center"
                   style={{ position: 'relative', zIndex: 2 }}
                 >
                   <div>
@@ -42,7 +42,7 @@ function Next({ nextProject, prevProject }) {
           {nextProject && (
             <div className="col-md-6 rest">
               <div
-                className="text-right d-flex box"
+                className="text-right d-flex box relative"
                 style={{ position: 'relative', overflow: 'hidden' }}
               >
                 <Image
@@ -55,7 +55,7 @@ function Next({ nextProject, prevProject }) {
                   className="ml-auto"
                   style={{ position: 'relative', zIndex: 2 }}
                 >
-                  <div className="cont d-flex align-items-center">
+                  <div className="cont relative d-flex align-items-center">
                     <div>
                       <h6 className="sub-title fz-16 mb-5">Další projekt</h6>
                       <Link

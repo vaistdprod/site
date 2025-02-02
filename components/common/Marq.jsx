@@ -14,7 +14,7 @@ function Marq() {
   return (
     <section className="marq">
       <div className="main-marq lrg sub-bg pt-20 pb-20 shadow-off">
-        <div className="slide-har st1">
+        <div className="slide-bar st1">
           <div className="box">
             {items.map((item, i) => (
               <div key={i} className="item">

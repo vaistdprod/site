@@ -95,7 +95,7 @@ function Team({ members = [] }) {
                       fill
                       src={member.image}
                       alt={member.name}
-                      style={{ objectFit: "cover" }}
+                      className="object-cover"
                       sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 25vw"
                     />
                   </Link>

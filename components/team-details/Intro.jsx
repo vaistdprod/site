@@ -51,7 +51,7 @@ function Intro({ memberData }) {
                 src={memberData.image}
                 alt={memberData.name}
                 fill
-                style={{ objectFit: "cover" }}
+                className="object-cover"
                 sizes="(max-width: 991px) 100vw, 42vw"
                 priority
               />

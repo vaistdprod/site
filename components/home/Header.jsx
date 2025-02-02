@@ -20,7 +20,7 @@ function Header() {
 
   return (
     <div 
-      className="header header-personal valign position-re overflow-hidden"
+      className="header header-personal valign relative o-hidden"
       data-overlay-dark="6">
       <video
         className="position-absolute top-0 start-0 w-100 h-100"
@@ -32,7 +32,7 @@ function Header() {
         style={{ objectFit: 'cover', zIndex: -1 }}
       />
 
-      <div className="container ontop">
+      <div className="container relative z-7">
         <div className="row">
           <div className="col-lg-7">
             <div className="caption">

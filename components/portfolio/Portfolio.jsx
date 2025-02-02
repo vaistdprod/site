@@ -91,7 +91,7 @@ function PortfolioGrid() {
                   </div>
                   <div className="cont d-flex align-items-end mt-30">
                     <div className="">
-                      <span className="p-color mb-5 sub-title full-width">
+                      <span className="p-color mb-5 sub-title w-100">
                         {item.subTitle}
                       </span>
                       <Link href={`/portfolio/${item.id}`}>

@@ -13,7 +13,7 @@ function Marq() {
   return (
     <section className="opacity-7">
       <div className="main-marq xlrg o-hidden">
-        <div className="slide-har st2 non-strok">
+        <div className="slide-bar st2 non-stroke">
           <div className="box">
             {marquee.map((item, i) => (
               <div key={i} className="item">

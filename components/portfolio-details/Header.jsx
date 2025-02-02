@@ -20,7 +20,7 @@ function Header({ data }) {
 
   return (
     <div
-      className="header header-project d-flex align-items-end position-re"
+      className="header header-project d-flex align-items-end relative"
       data-overlay-dark="5"
     >
       <Image

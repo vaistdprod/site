@@ -4,7 +4,6 @@ import Header from '@/components/blog/Header';
 import Blogs from '@/components/blog/Blogs';
 import Navbar from '@/components/common/Navbar';
 import Footer from '@/components/common/Footer';
-import Lines from '@/components/common/Lines';
 import ProgressScroll from '@/components/common/ProgressScroll';
 import Cursor from '@/components/common/Cursor';
 import LoadingScreen from '@/components/common/LoadingScreen';
@@ -27,7 +26,6 @@ export default function ClientBlogList({ allPosts, tag, searchQuery }) {
       <LoadingScreen />
       <Cursor />
       <ProgressScroll />
-      <Lines />
       <div id="smooth-wrapper">
         <Navbar />
         <div id="smooth-content">

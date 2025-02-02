@@ -101,7 +101,7 @@ function ContactForm() {
       <div className="container">
         <div className="row">
           <div className="col-lg-4 valign">
-            <div className="sec-head info-box full-width md-mb80">
+            <div className="sec-head info-box w-100 md-mb80">
               <div className="phone fz-30 fw-600 underline main-color">
                 <a href="tel:+420737065717">+420 737 065 717</a>
               </div>
@@ -138,7 +138,7 @@ function ContactForm() {
             </div>
           </div>
           <div className="col-lg-7 offset-lg-1 valign">
-            <div className="full-width">
+            <div className="w-100">
               <div className="sec-head mb-50">
                 <h6 className="sub-title main-color mb-15">Kontaktní formulář</h6>
                 <h3 className="text-u ls1">
@@ -197,7 +197,7 @@ function ContactForm() {
                               checked={formData.potrebuji.includes(item)}
                               onChange={handleChange}
                             />
-                            <label className="form-check-label" htmlFor={`formular_potrebuji${index + 1}`}>
+                            <label className="form-check-label cursor-pointer" htmlFor={`formular_potrebuji${index + 1}`}>
                               {item}
                             </label>
                           </div>

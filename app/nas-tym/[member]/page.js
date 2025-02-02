@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import { getMemberBySlug, getAllSlugs } from "@/lib/team";
-import Lines from "@/components/common/Lines";
 import ProgressScroll from "@/components/common/ProgressScroll";
 import Cursor from "@/components/common/Cursor";
 import LoadingScreen from '@/components/common/LoadingScreen';
@@ -69,7 +68,6 @@ export default async function MemberPage({ params }) {
       <LoadingScreen />
       <Cursor />
       <ProgressScroll />
-      <Lines />
       <Navbar />
       <div id="smooth-wrapper">
         <div id="smooth-content">

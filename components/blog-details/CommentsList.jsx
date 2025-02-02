@@ -46,7 +46,7 @@ function CommentsList({ slug }) {
                 alt={comment.name}
                 width={40}
                 height={40}
-                className="rounded-circle"
+                className="circle"
               />
             </div>
             <div className="comment-meta ml-10">

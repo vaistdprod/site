@@ -11,7 +11,7 @@ function Marq2() {
   return (
     <section className="call-marq section-padding o-hidden">
       <div className="main-marq lrg main-bg pt-20 pb-20">
-        <div className="slide-har st1">
+        <div className="slide-bar st1">
           <div className="box">
             {AllMarquess.map((item, i) => (
               <div key={i} className="item">
@@ -53,7 +53,7 @@ function Marq2() {
       </div>
 
       <div className="main-marq bord-item">
-        <div className="slide-har st2">
+        <div className="slide-bar st2">
           <div className="box">
             {AllContact.map((item, i) => (
               <div key={i} className="item">

@@ -7,8 +7,8 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 function Feat() {
   return (
-    <section className="feat section-padding">
-      <div className="container ontop">
+    <section className="feat relative section-padding">
+      <div className="container relative z-7">
         <div className="row">
           <div className="col-lg-5">
             <div className="cont md-mb50">

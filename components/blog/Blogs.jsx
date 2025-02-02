@@ -22,8 +22,7 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
                       src={post.coverImage}
                       alt={post.title}
                       fill
-                      style={{ objectFit: "cover" }}
-                      className="img-fluid"
+                      className="img-fluid object-cover"
                       sizes="(max-width: 991px) 100vw, 67vw"
                     />
                   </div>
@@ -59,7 +58,7 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
             <div className="sidebar">
               <div className="widget">
                 <h6 className="title-widget">Hledáte konkrétní článek?</h6>
-                <div className="search-box">
+                <div className="search-box relative">
                   <form
                     onSubmit={(e) => {
                       e.preventDefault();
@@ -72,6 +71,7 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
                       name="search-post"
                       placeholder="Hledat..."
                       required
+                      className="radius-5"
                     />
                     <button type="submit" aria-label="Vyhledat" className="icon">
                       <FontAwesomeIcon icon={faSearch} aria-hidden="true" />
@@ -106,8 +106,7 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
                             alt={post.title}
                             width={90}
                             height={100}
-                            style={{ objectFit: "cover" }}
-                            className="img-fluid"
+                            className="img-fluid object-cover"
                           />
                           <span className="date">
                             <span>

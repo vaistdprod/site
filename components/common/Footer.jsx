@@ -44,8 +44,8 @@ function Footer() {
   };
 
   return (
-    <footer className="clean-footer crev">
-      <div className="container pb-40 pt-40 ontop">
+    <footer className="clean-footer crev relative">
+      <div className="container pb-40 pt-40 relative z-7">
         <div className="row justify-content-between">
           <div className="col-lg-2">
             <div className="logo icon-img-100 md-mb80">
@@ -147,7 +147,7 @@ function Footer() {
             <div className="column subscribe-minimal">
               <h6 className="sub-title mb-30">Newsletter</h6>
               <form onSubmit={handleSubscribe}>
-                <div className="form-group mb-40">
+                <div className="form-group relative mb-40">
                   <input
                     type="text"
                     name="subscribe"
@@ -162,6 +162,7 @@ function Footer() {
                     <input
                       type="checkbox"
                       id="agree"
+                      className="cursor-pointer"
                       checked={agreed}
                       onChange={() => setAgreed(!agreed)}
                     />

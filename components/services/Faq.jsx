@@ -15,20 +15,19 @@ export default function Faq() {
   }
 
   return (
-    <section className="intro-accord">
-      <div className="container ontop">
+    <section className="intro-accord relative">
+      <div className="container relative z-7">
         <div className="row xlg-marg">
           <div className="col-lg-6">
             <div
-              className="img md-mb50 full-height"
+              className="img md-mb50 h-100"
               style={{ position: "relative" }}
             >
               <Image
                 src="/assets/imgs/fotoprodukce.jpg"
                 alt="Fotoprodukce"
                 fill
-                style={{ objectFit: "cover" }}
-                className="circle-img"
+                className="circle-img object-cover"
                 sizes="(max-width: 991px) 100vw, 50vw"
               />
             </div>

@@ -14,8 +14,8 @@ function Intro2({ serviceData }) {
   }
 
   return (
-    <section className="intro-accord">
-      <div className="container ontop">
+    <section className="intro-accord relative">
+      <div className="container relative z-7">
         <div className="row xlg-marg">
           <div className="col-lg-6">
             <div className="img md-mb50">

@@ -2,7 +2,7 @@ import React from 'react';
 
 function Numbers() {
   return (
-    <section className="numbers-crev section-padding">
+    <section className="numbers-crev relative section-padding">
       <div className="container">
         <div className="row lg-marg justify-content-center">
           <div className="col-lg-4 col-md-6">

@@ -37,7 +37,7 @@ function FAQS() {
         />
       </Head>
 
-      <section className="page-faqs section-padding pb-0 position-re">
+      <section className="page-faqs section-padding pb-0 relative">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-10">

@@ -3,20 +3,19 @@ import Image from 'next/image';
 
 function About() {
   return (
-    <section className="about-author section-padding">
-      <div className="container with-pad">
+    <section className="about-us section-padding">
+      <div className="container">
         <div className="row lg-marg">
           <div className="col-lg-5 valign">
-            <div className="profile-img">
+            <div className="profile-img circle">
               <div
-                className="img"
-                style={{ position: "relative" }}
+                className="img relative o-hidden circle"
               >
                 <Image
                   fill
                   src="/assets/imgs/ostrava.jpg"
                   alt="Centrum Ostravy, nedaleko ulice 28. října, na které sídlí společnost TD Productions."
-                  style={{ objectFit: "cover" }}
+                  className="object-cover object-center"
                   sizes="(max-width: 991px) 100vw, 50vw"
                 />
               </div>
@@ -26,6 +25,7 @@ function About() {
                   alt="Logo programu Adobe After Effects"
                   width={75}
                   height={75}
+                  className="h-100"
                 />
               </span>
               <span className="icon">
@@ -34,6 +34,7 @@ function About() {
                   alt="Logo programu Figma"
                   width={75}
                   height={75}
+                  className="h-100"
                 />
               </span>
               <span className="icon">
@@ -42,6 +43,7 @@ function About() {
                   alt="Logo knihovny React"
                   width={75}
                   height={75}
+                  className="h-100"
                 />
               </span>
               <span className="icon">
@@ -50,6 +52,7 @@ function About() {
                   alt="Logo CMS WordPress"
                   width={75}
                   height={75}
+                  className="h-100"
                 />
               </span>
             </div>

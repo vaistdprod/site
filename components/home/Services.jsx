@@ -7,7 +7,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 function Services({ services }) {
   return (
-    <section className="services-class">
+    <section className="services-class relative">
       <div className="container">
         <div className="sec-head mb-80">
           <div className="row">
@@ -25,7 +25,7 @@ function Services({ services }) {
         </div>
       </div>
 
-      <div className="container section-padding bord-bottom-grd pt-0">
+      <div className="container section-padding bord-bottom-grd relative pt-0">
         <div className="sec-head mb-80">
           <div className="d-flex align-items-center">
             <div>
