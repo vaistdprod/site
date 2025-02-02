@@ -6,22 +6,35 @@ const RollingText = ({ text = 'home' }) => {
 
   useEffect(() => {
     const element = elementRef.current;
+
+    element.innerHTML = '';
+
+    const fragment = document.createDocumentFragment();
+
     const textContainer = document.createElement('div');
     textContainer.classList.add('block');
 
     for (let letter of text) {
-      let span = document.createElement('span');
+      const span = document.createElement('span');
       span.innerText = letter.trim() === '' ? '\xa0' : letter;
       span.classList.add('letter');
       textContainer.appendChild(span);
     }
 
-    element.appendChild(textContainer);
-    element.appendChild(textContainer.cloneNode(true));
+    fragment.appendChild(textContainer);
+    fragment.appendChild(textContainer.cloneNode(true));
 
-    element.addEventListener('mouseover', () => {
+    element.appendChild(fragment);
+
+    const handleMouseOver = () => {
       element.classList.remove('play');
-    });
+    };
+
+    element.addEventListener('mouseover', handleMouseOver);
+
+    return () => {
+      element.removeEventListener('mouseover', handleMouseOver);
+    };
   }, [text]);
 
   return <span className="rolling-text" ref={elementRef}></span>;

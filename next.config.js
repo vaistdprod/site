@@ -2,7 +2,7 @@ const path = require('path');
 
 const contentSecurityPolicy = `
   default-src 'self';
-  
+  media-src 'self' blob: https:;
   script-src 
     'self' 
     'unsafe-inline' 
@@ -15,7 +15,7 @@ const contentSecurityPolicy = `
     https://va.vercel-scripts.com
     https://kit.fontawesome.com
     https://ka-f.fontawesome.com;
-  
+
   style-src 
     'self' 
     'unsafe-inline' 

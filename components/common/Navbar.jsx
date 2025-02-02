@@ -37,7 +37,7 @@ function Navbar() {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg bord blur">
+    <nav className="navbar navbar-expand-lg">
       <div className="container o-hidden">
         <Link className="logo relative icon-img-100" href="/">
           <Image

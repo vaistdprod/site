@@ -7,9 +7,9 @@ function About() {
       <div className="container">
         <div className="row lg-marg">
           <div className="col-lg-5 valign">
-            <div className="profile-img circle">
+            <div className="profile-img radius-250">
               <div
-                className="img relative o-hidden circle"
+                className="img relative o-hidden radius-250"
               >
                 <Image
                   fill
