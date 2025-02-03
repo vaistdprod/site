@@ -26,7 +26,7 @@ function Header() {
         src="/assets/imgs/bg/bg43.jpg"
         alt=""
         fill
-        style={{ objectFit: 'cover' }}
+        className="object-cover"
         priority
       />
       <div className="container pt-80">

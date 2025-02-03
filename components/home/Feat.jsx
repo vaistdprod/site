@@ -32,12 +32,12 @@ function Feat() {
           <div className="col-lg-6 offset-lg-1">
             <div className="item mb-30">
               <div className="row">
-                <div className="col-md-4" style={{ position: 'relative' }}>
+                <div className="col-md-4 relative">
                   <Image
                     fill
                     src="/assets/imgs/fotoprodukce.jpg"
                     alt="Dlouhodobé vztahy"
-                    style={{ objectFit: 'cover' }}
+                    className="object-cover"
                     sizes="(max-width: 767px) 100vw, (max-width: 991px) 33vw, 16vw"
                     />
                 </div>
@@ -53,12 +53,12 @@ function Feat() {
             </div>
             <div className="item mb-30">
               <div className="row">
-                <div className="col-md-4" style={{ position: 'relative' }}>
+                <div className="col-md-4 relative">
                   <Image
                     fill
                     src="/assets/imgs/sebastian-2.jpg"
                     alt="Dlouhodobé vztahy"
-                    style={{ objectFit: 'cover' }}
+                    className="object-cover"
                     sizes="(max-width: 767px) 100vw, (max-width: 991px) 33vw, 16vw"
                   />
                 </div>
@@ -74,12 +74,12 @@ function Feat() {
             </div>
             <div className="item">
               <div className="row">
-                <div className="col-md-4" style={{ position: 'relative' }}>
+                <div className="col-md-4 relative">
                   <Image
                     fill
                     src="/assets/imgs/schuzka-2.jpg"
                     alt="Dlouhodobé vztahy"
-                    style={{ objectFit: 'cover' }}
+                    className="object-cover"
                     sizes="(max-width: 767px) 100vw, (max-width: 991px) 33vw, 16vw"
                   />
                 </div>

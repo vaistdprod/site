@@ -25,6 +25,7 @@ function Header({ serviceData }) {
         src="/assets/imgs/bg/bg30.jpg"
         alt=""
         fill
+        className="object-cover"
         priority
       />
 

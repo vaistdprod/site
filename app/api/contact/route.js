@@ -25,7 +25,7 @@ export async function POST(request) {
     await rateLimiter.consume(ip);
 
     const body = await request.json();
-    const { jmeno, email, potrebuji, zprava, captchaToken } = body;
+    const { jmeno, email, potrebuji, zprava } = body;
 
     const schema = Joi.object({
       jmeno: Joi.string().min(2).max(100).required(),
@@ -42,7 +42,6 @@ export async function POST(request) {
         )
         .optional(),
       zprava: Joi.string().min(10).max(1000).required(),
-      captchaToken: Joi.string().required(),
     });
 
     const { error, value } = schema.validate({
@@ -50,40 +49,10 @@ export async function POST(request) {
       email,
       potrebuji,
       zprava,
-      captchaToken,
     });
 
     if (error) {
       return NextResponse.json({ message: error.details[0].message }, { status: 400 });
-    }
-
-    const secretKey = process.env.RECAPTCHA_SECRET_KEY;
-    const verificationURL = 'https://www.google.com/recaptcha/api/siteverify';
-
-    const params = new URLSearchParams();
-    params.append('secret', secretKey);
-    params.append('response', value.captchaToken);
-    params.append('remoteip', ip);
-
-    const captchaResponse = await fetch(verificationURL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: params.toString(),
-    });
-
-    const captchaData = await captchaResponse.json();
-    if (!captchaData.success) {
-      return NextResponse.json({ message: 'Ověření reCAPTCHA selhalo.' }, { status: 400 });
-    }
-
-    const MIN_SCORE = 0.5;
-    if (captchaData.score < MIN_SCORE) {
-      return NextResponse.json({ message: 'Nízké reCAPTCHA skóre. Zkuste to prosím znovu.' }, { status: 400 });
-    }
-
-    const expectedAction = 'contact_form_submission';
-    if (captchaData.action !== expectedAction) {
-      return NextResponse.json({ message: 'Neshoda v reCAPTCHA.' }, { status: 400 });
     }
 
     const sanitizedJmeno = sanitizeHtml(value.jmeno);

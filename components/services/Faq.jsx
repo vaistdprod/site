@@ -20,8 +20,7 @@ export default function Faq() {
         <div className="row xlg-marg">
           <div className="col-lg-6">
             <div
-              className="img md-mb50 h-100"
-              style={{ position: "relative" }}
+              className="img md-mb50 h-100 relative"
             >
               <Image
                 src="/assets/imgs/fotoprodukce.jpg"

@@ -35,13 +35,12 @@ function Blog({ posts = [] }) {
           {topPosts.map((post, idx) => (
             <div key={post.slug} className={`col-lg-6 ${idx === 0 ? 'md-mb50' : ''}`}>
               <div className="item">
-                <div className="img fit-img" style={{ position: 'relative' }}>
+                <div className="img fit-img relative">
                   <Image
                     fill
                     src={post.coverImage}
                     alt={post.title}
-                    className="img-fluid"
-                    style={{ objectFit: 'cover' }}
+                    className="img-fluid object-cover"
                     sizes="(max-width: 991px) 100vw, 50vw"
                   />
                 </div>

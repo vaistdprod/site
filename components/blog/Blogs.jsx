@@ -17,7 +17,7 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
             <div className="md-mb80">
               {posts.map((post) => (
                 <div key={post.slug} className="item mb-80">
-                  <div className="img" style={{ position: "relative" }}>
+                  <div className="img relative">
                     <Image
                       src={post.coverImage}
                       alt={post.title}
@@ -99,7 +99,7 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
                 {posts.slice(0, 3).map((post) => (
                   <div key={post.slug} className="item d-flex align-items-center">
                     <div>
-                      <div className="img" style={{ position: "relative" }}>
+                      <div className="img relative">
                         <Link href={`/blog/${post.slug}`}>
                           <Image
                             src={post.coverImage}

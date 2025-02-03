@@ -89,7 +89,7 @@ function Team({ members = [] }) {
                   </div>
                 </div>
 
-                <div className="img" style={{ position: "relative" }}>
+                <div className="img relative">
                   <Link href={`/nas-tym/${member.slug}`} style={{ position: "relative", height: "100%", width: "100%" }}>
                     <Image
                       fill

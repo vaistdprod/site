@@ -45,7 +45,7 @@ function Header({ title, author, date, comments, coverImage, tags }) {
               <div className="left-info">
                 <div className="d-flex align-items-center">
                   <div className="author-info">
-                    <div className="d-flex align-items-center" style={{ position: 'relative' }}>
+                    <div className="d-flex align-items-center relative">
                       <Link href={`/nas-tym/${encodeURIComponent(author.slug)}`} className="circle-60 d-inline-flex">
                         <Image
                           src={author.avatar}
@@ -90,7 +90,7 @@ function Header({ title, author, date, comments, coverImage, tags }) {
             fill
             src={coverImage}
             alt={`Obrázek k článku: ${title}`}
-            style={{ objectFit: 'cover' }}
+            className="object-cover"
             sizes="100vw"
             priority
           />

@@ -81,19 +81,6 @@ export default function PrivacyPolicy() {
               </li>
             </ol>
 
-            <h3 className="mb-20 fz-30 fw-600">2.3 Bezpečnostní nástroje</h3>
-            <p className="mb-20">
-              Za účelem zajištění bezpečnosti našich webových stránek využíváme následující služby:
-            </p>
-            <ol>
-             <li>
-                <strong>Google reCAPTCHA</strong><br />
-                <em>Poskytovatel:</em> Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA<br />
-                <em>Zpracovávané údaje:</em> informace o interakcích s reCAPTCHA, IP adresa, údaje o zařízení, údaje o prohlížeči, cookies (nutné pro bezpečnostní účely) a další technická data potřebná k ověření, že uživatel není robot<br />
-                <em>Právní základ:</em> čl. 6 odst. 1 písm. f) GDPR (oprávněný zájem) pro zabezpečení webu proti spamovým útokům a automatizovanému zneužívání.
-              </li>
-            </ol>
-
             <h3 className="mb-20 fz-30 fw-600">2.4 Loops pro e-mailový marketing</h3>
             <ul className="dot-list mb-20">
               <li className="mb-10">

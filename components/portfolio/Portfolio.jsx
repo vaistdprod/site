@@ -83,8 +83,7 @@ function PortfolioGrid() {
                         fill
                         src={item.img}
                         alt={item.alt}
-                        className="img-fluid"
-                        style={{ objectFit: 'cover' }}
+                        className="img-fluid object-cover"
                         sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 33vw"
                       />
                     </Link>

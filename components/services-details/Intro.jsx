@@ -63,8 +63,7 @@ function Intro({ serviceData }) {
 
           <div className="col-lg-4">
             <div
-              className="img-full h-100 fit-img"
-              style={{ position: "relative" }}
+              className="img-full h-100 fit-img relative"
             >
               <Image
                 src={serviceData.img}

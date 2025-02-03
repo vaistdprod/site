@@ -1172,6 +1172,14 @@ figure {
   cursor: pointer;
 }
 
+.-z-1 {
+  z-index: -1;
+}
+
+.z-2 {
+  z-index: 2;
+}
+
 .z-7 {
   z-index: 7;
 }
@@ -2453,12 +2461,6 @@ footer .agree-form {
   background-size: cover;
   opacity: 0.3;
   z-index: -1;
-}
-
-.grecaptcha-badge {
-  left: 0 !important;
-  right: auto !important;
-  bottom: 0 !important;
 }
 
 .contact .form2 input,

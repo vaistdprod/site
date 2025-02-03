@@ -27,7 +27,7 @@ function Header({ data }) {
         src={data.images[0]}
         alt=""
         fill
-        style={{ objectFit: 'cover' }}
+        className="object-cover"
         priority
       />
 

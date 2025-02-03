@@ -81,7 +81,7 @@ function Portfolio() {
                         <span className="text">Zobrazit detail</span>
                       </Link>
                     </div>
-                    <div className="img col-lg-6" style={{ position: "relative" }}>
+                    <div className="img col-lg-6 relative">
                       <Link href={`/portfolio/${item.id}`} style={{ position: "relative", height: "100%", width: "100%" }} tabIndex={isActive ? 0 : -1}>
                         <Image
                           fill

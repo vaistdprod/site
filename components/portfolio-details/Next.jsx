@@ -12,16 +12,15 @@ function Next({ nextProject, prevProject }) {
         <div className="row">
           {prevProject && (
             <div className="col-md-6 rest">
-              <div className="text-left box relative" style={{ position: 'relative', overflow: 'hidden' }}>
+              <div className="text-left box relative o-hidden">
                 <Image
                   src={prevProject.img}
                   alt=""
                   fill
-                  style={{ objectFit: 'cover' }}
-                />
+                  className="object-cover"
+                  />
                 <div
-                  className="cont relative d-flex align-items-center"
-                  style={{ position: 'relative', zIndex: 2 }}
+                  className="cont relative d-flex align-items-center z-2"
                 >
                   <div>
                     <FontAwesomeIcon icon={faArrowLeft} className="mr-30 fz-30" />
@@ -42,18 +41,16 @@ function Next({ nextProject, prevProject }) {
           {nextProject && (
             <div className="col-md-6 rest">
               <div
-                className="text-right d-flex box relative"
-                style={{ position: 'relative', overflow: 'hidden' }}
+                className="text-right d-flex box relative o-hidden"
               >
                 <Image
                   src={nextProject.img}
                   alt=""
                   fill
-                  style={{ objectFit: 'cover' }}
-                />
+                  className="object-cover"
+                  />
                 <div
-                  className="ml-auto"
-                  style={{ position: 'relative', zIndex: 2 }}
+                  className="ml-auto relative z-2"
                 >
                   <div className="cont relative d-flex align-items-center">
                     <div>

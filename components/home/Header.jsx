@@ -23,13 +23,12 @@ function Header() {
       className="header header-personal valign relative o-hidden"
       data-overlay-dark="6">
       <video
-        className="position-absolute top-0 start-0 w-100 h-100"
+        className="position-absolute top-0 start-0 w-100 h-100 object-cover -z-1"
         src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/tdprod-promo.mp4"
         autoPlay
         loop
         muted
         playsInline
-        style={{ objectFit: 'cover', zIndex: -1 }}
       />
 
       <div className="container relative z-7">

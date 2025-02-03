@@ -46,7 +46,7 @@ function Intro({ memberData }) {
       <div className="container">
         <div className="row md-marg justify-content-around bord">
           <div className="col-lg-5">
-            <div className="img md-mb50" style={{ position: "relative" }}>
+            <div className="img md-mb50 relative">
               <Image
                 src={memberData.image}
                 alt={memberData.name}

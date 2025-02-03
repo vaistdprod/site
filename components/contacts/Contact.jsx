@@ -1,11 +1,9 @@
 'use client';
-import React, { useState, useEffect, useCallback } from 'react';
-import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faXTwitter, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 function ContactForm() {
-  const { executeRecaptcha } = useGoogleReCaptcha();
   const [formData, setFormData] = useState({
     jmeno: '',
     email: '',
@@ -13,7 +11,6 @@ function ContactForm() {
     zprava: '',
   });
   const [status, setStatus] = useState(null);
-  const [captchaToken, setCaptchaToken] = useState(null);
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
@@ -43,9 +40,6 @@ function ContactForm() {
     if (formData.zprava.length < 10) {
       newErrors.zprava = 'Zpráva musí mít alespoň 10 znaků.';
     }
-    if (!captchaToken) {
-      newErrors.captcha = 'Ověřte, že nejste robot.';
-    }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -61,13 +55,12 @@ function ContactForm() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, captchaToken }),
+        body: JSON.stringify(formData),
       });
       const data = await res.json();
       if (res.ok) {
         setStatus('Zpráva úspěšně odeslána!');
         setFormData({ jmeno: '', email: '', potrebuji: [], zprava: '' });
-        setCaptchaToken(null);
       } else {
         setStatus(data.message || 'Nepodařilo se odeslat zprávu.');
       }
@@ -76,25 +69,6 @@ function ContactForm() {
       setStatus('Došlo k chybě při odesílání zprávy.');
     }
   };
-
-  const handleReCaptchaVerify = useCallback(async () => {
-    if (!executeRecaptcha) {
-      console.log('executeRecaptcha není dostupné.');
-      return;
-    }
-    try {
-      const token = await executeRecaptcha('contact_form_submission');
-      setCaptchaToken(token);
-      setErrors((prev) => ({ ...prev, captcha: null }));
-    } catch (error) {
-      console.error('ReCAPTCHA error:', error);
-      setErrors((prev) => ({ ...prev, captcha: 'Ověření ReCAPTCHA selhalo.' }));
-    }
-  }, [executeRecaptcha]);
-
-  useEffect(() => {
-    handleReCaptchaVerify();
-  }, [handleReCaptchaVerify]);
 
   return (
     <section className="contact section-padding">
@@ -218,7 +192,6 @@ function ContactForm() {
                       ></textarea>
                       {errors.zprava && <p className="error-text">{errors.zprava}</p>}
                     </div>
-                    {errors.captcha && <p className="error-text">{errors.captcha}</p>}
                     <div className="mt-30">
                       <button type="submit" className="btn btn-full btn-bord radius-30" id="odeslat-kontaktni-formular">
                         <span className="text">Odeslat</span>
@@ -237,14 +210,7 @@ function ContactForm() {
 }
 
 function Contact() {
-  return (
-    <GoogleReCaptchaProvider
-      reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-      scriptProps={{ async: true, defer: true, appendTo: 'head' }}
-    >
-      <ContactForm />
-    </GoogleReCaptchaProvider>
-  );
+  return <ContactForm />;
 }
 
 export default Contact;
