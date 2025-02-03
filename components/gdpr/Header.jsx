@@ -29,7 +29,7 @@ function Header() {
         className="object-cover"
         priority
       />
-      <div className="container pt-80">
+      <div className="container relative z-7 pt-80">
         <div className="row">
           <div className="col-12">
             <div className="text-center">

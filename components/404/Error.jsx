@@ -20,7 +20,7 @@ function Error() {
       </div>
       <div className="marq">
         <div className="main-marq">
-          <div className="slide-bar st1 strok">
+          <div className="slide-bar d-flex relative st1 strok">
             <div className="box">
               {AllMarquess.map((item, i) => (
                 <div key={i} className="item">
@@ -50,7 +50,7 @@ function Error() {
       </div>
       <div className="marq">
         <div className="main-marq">
-          <div className="slide-bar st2 non-stroke">
+          <div className="slide-bar relative st2 d-flex non-stroke">
             <div className="box">
               {AllMarquess.map((item, i) => (
                 <div key={i} className="item">
@@ -80,7 +80,7 @@ function Error() {
       </div>
       <div className="marq">
         <div className="main-marq">
-          <div className="slide-bar st1 strok">
+          <div className="slide-bar relative st1 d-flex strok">
             <div className="box">
               {AllMarquess.map((item, i) => (
                 <div key={i} className="item">
@@ -110,7 +110,7 @@ function Error() {
       </div>
       <div className="marq">
         <div className="main-marq">
-          <div className="slide-bar st2 non-stroke">
+          <div className="slide-bar relative st2 d-flex non-stroke">
             <div className="box">
               {AllMarquess.map((item, i) => (
                 <div key={i} className="item">

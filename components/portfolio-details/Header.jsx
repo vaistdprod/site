@@ -31,7 +31,7 @@ function Header({ data }) {
         priority
       />
 
-      <div className="container">
+      <div className="container relative z-7">
         <div className="row">
           <div className="col-12">
             <div className="caption">
