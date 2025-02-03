@@ -145,9 +145,9 @@ function Navbar() {
               </div>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/portfolio">
+              <Link className="nav-link" href="/portfolio">
                 <RollingText text="Portfolio" />
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" href="/blog">
