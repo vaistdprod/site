@@ -19,7 +19,7 @@ const ProgressScroll = () => {
       >
         <path className="progress-path" d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
       </svg>
-      <div className="progress-icon">
+      <div className="progress-icon absolute">
         <FontAwesomeIcon icon={faArrowUp} />
       </div>
     </div>

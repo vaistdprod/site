@@ -20,7 +20,7 @@ function Next({ nextProject, prevProject }) {
                   className="object-cover"
                   />
                 <div
-                  className="cont relative d-flex align-items-center z-2"
+                  className="cont relative flex align-items-center z-2"
                 >
                   <div>
                     <FontAwesomeIcon icon={faArrowLeft} className="mr-30 fz-30" />
@@ -41,7 +41,7 @@ function Next({ nextProject, prevProject }) {
           {nextProject && (
             <div className="col-md-6 rest">
               <div
-                className="text-right d-flex box relative o-hidden"
+                className="text-right flex box relative o-hidden"
               >
                 <Image
                   src={nextProject.img}
@@ -52,7 +52,7 @@ function Next({ nextProject, prevProject }) {
                 <div
                   className="ml-auto relative z-2"
                 >
-                  <div className="cont relative d-flex align-items-center">
+                  <div className="cont relative flex align-items-center">
                     <div>
                       <h6 className="sub-title fz-16 mb-5">Další projekt</h6>
                       <Link

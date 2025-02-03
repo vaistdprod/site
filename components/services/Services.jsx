@@ -9,11 +9,11 @@ function Services({ services }) {
     <section className="services-class relative section-padding">
       <div className="container">
         <div className="sec-head mb-80">
-          <div className="d-flex align-items-center">
+          <div className="flex align-items-center">
             <div>
               <span className="sub-title main-color mb-5">Naše specializace</span>
-              <h3 className="fw-600 fz-50 text-u d-rotate wow">
-                <span className="rotate-text">
+              <h3 className="fw-600 fz-50 text-u  ">
+                <span className="">
                   Seznam <span className="fw-200">služeb</span>
                 </span>
               </h3>

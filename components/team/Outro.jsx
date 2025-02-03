@@ -49,15 +49,15 @@ function Outro() {
             </div>
           </div>
           <div className="col-lg-6">
-            <div className="imgs">
-              <div className="img1">
-                <img src="/assets/imgs/intro/2.jpg" alt="" />
+            <div className="imgs relative">
+              <div className="img1 absolute o-hidden">
+                <img className="object-center object-cover" src="/assets/imgs/intro/2.jpg" alt="" />
               </div>
-              <div className="img2">
-                <img src="/assets/imgs/intro/03.jpg" alt="" />
+              <div className="img2 absolute o-hidden">
+                <img className="object-center object-cover" src="/assets/imgs/intro/03.jpg" alt="" />
               </div>
-              <div className="img3">
-                <img src="/assets/imgs/intro/04.jpg" alt="" />
+              <div className="img3 absolute o-hidden">
+                <img className="object-center object-cover" src="/assets/imgs/intro/04.jpg" alt="" />
               </div>
             </div>
           </div>

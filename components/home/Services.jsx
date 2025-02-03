@@ -27,11 +27,11 @@ function Services({ services }) {
 
       <div className="container section-padding bord-bottom-grd relative pt-0">
         <div className="sec-head mb-80">
-          <div className="d-flex align-items-center">
+          <div className="flex align-items-center">
             <div>
               <span className="sub-title main-color mb-5">Naše specializace</span>
-              <h3 className="fw-600 fz-50 text-u d-rotate wow">
-                <span className="rotate-text">
+              <h3 className="fw-600 fz-50 text-u  ">
+                <span className="">
                   Vybrané <span className="fw-200">služby</span>
                 </span>
               </h3>

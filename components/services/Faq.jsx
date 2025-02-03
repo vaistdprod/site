@@ -26,7 +26,7 @@ export default function Faq() {
                 src="/assets/imgs/fotoprodukce.jpg"
                 alt="Fotoprodukce"
                 fill
-                className="circle-img object-cover"
+                className="object-center size-100 object-cover"
                 sizes="(max-width: 991px) 100vw, 50vw"
               />
             </div>
@@ -42,7 +42,7 @@ export default function Faq() {
               </div>
 
               <div className="accordion bord">
-                <div className="item active wow fadeInUp" data-wow-delay=".1s">
+                <div className="item active  fadeInUp">
                   <div onClick={openAccordion} className="title">
                     <h6>Expertní tým s přesahem do sousedících oborů</h6>
                     <span className="ico ti-plus"></span>
@@ -55,7 +55,7 @@ export default function Faq() {
                   </div>
                 </div>
 
-                <div className="item wow fadeInUp" data-wow-delay=".3s">
+                <div className="item  fadeInUp">
                   <div onClick={openAccordion} className="title">
                     <h6>Spolehlivost a odpovědnost</h6>
                     <span className="ico ti-plus"></span>
@@ -68,7 +68,7 @@ export default function Faq() {
                   </div>
                 </div>
 
-                <div className="item wow fadeInUp" data-wow-delay=".5s">
+                <div className="item  fadeInUp">
                   <div onClick={openAccordion} className="title">
                     <h6>Partneři na dlouhou trať</h6>
                     <span className="ico ti-plus"></span>

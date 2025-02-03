@@ -14,14 +14,12 @@ export default function ClientScripts() {
 
   return (
     <>
-      <Script src="/assets/js/plugins.js" strategy="afterInteractive" />
       <Script src="/assets/js/gsap.min.js" strategy="afterInteractive" />
       {isNonTouch && (
         <>
           <Script src="/assets/js/ScrollTrigger.min.js" strategy="afterInteractive" />
           <Script src="/assets/js/ScrollSmoother.min.js" strategy="afterInteractive" />
           <Script src="/assets/js/smoother-script.js" strategy="lazyOnload" />
-          <Script src="/assets/js/scripts.js" strategy="afterInteractive" />
         </>
       )}
     </>

@@ -37,11 +37,11 @@ function Portfolio() {
     <section className="work-crev section-padding">
       <div className="container relative pb-80">
         <div className="sec-head mb-80">
-          <div className="d-flex align-items-center">
+          <div className="flex align-items-center">
             <div>
               <span className="sub-title main-color mb-5">Naše portfolio</span>
-              <h3 className="fw-600 fz-50 text-u d-rotate wow">
-                <span className="rotate-text">
+              <h3 className="fw-600 fz-50 text-u  ">
+                <span className="">
                   Vybrané <span className="fw-200">projekty</span>
                 </span>
               </h3>
@@ -65,14 +65,14 @@ function Portfolio() {
               const isActive = i === realIndex;
               return (
                 <SwiperSlide key={item.id} tabIndex={isActive ? 0 : -1} aria-hidden={!isActive}>
-                  <div className="item d-flex justify-content-between">
+                  <div className="item flex justify-content-between">
                     <div className="cont col-lg-6">
                       <Link href={`/portfolio/${item.id}`} tabIndex={isActive ? 0 : -1}>
                         <h6 className="sub-title main-color mb-15">{item.category}</h6>
                         <h2 className="mb-5">{item.title}</h2>
                         <h3>{item.subTitle}</h3>
                       </Link>
-                      <Link href={`/portfolio/${item.id}`} className="btn-crev d-flex align-items-center mt-30" tabIndex={isActive ? 0 : -1}>
+                      <Link href={`/portfolio/${item.id}`} className="btn-crev flex align-items-center mt-30" tabIndex={isActive ? 0 : -1}>
                         <span className="hover-this">
                           <span className="circle hover-anim">
                             <FontAwesomeIcon icon={faArrowRight} />

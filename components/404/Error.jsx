@@ -20,11 +20,11 @@ function Error() {
       </div>
       <div className="marq">
         <div className="main-marq">
-          <div className="slide-bar d-flex relative st1 strok">
+          <div className="slide-bar flex relative st1 strok">
             <div className="box">
               {AllMarquess.map((item, i) => (
                 <div key={i} className="item">
-                  <h4 className="d-flex align-items-center">
+                  <h4 className="flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
                       <FontAwesomeIcon icon={faExclamationTriangle} />
@@ -36,37 +36,7 @@ function Error() {
             <div className="box">
               {AllMarquess.map((item, i) => (
                 <div key={i} className="item">
-                  <h4 className="d-flex align-items-center">
-                    <span>{item}</span>
-                    <span className="ml-40">
-                      <FontAwesomeIcon icon={faExclamationTriangle} />
-                    </span>
-                  </h4>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="marq">
-        <div className="main-marq">
-          <div className="slide-bar relative st2 d-flex non-stroke">
-            <div className="box">
-              {AllMarquess.map((item, i) => (
-                <div key={i} className="item">
-                  <h4 className="d-flex align-items-center">
-                    <span>{item}</span>
-                    <span className="ml-40">
-                      <FontAwesomeIcon icon={faExclamationTriangle} />
-                    </span>
-                  </h4>
-                </div>
-              ))}
-            </div>
-            <div className="box">
-              {AllMarquess.map((item, i) => (
-                <div key={i} className="item">
-                  <h4 className="d-flex align-items-center">
+                  <h4 className="flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
                       <FontAwesomeIcon icon={faExclamationTriangle} />
@@ -80,11 +50,11 @@ function Error() {
       </div>
       <div className="marq">
         <div className="main-marq">
-          <div className="slide-bar relative st1 d-flex strok">
+          <div className="slide-bar relative st2 flex non-stroke">
             <div className="box">
               {AllMarquess.map((item, i) => (
                 <div key={i} className="item">
-                  <h4 className="d-flex align-items-center">
+                  <h4 className="flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
                       <FontAwesomeIcon icon={faExclamationTriangle} />
@@ -96,7 +66,7 @@ function Error() {
             <div className="box">
               {AllMarquess.map((item, i) => (
                 <div key={i} className="item">
-                  <h4 className="d-flex align-items-center">
+                  <h4 className="flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
                       <FontAwesomeIcon icon={faExclamationTriangle} />
@@ -110,11 +80,11 @@ function Error() {
       </div>
       <div className="marq">
         <div className="main-marq">
-          <div className="slide-bar relative st2 d-flex non-stroke">
+          <div className="slide-bar relative st1 flex strok">
             <div className="box">
               {AllMarquess.map((item, i) => (
                 <div key={i} className="item">
-                  <h4 className="d-flex align-items-center">
+                  <h4 className="flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
                       <FontAwesomeIcon icon={faExclamationTriangle} />
@@ -126,7 +96,37 @@ function Error() {
             <div className="box">
               {AllMarquess.map((item, i) => (
                 <div key={i} className="item">
-                  <h4 className="d-flex align-items-center">
+                  <h4 className="flex align-items-center">
+                    <span>{item}</span>
+                    <span className="ml-40">
+                      <FontAwesomeIcon icon={faExclamationTriangle} />
+                    </span>
+                  </h4>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="marq">
+        <div className="main-marq">
+          <div className="slide-bar relative st2 flex non-stroke">
+            <div className="box">
+              {AllMarquess.map((item, i) => (
+                <div key={i} className="item">
+                  <h4 className="flex align-items-center">
+                    <span>{item}</span>
+                    <span className="ml-40">
+                      <FontAwesomeIcon icon={faExclamationTriangle} />
+                    </span>
+                  </h4>
+                </div>
+              ))}
+            </div>
+            <div className="box">
+              {AllMarquess.map((item, i) => (
+                <div key={i} className="item">
+                  <h4 className="flex align-items-center">
                     <span>{item}</span>
                     <span className="ml-40">
                       <FontAwesomeIcon icon={faExclamationTriangle} />

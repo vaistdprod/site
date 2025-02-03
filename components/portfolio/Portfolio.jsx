@@ -80,7 +80,7 @@ function PortfolioGrid() {
               <h3>Poslední projekty</h3>
             </div>
           </div>
-          <div className="filtering col-lg-8 d-flex justify-content-end align-items-end">
+          <div className="filtering col-lg-8 flex justify-content-end align-items-end">
             <div className="filter">
               {categories.map((cat, idx) => {
                 const isAll = cat.filter === '*';
@@ -113,15 +113,11 @@ function PortfolioGrid() {
             return (
               <div
                 key={item.id}
-                className={`col-lg-4 col-md-6 grid-item ${catSlug}`}
+                className={`col-lg-4 col-md-6 grid-item absolute ${catSlug}`}
                 data-category={catSlug}
-                style={{
-                  position: 'absolute',
-                  transition: 'transform 0.4s ease, opacity 0.4s ease',
-                }}
               >
                 <div className="item mb-50">
-                  <div className="img" style={{ position: 'relative', height: '300px' }}>
+                  <div className="img relative" style={{ height: '300px' }}>
                     <Link href={`/portfolio/${item.id}`} style={{ position: 'relative', height: '100%', width: '100%' }}>
                       <Image
                         fill
@@ -132,7 +128,7 @@ function PortfolioGrid() {
                       />
                     </Link>
                   </div>
-                  <div className="cont d-flex align-items-end mt-30">
+                  <div className="cont flex align-items-end mt-30">
                     <div>
                       <span className="p-color mb-5 sub-title w-100">{item.subTitle}</span>
                       <Link href={`/portfolio/${item.id}`}>

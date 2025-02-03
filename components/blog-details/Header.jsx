@@ -41,19 +41,19 @@ function Header({ title, author, date, comments, coverImage, tags }) {
               </div>
               <h1 className="fz-55 mt-30">{title}</h1>
             </div>
-            <div className="info d-flex mt-40 align-items-center">
+            <div className="info flex mt-40 align-items-center">
               <div className="left-info">
-                <div className="d-flex align-items-center">
+                <div className="flex align-items-center">
                   <div className="author-info">
-                    <div className="d-flex align-items-center relative">
+                    <div className="flex align-items-center relative">
                       <Link href={`/nas-tym/${encodeURIComponent(author.slug)}`} className="circle-60 d-inline-flex">
                         <Image
                           src={author.avatar}
                           alt={author.name}
-                          className="circle-img"
+                          className="size-100 object-cover"
                           width={60}
                           height={60}
-                          style={{ objectFit: 'cover', objectPosition: '50% 10%' }}
+                          style={{ objectPosition: '50% 10%' }}
                         />
                       </Link>
                       <div className="ml-20">

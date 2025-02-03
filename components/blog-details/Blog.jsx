@@ -135,7 +135,7 @@ function Blog({ post, latestPosts }) {
                           alt={post.author.name}
                           height={60}
                           width={60}
-                          className="circle-img object-cover"
+                          className="object-center size-100 object-cover"
                         />
                       </div>
                     </div>
@@ -252,7 +252,7 @@ function Blog({ post, latestPosts }) {
               <div className="widget last-post-thum">
                 <h6 className="title-widget">Nejnovější příspěvky</h6>
                 {latestPosts.map((latestPost) => (
-                  <div key={latestPost.slug} className="item d-flex align-items-center">
+                  <div key={latestPost.slug} className="item flex align-items-center">
                     <div>
                       <div className="img relative">
                         <Link href={`/blog/${latestPost.slug}`} style={{ position: "relative", height: "100%", width: "100%" }}>

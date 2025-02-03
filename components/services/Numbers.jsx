@@ -23,7 +23,7 @@ function Numbers() {
       <div className="container">
         <div className="row lg-marg justify-content-center">
           <div className="col-lg-4 col-md-6">
-            <div className="item bord-thin-top pt-30 d-flex align-items-end mt-20 md-mb30">
+            <div className="item bord-thin-top pt-30 flex align-items-end mt-20 md-mb30">
               <div>
                 <h3 className="fw-300 mb-10">100%</h3>
                 <h6 className="p-color sub-title">garance spokojenosti</h6>
@@ -42,7 +42,7 @@ function Numbers() {
           </div>
 
           <div className="col-lg-4 col-md-6">
-            <div className="item bord-thin-top pt-30 d-flex align-items-end mt-20 md-mb30">
+            <div className="item bord-thin-top pt-30 flex align-items-end mt-20 md-mb30">
               <div>
                 <h3 className="fw-300 mb-10">40+</h3>
                 <h6 className="p-color sub-title">úspěšných projektů</h6>
@@ -61,7 +61,7 @@ function Numbers() {
           </div>
 
           <div className="col-lg-4 col-md-6">
-            <div className="item bord-thin-top pt-30 d-flex align-items-end mt-20">
+            <div className="item bord-thin-top pt-30 flex align-items-end mt-20">
               <div>
                 <h3 className="fw-300 mb-10">24/7</h3>
                 <h6 className="p-color sub-title">technická podpora</h6>

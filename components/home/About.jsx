@@ -7,7 +7,7 @@ function About() {
       <div className="container">
         <div className="row lg-marg">
           <div className="col-lg-5 valign">
-            <div className="profile-img radius-250">
+            <div className="profile-img relative radius-250">
               <div
                 className="img relative o-hidden radius-250"
               >
@@ -59,9 +59,8 @@ function About() {
           </div>
           <div className="col-lg-7 valign">
             <div className="cont">
-              <h6 className="sub-title main-color mb-30">O nás</h6>
-              <div className="text">
-                <h4 className="mb-30">
+              <h2 className="sub-title main-color mb-30">O nás</h2>
+                <h3 className="mb-30 h4">
                   Pomáháme vám přenést vaši vizi {' '}
                   <span className="d-revert fw-200">
                   ze světa
@@ -70,7 +69,7 @@ function About() {
                   do světa {' '}
                   </span>{' '}
                   reality.
-                </h4>
+                </h3>
                 <p>
                   Jsme tým profesionálů s bohatými zkušenostmi v digitálním světě.
                   Naší ambicí je přetvořit zdánlivě neproveditelné nápady do hmatatelné reality.
@@ -80,7 +79,7 @@ function About() {
                 <div className="numbers mt-50">
                   <div className="row lg-marg">
                     <div className="col-md-6">
-                      <div className="item bord-thin-top pt-30 d-flex align-items-end mt-20">
+                      <div className="item bord-thin-top pt-30 flex align-items-end mt-20">
                         <div>
                           <h3 className="fw-300 mb-10">100%</h3>
                           <h6 className="p-color sub-title">
@@ -100,7 +99,7 @@ function About() {
                       </div>
                     </div>
                     <div className="col-md-6">
-                      <div className="item bord-thin-top pt-30 d-flex align-items-end mt-20">
+                      <div className="item bord-thin-top pt-30 flex align-items-end mt-20">
                         <div>
                           <h3 className="fw-300 mb-10">40+</h3>
                           <h6 className="p-color sub-title">
@@ -121,7 +120,6 @@ function About() {
                     </div>
                   </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>

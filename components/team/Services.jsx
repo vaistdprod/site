@@ -9,11 +9,11 @@ function Services() {
     <section className="services-inline2 section-padding sub-bg bord-bottom-grd bord-top-grd relative">
       <div className="container relative z-7">
         <div className="sec-head mb-80">
-          <div className="d-flex align-items-center">
+          <div className="flex align-items-center">
             <div>
               <span className="sub-title main-color mb-5">Naše specializace</span>
-              <h3 className="fw-600 fz-50 text-u d-rotate wow">
-                <span className="rotate-text">
+              <h3 className="fw-600 fz-50 text-u  ">
+                <span className="">
                   Vybrané služby <span className="fw-200">služby</span>
                 </span>
               </h3>
@@ -48,7 +48,7 @@ function Services() {
               </div>
             </div>
             <div className="col-lg-4">
-              <div className="img fit-img">
+              <div className="img fit-img o-hidden">
                 <img src="/assets/imgs/serv-img/1.jpg" alt="" />
                 <Link href="/page-services-details">
                   <FontAwesomeIcon icon={faArrowRight} />
@@ -79,7 +79,7 @@ function Services() {
               </div>
             </div>
             <div className="col-lg-4">
-              <div className="img fit-img">
+              <div className="img fit-img o-hidden">
                 <img src="/assets/imgs/serv-img/2.jpg" alt="" />
                 <Link href="/page-services-details">
                   <FontAwesomeIcon icon={faArrowRight} />
@@ -110,7 +110,7 @@ function Services() {
               </div>
             </div>
             <div className="col-lg-4">
-              <div className="img fit-img">
+              <div className="img fit-img o-hidden">
                 <img src="/assets/imgs/serv-img/3.jpg" alt="" />
                 <Link href="/page-services-details">
                   <FontAwesomeIcon icon={faArrowRight} />

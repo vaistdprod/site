@@ -84,7 +84,7 @@ function Intro({ memberData }) {
             <div className="text md-mb50">
               <h4 className="mb-15">O mně</h4>
               <p>{memberData.about}</p>
-              <ul className="rest mt-30 social-icon d-flex align-items-center">
+              <ul className="rest mt-30 social-icon flex align-items-center">
                 {Object.entries(SOCIAL_MEDIA).map(([platformKey, { icon, label }]) => {
                   const link = memberData[platformKey];
                   if (!link) return null;

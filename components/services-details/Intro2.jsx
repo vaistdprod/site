@@ -36,8 +36,7 @@ function Intro2({ serviceData }) {
               <div className="accordion bord">
                 {serviceData.intro2?.accordion?.map((item, idx) => (
                   <div
-                    className={`item ${idx === 0 ? "active" : ""} wow fadeInUp`}
-                    data-wow-delay={`.${idx + 1}s`}
+                    className={`item ${idx === 0 ? "active" : ""}  fadeInUp`}
                     key={idx}
                   >
                     <div onClick={openAccordion} className="title">
@@ -54,7 +53,7 @@ function Intro2({ serviceData }) {
                     </div>
                   </div>
                 )) || (
-                  <div className="item active wow fadeInUp">
+                  <div className="item active  fadeInUp">
                     <div className="title" onClick={openAccordion}>
                       <h6>Výchozí nadpis</h6>
                       <span className="ico ti-plus"></span>

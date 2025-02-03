@@ -51,8 +51,7 @@ function FAQS() {
                 <div className="accordion bord">
                   {faqData.map((item, idx) => (
                     <div
-                      className={`item ${idx === 0 ? 'active' : ''} wow fadeInUp`}
-                      data-wow-delay={`${0.1 + (idx * 0.2)}s`}
+                      className={`item ${idx === 0 ? 'active' : ''}  fadeInUp`}
                       key={idx}
                     >
                       <div onClick={openAccordion} className="title">

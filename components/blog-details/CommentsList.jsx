@@ -39,7 +39,7 @@ function CommentsList({ slug }) {
     <div className="comments-list mt-40">
       {comments.map((comment) => (
         <div key={comment._id} className="comment-item mb-30">
-          <div className="comment-header d-flex align-items-center mb-10">
+          <div className="comment-header flex align-items-center mb-10">
             <div className="comment-avatar icon-img-40">
               <Image
                 src="/assets/imgs/user-placeholder.svg"

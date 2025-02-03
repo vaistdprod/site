@@ -19,7 +19,7 @@ function Feat() {
               <p>
                 Podání ruky je pro nás stejně svaté jako ta nejlépe sepsaná smlouva. Pokud se na něčem domluvíme, bereme to jako absolutní povinnost splnit naši část dohody.
               </p>
-              <Link href="/nas-tym" className="btn-crev d-flex align-items-center mt-40">
+              <Link href="/nas-tym" className="btn-crev flex align-items-center mt-40">
                 <span className="hover-this">
                   <span className="circle hover-anim">
                     <FontAwesomeIcon icon={faArrowRight} />

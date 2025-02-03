@@ -86,7 +86,7 @@ function Clients() {
           </Swiper>
         </div>
         <div className="sec-bottom relative mt-100">
-          <div className="main-bg d-flex align-items-center">
+          <div className="main-bg flex align-items-center">
             <h6 className="fz-14 fw-400">
               Více než{' '}<span className="fw-600">50 firem</span>
               {' '}nám svěřilo svůj projekt.

@@ -10,7 +10,7 @@ function Intro() {
     <section className="page-intro section-padding">
       <div className="container">
         <div className="row md-marg">
-          <div className="col-lg-6 d-flex">
+          <div className="col-lg-6 flex">
             <div className="img md-mb80">
               <div className="row col-12">
                 <div

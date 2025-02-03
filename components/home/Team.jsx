@@ -16,9 +16,9 @@ function Team({ members = [] }) {
     <section className="team-crev section-padding">
       <div className="container">
         <div className="sec-head mb-80">
-          <div className="d-flex align-items-center mb-30">
-            <h2 className="fw-600 fz-70 text-u d-rotate wow">
-              <span className="rotate-text">
+          <div className="flex align-items-center mb-30">
+            <h2 className="fw-600 fz-70 text-u  ">
+              <span className="">
                 Pracujeme pro vás <span className="fw-200">nonstop</span>
               </span>
             </h2>
@@ -29,7 +29,7 @@ function Team({ members = [] }) {
               <FontAwesomeIcon icon={faArrowRight} className="icon" />
             </div>
           </div>
-          <h6 className="sub-title main-color d-flex align-items-center">
+          <h6 className="sub-title main-color flex align-items-center">
             <span>Náš tým</span>
             <span className="thin"></span>
           </h6>

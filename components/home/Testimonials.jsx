@@ -30,7 +30,7 @@ function Testimonials() {
         <div className="row">
           <div className="col-lg-4 md-mb50">
             <div className="img-full relative h-100">
-              <div className="fit-img">
+              <div className="fit-img o-hidden">
                 <img src="/assets/imgs/testim/bg.jpg" alt="" />
               </div>
               <div className="fix-img">
@@ -59,9 +59,9 @@ function Testimonials() {
                           <div className="text">
                             <p className="fz-30">{item.desc}</p>
                           </div>
-                          <div className="info d-flex align-items-center pt-40 mt-40 bord-thin-top">
+                          <div className="info flex align-items-center pt-40 mt-40 bord-thin-top">
                             <div>
-                              <div className="fit-img circle">
+                              <div className="fit-img o-hidden circle">
                                 <img src={item.img} alt="" />
                               </div>
                             </div>
@@ -82,7 +82,7 @@ function Testimonials() {
                   width="256.721"
                   height="208.227"
                   viewBox="0 0 256.721 208.227"
-                  className="qout-svg"
+                  className="quote-svg absolute"
                 >
                   <path
                     data-name="Path"
@@ -95,7 +95,7 @@ function Testimonials() {
                   ></path>
                 </svg>
               </div>
-              <div className="swiper-arrow-control control-absolute">
+              <div className="swiper-arrow-control control-absolute absolute">
                 <div className="swiper-button-prev">
                   <FontAwesomeIcon icon={faArrowLeft} />
                 </div>
@@ -103,7 +103,7 @@ function Testimonials() {
                   <FontAwesomeIcon icon={faArrowRight} />
                 </div>
               </div>
-              <div className="circle-blur">
+              <div className="circle-blur absolute">
                 <img src="/assets/imgs/patterns/blur1.png" alt="" />
               </div>
             </div>

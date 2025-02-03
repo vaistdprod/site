@@ -11,11 +11,11 @@ function Marq2() {
   return (
     <section className="call-marq section-padding o-hidden">
       <div className="main-marq lrg main-bg pt-20 pb-20">
-        <div className="slide-bar relative d-flex st1">
+        <div className="slide-bar relative flex st1">
           <div className="box">
             {AllMarquess.map((item, i) => (
               <div key={i} className="item">
-                <h4 className="d-flex align-items-center">
+                <h4 className="flex align-items-center">
                   <span>{item}</span>
                   <span className="icon-img-50 ml-40">
                     <Image
@@ -30,7 +30,7 @@ function Marq2() {
             ))}
             {AllMarquess.map((item, i) => (
               <div key={i} className="item">
-                <h4 className="d-flex align-items-center">
+                <h4 className="flex align-items-center">
                   <span>{item}</span>
                   <span className="icon-img-50 ml-40">
                     <Image
@@ -46,18 +46,18 @@ function Marq2() {
           </div>
           <Link 
             href="/kontakty" 
-            className="overlay-link"
+            className="overlay-link absolute size-100"
             aria-label="Přejít na stránku kontaktů"
           ></Link>
         </div>
       </div>
 
       <div className="main-marq bord-item">
-        <div className="slide-bar relative d-flex st2">
+        <div className="slide-bar relative flex st2">
           <div className="box">
             {AllContact.map((item, i) => (
               <div key={i} className="item">
-                <h4 className="d-flex align-items-center">
+                <h4 className="flex align-items-center">
                   <span>{item}</span>
                 </h4>
               </div>
@@ -66,7 +66,7 @@ function Marq2() {
           <div className="box">
             {AllContact.map((item, i) => (
               <div key={i} className="item">
-                <h4 className="d-flex align-items-center">
+                <h4 className="flex align-items-center">
                   <span>{item}</span>
                 </h4>
               </div>
@@ -74,7 +74,7 @@ function Marq2() {
           </div>
           <Link 
             href="/kontakty" 
-            className="overlay-link"
+            className="overlay-link absolute size-100"
             aria-label="Přejít na stránku kontaktů"
           ></Link>
         </div>

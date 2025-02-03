@@ -27,7 +27,7 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
                     />
                   </div>
                   <div className="content">
-                    <div className="d-flex align-items-center mb-15">
+                    <div className="flex align-items-center mb-15">
                       <div className="post-date">
                         {new Date(post.date).toLocaleDateString()}
                       </div>
@@ -45,7 +45,7 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
                       </Link>
                     </h3>
                     <p>{post.excerpt}</p>
-                    <Link href={`/blog/${post.slug}`} className="d-flex align-items-center main-color mt-40">
+                    <Link href={`/blog/${post.slug}`} className="flex align-items-center main-color mt-40">
                       <span className="text mr-15">Přečíst</span>
                       <FontAwesomeIcon icon={faArrowRight} />
                     </Link>
@@ -97,7 +97,7 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
               <div className="widget last-post-thum">
                 <h6 className="title-widget">Nejnovější články</h6>
                 {posts.slice(0, 3).map((post) => (
-                  <div key={post.slug} className="item d-flex align-items-center">
+                  <div key={post.slug} className="item flex align-items-center">
                     <div>
                       <div className="img relative">
                         <Link href={`/blog/${post.slug}`}>

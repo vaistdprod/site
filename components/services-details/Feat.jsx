@@ -9,9 +9,9 @@ function Feat({ serviceData }) {
     <section className="feat relative">
       <div className="container">
         <div className="sec-head mb-80">
-          <div className="d-flex align-items-center mb-30">
-            <h2 className="fw-600 fz-70 text-u d-rotate wow">
-              <span className="rotate-text">
+          <div className="flex align-items-center mb-30">
+            <h2 className="fw-600 fz-70 text-u  ">
+              <span className="">
                 Proces <span className="fw-200">spolupráce</span>
               </span>
             </h2>
@@ -22,7 +22,7 @@ function Feat({ serviceData }) {
               <FontAwesomeIcon icon={faArrowRight} className="icon" />
             </div>
           </div>
-          <h6 className="sub-title main-color d-flex align-items-center">
+          <h6 className="sub-title main-color flex align-items-center">
             <span>Akční kroky</span>
             <span className="thin"></span>
           </h6>
@@ -30,7 +30,7 @@ function Feat({ serviceData }) {
         <div className="row">
           {serviceData.feat?.map((item, idx) => (
             <div className="col-lg-3 col-md-6" key={idx}>
-              <div className="item-box radius-15 md-mb50">
+              <div className="radius-15 md-mb50">
                 <h3 className="mb-30 p-color stroke-30">{item.step}.</h3>
                 <h6 className="mb-20">{item.title}</h6>
                 <p>{item.desc}</p>

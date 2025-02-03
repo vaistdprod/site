@@ -13,9 +13,9 @@ function Blog({ posts = [] }) {
     <section className="blog">
       <div className="container">
         <div className="sec-head mb-80">
-          <div className="d-flex align-items-center mb-30">
-            <h2 className="fw-600 fz-70 text-u d-rotate wow">
-              <span className="rotate-text">
+          <div className="flex align-items-center mb-30">
+            <h2 className="fw-600 fz-70 text-u  ">
+              <span className="">
                 Z naší <span className="fw-200">produkce</span>
               </span>
             </h2>
@@ -26,7 +26,7 @@ function Blog({ posts = [] }) {
               <FontAwesomeIcon icon={faArrowRight} className="icon" />
             </div>
           </div>
-          <h6 className="sub-title main-color d-flex align-items-center">
+          <h6 className="sub-title main-color flex align-items-center">
             <span>Naše články</span>
             <span className="thin"></span>
           </h6>
@@ -35,7 +35,7 @@ function Blog({ posts = [] }) {
           {topPosts.map((post, idx) => (
             <div key={post.slug} className={`col-lg-6 ${idx === 0 ? 'md-mb50' : ''}`}>
               <div className="item">
-                <div className="img fit-img relative">
+                <div className="img fit-img o-hidden relative">
                   <Image
                     fill
                     src={post.coverImage}
@@ -45,7 +45,7 @@ function Blog({ posts = [] }) {
                   />
                 </div>
                 <div className="cont pt-40">
-                  <div className="info sub-title p-color d-flex align-items-center mb-15">
+                  <div className="info sub-title p-color flex align-items-center mb-15">
                     <div>
                       <Link href={`/blog/${post.slug}`}>By : {post.author.name}</Link>
                     </div>
@@ -54,7 +54,7 @@ function Blog({ posts = [] }) {
                     </div>
                   </div>
                   <h4>{post.title}</h4>
-                  <Link href={`/blog/${post.slug}`} className="btn-crev d-flex align-items-center mt-40">
+                  <Link href={`/blog/${post.slug}`} className="btn-crev flex align-items-center mt-40">
                     <span className="hover-this">
                       <span className="circle hover-anim">
                         <FontAwesomeIcon icon={faArrowRight} />

@@ -23,7 +23,7 @@ function Header() {
       className="header header-personal valign relative o-hidden"
       data-overlay-dark="6">
       <video
-        className="position-absolute top-0 start-0 w-100 h-100 object-cover -z-1"
+        className="absolute top-0 start-0 w-100 h-100 object-cover -z-1"
         src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/tdprod-promo.mp4"
         autoPlay
         loop
@@ -35,7 +35,7 @@ function Header() {
         <div className="row">
           <div className="col-lg-7">
             <div className="caption">
-              <h6 className="mb-15">
+              <div className="mb-15 h6">
                 <span className="icon-img-30 mr-10">
                   <Image
                     src="/assets/imgs/logo-light.svg"
@@ -46,11 +46,11 @@ function Header() {
                   />
                 </span>{' '}
                 Vítejte
-              </h6>
+              </div>
               <h1 className="fw-700 mb-10">
                 TD <span className="main-color">Productions</span>
               </h1>
-              <h3>Posouváme hranice digitální inovace</h3>
+              <h2 className="h3">Posouváme hranice digitální inovace</h2>
               <div className="row">
                 <div className="col-lg-9">
                   <div className="text mt-30">
@@ -58,7 +58,7 @@ function Header() {
                       Inovace se u nás snoubí s profesionalitou a jednohlasným zájmem posunout váš projekt na tu nejvyšší úroveň.
                     </p>
                   </div>
-                  <div className="d-flex align-items-center mt-60">
+                  <div className="flex align-items-center mt-60">
                     <Link
                       href="/kontakty"
                       className="btn btn-md btn-bord radius-30"
@@ -81,9 +81,9 @@ function Header() {
           </div>
         </div>
 
-        <div className="info d-flex align-items-center justify-content-end mt-100">
+        <div className="info flex align-items-center justify-content-end mt-100">
           <div className="item">
-            <h6 className="sub-title mb-10">Email:</h6>
+            <h3 className="sub-title mb-10">Email:</h3>
             <Link
               href="mailto:info@tdprod.cz"
               className="p-color"
@@ -94,7 +94,7 @@ function Header() {
             </Link>
           </div>
           <div className="item">
-            <h6 className="sub-title mb-10">Telefon:</h6>
+            <h3 className="sub-title mb-10">Telefon:</h3>
             <Link
               href="tel:+420737065717"
               className="p-color"
@@ -105,7 +105,7 @@ function Header() {
             </Link>
           </div>
           <div className="item">
-            <h6 className="sub-title mb-10">Adresa:</h6>
+            <h3 className="sub-title mb-10">Adresa:</h3>
             <Link
               href="https://maps.app.goo.gl/ZrSaQYLotGqCciX79"
               className="p-color"

@@ -166,14 +166,14 @@ function Footer() {
                       checked={agreed}
                       onChange={() => setAgreed(!agreed)}
                     />
-                    <label htmlFor="agree" className="fz-12 p-color">
+                    <label htmlFor="agree" className="fz-12 p-color underline">
                       Souhlasím se <Link href="/ochrana-osobnich-udaju">zpracováním osobních údajů</Link>.
                     </label>
                   </div>
                   {msg && <p>{msg}</p>}
                 </div>
               </form>
-              <ul className="rest social-icon d-flex align-items-center">
+              <ul className="rest social-icon flex align-items-center">
                 <li className="hover-this cursor-pointer">
                   <a
                     href="https://facebook.com/tdprod.cz/"
