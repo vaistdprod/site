@@ -38,7 +38,7 @@ export default function PrivacyPolicy() {
             <p className="mb-20"><strong>Kontaktní osoby:</strong></p>
             <ul className="dot-list mb-20">
               <li className="mb-10">
-                <strong>Odpovědná osoba za web:</strong> Matěj Vais,{' '}
+                <strong>Odpovědná osoba:</strong> Matěj Vais,{' '}
                 <a href="mailto:vais@tdprod.cz">vais@tdprod.cz</a>
               </li>
               <li className="mb-10">
@@ -72,53 +72,27 @@ export default function PrivacyPolicy() {
             </p>
             <ol>
               <li>
-                <strong>Google Analytics, Google Ads a Google Tag Manager</strong><br />
-                <em>Poskytovatel:</em> Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irsko<br />
-                <em>Zpracovávané údaje:</em> informace o návštěvách, chování uživatelů na webu, IP adresa 
-                (může být anonymizována), typ zařízení, geografická poloha (obecná), údaje o prohlížeči atd.<br />
-                <em>Právní základ:</em> čl. 6 odst. 1 písm. a) GDPR (souhlas) v případě marketingových cookies; 
-                čl. 6 odst. 1 písm. f) GDPR (oprávněný zájem) pro základní analytické cookies.
-              </li>
-              <li>
-                <strong>HubSpot Website Analytics</strong><br />
-                <em>Poskytovatel:</em> HubSpot Inc., 25 First Street, 2nd Floor, Cambridge, MA 02141, USA<br />
-                <em>Zpracovávané údaje:</em> sledování návštěv, chování uživatelů, interakce se stránkou, metadata.<br />
-                <em>Právní základ:</em> čl. 6 odst. 1 písm. a) GDPR (souhlas) pro marketingové a pokročilé analýzy; 
-                čl. 6 odst. 1 písm. f) GDPR (oprávněný zájem) pro základní funkční sledování.
-              </li>
-              <li>
-                <strong>Vercel Analytics</strong><br />
+                <strong>Vercel Analytics a Vercel Speed Insights</strong><br />
                 <em>Poskytovatel:</em> Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA<br />
                 <em>Zpracovávané údaje:</em> technická data o chování uživatelů, výkonu webu a další údaje související 
                 s provozem stránek.<br />
                 <em>Právní základ:</em> čl. 6 odst. 1 písm. f) GDPR (oprávněný zájem na zajištění technické funkčnosti 
                 a optimalizace).
               </li>
-              <li>
-                <strong>Meta Ads</strong><br />
-                <em>Poskytovatel:</em> Meta Platforms, Inc., 1601 Willow Road, Menlo Park, CA 94025, USA<br />
-                <em>Zpracovávané údaje:</em> informace o interakci s reklamními prvky na Facebooku/Instagramu, IP adresa 
-                (může být anonymizována), případně další údaje dle nastavení Meta Pixelu.<br />
-                <em>Právní základ:</em> čl. 6 odst. 1 písm. a) GDPR (souhlas) v případě použití marketingových 
-                a sledovacích pixelů.
-              </li>
             </ol>
 
-            <h3 className="mb-20 fz-30 fw-600">2.3 HubSpot Chatbot</h3>
-            <ul className="dot-list mb-20">
-              <li className="mb-10">
-                <em>Poskytovatel:</em> HubSpot Inc., 25 First Street, 2nd Floor, Cambridge, MA 02141, USA
+            <h3 className="mb-20 fz-30 fw-600">2.3 Bezpečnostní nástroje</h3>
+            <p className="mb-20">
+              Za účelem zajištění bezpečnosti našich webových stránek využíváme následující služby:
+            </p>
+            <ol>
+             <li>
+                <strong>Google reCAPTCHA</strong><br />
+                <em>Poskytovatel:</em> Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA<br />
+                <em>Zpracovávané údaje:</em> informace o interakcích s reCAPTCHA, IP adresa, údaje o zařízení, údaje o prohlížeči, cookies (nutné pro bezpečnostní účely) a další technická data potřebná k ověření, že uživatel není robot<br />
+                <em>Právní základ:</em> čl. 6 odst. 1 písm. f) GDPR (oprávněný zájem) pro zabezpečení webu proti spamovým útokům a automatizovanému zneužívání.
               </li>
-              <li className="mb-10">
-                <em>Zpracovávané údaje:</em> údaje, které sami zadáte (např. jméno, e-mail), metadata o konverzaci.
-              </li>
-              <li className="mb-10">
-                <em>Účel zpracování:</em> usnadnění komunikace s návštěvníky, poskytování podpory a zpracování dotazů.
-              </li>
-              <li className="mb-10">
-                <em>Právní základ:</em> čl. 6 odst. 1 písm. f) GDPR (oprávněný zájem na zajištění efektivní komunikace).
-              </li>
-            </ul>
+            </ol>
 
             <h3 className="mb-20 fz-30 fw-600">2.4 Loops pro e-mailový marketing</h3>
             <ul className="dot-list mb-20">
