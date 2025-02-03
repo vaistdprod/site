@@ -93,6 +93,7 @@ function Header({ title, author, date, comments, coverImage, tags }) {
             className="object-cover"
             sizes="100vw"
             priority
+            quality={55}
           />
         </div>
       )}

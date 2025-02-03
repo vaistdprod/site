@@ -29,6 +29,7 @@ function Header({ data }) {
         fill
         className="object-cover"
         priority
+        quality={55}
       />
 
       <div className="container relative z-7">

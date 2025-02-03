@@ -22,11 +22,12 @@ function Header({ serviceData }) {
       data-overlay-dark="5"
     >
       <Image
-        src="/assets/imgs/bg/bg30.jpg"
+        src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/bg30-UuPNFBNCE2DEj2ClRLvyDq8JTN8PfX.jpg"
         alt=""
         fill
         className="object-cover"
         priority
+        quality={55}
       />
 
       <div className="container relative z-7 pt-80">

@@ -25,11 +25,12 @@ function Header() {
       data-overlay-dark="5"
     >
       <Image
-        src="/assets/imgs/bg/bg24.jpg"
+        src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/bg24-V9U2dJj2OY752zmTv4DPuP5H99SQkW.jpg"
         alt=""
         fill
         className="object-cover"
         priority
+        quality={55}
       />
       <div className="container relative z-7 pt-80">
         <div className="row">
