@@ -57,7 +57,7 @@ const contentSecurityPolicy = `
   base-uri 'self';
   form-action 'self';
   manifest-src 'self';
-`.replace(/\s{2,}/g, " ").trim();
+`.replace(/\s{2,}/g, ' ').trim();
 
 const cspHeader = {
   key: 'Content-Security-Policy',
@@ -92,7 +92,7 @@ const securityHeaders = [
   },
   {
     key: 'Permissions-Policy',
-    value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()'
+    value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()',
   },
   {
     key: 'Cross-Origin-Opener-Policy',
@@ -113,7 +113,14 @@ const securityHeaders = [
   {
     key: 'Access-Control-Allow-Headers',
     value: 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
-  }
+  },
+];
+
+const cachingHeaders = [
+  {
+    key: 'Cache-Control',
+    value: 'public, max-age=31536000, immutable',
+  },
 ];
 
 const nextConfig = {
@@ -131,7 +138,11 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/(.*)',
+        source: '/:all*(\\.(?:jpg|jpeg|png|gif|svg|ico|webp|css|js))',
+        headers: cachingHeaders,
+      },
+      {
+        source: '/((?!assets\\/email\\/).*)',
         headers: securityHeaders,
       },
     ];

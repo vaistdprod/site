@@ -42,7 +42,6 @@ function Header() {
                     alt="Logo TD Productions"
                     width={33}
                     height={25}
-                    className="logo-image"
                   />
                 </span>{' '}
                 Vítejte
@@ -67,7 +66,7 @@ function Header() {
                     </Link>
                     <div className="icon-img-60 ml-20">
                       <Image
-                        src="/assets/imgs/icon-img/arrow-down-big.png"
+                        src="/assets/imgs/ikony/arrow-down-big.png"
                         alt="Šipka"
                         width={170}
                         height={157}

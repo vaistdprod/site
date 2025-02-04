@@ -22,7 +22,7 @@ function Marq2() {
                       src="/assets/imgs/logo-light.svg"
                       alt="Logo TD Productions"
                       width={50}
-                      height={50}
+                      height={38}
                     />
                   </span>
                 </h4>
@@ -37,7 +37,7 @@ function Marq2() {
                       src="/assets/imgs/logo-light.svg"
                       alt="Logo TD Productions"
                       width={50}
-                      height={50}
+                      height={38}
                     />
                   </span>
                 </h4>

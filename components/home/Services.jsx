@@ -29,18 +29,18 @@ function Services({ services }) {
         <div className="sec-head mb-80">
           <div className="flex align-items-center">
             <div>
-              <span className="sub-title main-color mb-5">Naše specializace</span>
-              <h3 className="fw-600 fz-50 text-u  ">
-                <span className="">
+              <span className="sub-title main-color mb-5">Specializace</span>
+              <h3 className="fw-600 fz-50 text-u">
                   Vybrané <span className="fw-200">služby</span>
-                </span>
               </h3>
             </div>
             <div className="ml-auto vi-more">
               <Link href="/nase-sluzby" className="btn btn-sm btn-bord radius-30">
                 <span>Zobrazit všechny</span>
               </Link>
+              <Link href="/nase-sluzby">
               <FontAwesomeIcon icon={faArrowRight} className="icon" />
+              </Link>
             </div>
           </div>
         </div>
@@ -76,8 +76,8 @@ function Services({ services }) {
       </div>
       <div className="circle-blur">
         <Image
-          src="/assets/imgs/patterns/blur1.png"
-          alt="Efekt rozmazání"
+          src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/blur1-0J2DJ0INNrXDLBO6XFZu6DKiOqorlZ.png"
+          alt=""
           width={692}
           height={537}
         />

@@ -9,8 +9,6 @@ import Navbar from '@/components/common/Navbar'
 import Services from '@/components/home/Services'
 import Portfolio from '@/components/home/Portfolio'
 import Team from '@/components/home/Team'
-// import Testimonials from '@/components/home/Testimonials'
-// import Clients from '@/components/home/Clients'
 import Blog from '@/components/home/Blog'
 import Header from '@/components/home/Header'
 import About from '@/components/home/About'
@@ -79,8 +77,6 @@ export default async function Home() {
             <Portfolio />
             <Feat />
             <Team members={members} />
-            {/* <Testimonials />
-            <Clients /> */} 
             <Blog posts={posts} />
             <Marq2 />
           </main>

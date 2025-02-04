@@ -104,7 +104,7 @@ function Testimonials() {
                 </div>
               </div>
               <div className="circle-blur absolute">
-                <img src="/assets/imgs/patterns/blur1.png" alt="" />
+                <img src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/blur1-0J2DJ0INNrXDLBO6XFZu6DKiOqorlZ.png" alt="" />
               </div>
             </div>
           </div>

@@ -36,7 +36,6 @@ function Clients() {
           </div>
         </div>
         <div
-          className="swiper5"
           data-carousel="swiper"
           data-items="5"
           data-loop="true"

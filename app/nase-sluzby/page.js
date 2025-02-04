@@ -6,7 +6,6 @@ import Marq2 from "@/components/common/Marq2";
 import Navbar from "@/components/common/Navbar";
 import Services from "@/components/services/Services";
 import Faq from "@/components/services/Faq";
-// import Testimonials from "@/components/home/Testimonials";
 import Header from "@/components/services/Header";
 import Numbers from "@/components/services/Numbers";
 import { getLightServices } from '@/lib/services';
@@ -67,7 +66,6 @@ export default async function ServicesPage() {
             <Services services={services} />
             <Numbers />
             <Faq />
-            {/* <Testimonials /> */}
             <Marq2 />
           </main>
           <Footer />

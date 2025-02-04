@@ -49,13 +49,12 @@ function Footer() {
         <div className="row justify-content-between">
           <div className="col-lg-2">
             <div className="logo icon-img-100 md-mb80">
-              <Link href="/" aria-label="Domů" className="logo-container">
+              <Link href="/" aria-label="Domů">
                 <Image
                   src="/assets/imgs/logo-light.svg"
                   alt="Logo TD Productions"
-                  width={33}
-                  height={25}
-                  className="logo-image"
+                  width={198}
+                  height={150}
                 />
               </Link>
             </div>
@@ -222,8 +221,8 @@ function Footer() {
       </div>
       <div className="circle-blur">
         <Image
-          src="/assets/imgs/patterns/blur1.png"
-          alt="Efekt rozmazání"
+          src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/blur1-0J2DJ0INNrXDLBO6XFZu6DKiOqorlZ.png"
+          alt=""
           width={692}
           height={537}
           className="blur-image"

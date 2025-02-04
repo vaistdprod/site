@@ -11,10 +11,10 @@ function Services() {
         <div className="sec-head mb-80">
           <div className="flex align-items-center">
             <div>
-              <span className="sub-title main-color mb-5">Naše specializace</span>
+              <span className="sub-title main-color mb-5">Specializace</span>
               <h3 className="fw-600 fz-50 text-u  ">
                 <span className="">
-                  Vybrané služby <span className="fw-200">služby</span>
+                  Naše služby <span className="fw-200">služby</span>
                 </span>
               </h3>
             </div>

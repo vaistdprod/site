@@ -6,7 +6,6 @@ import Marq2 from '@/components/common/Marq2';
 import Navbar from '@/components/common/Navbar';
 import Team from '@/components/home/Team';
 import Header from '@/components/team/Header';
-// import Outro from '@/components/team/Outro';
 import Intro from '@/components/team/Intro';
 import Numbers from '@/components/common/Numbers';
 import { getMemberList } from "@/lib/team";
@@ -64,7 +63,6 @@ const members = getMemberList();
             <Intro />
             <Numbers />
             <Team members={members} />
-            {/* <Intro2 /> */}
             <Marq2 />
           </main>
           <Footer />

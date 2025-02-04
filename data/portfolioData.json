@@ -5,7 +5,7 @@
     "items": [
       {
         "id": "mcdental",
-        "img": "/assets/imgs/portfolio/mcdental.png",
+        "img": "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/mcdental-QigxzM2Xf2UWcBQMr9QMSp1Gvdpycm.png",
         "alt": "Náhled webu Zubní klinika MCDental",
         "title": "Zubní klinika MCDental",
         "subTitle": "Moderní web pro zubaře",
@@ -13,7 +13,7 @@
       },
       {
         "id": "petr-sojak",
-        "img": "/assets/imgs/portfolio/petr-sojak.png",
+        "img": "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/petr-sojak-7pugMojqCk6NLeds8mPxJdY925ynsw.png",
         "alt": "Náhled webu Mgr. Petr Soják, Ph.D.",
         "title": "Petr Soják",
         "subTitle": "Podpora pomáhajících profesí",
@@ -21,7 +21,7 @@
       },
       {
         "id": "ak-kolarova",
-        "img": "/assets/imgs/portfolio/ak-kolarova.png",
+        "img": "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/ak-kolarova-4HYvIP963l18pcEt1VXKjG8fqhHeq4.png",
         "alt": "Náhled webu AK Kolařová",
         "title": "AK Kolářová",
         "subTitle": "Advokacie profesionálně a lidsky",
@@ -29,7 +29,7 @@
       },
       {
         "id": "akmff",
-        "img": "/assets/imgs/portfolio/akmff.png",
+        "img": "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/akmff-JJuURjbgqcijMSC4NFs5H321a8fJGh.png",
         "alt": "Náhled webu AK MFF",
         "title": "AKMFF",
         "subTitle": "Právo lidsky a s citem",
@@ -37,7 +37,7 @@
       },
       {
         "id": "centrum-apolena",
-        "img": "/assets/imgs/portfolio/centrum-apolena.png",
+        "img": "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/centrum-apolena-LqCaW6joeAOgjGFE34isiy1aUiJn29.png",
         "alt": "Náhled webu Centrum Apolena",
         "title": "Centrum Apolena",
         "subTitle": "Komplexní zdravotní péče",
@@ -45,7 +45,7 @@
       },
       {
         "id": "dr-david",
-        "img": "/assets/imgs/portfolio/dr-david.png",
+        "img": "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/dr-david-VMwm3abV7GRtSslTqMH156AdKNN4oD.png",
         "alt": "Náhled webu Dr. David",
         "title": "Dr. David",
         "subTitle": "Moderní pediatrická ordinace",
@@ -53,7 +53,7 @@
       },
       {
         "id": "exiure",
-        "img": "/assets/imgs/portfolio/exiure.png",
+        "img": "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/exiure-voMddMczKRRyYKOGN2zi22DuCSBRHG.png",
         "alt": "Náhled webu Exiure",
         "title": "Exiure",
         "subTitle": "Na základě práva",
@@ -61,7 +61,7 @@
       },
       {
         "id": "intechi",
-        "img": "/assets/imgs/portfolio/intechi.png",
+        "img": "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/intechi-7JtMd9Degi6ccqPCtdCQmBExArF7Le.png",
         "alt": "Náhled webu Intechi",
         "title": "INTECHI",
         "subTitle": "Integrované technické služby",
@@ -69,7 +69,7 @@
       },
       {
         "id": "orchas",
-        "img": "/assets/imgs/portfolio/orchas.png",
+        "img": "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/orchas-sb3EgEQnbLDYoLbECdGhpaA0KQv2Jv.png",
         "alt": "Náhled webu Orchas",
         "title": "OR CHAS",
         "subTitle": "Ortopedická ambulance",
@@ -77,7 +77,7 @@
       },
       {
         "id": "rehabilitace-ostrava",
-        "img": "/assets/imgs/portfolio/rehabilitace-ostrava.png",
+        "img": "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/rehabilitace-ostrava-7qb0Ni9xVgPilvd3zdNOzc1tQIcxoN.png",
         "alt": "Náhled webu Rehab Ostrava",
         "title": "Rehab Ostrava",
         "subTitle": "Fyzioterapie a rehabilitace",
@@ -85,7 +85,7 @@
       },
       {
         "id": "sylvie-tichotova",
-        "img": "/assets/imgs/portfolio/sylvie-tichotova.png",
+        "img": "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/sylvie-tichotova-Z356xIpmLcutSsyASQxMIiV1ZuW4rj.png",
         "alt": "Náhled webu Sylvie Tichotová",
         "title": "Sylvie Tichotová",
         "subTitle": "Psychoterapie a supervize",
@@ -93,7 +93,7 @@
       },
       {
         "id": "ortopedie-vinohrady",
-        "img": "/assets/imgs/portfolio/vinohrady.png",
+        "img": "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/vinohrady-R3MoWK3YLM2ZnJ1ygGgmplNFrijoD2.png",
         "alt": "Náhled webu Ortopedie Vinohrady",
         "title": "Ortopedie Vinohrady",
         "subTitle": "Odborná ortopedická péče",
@@ -139,7 +139,7 @@
           "description": "Naším cílem bylo ..."
         },
         "images": [
-          "/assets/imgs/portfolio/mcdental.png"
+          "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/mcdental-QigxzM2Xf2UWcBQMr9QMSp1Gvdpycm.png"
         ]
       },
       {
@@ -158,7 +158,7 @@
           "description": "Při tvorbě nového webu ..."
         },
         "images": [
-          "/assets/imgs/portfolio/petr-sojak.png"
+          "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/petr-sojak-7pugMojqCk6NLeds8mPxJdY925ynsw.png"
         ]
       },
       {
@@ -177,7 +177,7 @@
           "description": "Rychlý popis řešení..."
         },
         "images": [
-          "/assets/imgs/portfolio/ak-kolarova.png"
+          "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/ak-kolarova-4HYvIP963l18pcEt1VXKjG8fqhHeq4.png"
         ]
       },
       {
@@ -196,7 +196,7 @@
           "description": "Rychlý popis řešení..."
         },
         "images": [
-          "/assets/imgs/portfolio/akmff.png"
+          "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/akmff-JJuURjbgqcijMSC4NFs5H321a8fJGh.png"
         ]
       },
       {
@@ -215,7 +215,7 @@
           "description": "Rychlý popis řešení..."
         },
         "images": [
-          "/assets/imgs/portfolio/centrum-apolena.png"
+          "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/centrum-apolena-LqCaW6joeAOgjGFE34isiy1aUiJn29.png"
         ]
       },
       {
@@ -234,7 +234,7 @@
           "description": "Rychlý popis řešení..."
         },
         "images": [
-          "/assets/imgs/portfolio/dr-david.png"
+          "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/dr-david-VMwm3abV7GRtSslTqMH156AdKNN4oD.png"
         ]
       },
       {
@@ -253,7 +253,7 @@
           "description": "Rychlý popis řešení..."
         },
         "images": [
-          "/assets/imgs/portfolio/exiure.png"
+          "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/exiure-voMddMczKRRyYKOGN2zi22DuCSBRHG.png"
         ]
       },
       {
@@ -272,7 +272,7 @@
           "description": "Rychlý popis řešení..."
         },
         "images": [
-          "/assets/imgs/portfolio/intech.png"
+          "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/intechi-7JtMd9Degi6ccqPCtdCQmBExArF7Le.png"
         ]
       },
       {
@@ -291,7 +291,7 @@
           "description": "Rychlý popis řešení..."
         },
         "images": [
-          "/assets/imgs/portfolio/orchas.png"
+          "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/orchas-sb3EgEQnbLDYoLbECdGhpaA0KQv2Jv.png"
         ]
       },
       {
@@ -310,7 +310,7 @@
           "description": "Rychlý popis řešení..."
         },
         "images": [
-          "/assets/imgs/portfolio/rehabilitace-ostrava.png"
+          "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/rehabilitace-ostrava-7qb0Ni9xVgPilvd3zdNOzc1tQIcxoN.png"
         ]
       },
       {
@@ -329,7 +329,7 @@
           "description": "Rychlý popis řešení..."
         },
         "images": [
-          "/assets/imgs/portfolio/sylvie-tichotova.png"
+          "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/sylvie-tichotova-Z356xIpmLcutSsyASQxMIiV1ZuW4rj.png"
         ]
       },
       {
@@ -348,7 +348,7 @@
           "description": "Rychlý popis řešení..."
         },
         "images": [
-          "/assets/imgs/portfolio/vinohrady.png"
+          "https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/vinohrady-R3MoWK3YLM2ZnJ1ygGgmplNFrijoD2.png"
         ]
       }
     ]

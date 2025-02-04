@@ -133,8 +133,7 @@ function Blog({ post, latestPosts }) {
                         <Image
                           src={post.author.avatar}
                           alt={post.author.name}
-                          height={60}
-                          width={60}
+                          fill
                           className="object-center size-100 object-cover"
                         />
                       </div>

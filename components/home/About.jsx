@@ -13,7 +13,7 @@ function About() {
               >
                 <Image
                   fill
-                  src="/assets/imgs/ostrava.jpg"
+                  src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/ostrava-pSlmFdt2nyEPo7m43e8YKETSALRTsm.jpg"
                   alt="Centrum Ostravy, nedaleko ulice 28. října, na které sídlí společnost TD Productions."
                   className="object-cover object-center"
                   sizes="(max-width: 991px) 100vw, 50vw"
@@ -92,7 +92,7 @@ function About() {
                               src="/assets/imgs/logo-light-stroke.svg"
                               alt="Logo TD Productions"
                               width={60}
-                              height={60}
+                              height={46}
                             />
                           </div>
                         </div>
@@ -112,7 +112,7 @@ function About() {
                               src="/assets/imgs/logo-light-stroke.svg"
                               alt="Logo TD Productions"
                               width={60}
-                              height={60}
+                              height={46}
                             />
                           </div>
                         </div>

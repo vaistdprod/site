@@ -35,7 +35,7 @@ function Feat() {
                 <div className="col-md-4 relative">
                   <Image
                     fill
-                    src="/assets/imgs/fotoprodukce.jpg"
+                    src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/fotoprodukce-YxyVSK0y1wHgrd2VKp46H7lU8wzGJO.jpg"
                     alt="Dlouhodobé vztahy"
                     className="object-cover"
                     sizes="(max-width: 767px) 100vw, (max-width: 991px) 33vw, 16vw"
@@ -56,7 +56,7 @@ function Feat() {
                 <div className="col-md-4 relative">
                   <Image
                     fill
-                    src="/assets/imgs/sebastian-2.jpg"
+                    src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/sebastian-2-zWCZ0gjcglBou2hDnRcZr4dPInhuwk.jpg"
                     alt="Dlouhodobé vztahy"
                     className="object-cover"
                     sizes="(max-width: 767px) 100vw, (max-width: 991px) 33vw, 16vw"
@@ -77,7 +77,7 @@ function Feat() {
                 <div className="col-md-4 relative">
                   <Image
                     fill
-                    src="/assets/imgs/schuzka-2.jpg"
+                    src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/schuzka-2-tjbOkWyEtYv76hp7f65UGgp7mTmvek.jpg"
                     alt="Dlouhodobé vztahy"
                     className="object-cover"
                     sizes="(max-width: 767px) 100vw, (max-width: 991px) 33vw, 16vw"
@@ -99,8 +99,8 @@ function Feat() {
       </div>
       <div className="circle-blur">
         <Image
-          src="/assets/imgs/patterns/blur1.png"
-          alt="Efekt rozmazání"
+          src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/blur1-0J2DJ0INNrXDLBO6XFZu6DKiOqorlZ.png"
+          alt=""
           width={692}
           height={537}
         />

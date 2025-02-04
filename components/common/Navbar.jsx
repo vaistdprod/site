@@ -43,9 +43,8 @@ function Navbar() {
           <Image
             src="/assets/imgs/logo-light.svg"
             alt="Logo TD Productions"
-            width={33}
-            height={25}
-            className="logo-image"
+            width={50}
+            height={38}
           />
         </Link>
         <button

@@ -17,7 +17,7 @@ function Intro() {
                   style={{ position: "relative", height: "400px" }}
                 >
                   <Image
-                    src="/assets/imgs/klient.jpg"
+                    src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/klient-YEUe12Xth6GSb6FWQ8auOQtvvordGP.jpg"
                     alt="Jednatel společnosti TD Productions, Matěj Vais, si podává ruku s klientem."
                     fill
                     style={{ objectFit: "cover", objectPosition: "55% 50%" }}

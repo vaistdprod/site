@@ -23,7 +23,7 @@ export default function Faq() {
               className="img md-mb50 h-100 relative"
             >
               <Image
-                src="/assets/imgs/fotoprodukce.jpg"
+                src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/fotoprodukce-YxyVSK0y1wHgrd2VKp46H7lU8wzGJO.jpg"
                 alt="Fotoprodukce"
                 fill
                 className="object-center size-100 object-cover"
