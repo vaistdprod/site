@@ -4,7 +4,6 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 import ClientScripts from "./client-scripts";
 import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Plus_Jakarta_Sans } from "next/font/google";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -31,7 +30,6 @@ export default function RootLayout({ children }) {
       <body>
         {children}
         <Analytics />
-        <SpeedInsights />
         <ClientScripts />
       </body>
     </html>
