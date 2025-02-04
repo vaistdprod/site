@@ -79,7 +79,7 @@ function Blog({ post, latestPosts }) {
                 <div className="info-area mt-30 flex pt-50 bord-thin-top">
                   <div>
                     <div className="tags flex">
-                      <div className="valign">
+                      <div className="flex align-center">
                         <span>Kategorie:</span>
                       </div>
                       <div>
@@ -97,7 +97,7 @@ function Blog({ post, latestPosts }) {
                   </div>
                   <div className="ml-auto">
                     <div className="share-icon flex">
-                      <div className="valign">
+                      <div className="flex align-center">
                         <span>Sdílet:</span>
                       </div>
                       <div>
@@ -134,11 +134,11 @@ function Blog({ post, latestPosts }) {
                           src={post.author.avatar}
                           alt={post.author.name}
                           fill
-                          className="object-center size-100 object-cover"
+                          className="object-center full-size object-cover"
                         />
                       </div>
                     </div>
-                    <div className="cont valign">
+                    <div className="cont flex align-center">
                       <div className="w-100">
                         <h6 className="fw-600 mb-10">{post.author.name}</h6>
                         <p>{post.author.bio}</p>
@@ -251,7 +251,7 @@ function Blog({ post, latestPosts }) {
               <div className="widget last-post-thum">
                 <h6 className="title-widget">Nejnovější příspěvky</h6>
                 {latestPosts.map((latestPost) => (
-                  <div key={latestPost.slug} className="item flex align-items-center">
+                  <div key={latestPost.slug} className="item flex align-center">
                     <div>
                       <div className="img relative">
                         <Link href={`/blog/${latestPost.slug}`} style={{ position: "relative", height: "100%", width: "100%" }}>

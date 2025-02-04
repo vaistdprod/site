@@ -62,7 +62,7 @@ function Navbar() {
           </span>
         </button>
         <div
-          className="collapse navbar-collapse justify-content-center"
+          className="collapse navbar-collapse justify-center"
           id="navbarSupportedContent"
         >
           <ul className="navbar-nav">
@@ -81,7 +81,7 @@ function Navbar() {
               >
                 <RollingText text="Naše služby" />
               </Link>
-              <ul className="dropdown-menu radius-5">
+              <ul className="dropdown-menu sub-bg m-0 z-1000 radius-5">
                 <li>
                   <Link className="dropdown-item" href="/nase-sluzby">
                     Vše
@@ -134,7 +134,7 @@ function Navbar() {
               >
                 <RollingText text="O nás" />
               </Link>
-              <div className="dropdown-menu radius-5">
+              <div className="dropdown-menu sub-bg m-0 z-1000 radius-5">
                 <Link className="dropdown-item" href="/nas-tym">
                   Náš tým
                 </Link>

@@ -37,7 +37,7 @@ function Portfolio() {
     <section className="work-crev section-padding">
       <div className="container relative pb-80">
         <div className="sec-head mb-80">
-          <div className="flex align-items-center">
+          <div className="flex align-center">
             <div>
               <span className="sub-title main-color mb-5">Naše portfolio</span>
               <h3 className="fw-600 fz-50 text-u  ">
@@ -65,14 +65,14 @@ function Portfolio() {
               const isActive = i === realIndex;
               return (
                 <SwiperSlide key={item.id} tabIndex={isActive ? 0 : -1} aria-hidden={!isActive}>
-                  <div className="item flex justify-content-between">
+                  <div className="item flex justify-between">
                     <div className="cont col-lg-6">
                       <Link href={`/portfolio/${item.id}`} tabIndex={isActive ? 0 : -1}>
                         <h6 className="sub-title main-color mb-15">{item.category}</h6>
                         <h2 className="mb-5">{item.title}</h2>
                         <h3>{item.subTitle}</h3>
                       </Link>
-                      <Link href={`/portfolio/${item.id}`} className="btn-crev flex align-items-center mt-30" tabIndex={isActive ? 0 : -1}>
+                      <Link href={`/portfolio/${item.id}`} className="btn-crev flex align-center mt-30" tabIndex={isActive ? 0 : -1}>
                         <span className="hover-this">
                           <span className="circle hover-anim">
                             <FontAwesomeIcon icon={faArrowRight} />

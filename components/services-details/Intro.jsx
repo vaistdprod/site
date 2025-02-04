@@ -39,7 +39,7 @@ function Intro({ serviceData }) {
               <div className="row lg-marg">
                 {serviceData.stats?.map((item, idx) => (
                   <div className="col-md-6" key={idx}>
-                    <div className="item bord-thin-top pt-30 flex align-items-end mt-20 sm-mb30">
+                    <div className="item bord-thin-top pt-30 flex align-end mt-20 sm-mb30">
                       <div>
                         <h3 className="fw-300 mb-10">{item.value}</h3>
                         <h6 className="p-color sub-title">{item.label}</h6>

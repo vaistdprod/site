@@ -74,7 +74,7 @@ function ContactForm() {
     <section className="contact section-padding">
       <div className="container">
         <div className="row">
-          <div className="col-lg-4 valign">
+          <div className="col-lg-4 flex align-center">
             <div className="sec-head info-box w-100 md-mb80">
               <div className="phone fz-30 fw-600 underline main-color">
                 <a href="tel:+420737065717">+420 737 065 717</a>
@@ -111,7 +111,7 @@ function ContactForm() {
               </div>
             </div>
           </div>
-          <div className="col-lg-7 offset-lg-1 valign">
+          <div className="col-lg-7 offset-lg-1 flex align-center">
             <div className="w-100">
               <div className="sec-head mb-50">
                 <h6 className="sub-title main-color mb-15">Kontaktní formulář</h6>

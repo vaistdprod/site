@@ -20,7 +20,7 @@ function Header() {
 
   return (
     <div 
-      className="header header-personal valign relative o-hidden"
+      className="header header-personal flex align-center relative o-hidden"
       data-overlay-dark="6">
       <video
         className="absolute top-0 start-0 w-100 h-100 object-cover -z-1"
@@ -57,7 +57,7 @@ function Header() {
                       Inovace se u nás snoubí s profesionalitou a jednohlasným zájmem posunout váš projekt na tu nejvyšší úroveň.
                     </p>
                   </div>
-                  <div className="flex align-items-center mt-60">
+                  <div className="flex align-center mt-60">
                     <Link
                       href="/kontakty"
                       className="btn btn-md btn-bord radius-30"
@@ -80,7 +80,7 @@ function Header() {
           </div>
         </div>
 
-        <div className="info flex align-items-center justify-content-end mt-100">
+        <div className="info flex align-center justify-end mt-100">
           <div className="item">
             <h3 className="sub-title mb-10">Email:</h3>
             <Link

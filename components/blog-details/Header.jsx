@@ -23,7 +23,7 @@ function Header({ title, author, date, comments, coverImage, tags }) {
   return (
     <div className="header blog-header section-padding pb-0">
       <div className="container mt-80">
-        <div className="row justify-content-center">
+        <div className="row justify-center">
           <div className="col-lg-11">
             <div className="caption">
               <div className="sub-title fz-12">
@@ -41,16 +41,16 @@ function Header({ title, author, date, comments, coverImage, tags }) {
               </div>
               <h1 className="fz-55 mt-30">{title}</h1>
             </div>
-            <div className="info flex mt-40 align-items-center">
+            <div className="info flex mt-40 align-center">
               <div className="left-info">
-                <div className="flex align-items-center">
+                <div className="flex align-center">
                   <div className="author-info">
-                    <div className="flex align-items-center relative">
+                    <div className="flex align-center relative">
                       <Link href={`/nas-tym/${encodeURIComponent(author.slug)}`} className="circle-60 d-inline-flex">
                         <Image
                           src={author.avatar}
                           alt={author.name}
-                          className="size-100 object-cover"
+                          className="full-size object-cover"
                           width={60}
                           height={60}
                           style={{ objectPosition: '50% 10%' }}

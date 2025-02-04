@@ -9,7 +9,7 @@ function Feat({ serviceData }) {
     <section className="feat relative">
       <div className="container">
         <div className="sec-head mb-80">
-          <div className="flex align-items-center mb-30">
+          <div className="flex align-center mb-30">
             <h2 className="fw-600 fz-70 text-u  ">
               <span className="">
                 Proces <span className="fw-200">spolupráce</span>
@@ -22,7 +22,7 @@ function Feat({ serviceData }) {
               <FontAwesomeIcon icon={faArrowRight} className="icon" />
             </div>
           </div>
-          <h6 className="sub-title main-color flex align-items-center">
+          <h6 className="sub-title main-color flex align-center">
             <span>Akční kroky</span>
             <span className="thin"></span>
           </h6>

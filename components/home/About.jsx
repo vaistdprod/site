@@ -6,7 +6,7 @@ function About() {
     <section className="about-us section-padding">
       <div className="container">
         <div className="row lg-marg">
-          <div className="col-lg-5 valign">
+          <div className="col-lg-5 flex align-center">
             <div className="profile-img relative radius-250">
               <div
                 className="img relative o-hidden radius-250"
@@ -57,7 +57,7 @@ function About() {
               </span>
             </div>
           </div>
-          <div className="col-lg-7 valign">
+          <div className="col-lg-7 flex align-center">
             <div className="cont">
               <h2 className="sub-title main-color mb-30">O nás</h2>
                 <h3 className="mb-30 h4">
@@ -79,7 +79,7 @@ function About() {
                 <div className="numbers mt-50">
                   <div className="row lg-marg">
                     <div className="col-md-6">
-                      <div className="item bord-thin-top pt-30 flex align-items-end mt-20">
+                      <div className="item bord-thin-top pt-30 flex align-end mt-20">
                         <div>
                           <h3 className="fw-300 mb-10">100%</h3>
                           <h6 className="p-color sub-title">
@@ -99,7 +99,7 @@ function About() {
                       </div>
                     </div>
                     <div className="col-md-6">
-                      <div className="item bord-thin-top pt-30 flex align-items-end mt-20">
+                      <div className="item bord-thin-top pt-30 flex align-end mt-20">
                         <div>
                           <h3 className="fw-300 mb-10">40+</h3>
                           <h6 className="p-color sub-title">

@@ -9,12 +9,12 @@ function Services() {
     <section className="services-inline2 section-padding sub-bg bord-bottom-grd bord-top-grd relative">
       <div className="container relative z-7">
         <div className="sec-head mb-80">
-          <div className="flex align-items-center">
+          <div className="flex align-center">
             <div>
               <span className="sub-title main-color mb-5">Specializace</span>
               <h3 className="fw-600 fz-50 text-u  ">
                 <span className="">
-                  Naše služby <span className="fw-200">služby</span>
+                  Naše <span className="fw-200">služby</span>
                 </span>
               </h3>
             </div>
@@ -28,7 +28,7 @@ function Services() {
         </div>
 
         <div className="item">
-          <div className="row md-marg align-items-end">
+          <div className="row md-marg align-end">
             <div className="col-lg-4">
               <div>
                 <span className="num">01</span>
@@ -59,7 +59,7 @@ function Services() {
         </div>
 
         <div className="item">
-          <div className="row md-marg align-items-end">
+          <div className="row md-marg align-end">
             <div className="col-lg-4">
               <div>
                 <span className="num">02</span>
@@ -90,7 +90,7 @@ function Services() {
         </div>
 
         <div className="item pb-0">
-          <div className="row md-marg align-items-end">
+          <div className="row md-marg align-end">
             <div className="col-lg-4">
               <div>
                 <span className="num">03</span>

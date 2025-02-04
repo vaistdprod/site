@@ -19,7 +19,7 @@ function Feat() {
               <p>
                 Podání ruky je pro nás stejně svaté jako ta nejlépe sepsaná smlouva. Pokud se na něčem domluvíme, bereme to jako absolutní povinnost splnit naši část dohody.
               </p>
-              <Link href="/nas-tym" className="btn-crev flex align-items-center mt-40">
+              <Link href="/nas-tym" className="btn-crev flex align-center mt-40">
                 <span className="hover-this">
                   <span className="circle hover-anim">
                     <FontAwesomeIcon icon={faArrowRight} />
@@ -31,7 +31,7 @@ function Feat() {
           </div>
           <div className="col-lg-6 offset-lg-1">
             <div className="item mb-30">
-              <div className="row">
+              <div className="row mx-0">
                 <div className="col-md-4 relative">
                   <Image
                     fill
@@ -52,7 +52,7 @@ function Feat() {
               </div>
             </div>
             <div className="item mb-30">
-              <div className="row">
+              <div className="row mx-0">
                 <div className="col-md-4 relative">
                   <Image
                     fill
@@ -73,7 +73,7 @@ function Feat() {
               </div>
             </div>
             <div className="item">
-              <div className="row">
+              <div className="row mx-0">
                 <div className="col-md-4 relative">
                   <Image
                     fill
@@ -97,7 +97,7 @@ function Feat() {
           </div>
         </div>
       </div>
-      <div className="circle-blur">
+      <div className="circle-blur absolute">
         <Image
           src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/blur1-0J2DJ0INNrXDLBO6XFZu6DKiOqorlZ.png"
           alt=""

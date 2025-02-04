@@ -59,7 +59,7 @@ function Testimonials() {
                           <div className="text">
                             <p className="fz-30">{item.desc}</p>
                           </div>
-                          <div className="info flex align-items-center pt-40 mt-40 bord-thin-top">
+                          <div className="info flex align-center pt-40 mt-40 bord-thin-top">
                             <div>
                               <div className="fit-img o-hidden circle">
                                 <img src={item.img} alt="" />

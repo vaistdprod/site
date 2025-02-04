@@ -32,7 +32,7 @@ function Challenge({ data }) {
             </div>
           </div>
         </div>
-        <div className="row justify-content-center">
+        <div className="row justify-center">
           <div className="col-lg-11">
             <div className="row">
               <div className="col-lg-5">

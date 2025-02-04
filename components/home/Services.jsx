@@ -27,7 +27,7 @@ function Services({ services }) {
 
       <div className="container section-padding bord-bottom-grd relative pt-0">
         <div className="sec-head mb-80">
-          <div className="flex align-items-center">
+          <div className="flex align-center">
             <div>
               <span className="sub-title main-color mb-5">Specializace</span>
               <h3 className="fw-600 fz-50 text-u">

@@ -26,13 +26,13 @@ export default function Faq() {
                 src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/fotoprodukce-YxyVSK0y1wHgrd2VKp46H7lU8wzGJO.jpg"
                 alt="Fotoprodukce"
                 fill
-                className="object-center size-100 object-cover"
+                className="object-center full-size object-cover"
                 sizes="(max-width: 991px) 100vw, 50vw"
               />
             </div>
           </div>
 
-          <div className="col-lg-6 valign">
+          <div className="col-lg-6 flex align-center">
             <div>
               <div className="sec-head mb-50">
                 <h6 className="sub-title main-color mb-15">Proč zvolit TD Productions?</h6>

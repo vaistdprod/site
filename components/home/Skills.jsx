@@ -4,7 +4,7 @@ function Skills() {
   return (
     <section className="my-skills relative section-padding">
       <div className="container">
-        <div className="row justify-content-center">
+        <div className="row justify-center">
           <div className="col-lg-6 col-md-10">
             <div className="sec-head text-center mb-80">
               <h3>

@@ -13,7 +13,7 @@ function Blog({ posts = [] }) {
     <section className="blog">
       <div className="container">
         <div className="sec-head mb-80">
-          <div className="flex align-items-center mb-30">
+          <div className="flex align-center mb-30">
             <h2 className="fw-600 fz-70 text-u  ">
               <span className="">
                 Z naší <span className="fw-200">produkce</span>
@@ -26,7 +26,7 @@ function Blog({ posts = [] }) {
               <FontAwesomeIcon icon={faArrowRight} className="icon" />
             </div>
           </div>
-          <h6 className="sub-title main-color flex align-items-center">
+          <h6 className="sub-title main-color flex align-center">
             <span>Naše články</span>
             <span className="thin"></span>
           </h6>
@@ -45,7 +45,7 @@ function Blog({ posts = [] }) {
                   />
                 </div>
                 <div className="cont pt-40">
-                  <div className="info sub-title p-color flex align-items-center mb-15">
+                  <div className="info sub-title p-color flex align-center mb-15">
                     <div>
                       <Link href={`/blog/${post.slug}`}>By : {post.author.name}</Link>
                     </div>
@@ -54,7 +54,7 @@ function Blog({ posts = [] }) {
                     </div>
                   </div>
                   <h4>{post.title}</h4>
-                  <Link href={`/blog/${post.slug}`} className="btn-crev flex align-items-center mt-40">
+                  <Link href={`/blog/${post.slug}`} className="btn-crev flex align-center mt-40">
                     <span className="hover-this">
                       <span className="circle hover-anim">
                         <FontAwesomeIcon icon={faArrowRight} />

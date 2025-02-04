@@ -80,7 +80,7 @@ function PortfolioGrid() {
               <h3>Poslední projekty</h3>
             </div>
           </div>
-          <div className="filtering col-lg-8 flex justify-content-end align-items-end">
+          <div className="filtering col-lg-8 flex justify-end align-end">
             <div className="filter">
               {categories.map((cat, idx) => {
                 const isAll = cat.filter === '*';
@@ -128,7 +128,7 @@ function PortfolioGrid() {
                       />
                     </Link>
                   </div>
-                  <div className="cont flex align-items-end mt-30">
+                  <div className="cont flex align-end mt-30">
                     <div>
                       <span className="p-color mb-5 sub-title w-100">{item.subTitle}</span>
                       <Link href={`/portfolio/${item.id}`}>

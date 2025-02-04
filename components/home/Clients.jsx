@@ -25,7 +25,7 @@ function Clients() {
   return (
     <section className="clients-carso section-padding pt-0">
       <div className="container">
-        <div className="row justify-content-center">
+        <div className="row justify-center">
           <div className="col-lg-6 col-md-10">
             <div className="sec-head text-center mb-80">
               <h3>
@@ -85,7 +85,7 @@ function Clients() {
           </Swiper>
         </div>
         <div className="sec-bottom relative mt-100">
-          <div className="main-bg flex align-items-center">
+          <div className="main-bg flex align-center">
             <h6 className="fz-14 fw-400">
               Více než{' '}<span className="fw-600">50 firem</span>
               {' '}nám svěřilo svůj projekt.

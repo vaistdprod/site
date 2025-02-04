@@ -44,7 +44,7 @@ function Intro({ memberData }) {
   return (
     <section className="team-single section-padding pb-0">
       <div className="container">
-        <div className="row md-marg justify-content-around bord">
+        <div className="row md-marg justify-around bord">
           <div className="col-lg-5">
             <div className="img md-mb50 relative">
               <Image
@@ -57,7 +57,7 @@ function Intro({ memberData }) {
               />
             </div>
           </div>
-          <div className="col-lg-6 valign">
+          <div className="col-lg-6 flex align-center">
             <div className="cont">
               <h2>{memberData.name}</h2>
               <h6 className="sub-title main-color mt-10">{memberData.role}</h6>
@@ -79,12 +79,12 @@ function Intro({ memberData }) {
             </div>
           </div>
         </div>
-        <div className="row md-marg justify-content-around mt-80">
-          <div className="col-lg-6 valign">
+        <div className="row md-marg justify-around mt-80">
+          <div className="col-lg-6 flex align-center">
             <div className="text md-mb50">
               <h4 className="mb-15">O mně</h4>
               <p>{memberData.about}</p>
-              <ul className="rest mt-30 social-icon flex align-items-center">
+              <ul className="rest mt-30 social-icon flex align-center">
                 {Object.entries(SOCIAL_MEDIA).map(([platformKey, { icon, label }]) => {
                   const link = memberData[platformKey];
                   if (!link) return null;

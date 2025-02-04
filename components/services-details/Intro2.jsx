@@ -22,7 +22,7 @@ function Intro2({ serviceData }) {
               <img src="/assets/imgs/arw2.png" alt="" />
             </div>
           </div>
-          <div className="col-lg-6 valign">
+          <div className="col-lg-6 flex align-center">
             <div>
               <div className="sec-head mb-50">
                 <h6 className="sub-title main-color mb-15">

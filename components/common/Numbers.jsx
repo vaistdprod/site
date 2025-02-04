@@ -4,7 +4,7 @@ function Numbers() {
   return (
     <section className="numbers-crev relative section-padding">
       <div className="container">
-        <div className="row lg-marg justify-content-center">
+        <div className="row lg-marg justify-center">
           <div className="col-lg-4 col-md-6">
             <div className="item text-center md-mb50">
               <div className="o-hidden">

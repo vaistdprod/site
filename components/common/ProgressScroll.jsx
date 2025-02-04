@@ -10,7 +10,7 @@ const ProgressScroll = () => {
   }, []);
 
   return (
-    <div className="progress-wrap cursor-pointer">
+    <div className="progress-wrap fixed block cursor-pointer">
       <svg
         className="progress-circle svg-content"
         width="100%"

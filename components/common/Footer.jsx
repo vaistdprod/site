@@ -46,7 +46,7 @@ function Footer() {
   return (
     <footer className="clean-footer crev relative">
       <div className="container pb-40 pt-40 relative z-7">
-        <div className="row justify-content-between">
+        <div className="row justify-between">
           <div className="col-lg-2">
             <div className="logo icon-img-100 md-mb80">
               <Link href="/" aria-label="Domů">
@@ -172,7 +172,7 @@ function Footer() {
                   {msg && <p>{msg}</p>}
                 </div>
               </form>
-              <ul className="rest social-icon flex align-items-center">
+              <ul className="rest social-icon flex align-center">
                 <li className="hover-this cursor-pointer">
                   <a
                     href="https://facebook.com/tdprod.cz/"
