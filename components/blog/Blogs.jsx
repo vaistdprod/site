@@ -23,7 +23,7 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
                       alt={post.title}
                       fill
                       className="img-fluid object-cover"
-                      sizes="(max-width: 991px) 100vw, 67vw"
+                      sizes="(max-width: 575px) 100vw, (max-width: 991px) 75vw, 60vw"
                     />
                   </div>
                   <div className="content">

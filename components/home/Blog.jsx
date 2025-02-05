@@ -41,7 +41,7 @@ function Blog({ posts = [] }) {
                     src={post.coverImage}
                     alt={post.title}
                     className="img-fluid object-cover object-center full-size"
-                    sizes="(max-width: 991px) 100vw, 50vw"
+                    sizes="(max-width: 575px) 100vw, (max-width: 991px) 75vw, 43vw"
                   />
                 </div>
                 <div className="cont pt-40">

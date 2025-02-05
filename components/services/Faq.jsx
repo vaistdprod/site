@@ -27,7 +27,7 @@ export default function Faq() {
                 alt="Fotoprodukce"
                 fill
                 className="object-center full-size object-cover"
-                sizes="(max-width: 991px) 100vw, 50vw"
+                sizes="(max-width: 575px) 100vw, (max-width: 991px) 75vw, 43vw"
               />
             </div>
           </div>

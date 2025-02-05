@@ -21,7 +21,7 @@ function Intro() {
                     alt="Jednatel společnosti TD Productions, Matěj Vais, si podává ruku s klientem."
                     fill
                     style={{ objectFit: "cover", objectPosition: "55% 50%" }}
-                    sizes="(max-width: 991px) 100vw, 50vw"
+                    sizes="(max-width: 575px) 100vw, (max-width: 991px) 75vw, 43vw"
                   />
                   <div className="img-icon">
                     <Image

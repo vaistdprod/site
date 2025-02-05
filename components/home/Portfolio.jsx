@@ -88,7 +88,7 @@ function Portfolio() {
                           src={item.img}
                           alt={item.alt}
                           className="radius-15 object-cover"
-                          sizes="(max-width: 991px) 100vw, 50vw"
+                          sizes="(max-width: 575px) 100vw, (max-width: 991px) 75vw, 33vw"
                         />
                       </Link>
                     </div>

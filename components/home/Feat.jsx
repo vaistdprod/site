@@ -38,7 +38,7 @@ function Feat() {
                     src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/fotoprodukce-YxyVSK0y1wHgrd2VKp46H7lU8wzGJO.jpg"
                     alt="Dlouhodobé vztahy"
                     className="object-cover"
-                    sizes="(max-width: 767px) 100vw, (max-width: 991px) 33vw, 16vw"
+                    sizes="(max-width: 575px) 100vw, (max-width: 767px) 75vw, (max-width: 991px) 25vw, 15vw"
                     />
                 </div>
                 <div className="col-md-8">
@@ -59,7 +59,7 @@ function Feat() {
                     src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/sebastian-2-zWCZ0gjcglBou2hDnRcZr4dPInhuwk.jpg"
                     alt="Dlouhodobé vztahy"
                     className="object-cover"
-                    sizes="(max-width: 767px) 100vw, (max-width: 991px) 33vw, 16vw"
+                    sizes="(max-width: 575px) 100vw, (max-width: 767px) 75vw, (max-width: 991px) 25vw, 15vw"
                   />
                 </div>
                 <div className="col-md-8">
@@ -80,7 +80,7 @@ function Feat() {
                     src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/schuzka-2-tjbOkWyEtYv76hp7f65UGgp7mTmvek.jpg"
                     alt="Dlouhodobé vztahy"
                     className="object-cover"
-                    sizes="(max-width: 767px) 100vw, (max-width: 991px) 33vw, 16vw"
+                    sizes="(max-width: 575px) 100vw, (max-width: 767px) 75vw, (max-width: 991px) 25vw, 15vw"
                   />
                 </div>
                 <div className="col-md-8">
