@@ -70,7 +70,7 @@ function Intro({ serviceData }) {
                 alt={serviceData.title}
                 fill
                 className="object-cover object-center full-size"
-                sizes="(max-width: 991px) 100vw, 33vw"
+                sizes="(max-width: 991px) 100vw, (max-width: 1399px) 25vw, 30vw"
               />
             </div>
           </div>

@@ -96,7 +96,7 @@ function Team({ members = [] }) {
                       src={member.image}
                       alt={member.name}
                       className="object-cover full-size"
-                      sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 25vw"
+                      sizes="(max-width: 575px) 100vw, (max-width: 767px) 75vw, (max-width: 991px) 33vw, 20vw"
                     />
                   </Link>
                 </div>

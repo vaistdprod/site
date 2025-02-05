@@ -52,7 +52,7 @@ function Intro({ memberData }) {
                 alt={memberData.name}
                 fill
                 className="object-cover"
-                sizes="(max-width: 991px) 100vw, 42vw"
+                sizes="(max-width: 575px) 85vw, (max-width: 991px) 65vw, 33vw"
                 priority
               />
             </div>

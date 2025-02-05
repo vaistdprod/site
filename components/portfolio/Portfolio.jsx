@@ -124,7 +124,7 @@ function PortfolioGrid() {
                         src={item.img}
                         alt={item.alt}
                         className="img-fluid object-cover"
-                        sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 33vw"
+                        sizes="(max-width: 575px) 100vw, (max-width: 991px) 75vw, (max-width: 1199px) 37vw, 28vw"
                       />
                     </Link>
                   </div>

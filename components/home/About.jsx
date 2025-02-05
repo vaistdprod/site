@@ -16,7 +16,7 @@ function About() {
                   src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/ostrava-pSlmFdt2nyEPo7m43e8YKETSALRTsm.jpg"
                   alt="Centrum Ostravy, nedaleko ulice 28. října, na které sídlí společnost TD Productions."
                   className="object-cover object-center"
-                  sizes="(max-width: 991px) 100vw, 50vw"
+                  sizes="(max-width: 991px) 75vw, (max-width: 1199px) 25vw, 30vw"
                 />
               </div>
               <span className="icon absolute size-60 radius-20">
