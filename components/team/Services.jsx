@@ -49,7 +49,7 @@ function Services() {
             </div>
             <div className="col-lg-4">
               <div className="img fit-img o-hidden">
-                <img src="/assets/imgs/serv-img/1.jpg" alt="" />
+                <img className="object-cover object-center full-size" src="/assets/imgs/serv-img/1.jpg" alt="" />
                 <Link href="/page-services-details">
                   <FontAwesomeIcon icon={faArrowRight} />
                 </Link>
@@ -80,7 +80,7 @@ function Services() {
             </div>
             <div className="col-lg-4">
               <div className="img fit-img o-hidden">
-                <img src="/assets/imgs/serv-img/2.jpg" alt="" />
+                <img className="object-cover object-center full-size" src="/assets/imgs/serv-img/2.jpg" alt="" />
                 <Link href="/page-services-details">
                   <FontAwesomeIcon icon={faArrowRight} />
                 </Link>
@@ -111,7 +111,7 @@ function Services() {
             </div>
             <div className="col-lg-4">
               <div className="img fit-img o-hidden">
-                <img src="/assets/imgs/serv-img/3.jpg" alt="" />
+                <img className="object-cover object-center full-size" src="/assets/imgs/serv-img/3.jpg" alt="" />
                 <Link href="/page-services-details">
                   <FontAwesomeIcon icon={faArrowRight} />
                 </Link>

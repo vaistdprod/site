@@ -30,10 +30,10 @@ function Testimonials() {
         <div className="row">
           <div className="col-lg-4 md-mb50">
             <div className="img-full relative h-100">
-              <div className="fit-img o-hidden">
-                <img src="/assets/imgs/testim/bg.jpg" alt="" />
+              <div className="fit-img h-100 o-hidden">
+                <img className="object-cover object-center full-size" src="/assets/imgs/testim/bg.jpg" alt="" />
               </div>
-              <div className="fix-img">
+              <div className="fix-img absolute">
                 <img src="/assets/imgs/arw1.png" alt="" />
               </div>
             </div>
@@ -62,7 +62,7 @@ function Testimonials() {
                           <div className="info flex align-center pt-40 mt-40 bord-thin-top">
                             <div>
                               <div className="fit-img o-hidden circle">
-                                <img src={item.img} alt="" />
+                                <img className="object-cover object-center full-size" src={item.img} alt="" />
                               </div>
                             </div>
                             <div className="ml-20">

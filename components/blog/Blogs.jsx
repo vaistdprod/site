@@ -31,7 +31,7 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
                       <div className="post-date">
                         {new Date(post.date).toLocaleDateString()}
                       </div>
-                      <div className="commt opacity-7 fz-13">
+                      <div className="opacity-7 fz-13">
                         <FontAwesomeIcon icon={faCommentAlt} className="mr-10" />
                         {post.comments} komentářů
                       </div>
@@ -99,16 +99,16 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
                 {posts.slice(0, 3).map((post) => (
                   <div key={post.slug} className="item flex align-center">
                     <div>
-                      <div className="img relative">
-                        <Link href={`/blog/${post.slug}`}>
+                      <div className="img o-hidden radius-5 relative">
+                        <Link href={`/blog/${post.slug}`} className="relative full-size">
                           <Image
                             src={post.coverImage}
                             alt={post.title}
                             width={90}
                             height={100}
-                            className="img-fluid object-cover"
+                            className="img-fluid full-size object-cover"
                           />
-                          <span className="date">
+                          <span className="date absolute size-50 circle z-3 fz-14">
                             <span>
                               {new Date(post.date).getDate()} . <br />{' '}
                               {new Date(post.date).toLocaleString('cs-CZ', { month: 'short' })}

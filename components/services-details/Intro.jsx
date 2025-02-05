@@ -69,7 +69,7 @@ function Intro({ serviceData }) {
                 src={serviceData.img}
                 alt={serviceData.title}
                 fill
-                className="object-cover"
+                className="object-cover object-center full-size"
                 sizes="(max-width: 991px) 100vw, 33vw"
               />
             </div>

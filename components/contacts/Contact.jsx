@@ -193,7 +193,7 @@ function ContactForm() {
                       {errors.zprava && <p className="error-text">{errors.zprava}</p>}
                     </div>
                     <div className="mt-30">
-                      <button type="submit" className="btn btn-full btn-bord radius-30" id="odeslat-kontaktni-formular">
+                      <button type="submit" className="btn btn-full w-100 btn-bord radius-30" id="odeslat-kontaktni-formular">
                         <span className="text">Odeslat</span>
                       </button>
                     </div>

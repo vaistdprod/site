@@ -46,7 +46,7 @@ function Header({ title, author, date, comments, coverImage, tags }) {
                 <div className="flex align-center">
                   <div className="author-info">
                     <div className="flex align-center relative">
-                      <Link href={`/nas-tym/${encodeURIComponent(author.slug)}`} className="circle-60 d-inline-flex">
+                      <Link href={`/nas-tym/${encodeURIComponent(author.slug)}`} className="circle-60 circle size-60 o-hidden d-inline-flex">
                         <Image
                           src={author.avatar}
                           alt={author.name}

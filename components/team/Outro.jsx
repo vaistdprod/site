@@ -32,16 +32,16 @@ function Outro() {
                 <div className="col-md-6">
                   <div className="skill-item sm-mb30">
                     <h5 className="sub-title mb-15">UI / UX Design 90%</h5>
-                    <div className="skill-progress">
-                      <div className="progres" data-value="90%"></div>
+                    <div className="skill-progress relative">
+                      <div className="progres absolute" data-value="90%"></div>
                     </div>
                   </div>
                 </div>
                 <div className="col-md-6">
                   <div className="skill-item">
                     <h5 className="sub-title mb-15">Development 80%</h5>
-                    <div className="skill-progress">
-                      <div className="progres" data-value="80%"></div>
+                    <div className="skill-progress relative">
+                      <div className="progres absolute" data-value="80%"></div>
                     </div>
                   </div>
                 </div>
@@ -49,15 +49,15 @@ function Outro() {
             </div>
           </div>
           <div className="col-lg-6">
-            <div className="imgs relative">
-              <div className="img1 absolute o-hidden">
-                <img className="object-center object-cover" src="/assets/imgs/intro/2.jpg" alt="" />
+            <div className="imgs full-size relative">
+              <div className="img1 radius-10 absolute o-hidden">
+                <img className="object-cover object-center full-size" src="/assets/imgs/intro/2.jpg" alt="" />
               </div>
-              <div className="img2 absolute o-hidden">
-                <img className="object-center object-cover" src="/assets/imgs/intro/03.jpg" alt="" />
+              <div className="img2 radius-10 absolute o-hidden">
+                <img className="object-cover object-center full-size" src="/assets/imgs/intro/03.jpg" alt="" />
               </div>
-              <div className="img3 absolute o-hidden">
-                <img className="object-center object-cover" src="/assets/imgs/intro/04.jpg" alt="" />
+              <div className="img3 radius-10 absolute o-hidden">
+                <img className="object-cover object-center full-size" src="/assets/imgs/intro/04.jpg" alt="" />
               </div>
             </div>
           </div>

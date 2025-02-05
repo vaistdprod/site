@@ -253,16 +253,16 @@ function Blog({ post, latestPosts }) {
                 {latestPosts.map((latestPost) => (
                   <div key={latestPost.slug} className="item flex align-center">
                     <div>
-                      <div className="img relative">
-                        <Link href={`/blog/${latestPost.slug}`} style={{ position: "relative", height: "100%", width: "100%" }}>
+                      <div className="img o-hidden radius-5 relative">
+                        <Link href={`/blog/${latestPost.slug}`} className="relative full-size">
                           <Image
                             src={latestPost.coverImage}
                             alt={latestPost.title}
                             width={90}
                             height={100}
-                            className="img-fluid object-cover"
+                            className="img-fluid full-size object-cover"
                           />
-                          <span className="date">
+                          <span className="date absolute size-50 circle z-3 fz-14">
                             <span>
                               {new Date(latestPost.date).getDate()} /{' '}
                               {new Date(latestPost.date).toLocaleString('default', {

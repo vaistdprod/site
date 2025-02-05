@@ -20,7 +20,7 @@ function Next({ nextProject, prevProject }) {
                   className="object-cover"
                   />
                 <div
-                  className="cont relative flex align-center z-2"
+                  className="cont z-3 relative flex align-center"
                 >
                   <div>
                     <FontAwesomeIcon icon={faArrowLeft} className="mr-30 fz-30" />
@@ -52,7 +52,7 @@ function Next({ nextProject, prevProject }) {
                 <div
                   className="ml-auto relative z-2"
                 >
-                  <div className="cont relative flex align-center">
+                  <div className="cont z-3 relative flex align-center">
                     <div>
                       <h6 className="sub-title fz-16 mb-5">Další projekt</h6>
                       <Link
@@ -73,7 +73,7 @@ function Next({ nextProject, prevProject }) {
         </div>
       </div>
       <div>
-        <Link href="/portfolio" className="all-works-btn text-center">
+        <Link href="/portfolio" className="all-works-btn absolute z-4 text-center">
           <span className="ti-view-grid fz-24 mb-10"></span>
           <span className="d-block fz-12 text-u ls1">Všechny projekty</span>
         </Link>

@@ -7,7 +7,7 @@ function About() {
       <div className="container">
         <div className="row lg-marg">
           <div className="col-lg-5 flex align-center">
-            <div className="profile-img relative radius-250">
+            <div className="profile-img w-100 relative radius-250">
               <div
                 className="img relative o-hidden radius-250"
               >
@@ -19,7 +19,7 @@ function About() {
                   sizes="(max-width: 991px) 100vw, 50vw"
                 />
               </div>
-              <span className="icon">
+              <span className="icon absolute size-60 radius-20">
                 <Image
                   src="/assets/imgs/ae.svg"
                   alt="Logo programu Adobe After Effects"
@@ -28,7 +28,7 @@ function About() {
                   className="h-100"
                 />
               </span>
-              <span className="icon">
+              <span className="icon absolute size-60 radius-20">
                 <Image
                   src="/assets/imgs/figma.svg"
                   alt="Logo programu Figma"
@@ -37,7 +37,7 @@ function About() {
                   className="h-100"
                 />
               </span>
-              <span className="icon">
+              <span className="icon absolute size-60 radius-20">
                 <Image
                   src="/assets/imgs/react.svg"
                   alt="Logo knihovny React"
@@ -46,7 +46,7 @@ function About() {
                   className="h-100"
                 />
               </span>
-              <span className="icon">
+              <span className="icon absolute size-60 radius-20">
                 <Image
                   src="/assets/imgs/wp.svg"
                   alt="Logo CMS WordPress"

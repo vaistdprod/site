@@ -26,7 +26,7 @@ function Services({ services }) {
             <div key={serviceKey} className="col-lg-4">
               <div className="item mb-30">
                 <div
-                  className="icon-img-60-60 opacity-7 mb-40"
+                  className="size-60 opacity-7 mb-40"
                   dangerouslySetInnerHTML={{ __html: service.icon }}
                 />
                 <h5>{service.title}</h5>

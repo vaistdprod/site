@@ -44,7 +44,7 @@ function Intro({ memberData }) {
   return (
     <section className="team-single section-padding pb-0">
       <div className="container">
-        <div className="row md-marg justify-around bord">
+        <div className="row md-marg justify-around bord relative">
           <div className="col-lg-5">
             <div className="img md-mb50 relative">
               <Image
@@ -113,8 +113,8 @@ function Intro({ memberData }) {
                     <h5 className="sub-title mb-15">
                       {skill.name} {skill.value}
                     </h5>
-                    <div className="skill-progress">
-                      <div className="progres" data-value={skill.value}></div>
+                    <div className="skill-progress relative">
+                      <div className="progres absolute" data-value={skill.value}></div>
                     </div>
                   </div>
                 ))

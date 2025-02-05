@@ -40,7 +40,7 @@ function Blog({ posts = [] }) {
                     fill
                     src={post.coverImage}
                     alt={post.title}
-                    className="img-fluid object-cover"
+                    className="img-fluid object-cover object-center full-size"
                     sizes="(max-width: 991px) 100vw, 50vw"
                   />
                 </div>

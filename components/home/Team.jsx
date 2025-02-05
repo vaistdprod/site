@@ -17,7 +17,7 @@ function Team({ members = [] }) {
       <div className="container">
         <div className="sec-head mb-80">
           <div className="flex align-center mb-30">
-            <h2 className="fw-600 fz-70 text-u  ">
+            <h2 className="fw-600 fz-70 text-u">
               <span className="">
                 Pracujeme pro vás <span className="fw-200">nonstop</span>
               </span>
@@ -38,7 +38,7 @@ function Team({ members = [] }) {
         <div className="row">
           {members.slice(0, 5).map((member) => (
             <div key={member.slug} className="col-lg-3 col-md-6">
-              <div className="item md-mb50">
+              <div className="item relative o-hidden md-mb50">
                 <div className="cont text-center pt-30 pb-30">
                   <Link href={`/nas-tym/${member.slug}`}>
                     <div className="info">
@@ -89,13 +89,13 @@ function Team({ members = [] }) {
                   </div>
                 </div>
 
-                <div className="img relative">
+                <div className="img relative z-2">
                   <Link href={`/nas-tym/${member.slug}`} style={{ position: "relative", height: "100%", width: "100%" }}>
                     <Image
                       fill
                       src={member.image}
                       alt={member.name}
-                      className="object-cover"
+                      className="object-cover full-size"
                       sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 25vw"
                     />
                   </Link>
