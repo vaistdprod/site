@@ -14,11 +14,10 @@ if (typeof window !== 'undefined') {
 }
 
 function Team({ members = [] }) {
-  if (!Array.isArray(members)) {
-    console.error("Expected 'members' to be an array, instead received:", members);
-    return null;
-  }
-
+  // Instead of conditionally returning, create a safe variable.
+  const validMembers = Array.isArray(members) ? members : [];
+  
+  // Always call hooks in the same order.
   const containerRef = useRef(null);
   
   useGSAP(
@@ -75,7 +74,7 @@ function Team({ members = [] }) {
         </div>
 
         <div className="row">
-          {members.slice(0, 5).map((member) => (
+          {validMembers.slice(0, 5).map((member) => (
             <div key={member.slug} className="col-lg-3 col-md-6">
               <div className="item relative o-hidden md-mb50">
                 <div className="cont text-center pt-30 pb-30">

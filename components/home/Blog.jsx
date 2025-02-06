@@ -13,11 +13,9 @@ if (typeof window !== 'undefined') {
 }
 
 function Blog({ posts = [] }) {
-  if (!posts.length) return null;
-
-  const topPosts = posts.slice(0, 2);
+  // Always call hooks first.
   const containerRef = useRef(null);
-
+  
   useGSAP(
     (context) => {
       const secHead = context.selector('.sec-head');
@@ -47,6 +45,11 @@ function Blog({ posts = [] }) {
     },
     { scope: containerRef }
   );
+
+  // Now do the early return if there are no posts.
+  if (!posts.length) return null;
+  
+  const topPosts = posts.slice(0, 2);
 
   return (
     <section ref={containerRef} className="blog">
