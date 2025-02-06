@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useScrollTrigger } from './useScrollTrigger';
@@ -26,22 +26,24 @@ const RotateHeading = ({
   const Component = tag;
   const animationRef = useRef(null);
   const triggerRef = useRef(null);
-  
+
   useScrollTrigger();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    const element = headingRef.current;
+    if (!element) return;
+
     const ctx = gsap.context(() => {
-      const heading = headingRef.current;
-      if (!heading) return;
-
-      gsap.set(heading.parentElement, {
-        perspective: perspective,
-        transformStyle: 'preserve-3d',
-        backfaceVisibility: 'hidden',
-        willChange: 'transform'
-      });
-
-      gsap.set(heading, {
+      // Make sure the parent element exists for perspective settings.
+      if (element.parentElement) {
+        gsap.set(element.parentElement, {
+          perspective: perspective,
+          transformStyle: 'preserve-3d',
+          backfaceVisibility: 'hidden',
+          willChange: 'transform'
+        });
+      }
+      gsap.set(element, {
         opacity: 0,
         rotationX: rotationX,
         y: y,
@@ -54,14 +56,14 @@ const RotateHeading = ({
         willChange: 'transform, opacity'
       });
 
+      // Create ScrollTrigger instance immediately.
       triggerRef.current = ScrollTrigger.create({
-        trigger: heading,
+        trigger: element,
         start: `top bottom-=${threshold * 100}%`,
         end: 'top center',
         onEnter: () => {
           if (animationRef.current) animationRef.current.kill();
-          
-          animationRef.current = gsap.to(heading, {
+          animationRef.current = gsap.to(element, {
             opacity: 1,
             rotationX: 0,
             y: 0,
@@ -73,14 +75,13 @@ const RotateHeading = ({
             force3D: true,
             overwrite: true,
             onComplete: () => {
-              heading.style.willChange = 'auto';
+              element.style.willChange = 'auto';
             }
           });
         },
         onLeaveBack: () => {
           if (animationRef.current) animationRef.current.kill();
-          
-          animationRef.current = gsap.to(heading, {
+          animationRef.current = gsap.to(element, {
             opacity: 0,
             rotationX: rotationX,
             y: y,
@@ -91,13 +92,13 @@ const RotateHeading = ({
             force3D: true,
             overwrite: true,
             onStart: () => {
-              heading.style.willChange = 'transform, opacity';
+              element.style.willChange = 'transform, opacity';
             }
           });
         },
         onRefresh: self => {
           if (self.progress === 0 && !self.isActive) {
-            gsap.set(heading, {
+            gsap.set(element, {
               opacity: 0,
               rotationX: rotationX,
               y: y,
@@ -107,14 +108,13 @@ const RotateHeading = ({
           }
         }
       });
+    }, element);
 
-      return () => {
-        if (triggerRef.current) triggerRef.current.kill();
-        if (animationRef.current) animationRef.current.kill();
-      };
-    });
-
-    return () => ctx.revert();
+    return () => {
+      if (triggerRef.current) triggerRef.current.kill();
+      if (animationRef.current) animationRef.current.kill();
+      ctx.revert();
+    };
   }, [delay, duration, perspective, rotationX, y, z, scale, threshold]);
 
   return (

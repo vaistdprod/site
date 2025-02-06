@@ -32,31 +32,54 @@ function rafDebounce(callback) {
 export const useScrollTrigger = () => {
   const handleResize = useCallback(
     rafDebounce(() => {
-      ScrollTrigger.refresh(true);
+      if (typeof window !== 'undefined') {
+        ScrollTrigger.refresh(true);
+      }
     }),
     []
   );
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    // Ensure GSAP is registered
+    gsap.registerPlugin(ScrollTrigger);
+
     // Force GPU acceleration on scroll container
     const scrollContainer = document.querySelector('#smooth-wrapper');
-    if (scrollContainer) {
+    if (scrollContainer instanceof Element) {
       scrollContainer.style.transform = 'translate3d(0,0,0)';
       scrollContainer.style.backfaceVisibility = 'hidden';
       scrollContainer.style.perspective = '1000px';
       scrollContainer.style.willChange = 'transform';
     }
 
+    // Configure ScrollTrigger defaults
+    ScrollTrigger.config({
+      ignoreMobileResize: true,
+      autoRefreshEvents: "visibilitychange,DOMContentLoaded,load"
+    });
+
     window.addEventListener('resize', handleResize, { passive: true });
     
-    // Initial refresh with RAF
-    requestAnimationFrame(() => {
-      ScrollTrigger.refresh(true);
-    });
+    // Initial refresh with RAF and safety check
+    const initializeScrollTrigger = () => {
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh(true);
+      });
+    };
+
+    if (document.readyState === 'complete') {
+      initializeScrollTrigger();
+    } else {
+      window.addEventListener('load', initializeScrollTrigger);
+    }
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      if (scrollContainer) {
+      window.removeEventListener('load', initializeScrollTrigger);
+      
+      if (scrollContainer instanceof Element) {
         scrollContainer.style.removeProperty('transform');
         scrollContainer.style.removeProperty('backface-visibility');
         scrollContainer.style.removeProperty('perspective');

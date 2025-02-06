@@ -29,7 +29,7 @@ const AnimatedHeading = ({
   useEffect(() => {
     const ctx = gsap.context(() => {
       const heading = headingRef.current;
-      if (!heading) return;
+      if (!heading || !(heading instanceof Element)) return;
 
       heading.style.transform = 'translate3d(0,0,0)';
       heading.style.backfaceVisibility = 'hidden';
@@ -42,48 +42,50 @@ const AnimatedHeading = ({
         rotationZ: 0.01,
       });
 
-      triggerRef.current = ScrollTrigger.create({
-        trigger: heading,
-        start: `top bottom-=${threshold * 100}%`,
-        end: 'top center',
-        onEnter: () => {
-          if (animationRef.current) animationRef.current.kill();
-          
-          animationRef.current = gsap.to(heading, {
-            opacity: 1,
-            y: 0,
-            duration: duration,
-            delay: delay,
-            ease: ease,
-            force3D: true,
-            overwrite: true,
-            onComplete: () => {
-              heading.style.willChange = 'auto';
+      // Create ScrollTrigger after a short delay to ensure proper initialization
+      setTimeout(() => {
+        triggerRef.current = ScrollTrigger.create({
+          trigger: heading,
+          start: `top bottom-=${threshold * 100}%`,
+          end: 'top center',
+          onEnter: () => {
+            if (animationRef.current) animationRef.current.kill();
+            
+            animationRef.current = gsap.to(heading, {
+              opacity: 1,
+              y: 0,
+              duration: duration,
+              delay: delay,
+              ease: ease,
+              force3D: true,
+              overwrite: true,
+              onComplete: () => {
+                heading.style.willChange = 'auto';
+              }
+            });
+          },
+          onLeaveBack: () => {
+            if (animationRef.current) animationRef.current.kill();
+            
+            animationRef.current = gsap.to(heading, {
+              opacity: 0,
+              y: y,
+              duration: duration * 0.5,
+              ease: "power2.in",
+              force3D: true,
+              overwrite: true,
+              onStart: () => {
+                heading.style.willChange = 'transform, opacity';
+              }
+            });
+          },
+          onRefresh: self => {
+            if (self.progress === 0 && !self.isActive) {
+              gsap.set(heading, { opacity: 0, y: y });
             }
-          });
-        },
-        onLeaveBack: () => {
-          if (animationRef.current) animationRef.current.kill();
-          
-          animationRef.current = gsap.to(heading, {
-            opacity: 0,
-            y: y,
-            duration: duration * 0.5,
-            ease: "power2.in",
-            force3D: true,
-            overwrite: true,
-            onStart: () => {
-              heading.style.willChange = 'transform, opacity';
-            }
-          });
-        },
-        onRefresh: self => {
-          // Handle refresh/resize
-          if (self.progress === 0 && !self.isActive) {
-            gsap.set(heading, { opacity: 0, y: y });
           }
-        }
-      });
+        });
+      }, 100);
 
       return () => {
         if (triggerRef.current) triggerRef.current.kill();
