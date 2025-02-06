@@ -1,9 +1,48 @@
 'use client';
-import React from 'react';
+import React, { useRef } from 'react';
 import Head from 'next/head';
 import faqData from '@/data/faqData';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 function FAQS() {
+  const containerRef = useRef(null);
+
+  useGSAP((context) => {
+    const secHead = context.selector('.sec-head');
+    const accordionItems = context.selector('.accordion .item');
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+      },
+    })
+      .from(secHead, {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+      })
+      .from(
+        accordionItems,
+        {
+          y: 20,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          stagger: 0.2,
+        },
+        '-=0.5'
+      );
+  }, { scope: containerRef });
+
   function openAccordion(event) {
     document.querySelectorAll('.accordion-info').forEach((element) => {
       element.classList.remove('active');
@@ -23,9 +62,9 @@ function FAQS() {
       "name": item.question,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": item.answer
-      }
-    }))
+        "text": item.answer,
+      },
+    })),
   };
 
   return (
@@ -37,7 +76,7 @@ function FAQS() {
         />
       </Head>
 
-      <section className="page-faqs section-padding pb-0 relative">
+      <section ref={containerRef} className="page-faqs section-padding pb-0 relative">
         <div className="container">
           <div className="row justify-center">
             <div className="col-lg-10">
@@ -51,7 +90,7 @@ function FAQS() {
                 <div className="accordion bord">
                   {faqData.map((item, idx) => (
                     <div
-                      className={`item ${idx === 0 ? 'active' : ''}  fadeInUp`}
+                      className={`item ${idx === 0 ? 'active' : ''} fadeInUp`}
                       key={idx}
                     >
                       <div onClick={openAccordion} className="title">

@@ -1,9 +1,52 @@
-import React from "react"
-import Image from "next/image"
+'use client';
+import React, { useRef } from "react";
+import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 function Intro({ serviceData }) {
+  const containerRef = useRef(null);
+
+  useGSAP((context) => {
+    const textContent = context.selector('.row.lg-marg > .col-lg-8');
+    const numbers = context.selector('.numbers');
+    const imgBox = context.selector('.col-lg-4 .img-full');
+    
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+      }
+    })
+      .from(textContent, {
+        x: -50,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+      })
+      .from(numbers, {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        stagger: 0.2,
+      }, '-=0.5')
+      .from(imgBox, {
+        x: 50,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+      }, '-=0.8');
+  }, { scope: containerRef });
+
   return (
-    <section className="intro section-padding">
+    <section ref={containerRef} className="intro section-padding">
       <div className="container">
         <div className="row lg-marg">
           <div className="col-lg-8">
@@ -14,7 +57,7 @@ function Intro({ serviceData }) {
                     {serviceData.title} s TD Productions
                   </h6>
                   <h3 className="mb-30">
-                    Věříme<br />v individualizované
+                    Věříme<br />v prvotřídní
                     <span className="block fw-300">služby pro každého.</span>
                   </h3>
                 </div>
@@ -50,7 +93,7 @@ function Intro({ serviceData }) {
                             src="/assets/imgs/logo-light-stroke.svg"
                             alt="Logo TD Productions"
                             width={60}
-                            height={60}
+                            height={46}
                           />
                         </div>
                       </div>
@@ -62,9 +105,7 @@ function Intro({ serviceData }) {
           </div>
 
           <div className="col-lg-4">
-            <div
-              className="img-full h-100 fit-img o-hidden relative"
-            >
+            <div className="img-full h-100 fit-img o-hidden relative">
               <Image
                 src={serviceData.img}
                 alt={serviceData.title}
@@ -77,7 +118,7 @@ function Intro({ serviceData }) {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Intro
+export default Intro;

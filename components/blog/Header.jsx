@@ -1,49 +1,35 @@
 'use client';
 
-import React, { useLayoutEffect } from 'react';
-import { gsap } from 'gsap';
+import React from 'react';
 import Image from 'next/image';
+import Header from '@/components/common/Header';
 
-function Header() {
-  useLayoutEffect(() => {
-    const tl = gsap.timeline();
-    tl.fromTo('.header', { y: 200 }, { y: 0 }, '+=2');
-    tl.fromTo(
-      '.header .container',
-      { opacity: 0, translateY: 40 },
-      { opacity: 1, translateY: 0 },
-      '-=0'
-    );
-
-    return () => tl.kill();
-  }, []);
-
+const BlogHeaderSimple = () => {
   return (
-    <div
+    <Header
+      delay={2}
+      overlayDark={5}
       className="header page-header section-padding flex align-center relative"
-      data-overlay-dark="5"
+      bgContent={
+        <Image
+          src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/bg34-BaISEyckbwserQhpN6rzgHuQeQhc5u.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+          quality={55}
+        />
+      }
     >
-      <Image
-        src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/bg34-BaISEyckbwserQhpN6rzgHuQeQhc5u.jpg"
-        alt=""
-        fill
-        className="object-cover"
-        priority
-        quality={55}
-      />
-      <div className="container relative z-7 pt-80">
-        <div className="row">
-          <div className="col-12">
-            <div className="text-center">
-              <h1 className="text-u ls1 fz-80">
-                Blog
-              </h1>
-            </div>
+      <div className="row">
+        <div className="col-12">
+          <div className="text-center pt-80">
+            <h1 className="text-u ls1 fz-80">Blog</h1>
           </div>
         </div>
       </div>
-    </div>
+    </Header>
   );
-}
+};
 
-export default Header;
+export default BlogHeaderSimple;

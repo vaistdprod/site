@@ -1,24 +1,63 @@
 'use client';
-import React from "react";
+import React, { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 function Team({ members = [] }) {
   if (!Array.isArray(members)) {
-    console.error("Byly očekávaní 'members' v řadě, namísto toho jsou zde:", members);
+    console.error("Expected 'members' to be an array, instead received:", members);
     return null;
   }
 
+  const containerRef = useRef(null);
+  
+  useGSAP(
+    (context) => {
+      const secHead = context.selector('.sec-head');
+      const teamItems = context.selector('.item');
+      gsap.from(secHead, {
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 80%'
+        }
+      });
+      gsap.from(teamItems, {
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 80%'
+        }
+      });
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <section className="team-crev section-padding">
+    <section ref={containerRef} className="team-crev section-padding">
       <div className="container">
         <div className="sec-head mb-80">
           <div className="flex align-center mb-30">
             <h2 className="fw-600 fz-70 text-u">
-              <span className="">
+              <span>
                 Pracujeme pro vás <span className="fw-200">nonstop</span>
               </span>
             </h2>

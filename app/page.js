@@ -1,24 +1,26 @@
-import ProgressScroll from '@/components/common/ProgressScroll'
-import Cursor from '@/components/common/Cursor'
-import LoadingScreen from '@/components/common/LoadingScreen'
-import Footer from '@/components/common/Footer'
-import Marq2 from '@/components/common/Marq2'
-import Feat from '@/components/home/Feat'
-import Marq from '@/components/common/Marq'
-import Navbar from '@/components/common/Navbar'
-import Services from '@/components/home/Services'
-import Portfolio from '@/components/home/Portfolio'
-import Team from '@/components/home/Team'
-import Blog from '@/components/home/Blog'
-import Header from '@/components/home/Header'
-import About from '@/components/home/About'
-import { getAllPosts } from '@/lib/posts'
-import { getMemberList } from "@/lib/team"
-import { getLightServices } from '@/lib/services'
+import ProgressScroll from '@/components/common/ProgressScroll';
+import Cursor from '@/components/common/Cursor';
+import LoadingScreen from '@/components/common/LoadingScreen';
+import Footer from '@/components/common/Footer';
+import Marq2 from '@/components/common/Marq2';
+import Feat from '@/components/home/Feat';
+import Marq from '@/components/common/Marq';
+import Navbar from '@/components/common/Navbar';
+import Services from '@/components/home/Services';
+import Portfolio from '@/components/home/Portfolio';
+import Team from '@/components/home/Team';
+import Blog from '@/components/home/Blog';
+import Header from '@/components/home/Header';
+import About from '@/components/home/About';
+import { getAllPosts } from '@/lib/posts';
+import { getMemberList } from '@/lib/team';
+import { getLightServices } from '@/lib/services';
+import SmoothScrollProvider from '@/components/common/SmoothScrollProvider';
 
 export const metadata = {
   title: 'TD Productions | Posouváme hranice digitální inovace',
-  description: 'Inovace se u nás snoubí s profesionalitou a jednohlasným zájmem posunout váš projekt na tu nejvyšší úroveň. Kontaktujte nás ještě dnes a získejte nabídku.',
+  description:
+    'Inovace se u nás snoubí s profesionalitou a jednohlasným zájmem posunout váš projekt na tu nejvyšší úroveň. Kontaktujte nás ještě dnes a získejte nabídku.',
   keywords: [
     'TD Productions',
     'webové stránky Ostrava',
@@ -29,13 +31,14 @@ export const metadata = {
     'marketingová agentura Ostrava',
     'web na míru Ostrava',
     'tvorba webových stránek ostrava',
-    'tvorba webu na míru ostrava',
+    'tvorba webu na míru ostrava'
   ],
   openGraph: {
     type: 'website',
-    url: 'https://tdprod.cz/', 
+    url: 'https://tdprod.cz/',
     title: 'TD Productions | Posouváme hranice digitální inovace',
-    description: 'Inovace se u nás snoubí s profesionalitou a jednohlasným zájmem posunout váš projekt na tu nejvyšší úroveň. Kontaktujte nás ještě dnes a získejte nabídku.',
+    description:
+      'Inovace se u nás snoubí s profesionalitou a jednohlasným zájmem posunout váš projekt na tu nejvyšší úroveň. Kontaktujte nás ještě dnes a získejte nabídku.',
     images: [
       {
         url: 'https://tdprod.cz/assets/imgs/og-image.jpg',
@@ -48,41 +51,40 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'TD Productions | Posouváme hranice digitální inovace',
-    description: 'Inovace se u nás snoubí s profesionalitou a jednohlasným zájmem posunout váš projekt na tu nejvyšší úroveň. Kontaktujte nás ještě dnes a získejte nabídku.',
+    description:
+      'Inovace se u nás snoubí s profesionalitou a jednohlasným zájmem posunout váš projekt na tu nejvyšší úroveň. Kontaktujte nás ještě dnes a získejte nabídku.',
     images: ['https://tdprod.cz/assets/imgs/og-image.jpg']
   },
   alternates: {
     canonical: 'https://tdprod.cz/'
   }
-}
+};
 
 export default async function Home() {
-  const posts = await getAllPosts()
-  const members = getMemberList()
-  const services = getLightServices()
+  const posts = await getAllPosts();
+  const members = getMemberList();
+  const services = getLightServices();
 
   return (
     <>
       <LoadingScreen />
       <Cursor />
-      <ProgressScroll />
       <Navbar />
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
-          <main className="main-bg o-hidden">
-            <Header />
-            <Marq />
-            <About />
-            <Services services={services} />
-            <Portfolio />
-            <Feat />
-            <Team members={members} />
-            <Blog posts={posts} />
-            <Marq2 />
-          </main>
+      <SmoothScrollProvider>
+        <main className="main-bg o-hidden">
+          <Header />
+          <Marq />
+          <About />
+          <Services services={services} />
+          <Portfolio />
+          <Feat />
+          <Team members={members} />
+          <Blog posts={posts} />
+          <Marq2 />
           <Footer />
-        </div>
-      </div>
+        </main>
+      </SmoothScrollProvider>
+      <ProgressScroll />
     </>
-  )
+  );
 }

@@ -8,6 +8,7 @@ import Team from '@/components/home/Team';
 import Header from '@/components/team/Header';
 import Intro from '@/components/team/Intro';
 import Numbers from '@/components/common/Numbers';
+import SmoothScrollProvider from '@/components/common/SmoothScrollProvider';
 import { getMemberList } from "@/lib/team";
 
 export const metadata = {
@@ -54,10 +55,8 @@ const members = getMemberList();
     <>
       <LoadingScreen />
       <Cursor />
-      <ProgressScroll />
       <Navbar />
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
+      <SmoothScrollProvider>
           <main className="main-bg o-hidden">
             <Header />
             <Intro />
@@ -66,8 +65,8 @@ const members = getMemberList();
             <Marq2 />
           </main>
           <Footer />
-        </div>
-      </div>
+      </SmoothScrollProvider>
+      <ProgressScroll />
     </>
   );
 }

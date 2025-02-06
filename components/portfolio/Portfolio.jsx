@@ -5,6 +5,13 @@ import Image from 'next/image';
 import portfolioData from '@/data/portfolioData.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 function PortfolioGrid() {
   const { portfolio } = portfolioData;
@@ -14,6 +21,7 @@ function PortfolioGrid() {
   const [activeFilter, setActiveFilter] = useState('*');
   const containerRef = useRef(null);
 
+  // Manually position grid items using inline transforms.
   const layoutGrid = () => {
     const container = containerRef.current;
     if (!container) return;
@@ -70,6 +78,24 @@ function PortfolioGrid() {
     layoutGrid();
   }, [activeFilter]);
 
+  // Animate the inner content of each grid item.
+  useGSAP((context) => {
+    const gridItemInners = context.selector('.grid-item-inner');
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+      }
+    }).from(gridItemInners, {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      ease: 'power3.out',
+      stagger: 0.1,
+    });
+  }, { scope: containerRef });
+
   return (
     <section className="work-grid section-padding pb-0">
       <div className="container">
@@ -116,29 +142,32 @@ function PortfolioGrid() {
                 className={`col-lg-4 col-md-6 grid-item absolute ${catSlug}`}
                 data-category={catSlug}
               >
-                <div className="item mb-50">
-                  <div className="img relative" style={{ height: '300px' }}>
-                    <Link href={`/portfolio/${item.id}`} style={{ position: 'relative', height: '100%', width: '100%' }}>
-                      <Image
-                        fill
-                        src={item.img}
-                        alt={item.alt}
-                        className="img-fluid object-cover"
-                        sizes="(max-width: 575px) 100vw, (max-width: 991px) 75vw, (max-width: 1199px) 37vw, 28vw"
-                      />
-                    </Link>
-                  </div>
-                  <div className="cont flex align-end mt-30">
-                    <div>
-                      <span className="p-color mb-5 sub-title w-100">{item.subTitle}</span>
-                      <Link href={`/portfolio/${item.id}`}>
-                        <h6>{item.title}</h6>
+                {/* Inner wrapper to separate positioning from animation */}
+                <div className="grid-item-inner">
+                  <div className="item mb-50">
+                    <div className="img relative" style={{ height: '300px' }}>
+                      <Link href={`/portfolio/${item.id}`} style={{ position: 'relative', height: '100%', width: '100%' }}>
+                        <Image
+                          fill
+                          src={item.img}
+                          alt={item.alt}
+                          className="img-fluid object-cover"
+                          sizes="(max-width: 575px) 100vw, (max-width: 991px) 75vw, (max-width: 1199px) 37vw, 28vw"
+                        />
                       </Link>
                     </div>
-                    <div className="ml-auto">
-                      <Link href={`/portfolio/${item.id}`} aria-label={`Detail projektu "${item.title}"`}>
-                        <FontAwesomeIcon icon={faArrowRight} />
-                      </Link>
+                    <div className="cont flex align-end mt-30">
+                      <div>
+                        <span className="p-color mb-5 sub-title w-100">{item.subTitle}</span>
+                        <Link href={`/portfolio/${item.id}`}>
+                          <h6>{item.title}</h6>
+                        </Link>
+                      </div>
+                      <div className="ml-auto">
+                        <Link href={`/portfolio/${item.id}`} aria-label={`Detail projektu "${item.title}"`}>
+                          <FontAwesomeIcon icon={faArrowRight} />
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>

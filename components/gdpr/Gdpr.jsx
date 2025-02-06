@@ -1,10 +1,29 @@
 'use client';
+import React, { useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 
-import React from 'react';
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function PrivacyPolicy() {
+  const containerRef = useRef(null);
+
+  useGSAP((context) => {
+    const elements = context.selector('h1, h2, h3, p, ul, ol, a');
+    gsap.from(elements, {
+      opacity: 0,
+      y: 20,
+      duration: 0.8,
+      ease: 'power3.out',
+      stagger: 0.1,
+    });
+  }, { scope: containerRef });
+
   return (
-    <section className="section-padding">
+    <section ref={containerRef} className="section-padding">
       <div className="container">
         <div className="row">
           <div className="col-12">
@@ -49,7 +68,7 @@ export default function PrivacyPolicy() {
 
             <h2 className="mb-30 fz-40 fw-600">2. Rozsah a účel zpracování osobních údajů</h2>
 
-            <h3 className="mb-20 fz-30 fw-600">2.1 Kontaktní formulář</h3>
+            <h3 className="mb-20 fz-30 fw-600">2.1. Kontaktní formulář</h3>
             <ul className="dot-list mb-20">
               <li className="mb-10">
                 <strong>Zpracovávané údaje:</strong> jméno, e-mail, telefonní číslo.
@@ -65,7 +84,7 @@ export default function PrivacyPolicy() {
               </li>
             </ul>
 
-            <h3 className="mb-20 fz-30 fw-600">2.2 Analytické a marketingové nástroje</h3>
+            <h3 className="mb-20 fz-30 fw-600">2.2. Analytické a marketingové nástroje</h3>
             <p className="mb-20">
               Za účelem optimalizace našich webových stránek, zlepšování uživatelské zkušenosti 
               a cílené reklamy využíváme následující služby:
@@ -81,7 +100,7 @@ export default function PrivacyPolicy() {
               </li>
             </ol>
 
-            <h3 className="mb-20 fz-30 fw-600">2.4 Loops pro e-mailový marketing</h3>
+            <h3 className="mb-20 fz-30 fw-600">2.3. Loops pro e-mailový marketing</h3>
             <ul className="dot-list mb-20">
               <li className="mb-10">
                 <em>Poskytovatel:</em> Loops Inc.
@@ -150,7 +169,7 @@ export default function PrivacyPolicy() {
               a daňovými). Poté jsou údaje vymazány nebo anonymizovány.
             </p>
 
-            <h2 className="mb-30 fz-40 fw-600">7. vaše práva podle GDPR</h2>
+            <h2 className="mb-30 fz-40 fw-600">7. Vaše práva podle GDPR</h2>
             <p className="mb-20">
               V souladu s GDPR máte následující práva:
             </p>
@@ -203,7 +222,7 @@ export default function PrivacyPolicy() {
               soubory cookies blokovat, může dojít k omezení funkčnosti našich stránek.
             </p>
 
-            <h2 className="mb-30 fz-40 fw-600">10. Změny těchto Zásad</h2>
+            <h2 className="mb-30 fz-40 fw-600">10. Změny těchto zásad</h2>
             <p className="mb-20">
               Tyto Zásady můžeme čas od času aktualizovat v souladu se změnami našich postupů 
               nebo příslušných právních předpisů. Vždy uveřejníme aktuální znění na našich 

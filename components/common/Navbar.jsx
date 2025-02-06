@@ -1,17 +1,22 @@
-'use client';
-import React, { useEffect } from 'react';
+"use client";
+
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import RollingText from '@/common/rolling';
+import RollingText from '@/components/common/RollingText';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
+  const navRef = useRef(null);
+  const collapseRef = useRef(null);
+
   function handleScroll() {
     const bodyScroll = window.scrollY;
-    const navbar = document.querySelector('.navbar');
-    if (bodyScroll > 300) navbar.classList.add('nav-scroll');
-    else navbar.classList.remove('nav-scroll');
+    if (navRef.current) {
+      if (bodyScroll > 300) navRef.current.classList.add('nav-scroll');
+      else navRef.current.classList.remove('nav-scroll');
+    }
   }
 
   useEffect(() => {
@@ -20,24 +25,27 @@ function Navbar() {
   }, []);
 
   function handleDropdownMouseMove(event) {
-    event.currentTarget.querySelector('.dropdown-menu').classList.add('show');
+    const dropdownMenu = event.currentTarget.querySelector('.dropdown-menu');
+    if (dropdownMenu) dropdownMenu.classList.add('show');
   }
 
   function handleDropdownMouseLeave(event) {
-    event.currentTarget.querySelector('.dropdown-menu').classList.remove('show');
+    const dropdownMenu = event.currentTarget.querySelector('.dropdown-menu');
+    if (dropdownMenu) dropdownMenu.classList.remove('show');
   }
 
   function handleToggleNav() {
-    const navbarCollapse = document.querySelector('.navbar .navbar-collapse');
-    if (navbarCollapse.classList.contains('show')) {
-      navbarCollapse.classList.remove('show');
-    } else {
-      navbarCollapse.classList.add('show');
+    if (collapseRef.current) {
+      if (collapseRef.current.classList.contains('show')) {
+        collapseRef.current.classList.remove('show');
+      } else {
+        collapseRef.current.classList.add('show');
+      }
     }
   }
 
   return (
-    <nav className="navbar navbar-expand-lg">
+    <nav ref={navRef} className="navbar navbar-expand-lg">
       <div className="container o-hidden">
         <Link className="logo relative icon-img-100" href="/">
           <Image
@@ -62,6 +70,7 @@ function Navbar() {
           </span>
         </button>
         <div
+          ref={collapseRef}
           className="collapse navbar-collapse justify-center"
           id="navbarSupportedContent"
         >

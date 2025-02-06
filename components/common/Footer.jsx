@@ -1,16 +1,23 @@
-"use client";
-
-import React, { useState } from "react";
-import Image from "next/image";
+'use client';
+import React, { useState, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookF, faXTwitter, faLinkedinIn, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 function Footer() {
   const [email, setEmail] = useState("");
   const [agreed, setAgreed] = useState(false);
   const [msg, setMsg] = useState("");
+  const containerRef = useRef(null);
 
   const handleSubscribe = async (e) => {
     e.preventDefault();
@@ -29,7 +36,7 @@ function Footer() {
       const response = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email })
       });
 
       const data = await response.json();
@@ -43,8 +50,26 @@ function Footer() {
     }
   };
 
+  useGSAP(
+    (context) => {
+      const cols = context.selector('.row > [class*="col-"]');
+      gsap.from(cols, {
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 80%'
+        }
+      });
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <footer className="clean-footer crev relative">
+    <footer ref={containerRef} className="clean-footer crev relative">
       <div className="container pb-40 pt-40 relative z-7">
         <div className="row justify-between">
           <div className="col-lg-2">

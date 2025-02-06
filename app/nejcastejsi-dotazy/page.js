@@ -9,6 +9,8 @@ import Navbar from '@/components/common/Navbar';
 // import Testimonials from '@/components/home/Testimonials';
 import Header from '@/components/faq/Header';
 import FAQS from '@/components/faq/FAQS';
+import SmoothScrollProvider from '@/components/common/SmoothScrollProvider';
+
 
 export const metadata = {
   title: "FAQ | TD Productions | Posouváme hranice digitální inovace",
@@ -51,20 +53,16 @@ export default function FAQPage() {
     <>
       <LoadingScreen />
       <Cursor />
-      <ProgressScroll />
       <Navbar />
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
+      <SmoothScrollProvider>
           <main className="main-bg o-hidden">
             <Header />
             <FAQS />
-            {/* <Testimonials />
-            <Clients /> */}
             <Marq2 />
           </main>
           <Footer />
-        </div>
-      </div>
+      </SmoothScrollProvider>
+      <ProgressScroll />
     </>
   );
 }

@@ -1,21 +1,57 @@
 'use client';
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 function Intro() {
+  const containerRef = useRef(null);
+
+  useGSAP((context) => {
+    const imgContainer = context.selector(".img");
+    const textContainer = context.selector(".cont");
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    })
+      .from(imgContainer, {
+        x: -50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+      })
+      .from(
+        textContainer,
+        {
+          x: 50,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+        },
+        "-=0.5"
+      );
+  }, { scope: containerRef });
+
   return (
-    <section className="page-intro section-padding">
+    <section ref={containerRef} className="page-intro section-padding">
       <div className="container">
         <div className="row md-marg">
           <div className="col-lg-6 flex">
             <div className="img md-mb80">
               <div className="row col-12">
-                <div
-                  style={{ position: "relative", height: "400px" }}
-                >
+                <div style={{ position: "relative", height: "400px" }}>
                   <Image
                     src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/klient-YEUe12Xth6GSb6FWQ8auOQtvvordGP.jpg"
                     alt="Jednatel společnosti TD Productions, Matěj Vais, si podává ruku s klientem."

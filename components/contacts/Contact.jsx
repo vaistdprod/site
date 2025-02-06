@@ -1,9 +1,17 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faXTwitter, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 function ContactForm() {
+  const containerRef = useRef(null);
   const [formData, setFormData] = useState({
     jmeno: '',
     email: '',
@@ -12,6 +20,47 @@ function ContactForm() {
   });
   const [status, setStatus] = useState(null);
   const [errors, setErrors] = useState({});
+
+  useGSAP((context) => {
+    const leftCol = context.selector('.col-lg-4');
+    const rightCol = context.selector('.col-lg-7');
+    const formGroups = context.selector('.form-group');
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+      },
+    })
+      .from(leftCol, {
+        x: -50,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+      })
+      .from(
+        rightCol,
+        {
+          x: 50,
+          opacity: 0,
+          duration: 1,
+          ease: 'power3.out',
+        },
+        '-=0.5'
+      )
+      .from(
+        formGroups,
+        {
+          y: 20,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          stagger: 0.2,
+        },
+        '-=0.5'
+      );
+  }, { scope: containerRef });
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -71,7 +120,7 @@ function ContactForm() {
   };
 
   return (
-    <section className="contact section-padding">
+    <section ref={containerRef} className="contact section-padding">
       <div className="container">
         <div className="row">
           <div className="col-lg-4 flex align-center">

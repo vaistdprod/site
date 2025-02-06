@@ -1,49 +1,124 @@
 'use client';
-import React from 'react';
-import Link from "next/link";
+
+import React, { useRef } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import RotateHeading from '@/components/common/animations/RotateHeading';
-import AnimatedHeading from '@/components/common/animations/AnimatedHeading';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 function Services({ services }) {
+  const containerRef = useRef(null);
+
+  useGSAP(
+    (context) => {
+      const tdZarukaHeading = context.selector('.title-border');
+      const partnerHeading = context.selector('.animated-heading');
+      const rotateHeadings = context.selector('.rotate-heading');
+      const serviceItems = context.selector('.item');
+
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+          },
+        })
+        .from(tdZarukaHeading, {
+          y: 50,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+        })
+        .from(
+          partnerHeading,
+          {
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            ease: 'power3.out',
+          },
+          '-=0.5'
+        )
+        .from(
+          rotateHeadings,
+          {
+            opacity: 0,
+            rotationX: -45,
+            y: 40,
+            z: -40,
+            scale: 0.95,
+            transformOrigin: '50% 0%',
+            duration: 1.2,
+            ease: 'power3.out',
+            stagger: 0.2,
+          },
+          '-=0.3'
+        )
+        .from(
+          serviceItems,
+          {
+            opacity: 0,
+            y: 50,
+            duration: 0.8,
+            ease: 'power3.out',
+            stagger: 0.2,
+          },
+          '-=0.3'
+        );
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <section className="services-class relative">
+    <section ref={containerRef} className="services-class relative">
+      {/* First Container: TD Záruka & Partner Text */}
       <div className="container">
         <div className="sec-head mb-80">
           <div className="row">
             <div className="col-lg-4">
+              {/* This h6 now gets a simple fade/up animation */}
               <h6 className="title-border mb-30">TD záruka</h6>
             </div>
             <div className="col-lg-8">
               <div className="text">
-                <AnimatedHeading tag="h4">
-                Jsme vašimi partnery od prvotního plánování projektu až po jeho finální spuštění a následnou údržbu.
-                </AnimatedHeading>
+                {/* Replace AnimatedHeading with a plain h4 that gets animated */}
+                <h4 className="animated-heading">
+                  Jsme vašimi partnery od prvotního plánování projektu až po jeho finální
+                  spuštění a následnou údržbu.
+                </h4>
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      {/* Second Container: Rotate-Style Headings & Services List */}
       <div className="container section-padding bord-bottom-grd relative pt-0">
         <div className="sec-head mb-80">
           <div className="flex align-center">
             <div>
-              <span className="sub-title main-color mb-5">Specializace</span>
-              <RotateHeading 
-                className="fw-600 fz-50 text-u"
-              >
+              {/* Replace RotateHeading with regular elements with a custom class */}
+              <span className="rotate-heading sub-title main-color mb-5">
+                Specializace
+              </span>
+              <h3 className="rotate-heading fw-600 fz-50 text-u">
                 Vybrané <span className="fw-200">služby</span>
-              </RotateHeading>
+              </h3>
             </div>
             <div className="ml-auto vi-more">
               <Link href="/nase-sluzby" className="btn btn-sm btn-bord radius-30">
                 <span>Zobrazit všechny</span>
               </Link>
               <Link href="/nase-sluzby">
-              <FontAwesomeIcon icon={faArrowRight} className="icon" />
+                <FontAwesomeIcon icon={faArrowRight} className="icon" />
               </Link>
             </div>
           </div>
@@ -60,9 +135,12 @@ function Services({ services }) {
                 <h5>{service.title}</h5>
                 <div className="text mt-40">
                   <div className="mb-10">
-                    {service.tags && service.tags.map((tag, idx) => (
-                      <span key={idx} className="tag">{tag}</span>
-                    ))}
+                    {service.tags &&
+                      service.tags.map((tag, idx) => (
+                        <span key={idx} className="tag">
+                          {tag}
+                        </span>
+                      ))}
                   </div>
                   <p>{service.desc}</p>
                 </div>
@@ -78,6 +156,8 @@ function Services({ services }) {
           ))}
         </div>
       </div>
+
+      {/* Decorative Image */}
       <div className="circle-blur">
         <Image
           src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/blur1-0J2DJ0INNrXDLBO6XFZu6DKiOqorlZ.png"

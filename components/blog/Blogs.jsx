@@ -1,16 +1,55 @@
-"use client";
+'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentAlt, faArrowRight, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 function Blogs({ posts, tagCounts, uniqueTags }) {
   const router = useRouter();
+  const containerRef = useRef(null);
+
+  useGSAP(
+    (context) => {
+      const blogItems = context.selector('.item');
+      const widgets = context.selector('.widget');
+      gsap.from(blogItems, {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        ease: 'power3.out',
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 80%',
+        },
+      });
+      gsap.from(widgets, {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        ease: 'power3.out',
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 80%',
+        },
+      });
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <section className="blog-main section-padding">
+    <section ref={containerRef} className="blog-main section-padding">
       <div className="container">
         <div className="row lg-marg justify-around">
           <div className="col-lg-8">
@@ -158,4 +197,5 @@ function Blogs({ posts, tagCounts, uniqueTags }) {
     </section>
   );
 }
+
 export default Blogs;

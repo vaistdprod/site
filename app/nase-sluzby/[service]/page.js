@@ -9,6 +9,8 @@ import Navbar from "@/components/common/Navbar";
 import Header from "@/components/services-details/Header";
 import Intro from "@/components/services-details/Intro";
 import Feat from "@/components/services-details/Feat";
+import SmoothScrollProvider from '@/components/common/SmoothScrollProvider';
+
 
 export async function generateStaticParams() {
   const lightServices = await import("@/data/mergedServices.json");
@@ -86,10 +88,8 @@ export default async function ServicePage({ params }) {
     <>
       <LoadingScreen />
       <Cursor />
-      <ProgressScroll />
       <Navbar />
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
+      <SmoothScrollProvider>
           <main className="main-bg o-hidden">
             <Header serviceData={serviceData} />
             <Intro serviceData={serviceData} />
@@ -97,8 +97,8 @@ export default async function ServicePage({ params }) {
             <Marq2 />
           </main>
           <Footer />
-        </div>
-      </div>
+      </SmoothScrollProvider>
+      <ProgressScroll />
     </>
   );
 }

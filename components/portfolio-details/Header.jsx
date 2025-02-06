@@ -1,48 +1,35 @@
 'use client';
 
-import React, { useLayoutEffect } from 'react';
-import { gsap } from 'gsap';
+import React from 'react';
 import Image from 'next/image';
+import Header from '@/components/common/Header';
 
-function Header({ data }) {
-  useLayoutEffect(() => {
-    const tl = gsap.timeline();
-    tl.fromTo('.header', { y: 200 }, { y: 0 }, '+=2');
-    tl.fromTo(
-      '.header .container',
-      { opacity: 0, translateY: 40 },
-      { opacity: 1, translateY: 0 },
-      '-=0'
-    );
-
-    return () => tl.kill();
-  }, []);
-
+const ProjectHeader = ({ data }) => {
   return (
-    <div
+    <Header
+      delay={2}
+      overlayDark={5}
       className="header header-project flex align-end relative"
-      data-overlay-dark="5"
+      bgContent={
+        <Image
+          src={data.images[0]}
+          alt=""
+          fill
+          className="object-cover"
+          priority
+          quality={55}
+        />
+      }
     >
-      <Image
-        src={data.images[0]}
-        alt=""
-        fill
-        className="object-cover"
-        priority
-        quality={55}
-      />
-
-      <div className="container relative z-7">
-        <div className="row">
-          <div className="col-12">
-            <div className="caption">
-              <h1>{data.title}</h1>
-            </div>
+      <div className="row">
+        <div className="col-12">
+          <div className="caption">
+            <h1>{data.title}</h1>
           </div>
         </div>
       </div>
-    </div>
+    </Header>
   );
-}
+};
 
-export default Header;
+export default ProjectHeader;

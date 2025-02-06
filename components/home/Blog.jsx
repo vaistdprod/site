@@ -1,21 +1,60 @@
-import React from 'react';
+'use client';
+import React, { useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 function Blog({ posts = [] }) {
   if (!posts.length) return null;
 
   const topPosts = posts.slice(0, 2);
+  const containerRef = useRef(null);
+
+  useGSAP(
+    (context) => {
+      const secHead = context.selector('.sec-head');
+      const items = context.selector('.item');
+      gsap.from(secHead, {
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 80%'
+        }
+      });
+      gsap.from(items, {
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 80%'
+        }
+      });
+    },
+    { scope: containerRef }
+  );
 
   return (
-    <section className="blog">
+    <section ref={containerRef} className="blog">
       <div className="container">
         <div className="sec-head mb-80">
           <div className="flex align-center mb-30">
-            <h2 className="fw-600 fz-70 text-u  ">
-              <span className="">
+            <h2 className="fw-600 fz-70 text-u">
+              <span>
                 Z naší <span className="fw-200">produkce</span>
               </span>
             </h2>

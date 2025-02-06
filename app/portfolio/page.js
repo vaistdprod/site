@@ -6,6 +6,7 @@ import Marq2 from '@/components/common/Marq2';
 import Navbar from '@/components/common/Navbar';
 import Header from '@/components/portfolio/Header';
 import Portfolio from '@/components/portfolio/Portfolio';
+import SmoothScrollProvider from '@/components/common/SmoothScrollProvider';
 
 export const metadata = {
   title: "Portfolio | TD Productions | Posouváme hranice digitální inovace",
@@ -50,18 +51,16 @@ export default function Home() {
     <>
       <LoadingScreen />
       <Cursor />
-      <ProgressScroll />
       <Navbar />
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
+      <SmoothScrollProvider>
           <main className="main-bg o-hidden">
             <Header />
             <Portfolio />
             <Marq2 />
           </main>
           <Footer />
-        </div>
-      </div>
+      </SmoothScrollProvider>
+      <ProgressScroll />
     </>
   );
 }

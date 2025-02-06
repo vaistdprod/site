@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -8,17 +8,39 @@ import CommentsList from './CommentsList';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faLinkedinIn, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
+function generateShareUrl(platform, post) {
+  const currentUrl = `https://tdprod.cz/blog/${post.slug}`;
+  const encodedUrl = encodeURIComponent(currentUrl);
+  const encodedTitle = encodeURIComponent(post.title);
+  switch (platform) {
+    case 'facebook':
+      return `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+    case 'linkedin':
+      return `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}`;
+    case 'twitter':
+      return `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`;
+    default:
+      return '#';
+  }
+}
 
 function Blog({ post, latestPosts }) {
   const router = useRouter();
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
-
   const [status, setStatus] = useState(null);
+  const containerRef = useRef(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -30,12 +52,9 @@ function Blog({ post, latestPosts }) {
     try {
       const res = await fetch('/api/comments', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...formData, slug: post.slug }),
       });
-
       if (res.ok) {
         setStatus('Komentář byl úspěšně publikován.');
         setFormData({ name: '', email: '', message: '' });
@@ -49,25 +68,28 @@ function Blog({ post, latestPosts }) {
     }
   };
 
-  const generateShareUrl = (platform) => {
-    const currentUrl = `https://tdprod.cz/blog/${post.slug}`;
-    const encodedUrl = encodeURIComponent(currentUrl);
-    const encodedTitle = encodeURIComponent(post.title);
-
-    switch (platform) {
-      case 'facebook':
-        return `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
-      case 'linkedin':
-        return `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}`;
-      case 'twitter':
-        return `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`;
-      default:
-        return '#';
-    }
-  };
+  // Guard against running the animation before containerRef is attached
+  useGSAP(
+    (context) => {
+      if (!containerRef.current) return;
+      const mainContent = context.selector('.main-post, .comments-form');
+      gsap.from(mainContent, {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        ease: 'power3.out',
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 80%',
+        },
+      });
+    },
+    { scope: containerRef }
+  );
 
   return (
-    <section className="blog section-padding">
+    <section ref={containerRef} className="blog section-padding">
       <div className="container">
         <div className="row xlg-marg">
           <div className="col-lg-8">
@@ -84,11 +106,7 @@ function Blog({ post, latestPosts }) {
                       </div>
                       <div>
                         {post.tags.map((tag) => (
-                          <Link
-                            key={tag}
-                            href={`/blog?tag=${encodeURIComponent(tag)}`}
-                            className="tag-link"
-                          >
+                          <Link key={tag} href={`/blog?tag=${encodeURIComponent(tag)}`} className="tag-link">
                             {tag}
                           </Link>
                         ))}
@@ -101,25 +119,13 @@ function Blog({ post, latestPosts }) {
                         <span>Sdílet:</span>
                       </div>
                       <div>
-                        <a
-                          href={generateShareUrl('facebook')}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
+                        <a href={generateShareUrl('facebook', post)} target="_blank" rel="noopener noreferrer">
                           <FontAwesomeIcon icon={faFacebookF} />
                         </a>
-                        <a
-                          href={generateShareUrl('linkedin')}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
+                        <a href={generateShareUrl('linkedin', post)} target="_blank" rel="noopener noreferrer">
                           <FontAwesomeIcon icon={faLinkedinIn} />
                         </a>
-                        <a
-                          href={generateShareUrl('twitter')}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
+                        <a href={generateShareUrl('twitter', post)} target="_blank" rel="noopener noreferrer">
                           <FontAwesomeIcon icon={faXTwitter} />
                         </a>
                       </div>

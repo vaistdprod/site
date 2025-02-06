@@ -14,26 +14,23 @@ const contentSecurityPolicy = `
     https://*.gstatic.com
     https://va.vercel-scripts.com
     https://kit.fontawesome.com
-    https://ka-f.fontawesome.com;
-
+    https://ka-f.fontawesome.com
+    https://vercel.live;
   style-src 
     'self' 
     'unsafe-inline' 
     https://fonts.googleapis.com
     https://ka-f.fontawesome.com;
-
   img-src 
     'self' 
     data:
     blob:
     https:;
-
   font-src 
     'self' 
     data:
     https://fonts.gstatic.com
     https://ka-f.fontawesome.com;
-
   connect-src 
     'self'
     data:
@@ -44,15 +41,12 @@ const contentSecurityPolicy = `
     https://va.vercel-scripts.com
     https://kit.fontawesome.com
     https://ka-f.fontawesome.com;
-
   frame-src 
     'self'
     https://*.google.com;
-
   worker-src 
     'self'
     blob:;
-
   object-src 'none';
   base-uri 'self';
   form-action 'self';

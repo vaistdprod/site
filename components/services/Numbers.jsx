@@ -1,10 +1,51 @@
-import React from 'react'
-import Image from 'next/image'
+'use client'
+
+import React, { useRef } from "react";
+import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 function Numbers() {
+  const containerRef = useRef(null);
+
+  useGSAP((context) => {
+    const secHead = context.selector(".sec-head");
+    const items = context.selector(".item");
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    })
+      .from(secHead, {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+      })
+      .from(
+        items,
+        {
+          y: 20,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          stagger: 0.2,
+        },
+        "-=0.5"
+      );
+  }, { scope: containerRef });
+
   return (
-    <section className="numbers section-padding pt-0">
-            <div className="container">
+    <section ref={containerRef} className="numbers section-padding pt-0">
+      <div className="container">
         <div className="sec-head mb-80">
           <div className="row">
             <div className="col-lg-4">
@@ -81,7 +122,7 @@ function Numbers() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Numbers
+export default Numbers;

@@ -6,6 +6,7 @@ import Navbar from '@/components/common/Navbar';
 import Header from '@/components/contacts/Header';
 import Contact from '@/components/contacts/Contact';
 import Map from '@/components/contacts/Map';
+import SmoothScrollProvider from '@/components/common/SmoothScrollProvider';
 
 export const metadata = {
   title: "Kontakty | TD Productions | Posouváme hranice digitální inovace",
@@ -52,18 +53,16 @@ export default function Home() {
     <>
       <LoadingScreen />
       <Cursor />
-      <ProgressScroll />
       <Navbar />
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
+      <SmoothScrollProvider>
           <main className="main-bg o-hidden">
             <Header />
             <Contact />
             <Map />
           </main>
           <Footer />
-        </div>
-      </div>
+      </SmoothScrollProvider>
+      <ProgressScroll />
     </>
   );
 }

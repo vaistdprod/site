@@ -1,8 +1,37 @@
-import React from 'react';
+'use client';
+
+import React, { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 function Numbers() {
+  const containerRef = useRef(null);
+
+  useGSAP(
+    (context) => {
+      const items = context.selector('.item');
+      gsap.from(items, {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        ease: 'power3.out',
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 80%',
+        },
+      });
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <section className="numbers-crev relative section-padding">
+    <section ref={containerRef} className="numbers-crev relative section-padding">
       <div className="container">
         <div className="row lg-marg justify-center">
           <div className="col-lg-4 col-md-6">

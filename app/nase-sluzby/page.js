@@ -8,6 +8,7 @@ import Services from "@/components/services/Services";
 import Faq from "@/components/services/Faq";
 import Header from "@/components/services/Header";
 import Numbers from "@/components/services/Numbers";
+import SmoothScrollProvider from '@/components/common/SmoothScrollProvider';
 import { getLightServices } from '@/lib/services';
 
 export const metadata = {
@@ -57,10 +58,8 @@ export default async function ServicesPage() {
     <>
       <LoadingScreen />
       <Cursor />
-      <ProgressScroll />
       <Navbar />
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
+      <SmoothScrollProvider>
           <main className="main-bg o-hidden">
             <Header />
             <Services services={services} />
@@ -69,8 +68,8 @@ export default async function ServicesPage() {
             <Marq2 />
           </main>
           <Footer />
-        </div>
-      </div>
+      </SmoothScrollProvider>
+      <ProgressScroll />
     </>
   );
 }

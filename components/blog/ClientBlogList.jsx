@@ -7,6 +7,7 @@ import Footer from '@/components/common/Footer';
 import ProgressScroll from '@/components/common/ProgressScroll';
 import Cursor from '@/components/common/Cursor';
 import LoadingScreen from '@/components/common/LoadingScreen';
+import SmoothScrollProvider from '@/components/common/SmoothScrollProvider';
 import { useMemo } from 'react';
 
 export default function ClientBlogList({ allPosts, tag, searchQuery }) {
@@ -25,32 +26,30 @@ export default function ClientBlogList({ allPosts, tag, searchQuery }) {
     <>
       <LoadingScreen />
       <Cursor />
+      <Navbar />
+      <SmoothScrollProvider>
+        <main className="main-bg">
+          <Header />
+          {allPosts.length > 0 ? (
+            <Blogs
+              posts={allPosts}
+              tagCounts={tagCounts}
+              uniqueTags={uniqueTags}
+              tag={tag}
+              searchQuery={searchQuery}
+            />
+          ) : (
+            <div className="no-results mt-80 text-center">
+              <h3>
+                Nenalezeny žádné výsledky
+                {searchQuery ? <> obsahující &quot;{searchQuery}&quot;</> : null}.
+              </h3>
+            </div>
+          )}
+        </main>
+        <Footer />
+      </SmoothScrollProvider>
       <ProgressScroll />
-      <div id="smooth-wrapper">
-        <Navbar />
-        <div id="smooth-content">
-          <main className="main-bg">
-            <Header />
-            {allPosts.length > 0 ? (
-              <Blogs
-                posts={allPosts}
-                tagCounts={tagCounts}
-                uniqueTags={uniqueTags}
-                tag={tag}
-                searchQuery={searchQuery}
-              />
-            ) : (
-              <div className="no-results mt-80 text-center">
-                <h3>
-                  Nenalezeny žádné výsledky
-                  {searchQuery ? <> obsahující &quot;{searchQuery}&quot;</> : null}.
-                </h3>
-              </div>
-            )}
-          </main>
-          <Footer />
-        </div>
-      </div>
     </>
   );
 }

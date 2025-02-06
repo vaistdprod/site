@@ -1,27 +1,75 @@
 'use client';
-import React from 'react';
-import Image from 'next/image';
+import React, { useRef } from "react";
+import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function Faq() {
+  const containerRef = useRef(null);
+
+  useGSAP((context) => {
+    const leftCol = context.selector(".col-lg-6 .img");
+    const rightCol = context.selector(".col-lg-6 .accordion");
+    const accordionItems = context.selector(".accordion .item");
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    })
+      .from(leftCol, {
+        x: -50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+      })
+      .from(
+        rightCol,
+        {
+          x: 50,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+        },
+        "-=0.5"
+      )
+      .from(
+        accordionItems,
+        {
+          y: 20,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          stagger: 0.2,
+        },
+        "-=0.5"
+      );
+  }, { scope: containerRef });
+
   function openAccordion(event) {
-    document.querySelectorAll('.accordion-info').forEach((element) => {
-      element.classList.remove('active');
+    document.querySelectorAll(".accordion-info").forEach((element) => {
+      element.classList.remove("active");
       element.style.maxHeight = 0;
-      element.parentElement.classList.remove('active');
+      element.parentElement.classList.remove("active");
     });
-    event.currentTarget.parentElement.classList.add('active');
-    event.currentTarget.nextElementSibling.style.maxHeight = '300px';
-    event.currentTarget.nextElementSibling.classList.add('active');
+    event.currentTarget.parentElement.classList.add("active");
+    event.currentTarget.nextElementSibling.style.maxHeight = "300px";
+    event.currentTarget.nextElementSibling.classList.add("active");
   }
 
   return (
-    <section className="intro-accord relative">
+    <section ref={containerRef} className="intro-accord relative">
       <div className="container relative z-7">
         <div className="row xlg-marg">
           <div className="col-lg-6">
-            <div
-              className="img md-mb50 h-100 relative"
-            >
+            <div className="img md-mb50 h-100 relative">
               <Image
                 src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/fotoprodukce-YxyVSK0y1wHgrd2VKp46H7lU8wzGJO.jpg"
                 alt="Fotoprodukce"
@@ -42,39 +90,39 @@ export default function Faq() {
               </div>
 
               <div className="accordion bord">
-                <div className="item active  fadeInUp">
+                <div className="item active fadeInUp">
                   <div onClick={openAccordion} className="title">
                     <h6>Expertní tým s přesahem do sousedících oborů</h6>
                     <span className="ico ti-plus"></span>
                   </div>
                   <div className="accordion-info">
-                    <p className="">
+                    <p>
                       Díky našemu expertnímu týmu a vazbám na zkušené externí dodavatele dokážeme
                       zajistit efektivní spolupráci a špičkové výsledky u projektů menšího, středního i velkého rozsahu.
                     </p>
                   </div>
                 </div>
 
-                <div className="item  fadeInUp">
+                <div className="item fadeInUp">
                   <div onClick={openAccordion} className="title">
                     <h6>Spolehlivost a odpovědnost</h6>
                     <span className="ico ti-plus"></span>
                   </div>
                   <div className="accordion-info">
-                    <p className="">
+                    <p>
                       Ve spolupráci s TD Productions získáváte kromě inovativního a precizního produktu také
                       spolehlivý a odpovědný přístup. To, na čem se domluvíme pro vás vždy zajistíme.
                     </p>
                   </div>
                 </div>
 
-                <div className="item  fadeInUp">
+                <div className="item fadeInUp">
                   <div onClick={openAccordion} className="title">
                     <h6>Partneři na dlouhou trať</h6>
                     <span className="ico ti-plus"></span>
                   </div>
                   <div className="accordion-info">
-                    <p className="">
+                    <p>
                       Kvalitní produkt vyžaduje pravidelnou správu a údržbu.
                       V našem případě se můžete spolehnout, že se Vám o výsledný projekt dlouhodobě postaráme a udržíme jej ve výborné kondici.
                     </p>

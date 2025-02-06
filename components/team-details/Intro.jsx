@@ -1,48 +1,74 @@
 'use client';
-import React, { useEffect } from "react";
+
+import React, { useRef, useEffect } from "react";
 import isInView from "@/common/isInView";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faXTwitter, faInstagram, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const SOCIAL_MEDIA = {
-  facebook: {
-    icon: faFacebookF,
-    label: "Facebook"
-  },
-  twitter: {
-    icon: faXTwitter,
-    label: "X"
-  },
-  instagram: {
-    icon: faInstagram,
-    label: "Instagram"
-  },
-  linkedin: {
-    icon: faLinkedinIn,
-    label: "LinkedIn"
-  }
+  facebook: { icon: faFacebookF, label: "Facebook" },
+  twitter: { icon: faXTwitter, label: "X" },
+  instagram: { icon: faInstagram, label: "Instagram" },
+  linkedin: { icon: faLinkedinIn, label: "LinkedIn" }
 };
 
 function Intro({ memberData }) {
-  function handleShowProgressValues() {
-    isInView({
-      selector: ".skill-progress .progres",
-      isElements: true,
-      callback: (element) => {
-        element.style.width = element.getAttribute("data-value");
-      }
-    });
-  }
+  const containerRef = useRef(null);
+
+  useGSAP(
+    (context) => {
+      const firstRow = context.selector('.row.md-marg.justify-around.bord');
+      const secondRow = context.selector('.row.md-marg.justify-around.mt-80');
+      gsap.from(firstRow, {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 80%'
+        }
+      });
+      gsap.from(secondRow, {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        ease: 'power3.out',
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 80%'
+        }
+      });
+    },
+    { scope: containerRef }
+  );
 
   useEffect(() => {
+    function handleShowProgressValues() {
+      isInView({
+        selector: ".skill-progress .progres",
+        isElements: true,
+        callback: (element) => {
+          element.style.width = element.getAttribute("data-value");
+        }
+      });
+    }
     window.addEventListener("scroll", handleShowProgressValues);
     handleShowProgressValues();
     return () => window.removeEventListener("scroll", handleShowProgressValues);
   }, []);
 
   return (
-    <section className="team-single section-padding pb-0">
+    <section ref={containerRef} className="team-single section-padding pb-0">
       <div className="container">
         <div className="row md-marg justify-around bord relative">
           <div className="col-lg-5">

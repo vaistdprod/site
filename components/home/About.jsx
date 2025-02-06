@@ -1,10 +1,84 @@
-import React from 'react';
+'use client';
+
+import React, { useRef } from 'react';
 import Image from 'next/image';
-import AnimatedHeading from '@/components/common/animations/AnimatedHeading';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 function About() {
+  const containerRef = useRef(null);
+
+  useGSAP((context) => {
+    const leftColumn = context.selector('.col-lg-5');
+    const icons = context.selector('.profile-img .icon');
+    const headings = context.selector('.heading');
+    const paragraph = context.selector('.paragraph');
+    const numbers = context.selector('.numbers');
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+      },
+    })
+      .from(leftColumn, {
+        x: -100,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+      })
+      .from(
+        icons,
+        {
+          scale: 0,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'back.out(1.7)',
+          stagger: 0.2,
+        },
+        '-=0.5'
+      )
+      .from(
+        headings,
+        {
+          y: 50,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          stagger: 0.2,
+        },
+        '-=0.5'
+      )
+      .from(
+        paragraph,
+        {
+          y: 20,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+        },
+        '-=0.5'
+      )
+      .from(
+        numbers,
+        {
+          y: 20,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+        },
+        '-=0.5'
+      );
+  }, { scope: containerRef });
+
   return (
-    <section className="about-us section-padding">
+    <section ref={containerRef} className="about-us section-padding">
       <div className="container">
         <div className="row lg-marg">
           <div className="col-lg-5 flex align-center">
@@ -56,16 +130,16 @@ function About() {
               </span>
             </div>
           </div>
+
           <div className="col-lg-7 flex align-center">
             <div className="cont">
-              <h2 className="sub-title main-color mb-30">O nás</h2>
-              <AnimatedHeading tag="h3" className="mb-30 h4">
+              <h2 className="heading sub-title main-color mb-30">O nás</h2>
+              <h3 className="heading mb-30 h4">
                 Pomáháme vám přenést vaši vizi{' '}
                 <span className="d-revert fw-200">ze světa</span>{' '}
-                myšlenek <span className="d-revert fw-200">do světa {' '}</span>{' '}
-                reality.
-              </AnimatedHeading>
-              <p>
+                myšlenek <span className="d-revert fw-200">do světa </span>reality.
+              </h3>
+              <p className="paragraph">
                 Jsme tým profesionálů s bohatými zkušenostmi v digitálním světě.
                 Naší ambicí je přetvořit zdánlivě neproveditelné nápady do hmatatelné reality.
                 Sázíme na kreativitu, preciznost a výsledky, které mluví samy za sebe.
@@ -77,9 +151,7 @@ function About() {
                     <div className="item bord-thin-top pt-30 flex align-end mt-20">
                       <div>
                         <h3 className="fw-300 mb-10">100%</h3>
-                        <h6 className="p-color sub-title">
-                          garance spokojenosti
-                        </h6>
+                        <h6 className="p-color sub-title">garance spokojenosti</h6>
                       </div>
                       <div className="ml-auto">
                         <div className="icon-img-60">
@@ -97,9 +169,7 @@ function About() {
                     <div className="item bord-thin-top pt-30 flex align-end mt-20">
                       <div>
                         <h3 className="fw-300 mb-10">40+</h3>
-                        <h6 className="p-color sub-title">
-                          hotových projektů
-                        </h6>
+                        <h6 className="p-color sub-title">hotových projektů</h6>
                       </div>
                       <div className="ml-auto">
                         <div className="icon-img-60">

@@ -7,6 +7,7 @@ import Footer from "@/components/common/Footer";
 import Marq2 from "@/components/common/Marq2";
 import Navbar from "@/components/common/Navbar";
 import Intro from "@/components/team-details/Intro";
+import SmoothScrollProvider from '@/components/common/SmoothScrollProvider';
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
@@ -67,17 +68,15 @@ export default async function MemberPage({ params }) {
     <>
       <LoadingScreen />
       <Cursor />
-      <ProgressScroll />
       <Navbar />
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
+      <SmoothScrollProvider>
           <main className="main-bg o-hidden">
             <Intro memberData={memberData} />
             <Marq2 />
           </main>
           <Footer />
-        </div>
-      </div>
+      </SmoothScrollProvider>
+      <ProgressScroll />
     </>
   );
 }

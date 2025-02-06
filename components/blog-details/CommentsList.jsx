@@ -1,11 +1,19 @@
 'use client';
 
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import Image from 'next/image';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 function CommentsList({ slug }) {
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
+  const containerRef = useRef(null);
 
   const fetchComments = useCallback(async () => {
     try {
@@ -27,6 +35,27 @@ function CommentsList({ slug }) {
     fetchComments();
   }, [fetchComments]);
 
+  useGSAP(
+    (context) => {
+      if (!containerRef.current) return;
+      const commentItems = context.selector('.comment-item');
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        },
+      }).from(commentItems, {
+        opacity: 0,
+        y: 20,
+        duration: 0.8,
+        ease: 'power3.out',
+        stagger: 0.2,
+      });
+    },
+    { scope: containerRef }
+  );
+
   if (loading) {
     return <p>Načítám komentáře...</p>;
   }
@@ -36,7 +65,7 @@ function CommentsList({ slug }) {
   }
 
   return (
-    <div className="comments-list mt-40">
+    <div ref={containerRef} className="comments-list mt-40">
       {comments.map((comment) => (
         <div key={comment._id} className="comment-item mb-30">
           <div className="comment-header flex align-center mb-10">

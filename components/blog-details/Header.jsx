@@ -1,27 +1,35 @@
 'use client';
 
-import React, { useLayoutEffect } from 'react';
-import { gsap } from 'gsap';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment } from '@fortawesome/free-solid-svg-icons';
+import Header from '@/components/common/Header';
 
-function Header({ title, author, date, comments, coverImage, tags }) {
-  useLayoutEffect(() => {
-    const tl = gsap.timeline();
-    tl.fromTo('.header', { y: 200 }, { y: 0 }, '+=2');
-    tl.fromTo(
-      '.header .container',
-      { opacity: 0, translateY: 40 },
-      { opacity: 1, translateY: 0 },
-      '-=0'
-    );
-    return () => tl.kill();
-  }, []);
-
+const DetailedBlogHeader = ({ title, author, date, comments, coverImage, tags }) => {
   return (
-    <div className="header blog-header section-padding pb-0">
+    <Header
+      delay={2}
+      overlayDark={5}
+      className="header blog-header section-padding pb-0"
+      bgContent={
+        coverImage && (
+          <div className="background bg-img mt-80 relative">
+            <Image
+              src={coverImage}
+              alt={`Obrázek k článku: ${title}`}
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
+              quality={55}
+            />
+          </div>
+        )
+      }
+    >
+      {/* Adding the missing container wrapper */}
       <div className="container mt-80">
         <div className="row justify-center">
           <div className="col-lg-11">
@@ -31,10 +39,7 @@ function Header({ title, author, date, comments, coverImage, tags }) {
                   tags.slice(0, 2).map((tag, index) => (
                     <React.Fragment key={tag}>
                       <Link href={`/blog?tag=${encodeURIComponent(tag)}`}>
-                        <span>
-                          {tag}
-                          {index < 1 ? ', ' : ''}
-                        </span>
+                        <span>{tag}{index < 1 ? ', ' : ''}</span>
                       </Link>
                     </React.Fragment>
                   ))}
@@ -46,7 +51,10 @@ function Header({ title, author, date, comments, coverImage, tags }) {
                 <div className="flex align-center">
                   <div className="author-info">
                     <div className="flex align-center relative">
-                      <Link href={`/nas-tym/${encodeURIComponent(author.slug)}`} className="circle-60 circle size-60 o-hidden d-inline-flex">
+                      <Link
+                        href={`/nas-tym/${encodeURIComponent(author.slug)}`}
+                        className="circle-60 circle size-60 o-hidden d-inline-flex"
+                      >
                         <Image
                           src={author.avatar}
                           alt={author.name}
@@ -84,21 +92,8 @@ function Header({ title, author, date, comments, coverImage, tags }) {
           </div>
         </div>
       </div>
-      {coverImage && (
-        <div className="background bg-img mt-80 relative">
-          <Image
-            fill
-            src={coverImage}
-            alt={`Obrázek k článku: ${title}`}
-            className="object-cover"
-            sizes="100vw"
-            priority
-            quality={55}
-          />
-        </div>
-      )}
-    </div>
+    </Header>
   );
-}
+};
 
-export default Header;
+export default DetailedBlogHeader;

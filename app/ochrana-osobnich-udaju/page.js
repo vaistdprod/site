@@ -6,6 +6,8 @@ import Marq2 from '@/components/common/Marq2';
 import Navbar from '@/components/common/Navbar';
 import Header from '@/components/gdpr/Header'
 import PrivacyPolicy from '@/components/gdpr/Gdpr';
+import SmoothScrollProvider from '@/components/common/SmoothScrollProvider';
+
 
 export const metadata = {
   title: "Ochrana osobních údajů | TD Productions | Posouváme hranice digitální inovace",
@@ -51,18 +53,16 @@ export default function Home() {
     <>
       <LoadingScreen />
       <Cursor />
-      <ProgressScroll />
       <Navbar />
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
+      <SmoothScrollProvider>
           <main className="main-bg o-hidden">
             <Header />
             <PrivacyPolicy />
             <Marq2 />
           </main>
           <Footer />
-        </div>
-      </div>
+      </SmoothScrollProvider>
+      <ProgressScroll />
     </>
   );
 }
