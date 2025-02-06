@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import AnimatedHeading from '@/components/common/animations/AnimatedHeading';
 
 function Feat() {
   return (
@@ -13,9 +14,9 @@ function Feat() {
           <div className="col-lg-5">
             <div className="cont md-mb50">
               <h6 className="sub-title main-color mb-15">Na nás se můžete spolehnout</h6>
-              <h3 className="mb-30">
-                Spojujeme energii mladého talentu se spolehlivostí ostřílených profesionálů.
-              </h3>
+                <AnimatedHeading tag="h3" className="h4 mb-30">
+                Spojujeme energii mladého talentu se spolehlivostí ostřílených profesionálů. 
+                </AnimatedHeading>
               <p>
                 Podání ruky je pro nás stejně svaté jako ta nejlépe sepsaná smlouva. Pokud se na něčem domluvíme, bereme to jako absolutní povinnost splnit naši část dohody.
               </p>

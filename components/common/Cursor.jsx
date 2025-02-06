@@ -85,9 +85,9 @@ export default function Cursor() {
     left: 0,
     width: "100%",
     height: "100%",
-    zIndex: 6,
+    zIndex: 1,
     transition: "opacity 300ms",
-    background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, hsla(11, 96%, 46%, 0.1), transparent 80%)`
+    background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, hsla(11, 96%, 46%, 0.1), transparent 100%)`
   };
 
   return (

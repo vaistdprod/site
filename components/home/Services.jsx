@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import RotateHeading from '@/components/common/animations/RotateHeading';
+import AnimatedHeading from '@/components/common/animations/AnimatedHeading';
 
 function Services({ services }) {
   return (
@@ -16,9 +18,9 @@ function Services({ services }) {
             </div>
             <div className="col-lg-8">
               <div className="text">
-                <h4>
-                  Jsme vašimi partnery od prvotního plánování projektu až po jeho finální spuštění a následnou údržbu.
-                </h4>
+                <AnimatedHeading tag="h4">
+                Jsme vašimi partnery od prvotního plánování projektu až po jeho finální spuštění a následnou údržbu.
+                </AnimatedHeading>
               </div>
             </div>
           </div>
@@ -30,9 +32,11 @@ function Services({ services }) {
           <div className="flex align-center">
             <div>
               <span className="sub-title main-color mb-5">Specializace</span>
-              <h3 className="fw-600 fz-50 text-u">
-                  Vybrané <span className="fw-200">služby</span>
-              </h3>
+              <RotateHeading 
+                className="fw-600 fz-50 text-u"
+              >
+                Vybrané <span className="fw-200">služby</span>
+              </RotateHeading>
             </div>
             <div className="ml-auto vi-more">
               <Link href="/nase-sluzby" className="btn btn-sm btn-bord radius-30">
