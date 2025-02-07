@@ -120,7 +120,7 @@ function Feat() {
                 <div className="col-md-4 relative">
                   <Image
                     fill
-                    src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/fotoprodukce-YxyVSK0y1wHgrd2VKp46H7lU8wzGJO.jpg"
+                    src="/assets/imgs/fotoprodukce.jpg"
                     alt="Dlouhodobé vztahy"
                     className="object-cover"
                     sizes="(max-width: 575px) 100vw, (max-width: 767px) 75vw, (max-width: 991px) 25vw, 15vw"
@@ -143,7 +143,7 @@ function Feat() {
                 <div className="col-md-4 relative">
                   <Image
                     fill
-                    src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/sebastian-2-zWCZ0gjcglBou2hDnRcZr4dPInhuwk.jpg"
+                    src="/assets/imgs/sebastian-2.jpg"
                     alt="Dlouhodobé vztahy"
                     className="object-cover"
                     sizes="(max-width: 575px) 100vw, (max-width: 767px) 75vw, (max-width: 991px) 25vw, 15vw"
@@ -166,7 +166,7 @@ function Feat() {
                 <div className="col-md-4 relative">
                   <Image
                     fill
-                    src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/schuzka-2-tjbOkWyEtYv76hp7f65UGgp7mTmvek.jpg"
+                    src="/assets/imgs/schuzka-2.jpg"
                     alt="Dlouhodobé vztahy"
                     className="object-cover"
                     sizes="(max-width: 575px) 100vw, (max-width: 767px) 75vw, (max-width: 991px) 25vw, 15vw"
@@ -190,7 +190,7 @@ function Feat() {
 
       <div className="circle-blur absolute">
         <Image
-          src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/blur1-0J2DJ0INNrXDLBO6XFZu6DKiOqorlZ.png"
+          src="/assets/imgs/bg/blur1.png"
           alt=""
           width={692}
           height={537}

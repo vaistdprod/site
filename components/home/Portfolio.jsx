@@ -42,7 +42,6 @@ function Portfolio() {
     },
     onSlideChange: (swiper) => {
       setRealIndex(swiper.realIndex);
-      // (Optional) animate the slide’s text content on slide change:
       const activeSlideCont = swiper.slides[swiper.activeIndex].querySelector('.item .cont');
       if (activeSlideCont) {
         gsap.fromTo(
@@ -54,7 +53,6 @@ function Portfolio() {
     }
   };
 
-  // Combine header and swiper animations.
   useGSAP((context) => {
     const secHead = context.selector('.sec-head');
     const workSwiper = context.selector('.work-swiper');
@@ -72,7 +70,6 @@ function Portfolio() {
         ease: 'power3.out',
         stagger: 0.2,
       })
-      // Animate the swiper container from a slight offset.
       .fromTo(
         workSwiper,
         { y: 30, opacity: 0 },
@@ -81,7 +78,6 @@ function Portfolio() {
           opacity: 1,
           duration: 0.8,
           ease: 'power3.out',
-          // Clear inline transform after the animation so that the layout (and image sizing) remains as expected.
           clearProps: 'transform'
         },
         "-=0.4"

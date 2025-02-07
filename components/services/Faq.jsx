@@ -71,7 +71,7 @@ export default function Faq() {
           <div className="col-lg-6">
             <div className="img md-mb50 h-100 relative">
               <Image
-                src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/fotoprodukce-YxyVSK0y1wHgrd2VKp46H7lU8wzGJO.jpg"
+                src="/assets/imgs/fotoprodukce.jpg"
                 alt="Fotoprodukce"
                 fill
                 className="object-center full-size object-cover"

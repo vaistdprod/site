@@ -12,8 +12,8 @@ const PrivacyHeader = () => {
       className="header page-header section-padding flex align-center relative"
       bgContent={
         <Image
-          src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/bg58-MbvrKc0tCnP3UqMVisnN2ngn5Jirh0.jpg"
-          alt=""
+        src="/assets/imgs/bg58.jpg"
+        alt=""
           fill
           className="object-cover"
           priority

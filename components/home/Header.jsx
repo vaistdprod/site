@@ -14,7 +14,7 @@ const PersonalHeader = () => {
       bgContent={
         <video
           className="absolute top-0 start-0 w-100 h-100 object-cover -z-1"
-          src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/tdprod-promo.mp4"
+          src="/assets/imgs/tdprod-promo.mp4"
           autoPlay
           loop
           muted

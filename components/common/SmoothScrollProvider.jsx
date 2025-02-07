@@ -1,13 +1,12 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import ScrollSmoother from 'gsap/ScrollSmoother';
 
 if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+  gsap.registerPlugin(ScrollTrigger);
 }
 
 const SmoothScrollProvider = ({ children }) => {
@@ -23,23 +22,13 @@ const SmoothScrollProvider = ({ children }) => {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
 
+    // These style tweaks stay to keep things smooth-ish with GSAP animations
     wrapper.style.backfaceVisibility = 'hidden';
     wrapper.style.transformStyle = 'preserve-3d';
     wrapper.style.willChange = 'transform';
     wrapper.style.transform = 'translate3d(0,0,0)';
 
-    // Create ScrollSmoother instance
-    const smoother = ScrollSmoother.create({
-      wrapper: wrapper,
-      content: wrapper.querySelector('#smooth-content'),
-      smooth: 1.2,
-      normalizeScroll: false,
-      ignoreMobileResize: true,
-      smoothTouch: false,
-      renderPriority: 1,
-      ease: 'power3.out'
-    });
-
+    // Configure ScrollTrigger as usual
     ScrollTrigger.config({
       limitCallbacks: true,
       ignoreMobileResize: true,
@@ -50,10 +39,8 @@ const SmoothScrollProvider = ({ children }) => {
     const handleResize = () => {
       if (resizeTimer) clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
-        // Refresh the smoother's measurements instead of killing it
-        if (smoother && smoother.refresh) {
-          smoother.refresh();
-        }
+        // Refresh ScrollTrigger instead of a smoother instance
+        ScrollTrigger.refresh();
       }, 150);
     };
 
@@ -62,7 +49,6 @@ const SmoothScrollProvider = ({ children }) => {
     return () => {
       clearTimeout(resizeTimer);
       window.removeEventListener('resize', handleResize);
-      smoother.kill();
       ScrollTrigger.killAll();
     };
   }, { scope: wrapperRef });

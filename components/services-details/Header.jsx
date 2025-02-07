@@ -12,8 +12,8 @@ const ServiceDataHeader = ({ serviceData }) => {
       className="header page-header section-padding flex align-center relative"
       bgContent={
         <Image
-          src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/bg30-UuPNFBNCE2DEj2ClRLvyDq8JTN8PfX.jpg"
-          alt=""
+        src="/assets/imgs/bg30.jpg"
+        alt=""
           fill
           className="object-cover"
           priority

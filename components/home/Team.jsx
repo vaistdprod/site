@@ -85,7 +85,7 @@ function Team({ members = [] }) {
                     </div>
                   </Link>
 
-                  <div className="social sub-bg absolute mt-20">
+                  <div className="social mt-20">
                     <div className="links">
                       {member.instagram && (
                         <Link

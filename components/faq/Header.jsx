@@ -12,8 +12,8 @@ const BlogHeaderAlternate = () => {
       className="header page-header section-padding flex align-center relative"
       bgContent={
         <Image
-          src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/bg43-j43iVV8imYG0SWudtzcTxqqeOkmbAP.jpg"
-          alt=""
+        src="/assets/imgs/bg43.jpg"
+        alt=""
           fill
           className="object-cover"
           priority

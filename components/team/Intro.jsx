@@ -53,7 +53,7 @@ function Intro() {
               <div className="row col-12">
                 <div style={{ position: "relative", height: "400px" }}>
                   <Image
-                    src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/klient-YEUe12Xth6GSb6FWQ8auOQtvvordGP.jpg"
+                    src="/assets/imgs/klient.jpg"
                     alt="Jednatel společnosti TD Productions, Matěj Vais, si podává ruku s klientem."
                     fill
                     style={{ objectFit: "cover", objectPosition: "55% 50%" }}

@@ -79,17 +79,14 @@ function Services({ services }) {
 
   return (
     <section ref={containerRef} className="services-class relative">
-      {/* First Container: TD Záruka & Partner Text */}
       <div className="container">
         <div className="sec-head mb-80">
           <div className="row">
             <div className="col-lg-4">
-              {/* This h6 now gets a simple fade/up animation */}
               <h6 className="title-border mb-30">TD záruka</h6>
             </div>
             <div className="col-lg-8">
               <div className="text">
-                {/* Replace AnimatedHeading with a plain h4 that gets animated */}
                 <h4 className="animated-heading">
                   Jsme vašimi partnery od prvotního plánování projektu až po jeho finální
                   spuštění a následnou údržbu.
@@ -100,12 +97,10 @@ function Services({ services }) {
         </div>
       </div>
 
-      {/* Second Container: Rotate-Style Headings & Services List */}
       <div className="container section-padding bord-bottom-grd relative pt-0">
         <div className="sec-head mb-80">
           <div className="flex align-center">
             <div>
-              {/* Replace RotateHeading with regular elements with a custom class */}
               <span className="rotate-heading sub-title main-color mb-5">
                 Specializace
               </span>
@@ -157,10 +152,9 @@ function Services({ services }) {
         </div>
       </div>
 
-      {/* Decorative Image */}
       <div className="circle-blur">
         <Image
-          src="https://6seb0zjl38si3gp0.public.blob.vercel-storage.com/blur1-0J2DJ0INNrXDLBO6XFZu6DKiOqorlZ.png"
+          src="/assets/imgs/bg/blur1.png"
           alt=""
           width={692}
           height={537}
