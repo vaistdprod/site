@@ -20,7 +20,6 @@
     "eslint-config-next": "14.1.0",
     "gray-matter": "^4.0.3",
     "gsap": "^3.12.7",
-    "gsap-trial": "^3.12.7",
     "joi": "^17.13.3",
     "loops": "^4.0.0",
     "mongoose": "^8.9.5",
