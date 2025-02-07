@@ -12,7 +12,7 @@ const TeamHeader = () => {
       className="header page-header section-padding flex align-center relative"
       bgContent={
         <Image
-        src="/assets/imgs/bg58.jpg"
+        src="/assets/imgs/bg/bg58.jpg"
         alt=""
           fill
           className="object-cover"

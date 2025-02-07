@@ -12,7 +12,7 @@ const ServiceDataHeader = ({ serviceData }) => {
       className="header page-header section-padding flex align-center relative"
       bgContent={
         <Image
-        src="/assets/imgs/bg30.jpg"
+        src="/assets/imgs/bg/bg30.jpg"
         alt=""
           fill
           className="object-cover"

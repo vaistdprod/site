@@ -12,7 +12,7 @@ const BlogHeaderAlternate = () => {
       className="header page-header section-padding flex align-center relative"
       bgContent={
         <Image
-        src="/assets/imgs/bg43.jpg"
+        src="/assets/imgs/bg/bg43.jpg"
         alt=""
           fill
           className="object-cover"

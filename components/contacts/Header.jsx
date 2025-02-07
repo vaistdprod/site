@@ -12,7 +12,7 @@ const ContactHeader = () => {
       className="header page-header section-padding flex align-center relative"
       bgContent={
         <Image
-        src="/assets/imgs/bg15.jpg"
+        src="/assets/imgs/bg/bg15.jpg"
         alt=""
           fill
           className="object-cover"

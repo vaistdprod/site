@@ -12,7 +12,7 @@ const ServicesHeader = () => {
       className="header page-header section-padding flex align-center relative"
       bgContent={
         <Image
-        src="/assets/imgs/bg8.jpg"
+        src="/assets/imgs/bg/bg8.jpg"
         alt=""
           fill
           className="object-cover"

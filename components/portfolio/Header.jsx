@@ -12,7 +12,7 @@ const PortfolioHeader = () => {
       className="page-header section-padding flex align-center relative"
       bgContent={
         <Image
-        src="/assets/imgs/bg24.jpg"
+        src="/assets/imgs/bg/bg24.jpg"
         alt=""
           fill
           className="object-cover"
