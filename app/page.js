@@ -81,8 +81,8 @@ export default async function Home() {
           <Team members={members} />
           <Blog posts={posts} />
           <Marq2 />
-          <Footer />
         </main>
+        <Footer />
       </SmoothScrollProvider>
       <ProgressScroll />
     </>
