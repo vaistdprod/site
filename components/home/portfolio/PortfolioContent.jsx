@@ -1,4 +1,3 @@
-// components/home/PortfolioContent.jsx
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -9,7 +8,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-export default function PortfolioContent({ swiperItems, swiperOptions }) {
+export default function PortfolioContent({ swiperItems, swiperOptions, arrowPrevRef, arrowNextRef, paginationRef }) {
   return (
     <section className="work-crev section-padding">
       <div className="container relative pb-80">
@@ -23,10 +22,10 @@ export default function PortfolioContent({ swiperItems, swiperOptions }) {
             </div>
             <div className="ml-auto">
               <div className="swiper-arrow-control">
-                <div className="swiper-button-prev">
+                <div ref={arrowPrevRef} className="swiper-button-prev">
                   <FontAwesomeIcon icon={faArrowLeft} />
                 </div>
-                <div className="swiper-button-next">
+                <div ref={arrowNextRef} className="swiper-button-next">
                   <FontAwesomeIcon icon={faArrowRight} />
                 </div>
               </div>
@@ -79,7 +78,7 @@ export default function PortfolioContent({ swiperItems, swiperOptions }) {
               );
             })}
           </Swiper>
-          <div className="swiper-pagination"></div>
+          <div ref={paginationRef} className="swiper-pagination"></div>
         </div>
       </div>
     </section>

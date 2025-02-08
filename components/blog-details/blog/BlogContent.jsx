@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faLinkedinIn, faXTwitter, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookF, faLinkedinIn, faXTwitter, faSearch } from '@fortawesome/free-brands-svg-icons';
 import CommentsList from '../comments/CommentsList';
 
 export default function BlogContent({

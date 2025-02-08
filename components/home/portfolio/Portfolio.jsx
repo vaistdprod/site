@@ -1,4 +1,3 @@
-// components/home/Portfolio.jsx
 'use client';
 
 import React, { useRef, useState } from 'react';
@@ -17,25 +16,37 @@ if (typeof window !== 'undefined') {
 
 export default function Portfolio() {
   const containerRef = useRef(null);
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+  const paginationRef = useRef(null);
+
   const { portfolio } = portfolioData;
   const { items, showcaseIds } = portfolio;
   const swiperItems = showcaseIds.map((id) => items.find((obj) => obj.id === id));
   const [realIndex, setRealIndex] = useState(0);
 
-  // Define Swiper options with dynamic behavior
+  // Define Swiper options with dynamic behavior and refs
   const swiperOptions = {
+    modules: [], // When using Next.js dynamic imports, you can omit modules here if you're controlling via refs.
     slidesPerView: 'auto',
     spaceBetween: 80,
     loop: true,
     touchRatio: 0.2,
     speed: 1500,
+    // Initial dummy assignment; these will be overwritten in onBeforeInit.
     pagination: {
-      el: '.work-crev .swiper-pagination',
+      el: paginationRef.current,
       type: 'progressbar',
     },
     navigation: {
-      nextEl: '.work-crev .swiper-button-next',
-      prevEl: '.work-crev .swiper-button-prev',
+      nextEl: nextRef.current,
+      prevEl: prevRef.current,
+    },
+    onBeforeInit: (swiper) => {
+      // Assign navigation and pagination elements via refs
+      swiper.params.navigation.prevEl = prevRef.current;
+      swiper.params.navigation.nextEl = nextRef.current;
+      swiper.params.pagination.el = paginationRef.current;
     },
     onSlideChange: (swiper) => {
       setRealIndex(swiper.realIndex);
@@ -87,7 +98,13 @@ export default function Portfolio() {
 
   return (
     <div ref={containerRef}>
-      <PortfolioContent swiperItems={swiperItems} swiperOptions={swiperOptions} />
+      <PortfolioContent
+        swiperItems={swiperItems}
+        swiperOptions={swiperOptions}
+        arrowPrevRef={prevRef}
+        arrowNextRef={nextRef}
+        paginationRef={paginationRef}
+      />
     </div>
   );
 }
