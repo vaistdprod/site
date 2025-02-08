@@ -1,7 +1,7 @@
-import ProgressScroll from '@/components/common/ProgressScroll';
-import Cursor from '@/components/common/Cursor';
-import LoadingScreen from '@/components/common/LoadingScreen';
-import Navbar from '@/components/common/Navbar';
+import ProgressScroll from '@/components/common/progress-scroll/ProgressScroll';
+
+import LoadingScreen from '@/components/common/loading-screen/LoadingScreen';
+import Navbar from '@/components/common/navbar/Navbar';
 import Error from '@/components/404/Error';
 
 export const metadata = {
@@ -36,7 +36,7 @@ export default function Home() {
   return (
     <>
       <LoadingScreen />
-      <Cursor />
+
       <ProgressScroll />
       <Navbar />
       <div id="smooth-wrapper">

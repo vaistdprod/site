@@ -1,9 +1,10 @@
+// components/PersonalHeader.jsx
 'use client';
 
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Header from '@/components/common/Header';
+import Header from '@/components/common/header/Header';
 
 const PersonalHeader = () => {
   return (

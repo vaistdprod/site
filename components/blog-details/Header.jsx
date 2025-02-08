@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment } from '@fortawesome/free-solid-svg-icons';
-import Header from '@/components/common/Header';
+import Header from '@/components/common/header/Header';
 
 const DetailedBlogHeader = ({ title, author, date, comments, coverImage, tags }) => {
   return (

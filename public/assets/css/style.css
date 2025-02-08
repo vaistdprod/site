@@ -915,7 +915,7 @@ img {
 
 .main-marq .strok .item h4 {
   color: transparent !important;
-  -webkit-text-stroke: 0.5px var(--white);
+  -webkit-text-stroke: 1px var(--white);
 }
 
 .main-marq .non-stroke .item h4 {
@@ -955,12 +955,12 @@ img {
 
 .main-marq .box .item:nth-of-type(even) h4 {
   color: transparent;
-  -webkit-text-stroke: 0.5px var(--white);
+  -webkit-text-stroke: 1px var(--white);
 }
 
 .main-marq .box .item:nth-of-type(even) h4 a {
   color: transparent;
-  -webkit-text-stroke: 0.5px var(--white);
+  -webkit-text-stroke: 1px var(--white);
 }
 
 .main-marq .box:last-of-type .item:nth-of-type(even) h4 {
@@ -1039,10 +1039,6 @@ img {
   margin: 0 !important;
 }
 
-img.left {
-  margin-left: -40%;
-}
-
 .bord-thin-top {
   border-top: 1px solid var(--white-14);
 }
@@ -1083,7 +1079,7 @@ img.left {
     color: var(--main-color-1);
     font-size: 0.875rem;
     margin-top: 5px;
-  }
+}
 
 .bg-img {
   background-size: cover;
@@ -1109,12 +1105,8 @@ img.left {
   white-space: nowrap;
 }
 
-.underline a {
+.underline {
   text-decoration: underline !important;
-}
-
-.underline span {
-  text-decoration: underline;
 }
 
 .inline {
@@ -2534,7 +2526,7 @@ footer.clean-footer.crev .circle-blur {
 
 .stroke-30 {
   color: transparent;
-  -webkit-text-stroke: 0.3px var(--white);
+  -webkit-text-stroke: 0.5px var(--white);
 }
 
 .work-crev .item .cont h2, .work-crev .item .cont h3 {

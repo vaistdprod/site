@@ -3,7 +3,7 @@
   "version": "1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -35,8 +35,5 @@
     "swiper": "^8.4.7",
     "unified": "^11.0.5",
     "unist-util-visit": "^5.0.0"
-  },
-  "devDependencies": {
-    "@next/bundle-analyzer": "^15.1.6"
   }
 }

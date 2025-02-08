@@ -2,14 +2,14 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Header from '@/components/common/Header';
+import Header from '@/components/common/header/Header';
 
 const PortfolioHeader = () => {
   return (
     <Header
       delay={2}
       overlayDark={5}
-      className="page-header section-padding flex align-center relative"
+      className="header page-header section-padding flex align-center relative"
       bgContent={
         <Image
         src="/assets/imgs/bg/bg24.jpg"

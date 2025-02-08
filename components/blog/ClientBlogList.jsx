@@ -1,13 +1,13 @@
 'use client';
 
 import Header from '@/components/blog/Header';
-import Blogs from '@/components/blog/Blogs';
-import Navbar from '@/components/common/Navbar';
-import Footer from '@/components/common/Footer';
-import ProgressScroll from '@/components/common/ProgressScroll';
+import Blogs from '@/components/blog/blogs/Blogs';
+import Navbar from '@/components/common/navbar/Navbar';
+import Footer from '@/components/common/footer/Footer';
+import ProgressScroll from '@/components/common/progress-scroll/ProgressScroll';
 import Cursor from '@/components/common/Cursor';
-import LoadingScreen from '@/components/common/LoadingScreen';
-import SmoothScrollProvider from '@/components/common/SmoothScrollProvider';
+import LoadingScreen from '@/components/common/loading-screen/LoadingScreen';
+import SmoothScrollProvider from '@/components/common/smooth-scroll/SmoothScrollProvider';
 import { useMemo } from 'react';
 
 export default function ClientBlogList({ allPosts, tag, searchQuery }) {

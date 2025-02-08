@@ -1,21 +1,21 @@
-import ProgressScroll from '@/components/common/ProgressScroll';
-import Cursor from '@/components/common/Cursor';
-import LoadingScreen from '@/components/common/LoadingScreen';
-import Footer from '@/components/common/Footer';
-import Marq2 from '@/components/common/Marq2';
-import Feat from '@/components/home/Feat';
-import Marq from '@/components/common/Marq';
-import Navbar from '@/components/common/Navbar';
-import Services from '@/components/home/Services';
-import Portfolio from '@/components/home/Portfolio';
-import Team from '@/components/home/Team';
-import Blog from '@/components/home/Blog';
+import ProgressScroll from '@/components/common/progress-scroll/ProgressScroll';
+import Cursor from '@/components/common/Cursor'; 
+import LoadingScreen from '@/components/common/loading-screen/LoadingScreen';
+import Footer from '@/components/common/footer/Footer';
+import Marq2 from '@/components/common/static/Marq2';
+import Feat from '@/components/home/feat/Feat';
+import Marq from '@/components/common/static/Marq';
+import Navbar from '@/components/common/navbar/Navbar';
+import Services from '@/components/home/services/Services';
+import Portfolio from '@/components/home/portfolio/Portfolio';
+import Team from '@/components/home/team/Team';
+import Blog from '@/components/home/blog/Blog';
 import Header from '@/components/home/Header';
-import About from '@/components/home/About';
+import About from '@/components/home/about/About';
 import { getAllPosts } from '@/lib/posts';
 import { getMemberList } from '@/lib/team';
 import { getLightServices } from '@/lib/services';
-import SmoothScrollProvider from '@/components/common/SmoothScrollProvider';
+import SmoothScrollProvider from '@/components/common/smooth-scroll/SmoothScrollProvider';
 
 export const metadata = {
   title: 'TD Productions | Posouváme hranice digitální inovace',

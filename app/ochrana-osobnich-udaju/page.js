@@ -1,12 +1,12 @@
-import ProgressScroll from '@/components/common/ProgressScroll';
+import ProgressScroll from '@/components/common/progress-scroll/ProgressScroll';
 import Cursor from '@/components/common/Cursor';
-import LoadingScreen from '@/components/common/LoadingScreen';
-import Footer from '@/components/common/Footer';
-import Marq2 from '@/components/common/Marq2';
-import Navbar from '@/components/common/Navbar';
+import LoadingScreen from '@/components/common/loading-screen/LoadingScreen';
+import Footer from '@/components/common/footer/Footer';
+import Marq2 from '@/components/common/static/Marq2';
+import Navbar from '@/components/common/navbar/Navbar';
 import Header from '@/components/gdpr/Header'
 import PrivacyPolicy from '@/components/gdpr/Gdpr';
-import SmoothScrollProvider from '@/components/common/SmoothScrollProvider';
+import SmoothScrollProvider from '@/components/common/smooth-scroll/SmoothScrollProvider';
 
 
 export const metadata = {
