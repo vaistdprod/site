@@ -1,4 +1,3 @@
-// components/blog/Blog.jsx
 'use client';
 
 import React, { useState, useRef } from 'react';
@@ -64,6 +63,12 @@ export default function Blog({ post, latestPosts }) {
     }
   };
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const query = e.target.elements['search-post'].value;
+    router.push(`/blog?search=${encodeURIComponent(query)}`);
+  };
+
   useGSAP(
     (context) => {
       if (!containerRef.current) return;
@@ -93,6 +98,7 @@ export default function Blog({ post, latestPosts }) {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         generateShareUrl={generateShareUrl}
+        handleSearch={handleSearch}
       />
     </section>
   );

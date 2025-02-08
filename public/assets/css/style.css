@@ -1105,8 +1105,12 @@ img {
   white-space: nowrap;
 }
 
-.underline {
+.underline a {
   text-decoration: underline !important;
+}
+
+.underline span {
+  text-decoration: underline;
 }
 
 .inline {
