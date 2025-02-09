@@ -16,7 +16,7 @@ export default function PortfolioContent({ swiperItems, swiperOptions, arrowPrev
           <div className="flex align-center">
             <div>
               <span className="sub-title main-color mb-5">Naše portfolio</span>
-              <h3 className="fw-600 fz-50 text-u">
+              <h3 className="fw-600 fz-50 uppercase">
                 <span>Vybrané <span className="fw-200">projekty</span></span>
               </h3>
             </div>

@@ -12,7 +12,7 @@ function Services() {
           <div className="flex align-center">
             <div>
               <span className="sub-title main-color mb-5">Specializace</span>
-              <h3 className="fw-600 fz-50 text-u  ">
+              <h3 className="fw-600 fz-50 uppercase  ">
                 <span className="">
                   Naše <span className="fw-200">služby</span>
                 </span>
@@ -31,7 +31,7 @@ function Services() {
           <div className="row md-marg align-end">
             <div className="col-lg-4">
               <div>
-                <span className="num">01</span>
+                <span className="num fz-13 mb-15 circle text-center">01</span>
                 <div>
                   <span className="sub-title main-color mb-10">Web Design</span>
                   <h2>
@@ -62,7 +62,7 @@ function Services() {
           <div className="row md-marg align-end">
             <div className="col-lg-4">
               <div>
-                <span className="num">02</span>
+                <span className="num fz-13 mb-15 circle text-center">02</span>
                 <div>
                   <span className="sub-title main-color mb-10">Web Design</span>
                   <h2>
@@ -93,7 +93,7 @@ function Services() {
           <div className="row md-marg align-end">
             <div className="col-lg-4">
               <div>
-                <span className="num">03</span>
+                <span className="num fz-13 mb-15 circle text-center">03</span>
                 <div>
                   <span className="sub-title main-color mb-10">Web Design</span>
                   <h2>

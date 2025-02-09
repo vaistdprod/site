@@ -15,7 +15,7 @@ export default function TeamContent({ members = [] }) {
       <div className="container">
         <div className="sec-head mb-80">
           <div className="flex align-center mb-30">
-            <h2 className="fw-600 fz-70 text-u">
+            <h2 className="fw-600 fz-70 uppercase">
               <span>
                 Pracujeme pro vás <span className="fw-200">nonstop</span>
               </span>
@@ -85,7 +85,7 @@ export default function TeamContent({ members = [] }) {
                     </div>
                   </div>
                 </div>
-                <div className="img relative z-2">
+                <div className="img backdrop-50 relative z-2">
                   <Link href={`/nas-tym/${member.slug}`} style={{ position: "relative", height: "100%", width: "100%" }}>
                     <Image
                       fill

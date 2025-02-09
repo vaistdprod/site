@@ -75,7 +75,7 @@ function Next({ nextProject, prevProject }) {
       <div>
         <Link href="/portfolio" className="all-works-btn absolute z-4 text-center">
           <span className="ti-view-grid fz-24 mb-10"></span>
-          <span className="d-block fz-12 text-u ls1">Všechny projekty</span>
+          <span className="d-block fz-12 uppercase ls1">Všechny projekty</span>
         </Link>
       </div>
     </section>

@@ -13,7 +13,7 @@ export default function BlogContent({ posts = [] }) {
       <div className="container">
         <div className="sec-head mb-80">
           <div className="flex align-center mb-30">
-            <h2 className="fw-600 fz-70 text-u">
+            <h2 className="fw-600 fz-70 uppercase">
               <span>
                 Z naší <span className="fw-200">produkce</span>
               </span>

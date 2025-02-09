@@ -8,7 +8,7 @@ export default function NumbersContent() {
         <div className="sec-head mb-80">
           <div className="row">
             <div className="col-lg-4">
-              <h6 className="title-border mb-30">TD záruka</h6>
+              <h6 className="title-border fz-14 relative uppercase ls1 radius-30 mb-30">TD záruka</h6>
             </div>
             <div className="col-lg-8">
               <div className="text">

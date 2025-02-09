@@ -7,7 +7,7 @@ export default function FaqContent({ onAccordionClick }) {
       <div className="container relative z-7">
         <div className="row xlg-marg">
           <div className="col-lg-6">
-            <div className="img md-mb50 h-100 relative">
+            <div className="img md-mb50 h-full relative">
               <Image
                 src="/assets/imgs/fotoprodukce.jpg"
                 alt="Fotoprodukce"

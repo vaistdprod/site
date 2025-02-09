@@ -14,7 +14,7 @@ const PersonalHeader = () => {
       className="header header-personal flex align-center relative o-hidden"
       bgContent={
         <video
-          className="absolute top-0 start-0 w-100 h-100 object-cover -z-1"
+          className="absolute top-0 start-0 w-full h-full object-cover -z-1"
           src="/assets/imgs/tdprod-promo.mp4"
           autoPlay
           loop
@@ -37,7 +37,7 @@ const PersonalHeader = () => {
               </span>
               Vítejte
             </div>
-            <h1 className="fw-700 mb-10">
+            <h1 className="fw-700 mb-10 relative z-2">
               TD <span className="main-color">Productions</span>
             </h1>
             <h2 className="h3">Posouváme hranice digitální inovace</h2>
@@ -69,19 +69,19 @@ const PersonalHeader = () => {
       </div>
 
       <div className="info flex align-center justify-end mt-100">
-        <div className="item">
+        <div className="item relative">
           <h3 className="sub-title mb-10">Email:</h3>
           <Link href="mailto:info@tdprod.cz" className="p-color" target="_blank" rel="noopener noreferrer">
             info@tdprod.cz
           </Link>
         </div>
-        <div className="item">
+        <div className="item relative">
           <h3 className="sub-title mb-10">Telefon:</h3>
           <Link href="tel:+420737065717" className="p-color" target="_blank" rel="noopener noreferrer">
             +420 737 065 717
           </Link>
         </div>
-        <div className="item">
+        <div className="item relative">
           <h3 className="sub-title mb-10">Adresa:</h3>
           <Link href="https://maps.app.goo.gl/ZrSaQYLotGqCciX79" className="p-color" target="_blank" rel="noopener noreferrer">
             28. října 205/45, 702 00 Ostrava

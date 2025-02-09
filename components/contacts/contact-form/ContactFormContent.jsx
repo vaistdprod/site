@@ -14,7 +14,7 @@ export default function ContactFormContent({
         <div className="row">
           {/* Left Column: Contact Info */}
           <div className="col-lg-4 flex align-center">
-            <div className="sec-head info-box w-100 md-mb80">
+            <div className="sec-head info-box w-full md-mb80">
               <div className="phone fz-30 fw-600 underline main-color">
                 <a href="tel:+420737065717">+420 737 065 717</a>
               </div>
@@ -52,10 +52,10 @@ export default function ContactFormContent({
           </div>
           {/* Right Column: Contact Form */}
           <div className="col-lg-7 offset-lg-1 flex align-center">
-            <div className="w-100">
+            <div className="w-full">
               <div className="sec-head mb-50">
                 <h6 className="sub-title main-color mb-15">Kontaktní formulář</h6>
-                <h3 className="text-u ls1">
+                <h3 className="uppercase ls1">
                   Zanechte nám <span className="fw-200">zprávu</span>
                 </h3>
               </div>
@@ -138,7 +138,7 @@ export default function ContactFormContent({
                     <div className="mt-30">
                       <button
                         type="submit"
-                        className="btn btn-full w-100 btn-bord radius-30"
+                        className="btn btn-full w-full btn-bord radius-30"
                         id="odeslat-kontaktni-formular"
                       >
                         <span className="text">Odeslat</span>

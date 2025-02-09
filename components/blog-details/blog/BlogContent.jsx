@@ -50,23 +50,23 @@ export default function BlogContent({
                         <span>Sdílet:</span>
                       </div>
                       <div>
-                        <a href={generateShareUrl('facebook', post)} target="_blank" rel="noopener noreferrer">
+                        <a className="text-center" href={generateShareUrl('facebook', post)} target="_blank" rel="noopener noreferrer">
                           <FontAwesomeIcon icon={faFacebookF} />
                         </a>
-                        <a href={generateShareUrl('linkedin', post)} target="_blank" rel="noopener noreferrer">
+                        <a className="text-center" href={generateShareUrl('linkedin', post)} target="_blank" rel="noopener noreferrer">
                           <FontAwesomeIcon icon={faLinkedinIn} />
                         </a>
-                        <a href={generateShareUrl('twitter', post)} target="_blank" rel="noopener noreferrer">
+                        <a className="text-center" href={generateShareUrl('twitter', post)} target="_blank" rel="noopener noreferrer">
                           <FontAwesomeIcon icon={faXTwitter} />
                         </a>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="author-area mt-50 bord-thin-bottom">
+                <div className="author-area backdrop-2 mt-50 bord-thin-bottom">
                   <div className="flex">
                     <div className="author-img mr-30">
-                      <div className="img relative">
+                      <div className="img o-hidden radius-10 relative">
                         <Image
                           src={post.author.avatar}
                           alt={post.author.name}
@@ -78,7 +78,7 @@ export default function BlogContent({
                       </div>
                     </div>
                     <div className="cont flex align-center">
-                      <div className="w-100">
+                      <div className="w-full">
                         <h6 className="fw-600 mb-10">{post.author.name}</h6>
                         <p>{post.author.bio}</p>
                       </div>
@@ -134,8 +134,8 @@ export default function BlogContent({
                       </div>
                       <div className="text-center">
                         <div className="mt-30">
-                          <button type="submit">
-                            <span className="text">Publikovat komentář</span>
+                          <button className="relative o-hidden ls1 radius-5 w-full backdrop-2 uppercase fz-13" type="submit">
+                            <span className="relative z-4 text">Publikovat komentář</span>
                           </button>
                         </div>
                       </div>
@@ -198,7 +198,7 @@ export default function BlogContent({
                             height={100}
                             className="img-fluid full-size object-cover"
                           />
-                          <span className="date absolute size-50 circle z-3 fz-14">
+                          <span className="date text-center backdrop-10 absolute size-50 circle z-3 fz-14">
                             <span>
                               {new Date(latestPost.date).getDate()} /{' '}
                               {new Date(latestPost.date).toLocaleString('default', {
@@ -210,7 +210,7 @@ export default function BlogContent({
                       </div>
                     </div>
                     <div className="cont">
-                      <span className="tag">
+                      <span className="tag radius-30 fz-12">
                         {latestPost.tags.map((tag, index) => (
                           <React.Fragment key={tag}>
                             <Link href={`/blog?tag=${encodeURIComponent(tag)}`}>

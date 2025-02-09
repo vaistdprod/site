@@ -29,8 +29,8 @@ function Testimonials() {
       <div className="container section-padding bord-top-grd relative">
         <div className="row">
           <div className="col-lg-4 md-mb50">
-            <div className="img-full relative h-100">
-              <div className="fit-img h-100 o-hidden">
+            <div className="img-full relative h-full">
+              <div className="fit-img h-full o-hidden">
                 <img className="object-cover object-center full-size" src="/assets/imgs/testim/bg.jpg" alt="" />
               </div>
               <div className="fix-img absolute">
@@ -41,7 +41,7 @@ function Testimonials() {
           <div className="col-lg-8">
             <div className="cont-full relative">
               <div
-                className="testim-swiper"
+                className="testim-swiper o-hidden backdrop-50"
                 data-carousel="swiper"
                 data-loop="true"
                 data-space="30"

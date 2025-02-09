@@ -8,7 +8,7 @@ function Construction() {
   const AllMarquess = Array(8).fill(marquess).flat();
 
   return (
-    <section className="page-error construction section-padding flex align-center">
+    <section className="page-error relative construction section-padding flex align-center">
       <div className="container">
         <div className="text-center">
           <h1 className="fw-700">Stavíme</h1>

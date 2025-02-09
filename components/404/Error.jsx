@@ -8,7 +8,7 @@ function Error() {
   const AllMarquess = Array(8).fill(marquess).flat();
 
   return (
-    <section className="page-error section-padding flex align-center">
+    <section className="page-error relative section-padding flex align-center">
       <div className="container">
         <div className="text-center">
           <h1 className="fw-700">404</h1>

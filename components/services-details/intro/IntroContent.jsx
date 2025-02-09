@@ -63,7 +63,7 @@ export default function IntroContent({ serviceData }) {
           </div>
 
           <div className="col-lg-4">
-            <div className="img-full h-100 fit-img o-hidden relative">
+            <div className="img-full h-full fit-img o-hidden relative">
               <Image
                 src={serviceData.img}
                 alt={serviceData.title}

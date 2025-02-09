@@ -1,4 +1,3 @@
-// components/home/ServicesContent.jsx
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -12,7 +11,7 @@ export default function ServicesContent({ services }) {
         <div className="sec-head mb-80">
           <div className="row">
             <div className="col-lg-4">
-              <h6 className="title-border mb-30">TD záruka</h6>
+              <h6 className="title-border fz-14 relative uppercase ls1 radius-30 mb-30">TD záruka</h6>
             </div>
             <div className="col-lg-8">
               <div className="text">
@@ -33,7 +32,7 @@ export default function ServicesContent({ services }) {
               <span className="rotate-heading sub-title main-color mb-5">
                 Specializace
               </span>
-              <h3 className="rotate-heading fw-600 fz-50 text-u">
+              <h3 className="rotate-heading fw-600 fz-50 uppercase">
                 Vybrané <span className="fw-200">služby</span>
               </h3>
             </div>
@@ -51,7 +50,7 @@ export default function ServicesContent({ services }) {
         <div className="row mb-40">
           {Object.entries(services).map(([serviceKey, service]) => (
             <div key={serviceKey} className="col-lg-4">
-              <div className="item mb-30">
+              <div className="item backdrop-15 radius-15 column mb-30">
                 <div
                   className="size-60 opacity-7 mb-40"
                   dangerouslySetInnerHTML={{ __html: service.icon }}
@@ -61,7 +60,7 @@ export default function ServicesContent({ services }) {
                   <div className="mb-10">
                     {service.tags &&
                       service.tags.map((tag, idx) => (
-                        <span key={idx} className="tag">
+                        <span key={idx} className="tag ls1 fz-12 radius-30 uppercase">
                           {tag}
                         </span>
                       ))}
@@ -81,7 +80,7 @@ export default function ServicesContent({ services }) {
         </div>
       </div>
 
-      <div className="circle-blur">
+      <div className="circle-blur absolute -z-1">
         <Image
           src="/assets/imgs/bg/blur1.png"
           alt=""

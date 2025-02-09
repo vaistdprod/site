@@ -73,7 +73,7 @@ export default function PortfolioGridContent() {
                     </div>
                     <div className="cont flex align-end mt-30">
                       <div>
-                        <span className="p-color mb-5 sub-title w-100">{item.subTitle}</span>
+                        <span className="p-color mb-5 sub-title w-full">{item.subTitle}</span>
                         <Link href={`/portfolio/${item.id}`}>
                           <h6>{item.title}</h6>
                         </Link>

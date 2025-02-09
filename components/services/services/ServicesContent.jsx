@@ -1,4 +1,3 @@
-// components/home/ServicesContent.jsx
 import React from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,7 +11,7 @@ export default function ServicesContent({ services }) {
           <div className="flex align-center">
             <div>
               <span className="sub-title main-color mb-5">Specializace</span>
-              <h3 className="fw-600 fz-50 text-u">
+              <h3 className="fw-600 fz-50 uppercase">
                 <span>
                   Seznam <span className="fw-200">služeb</span>
                 </span>
@@ -24,7 +23,7 @@ export default function ServicesContent({ services }) {
         <div className="row">
           {Object.entries(services).map(([serviceKey, service]) => (
             <div key={serviceKey} className="col-lg-4">
-              <div className="item mb-30">
+              <div className="item radius-15 backdrop-15 column mb-30">
                 <div
                   className="size-60 opacity-7 mb-40"
                   dangerouslySetInnerHTML={{ __html: service.icon }}
@@ -34,7 +33,7 @@ export default function ServicesContent({ services }) {
                   <div className="mb-10">
                     {service.tags &&
                       service.tags.map((tag, idx) => (
-                        <span key={idx} className="tag">
+                        <span key={idx} className="tag ls1 fz-12 radius-30 uppercase">
                           {tag}
                         </span>
                       ))}

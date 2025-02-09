@@ -128,7 +128,7 @@ export default function FooterContent({
                   <button type="submit" aria-label="Přihlásit se k odběru">
                     <FontAwesomeIcon icon={faPaperPlane} aria-hidden="true" />
                   </button>
-                  <div className="agree-form mt-20">
+                  <div className="agree-form flex mt-20">
                     <input
                       type="checkbox"
                       id="agree"

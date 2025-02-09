@@ -24,7 +24,7 @@ const TeamHeader = () => {
       <div className="row">
         <div className="col-12">
           <div className="text-center pt-80">
-            <h1 className="text-u ls1 fz-80">
+            <h1 className="uppercase ls1 fz-80">
               Náš <span className="fw-200">tým</span>
             </h1>
           </div>

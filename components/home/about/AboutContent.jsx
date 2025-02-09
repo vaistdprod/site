@@ -7,7 +7,7 @@ export default function AboutContent() {
       <div className="container">
         <div className="row lg-marg">
           <div className="col-lg-5 flex align-center">
-            <div className="profile-img w-100 relative radius-250">
+            <div className="profile-img w-full relative radius-250">
               <div className="img relative o-hidden radius-250">
                 <Image
                   fill
@@ -17,40 +17,40 @@ export default function AboutContent() {
                   sizes="(max-width: 991px) 75vw, (max-width: 1199px) 25vw, 30vw"
                 />
               </div>
-              <span className="icon absolute size-60 radius-20">
+              <span className="icon absolute size-60 radius-20 backdrop-5">
                 <Image
                   src="/assets/imgs/ae.svg"
                   alt="Logo programu Adobe After Effects"
                   width={75}
                   height={75}
-                  className="h-100"
+                  className="h-full"
                 />
               </span>
-              <span className="icon absolute size-60 radius-20">
+              <span className="icon absolute size-60 radius-20 backdrop-5">
                 <Image
                   src="/assets/imgs/figma.svg"
                   alt="Logo programu Figma"
                   width={75}
                   height={75}
-                  className="h-100"
+                  className="h-full"
                 />
               </span>
-              <span className="icon absolute size-60 radius-20">
+              <span className="icon absolute size-60 radius-20 backdrop-5">
                 <Image
                   src="/assets/imgs/react.svg"
                   alt="Logo knihovny React"
                   width={75}
                   height={75}
-                  className="h-100"
+                  className="h-full"
                 />
               </span>
-              <span className="icon absolute size-60 radius-20">
+              <span className="icon absolute size-60 radius-20 backdrop-5">
                 <Image
                   src="/assets/imgs/wp.svg"
                   alt="Logo CMS WordPress"
                   width={75}
                   height={75}
-                  className="h-100"
+                  className="h-full"
                 />
               </span>
             </div>

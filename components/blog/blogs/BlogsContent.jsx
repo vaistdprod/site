@@ -30,7 +30,7 @@ export default function BlogsContent({
                   </div>
                   <div className="content">
                     <div className="flex align-center mb-15">
-                      <div className="post-date">
+                      <div className="post-date fz-12 radius-30 uppercase">
                         {new Date(post.date).toLocaleDateString()}
                       </div>
                       <div className="opacity-7 fz-13">
@@ -79,7 +79,7 @@ export default function BlogsContent({
                 <h6 className="title-widget">Kategorie</h6>
                 <ul className="rest">
                   {uniqueTags.map((tag) => (
-                    <li key={tag}>
+                    <li className="flex radius-30" key={tag}>
                       <span>
                         <Link href={`/blog?tag=${encodeURIComponent(tag)}`}>
                           {tag}
@@ -104,7 +104,7 @@ export default function BlogsContent({
                             height={100}
                             className="img-fluid full-size object-cover"
                           />
-                          <span className="date absolute size-50 circle z-3 fz-14">
+                          <span className="date text-center backdrop-10 absolute size-50 circle z-3 fz-14">
                             <span>
                               {new Date(post.date).getDate()} /{' '}
                               {new Date(post.date).toLocaleString('default', {
@@ -116,7 +116,7 @@ export default function BlogsContent({
                       </div>
                     </div>
                     <div className="cont">
-                      <span className="tag">
+                      <span className="tag radius-30 fz-12">
                         {post.tags.map((tag, index) => (
                           <React.Fragment key={tag}>
                             <Link href={`/blog?tag=${encodeURIComponent(tag)}`}>

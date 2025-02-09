@@ -10,7 +10,7 @@ export default function FeatContent({ serviceData }) {
       <div className="container">
         <div className="sec-head mb-80">
           <div className="flex align-center mb-30">
-            <h2 className="fw-600 fz-70 text-u">
+            <h2 className="fw-600 fz-70 uppercase">
               <span>Proces <span className="fw-200">spolupráce</span></span>
             </h2>
             <div className="ml-auto vi-more">

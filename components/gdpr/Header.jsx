@@ -24,7 +24,7 @@ const PrivacyHeader = () => {
       <div className="row">
         <div className="col-12">
           <div className="text-center pt-80">
-            <h1 className="text-u ls1 fz-80">Ochrana osobních údajů</h1>
+            <h1 className="uppercase ls1 fz-80">Ochrana osobních údajů</h1>
           </div>
         </div>
       </div>

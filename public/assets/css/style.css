@@ -290,7 +290,6 @@ textarea {
     border-bottom: 0;
     border-left: 0.3em solid transparent;
 }
-
 .nav,
 .navbar-nav {
     margin-bottom: 0;
@@ -364,7 +363,6 @@ textarea {
   display: flex;
   flex-direction: column;
 }
-
 @media (prefers-reduced-motion: reduce) {
     .nav-link,
     .navbar-toggler {
@@ -393,13 +391,13 @@ textarea {
 .start-0 {
     left: 0 !important;
 }
-.w-100 {
+.w-full {
     width: 100% !important;
 }
 .w-auto {
     width: auto !important;
 }
-.h-100 {
+.h-full {
     height: 100%;
 }
 .full-size {
@@ -439,9 +437,6 @@ textarea {
 }
 .pb-0 {
     padding-bottom: 0 !important;
-}
-.text-center {
-    text-align: center !important;
 }
 
 @media (min-width: 992px) {
@@ -494,11 +489,9 @@ textarea {
   --white-10: rgba(255, 255, 255, 0.1);
   --white-14: rgba(255, 255, 255, 0.14);
   --white-20: rgba(255, 255, 255, 0.2);
-  --white-30: rgba(255, 255, 255, 0.3);
   --white-40: rgba(255, 255, 255, 0.4);
   --white-50: rgba(255, 255, 255, 0.5);
   --white-70: rgba(255, 255, 255, 0.7);
-  --white-80: rgba(255, 255, 255, 0.8);
   --black: #000;
   --black-10: rgba(0, 0, 0, 0.1);
   --black-30: rgba(0, 0, 0, 0.3);
@@ -1238,20 +1231,28 @@ span.fw-200 {
   line-height: 40px;
 }
 
-.text-u {
+.uppercase {
   text-transform: uppercase !important;
 }
 
 .text-left {
-  text-align: left;
+  text-align: left !important;
 }
 
 .text-right {
-  text-align: right;
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
 }
 
 .ls1 {
   letter-spacing: 1px !important;
+}
+
+.ls2 {
+  letter-spacing: 2px !important;
 }
 
 .mt-5 {
@@ -1458,9 +1459,7 @@ body.loaded {
 
 .loader-wrap .loader-wrap-heading .load-text {
   font-size: 20px;
-  font-weight: 200;
   letter-spacing: 15px;
-  text-transform: uppercase;
 }
 
 .load-text span {
@@ -1562,6 +1561,22 @@ body.loaded {
 
 .backdrop-10 {
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.backdrop-2 {
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.backdrop-15 {
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.backdrop-50 {
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
 }
 
 .navbar {
@@ -1721,14 +1736,9 @@ body.loaded {
 }
 
 .title-border {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
   padding: 10px 20px 10px 40px;
   border: 1px solid var(--white-20);
-  border-radius: 30px;
   width: max-content;
-  position: relative;
 }
 
 .title-border:after {
@@ -1794,8 +1804,6 @@ body.loaded {
   border: 1px solid var(--white-10);
   padding: 12px;
   background: var(--white-1);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
   z-index: 3;
 }
 
@@ -1891,10 +1899,8 @@ body.loaded {
 }
 
 .sidebar .widget.catogry li {
-  display: flex;
   font-size: 15px;
   padding: 10px 20px;
-  border-radius: 30px;
 }
 
 .sidebar .widget.catogry li:last-of-type {
@@ -1925,10 +1931,7 @@ body.loaded {
 .sidebar .widget.last-post-thum .item .img a .date {
   top: 50%;
   left: 50%;
-  text-align: center;
   background: var(--black-10);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
   transform: translateX(-50%) translateY(-50%);
   opacity: 0;
   transition: all 0.4s;
@@ -1951,9 +1954,7 @@ body.loaded {
 }
 
 .sidebar .widget.last-post-thum .item .cont .tag {
-  font-size: 12px;
   padding: 5px 15px;
-  border-radius: 30px;
   background: var(--white-3);
   margin-bottom: 10px;
 }
@@ -1977,10 +1978,7 @@ body.loaded {
 .blog-main .item .content .post-date {
   padding: 7px 15px;
   border: 1px solid var(--white-20);
-  border-radius: 30px;
-  font-size: 12px;
-  color: #ddd;
-  text-transform: uppercase;
+  color: var(--silver);
   margin-right: 15px;
 }
 
@@ -2017,7 +2015,6 @@ body.loaded {
   height: 35px;
   line-height: 35px;
   font-size: 11px;
-  text-align: center;
   padding: 0;
 }
 
@@ -2038,7 +2035,6 @@ input::-internal-input-suggested {
   }
 
 footer .agree-form {
-    display: flex;
     flex-direction: row;
     gap: 10px;
 }
@@ -2046,15 +2042,11 @@ footer .agree-form {
 .main-post .author-area {
   padding: 40px;
   background: var(--white-2);
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
 }
 
 .main-post .author-area .author-img .img {
   width: 100px;
   height: 100px;
-  border-radius: 10px;
-  overflow: hidden;
 }
 
 .comments-form input,
@@ -2079,24 +2071,10 @@ footer .agree-form {
 
 .comments-form button {
   padding: 15px 35px;
-  width: 100%;
   background: var(--white-2);
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
   color: var(--white);
-  text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 1px;
-  position: relative;
   border: 1px solid var(--white-20);
-  border-radius: 5px;
-  overflow: hidden;
   transition: all 0.4s;
-}
-
-.comments-form button .text {
-  position: relative;
-  z-index: 4;
 }
 
 .comments-form button:hover {
@@ -2261,7 +2239,6 @@ footer .agree-form {
 
 .page-error {
   min-height: 100vh;
-  position: relative;
 }
 
 .page-error h1 {
@@ -2382,13 +2359,10 @@ footer.clean-footer.crev .circle-blur {
 
 .header-personal .caption h1 {
   line-height: 1.2;
-  position: relative;
-  z-index: 2;
 }
 
 .header-personal .info .item {
   padding-right: 60px;
-  position: relative;
 }
 
 .header-personal .info .item:after {
@@ -2433,14 +2407,6 @@ footer.clean-footer.crev .circle-blur {
   opacity: 1;
 }
 
-.skills-box h6 {
-  font-size: 13px;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
-
 .skills-box .skill-progress {
   height: 25px;
   border: 1px solid var(--white-20);
@@ -2472,10 +2438,6 @@ footer.clean-footer.crev .circle-blur {
   z-index: -1;
 }
 
-.my-skills .item {
-  text-align: center;
-}
-
 .my-skills .item .box-bord {
   padding: 40px 15px;
   border: 1px solid var(--white-10);
@@ -2486,9 +2448,7 @@ footer.clean-footer.crev .circle-blur {
   width: 100px;
   height: 100px;
   line-height: 100px;
-  text-align: center;
   margin: 0 auto 30px;
-  border-radius: 50%;
   background: var(--white-5);
 }
 
@@ -2650,13 +2610,11 @@ footer.clean-footer.crev .circle-blur {
 }
 
 .services-class .circle-blur {
-    position: absolute;
     bottom: 50px;
     right: -15%;
     width: 30%;
     transform: rotate(-45deg);
     filter: blur(100px);
-    z-index: -1;
   }
 
 .services-class .row > .col-lg-4:not(:has(> .title-border)) {
@@ -2665,22 +2623,13 @@ footer.clean-footer.crev .circle-blur {
 
 .services-class .item {
   padding: 40px 30px;
-  border-radius: 15px;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
   background: var(--dark-color-2-75);
-  display: flex;
-  flex-direction: column;
 }
 
 .services-class .item .tag {
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
   padding: 5px 15px;
   margin: 2px;
   border: 1px solid var(--white-10);
-  border-radius: 30px;
 }
 
 .services-class .item a {
@@ -2723,11 +2672,7 @@ footer.clean-footer.crev .circle-blur {
   width: 45px;
   height: 45px;
   line-height: 45px;
-  text-align: center;
   border: 1px solid var(--white-20);
-  border-radius: 50%;
-  margin-bottom: 15px;
-  font-size: 13px;
 }
 
 .services-inline2 .item h2 {
@@ -2848,8 +2793,6 @@ footer.clean-footer.crev .circle-blur {
 
 .team-crev .item .img {
   height: 300px;
-  -webkit-backdrop-filter: blur(50px);
-  backdrop-filter: blur(50px);
 }
 
 .team-crev .col-lg-3 .item .img img {
@@ -2920,9 +2863,6 @@ footer.clean-footer.crev .circle-blur {
   padding: 80px;
   border: 10px;
   background: var(--white-1);
-  -webkit-backdrop-filter: blur(50px);
-  backdrop-filter: blur(50px);
-  overflow: hidden;
 }
 
 .testimonials .cont-full .circle-blur {
