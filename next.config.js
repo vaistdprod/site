@@ -118,14 +118,14 @@ const cachingHeaders = [
 ];
 
 const nextConfig = {
-  reactStrictMode: false,
   sassOptions: {
     includePaths: [path.join(__dirname, 'css')],
   },
-  trailingSlash: true,
-  devIndicators: {
-    buildActivity: false,
+  experimental: {
+    cssChunking: true,
   },
+  trailingSlash: true,
+  reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: false,
   },
@@ -140,22 +140,6 @@ const nextConfig = {
         headers: securityHeaders,
       },
     ];
-  },
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@': path.resolve(__dirname),
-    };
-    return config;
-  },
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'yjlhhtltrmgorunyoppp.supabase.co',
-        pathname: '/**',
-      },
-    ],
   },
 };
 
