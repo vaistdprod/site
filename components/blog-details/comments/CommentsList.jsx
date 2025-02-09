@@ -1,4 +1,3 @@
-// components/blog/CommentsList.jsx
 'use client';
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';

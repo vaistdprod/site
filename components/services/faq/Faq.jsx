@@ -1,4 +1,3 @@
-// components/home/Faq.jsx
 'use client';
 
 import React, { useRef } from "react";

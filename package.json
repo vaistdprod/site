@@ -14,6 +14,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@gsap/react": "^2.1.2",
+    "@supabase/supabase-js": "^2.48.1",
     "@vercel/analytics": "^1.4.1",
     "dotenv": "^16.4.7",
     "eslint": "8.56.0",
@@ -22,7 +23,6 @@
     "gsap": "^3.12.7",
     "joi": "^17.13.3",
     "loops": "^4.0.0",
-    "mongoose": "^8.9.5",
     "next": "^15.1.2",
     "nodemailer": "^6.9.16",
     "rate-limiter-flexible": "^5.0.4",
@@ -33,7 +33,6 @@
     "remark-rehype": "^11.1.1",
     "sanitize-html": "^2.14.0",
     "swiper": "^8.4.7",
-    "unified": "^11.0.5",
-    "unist-util-visit": "^5.0.0"
+    "unified": "^11.0.5"
   }
 }

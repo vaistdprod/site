@@ -1,0 +1,38 @@
+.blogContent h1 {
+    margin-bottom: 30px;
+    font-size: 50px;
+    font-weight: 600;
+  }
+  
+  .blogContent h2 {
+    margin-bottom: 30px;
+    font-size: 40px;
+    font-weight: 600;
+  }
+  
+  .blogContent h3 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  
+  .blogContent p {
+    margin-bottom: 20px;
+  }
+  
+  .blogContent hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 0;
+    border-top: 1px solid #ccc;
+  }
+  
+  .blogContent ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .blogContent li {
+    margin-bottom: 10px;
+    list-style-type: disc;
+  }

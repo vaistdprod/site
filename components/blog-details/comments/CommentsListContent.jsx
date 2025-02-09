@@ -1,4 +1,3 @@
-// components/blog/CommentsListContent.jsx
 import React from 'react';
 import Image from 'next/image';
 
@@ -6,7 +5,7 @@ export default function CommentsListContent({ comments }) {
   return (
     <div className="comments-list mt-40">
       {comments.map((comment) => (
-        <div key={comment._id} className="comment-item mb-30">
+        <div key={comment.id} className="comment-item mb-30">
           <div className="comment-header flex align-center mb-10">
             <div className="comment-avatar icon-img-40">
               <Image

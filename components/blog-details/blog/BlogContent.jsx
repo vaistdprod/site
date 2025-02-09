@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faLinkedinIn, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import CommentsList from '../comments/CommentsList';
+import styles from '../ClientBlogPostPage.module.css';
 
 export default function BlogContent({
   post,
@@ -22,12 +23,11 @@ export default function BlogContent({
     <section className="blog section-padding">
       <div className="container">
         <div className="row xlg-marg">
-          {/* Main Content Column */}
           <div className="col-lg-8">
             <div className="main-post">
               <div className="item pb-60">
                 <article>
-                  <div className="text" dangerouslySetInnerHTML={{ __html: post.content }} />
+                  <div className={`text ${styles.blogContent}`} dangerouslySetInnerHTML={{ __html: post.content }} />
                 </article>
                 <div className="info-area mt-30 flex pt-50 bord-thin-top">
                   <div>
@@ -70,7 +70,9 @@ export default function BlogContent({
                         <Image
                           src={post.author.avatar}
                           alt={post.author.name}
-                          fill
+                          width={60}
+                          height={60}
+                          style={{ objectPosition: '50% 10%' }}
                           className="object-center full-size object-cover"
                         />
                       </div>

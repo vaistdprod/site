@@ -1,11 +1,9 @@
-import { connectToDB } from '@/lib/db';
-import Comment from '@/models/Comment';
+import { supabase } from '@/lib/supabaseClient';
 
 export async function POST(request) {
   try {
-    await connectToDB();
-
     const { name, email, message, slug } = await request.json();
+
     if (!name || !email || !message || !slug) {
       return new Response(
         JSON.stringify({ error: 'Je nutné vyplnit všechna pole.' }),
@@ -13,10 +11,17 @@ export async function POST(request) {
       );
     }
 
-    const newComment = await Comment.create({ name, email, message, slug });
+    const { data, error } = await supabase
+      .from('comments')
+      .insert([{ name, email, message, slug }])
+      .select();
+
+    if (error) {
+      throw error;
+    }
 
     return new Response(
-      JSON.stringify({ message: 'Komentář byl úspěšně přidán.', comment: newComment }),
+      JSON.stringify({ message: 'Komentář byl úspěšně přidán.', comment: data[0] }),
       { status: 201, headers: { 'Content-Type': 'application/json' } }
     );
   } catch (error) {
@@ -30,8 +35,6 @@ export async function POST(request) {
 
 export async function GET(request) {
   try {
-    await connectToDB();
-
     const { searchParams } = new URL(request.url);
     const slug = searchParams.get('slug');
 
@@ -42,10 +45,18 @@ export async function GET(request) {
       );
     }
 
-    const postComments = await Comment.find({ slug }).sort({ date: -1 });
+    const { data, error } = await supabase
+      .from('comments')
+      .select('*')
+      .eq('slug', slug)
+      .order('date', { ascending: false });
+
+    if (error) {
+      throw error;
+    }
 
     return new Response(
-      JSON.stringify({ comments: postComments }),
+      JSON.stringify({ comments: data }),
       { status: 200, headers: { 'Content-Type': 'application/json' } }
     );
   } catch (error) {
@@ -59,47 +70,50 @@ export async function GET(request) {
 
 export async function DELETE(request) {
   try {
-    await connectToDB();
-
     const adminHeader = request.headers.get('x-admin-key');
     if (!adminHeader || adminHeader !== process.env.ADMIN_DELETE_KEY) {
-      return new Response(JSON.stringify({ error: 'Neautorizovaný uživatel.' }), {
-        status: 401,
-        headers: { 'Content-Type': 'application/json' },
-      });
+      return new Response(
+        JSON.stringify({ error: 'Neautorizovaný uživatel.' }),
+        { status: 401, headers: { 'Content-Type': 'application/json' } }
+      );
     }
 
     const { searchParams } = new URL(request.url);
     const commentId = searchParams.get('id');
 
     if (!commentId) {
-      return new Response(JSON.stringify({ error: 'Chybějící ID komentáře.' }), {
-        status: 400,
-        headers: { 'Content-Type': 'application/json' },
-      });
+      return new Response(
+        JSON.stringify({ error: 'Chybějící ID komentáře.' }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      );
     }
 
-    const deletedComment = await Comment.findByIdAndDelete(commentId);
+    const { data, error } = await supabase
+      .from('comments')
+      .delete()
+      .eq('id', commentId)
+      .select();
 
-    if (!deletedComment) {
-      return new Response(JSON.stringify({ error: 'Komentář nenalezen.' }), {
-        status: 404,
-        headers: { 'Content-Type': 'application/json' },
-      });
+    if (error) {
+      throw error;
+    }
+
+    if (!data || data.length === 0) {
+      return new Response(
+        JSON.stringify({ error: 'Komentář nenalezen.' }),
+        { status: 404, headers: { 'Content-Type': 'application/json' } }
+      );
     }
 
     return new Response(
       JSON.stringify({ message: 'Komentář byl úspěšně smazán.' }),
-      {
-        status: 200,
-        headers: { 'Content-Type': 'application/json' },
-      }
+      { status: 200, headers: { 'Content-Type': 'application/json' } }
     );
   } catch (error) {
     console.error(error);
-    return new Response(JSON.stringify({ error: 'Chyba serveru.' }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return new Response(
+      JSON.stringify({ error: 'Chyba serveru.' }),
+      { status: 500, headers: { 'Content-Type': 'application/json' } }
+    );
   }
 }

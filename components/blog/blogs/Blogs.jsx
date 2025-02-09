@@ -1,4 +1,3 @@
-// components/blog/Blogs.jsx
 'use client';
 
 import React, { useRef } from 'react';
