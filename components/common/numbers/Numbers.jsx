@@ -1,4 +1,3 @@
-// components/home/Numbers.jsx
 'use client';
 
 import React, { useRef } from 'react';

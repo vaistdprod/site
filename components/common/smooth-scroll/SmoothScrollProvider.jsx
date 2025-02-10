@@ -1,4 +1,3 @@
-// components/common/SmoothScrollProvider.jsx
 'use client';
 
 import React, { useRef } from 'react';
@@ -25,13 +24,11 @@ export default function SmoothScrollProvider({ children }) {
       const wrapper = wrapperRef.current;
       if (!wrapper) return;
 
-      // Apply style tweaks for smoother animations
       wrapper.style.backfaceVisibility = 'hidden';
       wrapper.style.transformStyle = 'preserve-3d';
       wrapper.style.willChange = 'transform';
       wrapper.style.transform = 'translate3d(0,0,0)';
 
-      // Configure ScrollTrigger options
       ScrollTrigger.config({
         limitCallbacks: true,
         ignoreMobileResize: true,
@@ -42,7 +39,6 @@ export default function SmoothScrollProvider({ children }) {
       const handleResize = () => {
         if (resizeTimer) clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
-          // Refresh ScrollTrigger on resize
           ScrollTrigger.refresh();
         }, 150);
       };

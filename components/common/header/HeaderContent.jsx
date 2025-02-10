@@ -1,4 +1,3 @@
-// components/common/HeaderContent.jsx
 import React from 'react';
 
 export default function HeaderContent({ children, className, overlayDark, bgContent }) {

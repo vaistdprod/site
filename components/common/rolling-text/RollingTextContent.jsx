@@ -1,4 +1,3 @@
-// components/common/RollingTextContent.jsx
 import React from 'react';
 
 export default function RollingTextContent({ text = "home" }) {

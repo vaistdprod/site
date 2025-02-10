@@ -1,4 +1,3 @@
-// components/home/BlogContent.jsx
 import Link from 'next/link';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

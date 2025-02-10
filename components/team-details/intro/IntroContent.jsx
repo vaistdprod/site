@@ -1,4 +1,3 @@
-// components/home/IntroContent.jsx
 import React from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -20,7 +19,6 @@ export default function IntroContent({ memberData }) {
   return (
     <section className="team-single section-padding pb-0">
       <div className="container">
-        {/* Top Row: Image and Basic Info */}
         <div className="row md-marg justify-around bord relative">
           <div className="col-lg-5">
             <div className="img md-mb50 relative">
@@ -57,7 +55,6 @@ export default function IntroContent({ memberData }) {
           </div>
         </div>
 
-        {/* Bottom Row: "O mně" and Skills */}
         <div className="row md-marg justify-around mt-80">
           <div className="col-lg-6 flex align-center">
             <div className="text md-mb50">

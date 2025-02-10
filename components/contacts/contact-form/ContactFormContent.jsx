@@ -1,4 +1,3 @@
-// components/home/ContactFormContent.jsx
 import React from 'react';
 
 export default function ContactFormContent({
@@ -12,7 +11,6 @@ export default function ContactFormContent({
     <section className="contact section-padding">
       <div className="container">
         <div className="row">
-          {/* Left Column: Contact Info */}
           <div className="col-lg-4 flex align-center">
             <div className="sec-head info-box w-full md-mb80">
               <div className="phone fz-30 fw-600 underline main-color">
@@ -50,7 +48,6 @@ export default function ContactFormContent({
               </div>
             </div>
           </div>
-          {/* Right Column: Contact Form */}
           <div className="col-lg-7 offset-lg-1 flex align-center">
             <div className="w-full">
               <div className="sec-head mb-50">

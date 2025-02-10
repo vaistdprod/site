@@ -1,4 +1,3 @@
-// components/common/LoadingScreen.jsx
 'use client';
 
 import React, { useEffect } from 'react';

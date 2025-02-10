@@ -1,4 +1,3 @@
-// components/common/Header.jsx
 'use client';
 
 import React, { useRef } from 'react';

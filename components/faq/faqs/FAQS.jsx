@@ -1,4 +1,3 @@
-// components/home/FAQS.jsx
 'use client';
 
 import React, { useRef } from 'react';
@@ -16,7 +15,6 @@ if (typeof window !== 'undefined') {
 export default function FAQS() {
   const containerRef = useRef(null);
 
-  // Attach GSAP animations to the section header and accordion items.
   useGSAP(
     (context) => {
       const secHead = context.selector('.sec-head');
@@ -50,7 +48,6 @@ export default function FAQS() {
     { scope: containerRef }
   );
 
-  // Accordion click handler: closes any open panels and opens the clicked one.
   function openAccordion(event) {
     document.querySelectorAll('.accordion-info').forEach((element) => {
       element.classList.remove('active');
@@ -62,7 +59,6 @@ export default function FAQS() {
     event.currentTarget.nextElementSibling.classList.add('active');
   }
 
-  // FAQ schema markup for SEO.
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",

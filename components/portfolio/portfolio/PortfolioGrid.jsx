@@ -1,4 +1,3 @@
-// components/home/PortfolioGrid.jsx
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
@@ -23,7 +22,6 @@ export default function PortfolioGrid() {
   const [activeFilter, setActiveFilter] = useState('*');
   const containerRef = useRef(null);
 
-  // Function to layout grid items based on container width and columns.
   const layoutGrid = () => {
     const container = containerRef.current;
     if (!container) return;
@@ -80,7 +78,6 @@ export default function PortfolioGrid() {
     layoutGrid();
   }, [activeFilter]);
 
-  // Animate the inner content of each grid item.
   useGSAP((context) => {
     const gridItemInners = context.selector('.grid-item-inner');
     gsap.timeline({

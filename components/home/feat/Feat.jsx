@@ -1,4 +1,3 @@
-// components/home/Feat.jsx
 'use client';
 
 import React, { useRef } from 'react';

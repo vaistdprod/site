@@ -1,4 +1,3 @@
-// components/home/FeatContent.jsx
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,7 +9,6 @@ export default function FeatContent() {
     <section className="feat relative section-padding">
       <div className="container relative z-7">
         <div className="row">
-          {/* Left Column: Text Content */}
           <div className="col-lg-5">
             <div className="cont md-mb50">
               <h6 className="feat-h6 sub-title main-color mb-15">
@@ -34,7 +32,6 @@ export default function FeatContent() {
             </div>
           </div>
 
-          {/* Right Column: Image & Info Items */}
           <div className="col-lg-6 offset-lg-1">
             <div className="item mb-30">
               <div className="row mx-0">

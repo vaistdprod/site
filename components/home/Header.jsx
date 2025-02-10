@@ -1,4 +1,3 @@
-// components/PersonalHeader.jsx
 'use client';
 
 import React from 'react';

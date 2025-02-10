@@ -1,4 +1,3 @@
-// components/home/PortfolioGridContent.jsx
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -10,7 +9,7 @@ export default function PortfolioGridContent() {
   const { portfolio } = portfolioData;
   const { items, showcaseIds, categories } = portfolio;
   const gridItemsData = showcaseIds.map((id) => items.find((obj) => obj.id === id));
-  const activeFilter = '*'; // Default filter for static markup
+  const activeFilter = '*';
 
   return (
     <section className="work-grid section-padding pb-0">

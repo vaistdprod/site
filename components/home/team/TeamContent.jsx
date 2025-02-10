@@ -1,4 +1,3 @@
-// components/home/TeamContent.jsx
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,7 +6,6 @@ import { faArrowRight, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-i
 import { faInstagram, faFacebookF } from "@fortawesome/free-brands-svg-icons";
 
 export default function TeamContent({ members = [] }) {
-  // Create a safe variable for members
   const validMembers = Array.isArray(members) ? members : [];
   
   return (

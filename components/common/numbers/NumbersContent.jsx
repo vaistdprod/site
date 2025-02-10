@@ -1,4 +1,3 @@
-// components/home/NumbersContent.jsx
 import React from 'react';
 
 export default function NumbersContent() {

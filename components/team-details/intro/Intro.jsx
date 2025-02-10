@@ -1,4 +1,3 @@
-// components/home/Intro.jsx
 'use client';
 
 import React, { useRef, useEffect } from "react";
@@ -15,7 +14,6 @@ if (typeof window !== "undefined") {
 export default function Intro({ memberData }) {
   const containerRef = useRef(null);
 
-  // Attach GSAP animations to the two rows
   useGSAP(
     (context) => {
       const firstRow = context.selector('.row.md-marg.justify-around.bord');
@@ -45,7 +43,6 @@ export default function Intro({ memberData }) {
     { scope: containerRef }
   );
 
-  // Use effect to update progress bar widths when in view
   useEffect(() => {
     function handleShowProgressValues() {
       isInView({

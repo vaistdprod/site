@@ -58,13 +58,11 @@ export default function Faq() {
   );
 
   function openAccordion(event) {
-    // Close all open accordion info panels
     document.querySelectorAll(".accordion-info").forEach((element) => {
       element.classList.remove("active");
       element.style.maxHeight = 0;
       element.parentElement.classList.remove("active");
     });
-    // Open the clicked accordion panel
     event.currentTarget.parentElement.classList.add("active");
     event.currentTarget.nextElementSibling.style.maxHeight = "300px";
     event.currentTarget.nextElementSibling.classList.add("active");

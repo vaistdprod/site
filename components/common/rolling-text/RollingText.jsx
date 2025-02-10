@@ -1,4 +1,3 @@
-// components/common/RollingText.jsx
 'use client';
 
 import React, { useEffect, useRef } from "react";
@@ -11,10 +10,8 @@ const RollingText = ({ text = "home" }) => {
     const element = elementRef.current;
     if (!element) return;
 
-    // Clear the static fallback content
     element.innerHTML = "";
 
-    // Create animated content using a DocumentFragment
     const fragment = document.createDocumentFragment();
     const textContainer = document.createElement("div");
     textContainer.classList.add("block");
@@ -26,7 +23,6 @@ const RollingText = ({ text = "home" }) => {
       textContainer.appendChild(span);
     }
 
-    // Clone the container for the double animation effect
     fragment.appendChild(textContainer);
     fragment.appendChild(textContainer.cloneNode(true));
 
@@ -42,7 +38,6 @@ const RollingText = ({ text = "home" }) => {
     };
   }, [text]);
 
-  // Render an empty span with a ref. Once hydrated, the useEffect replaces its content.
   return <span className="rolling-text" ref={elementRef}></span>;
 };
 

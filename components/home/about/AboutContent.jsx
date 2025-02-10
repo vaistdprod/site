@@ -1,4 +1,3 @@
-// components/home/AboutContent.jsx
 import Image from 'next/image';
 
 export default function AboutContent() {

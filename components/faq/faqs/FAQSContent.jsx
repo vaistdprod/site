@@ -1,4 +1,3 @@
-// components/home/FAQSContent.jsx
 import React from 'react';
 import faqData from '@/data/faqData';
 

@@ -1,4 +1,3 @@
-// components/home/Services.jsx
 'use client';
 
 import React, { useRef } from 'react';

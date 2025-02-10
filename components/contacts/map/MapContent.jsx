@@ -1,4 +1,3 @@
-// components/home/MapContent.jsx
 import React from "react";
 
 export default function MapContent() {

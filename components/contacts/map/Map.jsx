@@ -1,4 +1,3 @@
-// components/home/Map.jsx
 'use client';
 
 import React, { useRef } from "react";

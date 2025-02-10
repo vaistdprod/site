@@ -1,4 +1,3 @@
-// components/home/Intro.jsx
 'use client';
 
 import React, { useRef } from "react";
@@ -16,7 +15,6 @@ export default function Intro({ serviceData }) {
 
   useGSAP(
     (context) => {
-      // Selectors relative to the containerRef
       const textContent = context.selector(".row.lg-marg > .col-lg-8");
       const numbers = context.selector(".numbers");
       const imgBox = context.selector(".col-lg-4 .img-full");

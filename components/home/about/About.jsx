@@ -1,4 +1,3 @@
-// components/home/About.jsx
 'use client';
 
 import React, { useRef, useEffect } from 'react';
@@ -15,7 +14,6 @@ export default function About() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate left column (col-lg-5) and text container (cont)
       gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,

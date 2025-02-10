@@ -1,4 +1,3 @@
-// components/common/LoadingScreenContent.jsx
 import React from 'react';
 
 export default function LoadingScreenContent() {

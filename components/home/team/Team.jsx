@@ -1,4 +1,3 @@
-// components/home/Team.jsx
 'use client';
 
 import React, { useRef } from "react";

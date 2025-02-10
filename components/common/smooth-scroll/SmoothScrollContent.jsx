@@ -1,4 +1,3 @@
-// components/common/SmoothScrollContent.jsx
 import React from 'react';
 
 export default function SmoothScrollContent({ children }) {
