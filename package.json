@@ -15,17 +15,16 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@gsap/react": "^2.1.2",
     "@supabase/supabase-js": "^2.48.1",
-    "@vercel/analytics": "^1.4.1",
+    "@vercel/analytics": "^1.5.0",
     "dotenv": "^16.4.7",
-    "eslint": "8.56.0",
-    "eslint-config-next": "14.1.0",
     "gray-matter": "^4.0.3",
     "gsap": "^3.12.7",
     "joi": "^17.13.3",
     "loops": "^4.0.0",
-    "next": "^15.1.2",
-    "nodemailer": "^6.9.16",
-    "rate-limiter-flexible": "^5.0.4",
+    "lru-cache": "^11.0.2",
+    "next": "^15.1.7",
+    "nodemailer": "^6.10.0",
+    "rate-limiter-flexible": "^5.0.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "rehype-stringify": "^10.0.1",
@@ -34,5 +33,13 @@
     "sanitize-html": "^2.14.0",
     "swiper": "^8.4.7",
     "unified": "^11.0.5"
+  },
+  "devDependencies": {
+    "@eslint/config-array": "^0.19.2",
+    "@eslint/object-schema": "^2.1.6",
+    "eslint": "^9.20.1",
+    "eslint-config-next": "^15.1.7",
+    "glob": "^11.0.1",
+    "rimraf": "^6.0.1"
   }
 }
