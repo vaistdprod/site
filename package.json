@@ -6,7 +6,9 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "supabase:migration:new": "supabase migration new",
+    "supabase:migration:push": "cross-env POSTGRES_URL=$POSTGRES_URL supabase db push"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -16,6 +18,7 @@
     "@gsap/react": "^2.1.2",
     "@supabase/supabase-js": "^2.48.1",
     "@vercel/analytics": "^1.5.0",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.4.7",
     "gray-matter": "^4.0.3",
     "gsap": "^3.12.7",
@@ -31,6 +34,7 @@
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.1",
     "sanitize-html": "^2.14.0",
+    "supabase": "^2.12.1",
     "swiper": "^8.4.7",
     "unified": "^11.0.5"
   },
