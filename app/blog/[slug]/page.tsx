@@ -4,7 +4,7 @@ import ClientBlogPostPage from '@/components/blog-details/ClientBlogPostPage';
 import React from 'react';
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
