@@ -10,11 +10,16 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+interface SubscribeResponse {
+  success: boolean;
+  message?: string;
+}
+
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [agreed, setAgreed] = useState(false);
   const [msg, setMsg] = useState("");
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,38 +41,43 @@ export default function Footer() {
         body: JSON.stringify({ email })
       });
 
-      const data = await response.json();
+      const data: SubscribeResponse = await response.json();
       if (data.success) {
         setMsg("Potvrďte prosím přihlášení v emailu.");
       } else {
         setMsg(data.message || "Nastala chyba, zkuste to prosím znovu.");
       }
     } catch (error) {
-      if (error instanceof Error) {
-        setMsg("Chyba serveru: " + error.message);
-      } else {
-        setMsg("Chyba serveru: " + String(error));
-      }
+      setMsg(`Chyba serveru: ${error instanceof Error ? error.message : String(error)}`);
     }
   };
 
-    useGSAP(
-    (context) => {
-      const cols = context.selector('.row > [class*="col-"]');
-      gsap.from(cols, {
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power3.out",
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 80%'
-        }
-      });
-    },
-    { scope: containerRef }
-  );
+  useGSAP(() => {
+    if (!containerRef.current) return;
+
+    const elements = {
+      columns: '.row > [class*="col-"]'
+    };
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 80%',
+      },
+    });
+
+    tl.from(elements.columns, {
+      y: 50,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out',
+      stagger: 0.2,
+    });
+
+    return () => {
+      tl.kill();
+    };
+  }, { scope: containerRef });
 
   return (
     <div ref={containerRef}>
@@ -76,8 +86,8 @@ export default function Footer() {
         agreed={agreed}
         msg={msg}
         handleSubscribe={handleSubscribe}
-        setEmail={setEmail as React.Dispatch<React.SetStateAction<string>>}
-        setAgreed={setAgreed as React.Dispatch<React.SetStateAction<boolean>>}
+        setEmail={setEmail}
+        setAgreed={setAgreed}
       />
     </div>
   );

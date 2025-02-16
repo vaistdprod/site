@@ -3,8 +3,12 @@
 import React, { useEffect, useRef } from "react";
 import RollingTextContent from "./RollingTextContent";
 
-const RollingText = ({ text = "home" }) => {
-  const elementRef = useRef(null);
+interface RollingTextProps {
+  text?: string;
+}
+
+const RollingText: React.FC<RollingTextProps> = ({ text = "home" }) => {
+  const elementRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const element = elementRef.current;

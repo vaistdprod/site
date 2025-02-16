@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -10,65 +10,71 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+interface FormData {
+  jmeno: string;
+  email: string;
+  potrebuji: string[];
+  zprava: string;
+}
+
+interface FormErrors {
+  jmeno?: string;
+  email?: string;
+  zprava?: string;
+}
+
 export default function ContactForm() {
-  const containerRef = useRef(null);
-  const [formData, setFormData] = useState<{
-    jmeno: string;
-    email: string;
-    potrebuji: string[];
-    zprava: string;
-  }>({
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [formData, setFormData] = useState<FormData>({
     jmeno: '',
     email: '',
     potrebuji: [],
     zprava: '',
   });
   const [status, setStatus] = useState<string | null>(null);
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [errors, setErrors] = useState<FormErrors>({});
 
-  useGSAP(
-    (context) => {
-      const leftCol = context.selector('.col-lg-4');
-      const rightCol = context.selector?.('.col-lg-7');
-      const formGroups = context.selector?.('.form-group');
+  useGSAP(() => {
+    if (!containerRef.current) return;
 
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 80%',
-          toggleActions: 'play none none none',
-        },
-      })
-        .from(leftCol, {
-          x: -50,
-          opacity: 0,
-          duration: 1,
-          ease: 'power3.out',
-        })
-        .from(
-          rightCol,
-          {
-            x: 50,
-            opacity: 0,
-            duration: 1,
-            ease: 'power3.out',
-          },
-          '-=0.5'
-        )
-        .from(
-          formGroups,
-          {
-            y: 20,
-            opacity: 0,
-            duration: 0.8,
-            ease: 'power3.out',
-            stagger: 0.2,
-          },
-          '-=0.5'
-        );
-    },
-    { scope: containerRef }
-  );
+    const elements = {
+      leftCol: '.col-lg-4',
+      rightCol: '.col-lg-7',
+      formGroups: '.form-group'
+    };
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+      },
+    });
+
+    tl.from(elements.leftCol, {
+      x: -50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+    })
+    .from(elements.rightCol, {
+      x: 50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+    }, '-=0.5')
+    .from(elements.formGroups, {
+      y: 20,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out',
+      stagger: 0.2,
+    }, '-=0.5');
+
+    return () => {
+      tl.kill();
+    };
+  }, { scope: containerRef });
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -89,7 +95,7 @@ export default function ContactForm() {
   };
 
   const validateForm = () => {
-    const newErrors = {};
+    const newErrors: FormErrors = {};
     if (!formData.jmeno || formData.jmeno.length < 2) {
       newErrors.jmeno = 'Jméno musí mít alespoň 2 znaky.';
     }

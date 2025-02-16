@@ -27,31 +27,49 @@ export default function Header({
 }: HeaderProps) {
   const headerRef = useRef<HTMLDivElement>(null);
 
-    useGSAP(
-    (context) => {
-      const header = headerRef.current;
-      if (!header) return;
-      const tl = gsap.timeline();
-      tl.fromTo(
-        header,
-        { y: 200 },
-        { y: 0, duration: 0.8, ease: 'power3.out' },
-        `+=${delay}`
-      );
-      tl.fromTo(
-        header.querySelector('.container'),
-        { opacity: 0, y: 40 },
-        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
-        '-=0'
-      );
-      return () => tl.kill();
-    },
-    { dependencies: [] }
-  );
+  useGSAP(() => {
+    if (!headerRef.current) return;
+
+    const elements = {
+      header: headerRef.current,
+      container: '.container'
+    };
+
+    const tl = gsap.timeline();
+
+    tl.fromTo(
+      elements.header,
+      { y: 200 },
+      { 
+        y: 0, 
+        duration: 0.8, 
+        ease: 'power3.out',
+        delay
+      }
+    ).fromTo(
+      elements.container,
+      { opacity: 0, y: 40 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 0.8, 
+        ease: 'power3.out' 
+      },
+      '-=0.2'
+    );
+
+    return () => {
+      tl.kill();
+    };
+  }, { scope: headerRef });
 
   return (
     <div ref={headerRef}>
-      <HeaderContent className={className} overlayDark={overlayDark} bgContent={bgContent}>
+      <HeaderContent 
+        className={className} 
+        overlayDark={overlayDark} 
+        bgContent={bgContent}
+      >
         {children}
       </HeaderContent>
     </div>

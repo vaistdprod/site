@@ -2,13 +2,36 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faArrowRight, faArrowRight as faArrowRightIcon } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import type { SwiperOptions } from '@/types';
 
-export default function PortfolioContent({ swiperItems, swiperOptions, arrowPrevRef, arrowNextRef, paginationRef }) {
+interface PortfolioItem {
+  id: string;
+  img: string;
+  alt: string;
+  title: string;
+  subTitle: string;
+}
+
+interface PortfolioContentProps {
+  swiperItems: (PortfolioItem | undefined)[];
+  swiperOptions: SwiperOptions;
+  arrowPrevRef: React.RefObject<HTMLDivElement>;
+  arrowNextRef: React.RefObject<HTMLDivElement>;
+  paginationRef: React.RefObject<HTMLDivElement>;
+}
+
+export default function PortfolioContent({
+  swiperItems,
+  swiperOptions,
+  arrowPrevRef,
+  arrowNextRef,
+  paginationRef
+}: PortfolioContentProps) {
   return (
     <section className="work-crev section-padding">
       <div className="container relative pb-80">
@@ -23,7 +46,7 @@ export default function PortfolioContent({ swiperItems, swiperOptions, arrowPrev
             <div className="ml-auto">
               <div className="swiper-arrow-control">
                 <div ref={arrowPrevRef} className="swiper-button-prev">
-                  <FontAwesomeIcon icon={faArrowLeft} />
+                  <FontAwesomeIcon icon={faArrowRight} />
                 </div>
                 <div ref={arrowNextRef} className="swiper-button-next">
                   <FontAwesomeIcon icon={faArrowRight} />
@@ -41,9 +64,8 @@ export default function PortfolioContent({ swiperItems, swiperOptions, arrowPrev
                   <div className="item flex justify-between">
                     <div className="cont col-lg-6">
                       <Link href={`/portfolio/${item.id}`} tabIndex={0}>
-                        <h6 className="sub-title main-color mb-15">{item.category}</h6>
+                        <h6 className="sub-title main-color mb-15">{item.subTitle}</h6>
                         <h2 className="mb-5">{item.title}</h2>
-                        <h3>{item.subTitle}</h3>
                       </Link>
                       <Link
                         href={`/portfolio/${item.id}`}
@@ -52,7 +74,7 @@ export default function PortfolioContent({ swiperItems, swiperOptions, arrowPrev
                       >
                         <span className="hover-this">
                           <span className="circle hover-anim">
-                            <FontAwesomeIcon icon={faArrowRightIcon} />
+                            <FontAwesomeIcon icon={faArrowRight} />
                           </span>
                         </span>
                         <span className="text">Zobrazit detail</span>

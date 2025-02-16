@@ -22,9 +22,9 @@ interface Comment {
 export default function CommentsList({ slug }: { slug: string }) {
   const [comments, setComments] = useState<Comment[]>([]);
   const [loading, setLoading] = useState(true);
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-    const fetchComments = useCallback(async () => {
+  const fetchComments = useCallback(async () => {
     try {
       const res = await fetch(`/api/comments?slug=${encodeURIComponent(slug)}`);
       const data = await res.json();
@@ -44,26 +44,33 @@ export default function CommentsList({ slug }: { slug: string }) {
     fetchComments();
   }, [fetchComments]);
 
-  useGSAP(
-    (context) => {
-      if (!containerRef.current) return;
-      const commentItems = context.selector('.comment-item');
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 80%',
-          toggleActions: 'play none none none',
-        },
-      }).from(commentItems, {
-        opacity: 0,
-        y: 20,
-        duration: 0.8,
-        ease: 'power3.out',
-        stagger: 0.2,
-      });
-    },
-    { scope: containerRef }
-  );
+  useGSAP(() => {
+    if (!containerRef.current) return;
+
+    const elements = {
+      commentItems: '.comment-item'
+    };
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+      },
+    });
+
+    tl.from(elements.commentItems, {
+      opacity: 0,
+      y: 20,
+      duration: 0.8,
+      ease: 'power3.out',
+      stagger: 0.2,
+    });
+
+    return () => {
+      tl.kill();
+    };
+  }, { scope: containerRef });
 
   if (loading) {
     return <p>Načítám komentáře...</p>;

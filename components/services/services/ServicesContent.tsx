@@ -2,8 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { Service } from '@/lib/services';
 
-export default function ServicesContent({ services }) {
+interface ServicesContentProps {
+  services: Record<string, Service>;
+}
+
+export default function ServicesContent({ services }: ServicesContentProps) {
   return (
     <section className="services-class relative section-padding">
       <div className="container">

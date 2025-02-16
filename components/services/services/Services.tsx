@@ -5,46 +5,53 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import ServicesContent from './ServicesContent';
+import { Service } from '@/lib/services';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function Services({ services }) {
-  const containerRef = useRef(null);
+interface ServicesProps {
+  services: Record<string, Service>;
+}
 
-  useGSAP(
-    (context) => {
-      const secHead = context.selector('.sec-head');
-      const serviceItems = context.selector('.item');
+export default function Services({ services }: ServicesProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
 
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 80%',
-          toggleActions: 'play none none none',
-        },
-      })
-        .from(secHead, {
-          y: 50,
-          opacity: 0,
-          duration: 1,
-          ease: 'power3.out',
-        })
-        .from(
-          serviceItems,
-          {
-            y: 20,
-            opacity: 0,
-            duration: 0.8,
-            ease: 'power3.out',
-            stagger: 0.2,
-          },
-          '-=0.5'
-        );
-    },
-    { scope: containerRef }
-  );
+  useGSAP(() => {
+    if (!containerRef.current) return;
+
+    const elements = {
+      secHead: '.sec-head',
+      serviceItems: '.item'
+    };
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+      },
+    });
+
+    tl.from(elements.secHead, {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+    })
+    .from(elements.serviceItems, {
+      y: 20,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out',
+      stagger: 0.2,
+    }, '-=0.5');
+
+    return () => {
+      tl.kill();
+    };
+  }, { scope: containerRef });
 
   return (
     <div ref={containerRef}>

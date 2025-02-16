@@ -1,13 +1,19 @@
 'use client';
+
 import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
+interface CursorElements {
+  cursor: HTMLDivElement;
+  radial: HTMLDivElement;
+}
+
 export default function Cursor() {
   const [shouldRender, setShouldRender] = useState(false);
-  const containerRef = useRef(null);
-  const cursorRef = useRef(null);
-  const radialRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const radialRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const hasTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
@@ -17,51 +23,68 @@ export default function Cursor() {
   }, []);
 
   useGSAP(() => {
-    if (!shouldRender) return;
-    const cursor = cursorRef.current;
-    const radial = radialRef.current;
-    if (!cursor || !radial) return;
+    if (!shouldRender || !cursorRef.current || !radialRef.current) return;
 
-    const setCursorX = gsap.quickSetter(cursor, "x", "px");
-    const setCursorY = gsap.quickSetter(cursor, "y", "px");
-
-    const updateRadial = (x, y) => {
-      radial.style.background = `radial-gradient(600px at ${x}px ${y}px, hsla(11, 96%, 46%, 0.15), transparent 100%)`;
+    const elements: CursorElements = {
+      cursor: cursorRef.current,
+      radial: radialRef.current
     };
 
-    const handleMouseMove = (e) => {
+    const setCursorX = gsap.quickSetter(elements.cursor, "x", "px");
+    const setCursorY = gsap.quickSetter(elements.cursor, "y", "px");
+
+    const updateRadial = (x: number, y: number) => {
+      elements.radial.style.background = `radial-gradient(600px at ${x}px ${y}px, hsla(11, 96%, 46%, 0.15), transparent 100%)`;
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e;
       setCursorX(clientX - 5);
       setCursorY(clientY - 5);
       updateRadial(clientX, clientY);
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-
-    const interactiveElements = document.querySelectorAll("a, .cursor-pointer");
+    const interactiveElements = document.querySelectorAll<HTMLElement>("a, .cursor-pointer");
+    
     const addActive = () => {
-      gsap.to(cursor, { scale: 8, opacity: 0.1, duration: 0.2, ease: "power3.out" });
-      cursor.classList.add("cursor-active");
+      gsap.to(elements.cursor, {
+        scale: 8,
+        opacity: 0.1,
+        duration: 0.2,
+        ease: "power3.out"
+      });
+      elements.cursor.classList.add("cursor-active");
     };
+
     const removeActive = () => {
-      gsap.to(cursor, { scale: 1, opacity: 1, duration: 0.2, ease: "power3.out" });
-      cursor.classList.remove("cursor-active");
+      gsap.to(elements.cursor, {
+        scale: 1,
+        opacity: 1,
+        duration: 0.2,
+        ease: "power3.out"
+      });
+      elements.cursor.classList.remove("cursor-active");
     };
+
     interactiveElements.forEach((el) => {
       el.addEventListener("mouseenter", addActive);
       el.addEventListener("mouseleave", removeActive);
     });
 
-    const hoverElements = document.querySelectorAll(".hover-this");
-    const handleHover = (e) => {
-      const hoverAnim = e.currentTarget.querySelector(".hover-anim");
+    const hoverElements = document.querySelectorAll<HTMLElement>(".hover-this");
+    
+    const handleHover = (e: MouseEvent) => {
+      const target = e.currentTarget as HTMLElement;
+      const hoverAnim = target.querySelector<HTMLElement>(".hover-anim");
       if (!hoverAnim) return;
-      const rect = e.currentTarget.getBoundingClientRect();
+
+      const rect = target.getBoundingClientRect();
       const move = 25;
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
       const xMove = (x / rect.width) * (move * 2) - move;
       const yMove = (y / rect.height) * (move * 2) - move;
+
       gsap.to(hoverAnim, {
         x: xMove,
         y: yMove,
@@ -70,9 +93,12 @@ export default function Cursor() {
         overwrite: true,
       });
     };
-    const resetHover = (e) => {
-      const hoverAnim = e.currentTarget.querySelector(".hover-anim");
+
+    const resetHover = (e: MouseEvent) => {
+      const target = e.currentTarget as HTMLElement;
+      const hoverAnim = target.querySelector<HTMLElement>(".hover-anim");
       if (!hoverAnim) return;
+
       gsap.to(hoverAnim, {
         x: 0,
         y: 0,
@@ -81,10 +107,13 @@ export default function Cursor() {
         overwrite: true,
       });
     };
+
     hoverElements.forEach((el) => {
-      el.addEventListener("mousemove", handleHover);
-      el.addEventListener("mouseleave", resetHover);
+      el.addEventListener("mousemove", handleHover as EventListener);
+      el.addEventListener("mouseleave", resetHover as EventListener);
     });
+
+    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
@@ -93,8 +122,8 @@ export default function Cursor() {
         el.removeEventListener("mouseleave", removeActive);
       });
       hoverElements.forEach((el) => {
-        el.removeEventListener("mousemove", handleHover);
-        el.removeEventListener("mouseleave", resetHover);
+        el.removeEventListener("mousemove", handleHover as EventListener);
+        el.removeEventListener("mouseleave", resetHover as EventListener);
       });
     };
   }, { dependencies: [shouldRender], scope: containerRef });
@@ -117,7 +146,7 @@ export default function Cursor() {
           borderRadius: "50%",
           backgroundColor: "white",
         }}
-      ></div>
+      />
       <div
         ref={radialRef}
         className="radial-cursor"
@@ -131,7 +160,7 @@ export default function Cursor() {
           zIndex: 1,
           transition: "opacity 300ms",
         }}
-      ></div>
+      />
     </div>
   );
 }

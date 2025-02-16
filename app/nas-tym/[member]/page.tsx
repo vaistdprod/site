@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getMemberBySlug, getAllSlugs } from "@/lib/team";
-import ProgressScroll from "@/components/common/progress-scroll/ProgressScroll";
+import ProgressScroll from '@/components/common/progress-scroll/ProgressScroll';
 import Cursor from '@/components/common/Cursor';
 import LoadingScreen from '@/components/common/loading-screen/LoadingScreen';
 import Footer from "@/components/common/footer/Footer";
@@ -9,14 +9,15 @@ import Navbar from "@/components/common/navbar/Navbar";
 import Intro from "@/components/team-details/intro/Intro";
 import SmoothScrollProvider from '@/components/common/smooth-scroll/SmoothScrollProvider';
 import React from "react";
+import type { TeamProps } from '@/types';
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
   return slugs.map((slug) => ({ member: slug }));
 }
 
-export async function generateMetadata({ params }) {
-  const { member } = await params;
+export async function generateMetadata({ params }: TeamProps) {
+  const { member } = params;
   const data = getMemberBySlug(member);
   if (!data) {
     return {
@@ -59,8 +60,8 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default async function MemberPage({ params }) {
-  const { member } = await params;
+export default async function MemberPage({ params }: TeamProps) {
+  const { member } = params;
   const memberData = getMemberBySlug(member);
 
   if (!memberData) return notFound();

@@ -12,41 +12,20 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-function generateShareUrl(platform: string, post: Post) {
-  const currentUrl = `https://tdprod.cz/blog/${post.slug}`;
-  const encodedUrl = encodeURIComponent(currentUrl);
-  const encodedTitle = encodeURIComponent(post.title);
-  switch (platform) {
-    case 'facebook':
-      return `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
-    case 'linkedin':
-      return `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}`;
-    case 'twitter':
-      return `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`;
-    default:
-      return '#';
-  }
-}
-
-export default function Blog({
-  post,
-  latestPosts,
-}: {
+interface BlogProps {
   post: Post;
   latestPosts: Post[];
-}) {
+}
+
+export default function Blog({ post, latestPosts }: BlogProps) {
   const router = useRouter();
-  const [formData, setFormData] = useState<{
-    name: string;
-    email: string;
-    message: string;
-  }>({
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
   const [status, setStatus] = useState<string | null>(null);
-  const containerRef = useRef(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -74,41 +53,32 @@ export default function Blog({
     }
   };
 
- const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
-   e.preventDefault();
-   const query = (e.currentTarget.elements.namedItem(
-     'search-post'
-   ) as HTMLInputElement).value;
-   router.push(`/blog?search=${encodeURIComponent(query)}`);
- };
+  useGSAP(() => {
+    if (!containerRef.current) return;
 
-    useGSAP(
-    (context) => {
-      if (!containerRef.current) return;
+    const elements = {
+      mainContent: '.main-post, .comments-form'
+    };
 
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 80%',
-          onEnter: () => {
-            if (containerRef.current) {
-              const mainContent = containerRef.current.querySelectorAll('.main-post, .comments-form');
-              if (mainContent) {
-                gsap.from(mainContent, {
-                  opacity: 0,
-                  y: 50,
-                  duration: 0.8,
-                  ease: 'power3.out',
-                  stagger: 0.2,
-                });
-              }
-            }
-          },
-        },
-      });
-    },
-    {}
-);
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 80%',
+      },
+    });
+
+    tl.from(elements.mainContent, {
+      opacity: 0,
+      y: 50,
+      duration: 0.8,
+      ease: 'power3.out',
+      stagger: 0.2,
+    });
+
+    return () => {
+      tl.kill();
+    };
+  }, { scope: containerRef });
 
   return (
     <section ref={containerRef} className="blog section-padding">
@@ -119,8 +89,28 @@ export default function Blog({
         status={status}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
-        generateShareUrl={generateShareUrl}
-        handleSearch={handleSearch}
+        generateShareUrl={(platform: string) => {
+          const currentUrl = `https://tdprod.cz/blog/${post.slug}`;
+          const encodedUrl = encodeURIComponent(currentUrl);
+          const encodedTitle = encodeURIComponent(post.title);
+          switch (platform) {
+            case 'facebook':
+              return `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+            case 'linkedin':
+              return `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}`;
+            case 'twitter':
+              return `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`;
+            default:
+              return '#';
+          }
+        }}
+        handleSearch={(e: React.FormEvent<HTMLFormElement>) => {
+          e.preventDefault();
+          const query = (e.currentTarget.elements.namedItem(
+            'search-post'
+          ) as HTMLInputElement).value;
+          router.push(`/blog?search=${encodeURIComponent(query)}`);
+        }}
       />
     </section>
   );

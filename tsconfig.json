@@ -8,7 +8,7 @@
     ],
     "allowJs": true, // Allow JavaScript files
     "skipLibCheck": true, // Skip type checking for libraries
-    "strict": false, // Enable all strict type-checking options
+    "strict": true, // Enable all strict type-checking options
     "noEmit": true, // Next.js handles compilation
     "esModuleInterop": true,
     "module": "esnext",
@@ -27,14 +27,15 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "typeRoots": ["./node_modules/@types", "./types"]
   },
   "include": [
     "**/.js",
     "**/*.ts",
     "**/*.tsx",
-    "next-env.d.ts",
-    "global.d.ts",
+    "supabase/global.d.tsts",
+    "types/index.d.ts",
     ".next/types/**/*.ts", ],
   "exclude": [
     "node_modules"

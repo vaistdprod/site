@@ -50,7 +50,7 @@ export const metadata = {
 };
 
 export default function Home() {
-const members = getMemberList();
+  const members = getMemberList();
 
   return (
     <>
@@ -60,7 +60,7 @@ const members = getMemberList();
       <SmoothScrollProvider>
           <main className="main-bg o-hidden">
             <Header />
-            <Intro />
+            <Intro memberData={members[0]} />
             <Numbers />
             <Team members={members} />
             <Marq2 />

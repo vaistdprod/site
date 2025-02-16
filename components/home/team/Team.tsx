@@ -3,52 +3,54 @@
 import React, { useRef } from "react";
 import TeamContent from "./TeamContent";
 import gsap from "gsap";
-
-export interface TeamMember {
-  slug: string;
-  name: string;
-  image: string;
-  role: string;
-  instagram: string;
-  phone: string;
-  email: string;
-  facebook?: string;
-}
-
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import type { Member } from '@/lib/team';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function Team({ members = [] }: { members: TeamMember[] }) {
-  const containerRef = useRef(null);
+interface TeamProps {
+  members: Member[];
+}
 
- useGSAP(() => {
-    const secHead = gsap.utils.selector(containerRef);
-    gsap.from(secHead(".sec-head"), {
+export default function Team({ members }: TeamProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    if (!containerRef.current) return;
+
+    const elements = {
+      secHead: '.sec-head',
+      teamItems: '.item'
+    };
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+      },
+    });
+
+    tl.from(elements.secHead, {
       y: 50,
       opacity: 0,
       duration: 0.8,
-      ease: "power3.out",
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 80%",
-      },
-    });
-    gsap.from(secHead(".item"), {
+      ease: 'power3.out',
+    })
+    .from(elements.teamItems, {
       y: 50,
       opacity: 0,
       duration: 0.8,
-      ease: "power3.out",
+      ease: 'power3.out',
       stagger: 0.2,
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 80%",
-      },
-    });
+    }, '-=0.4');
+
+    return () => {
+      tl.kill();
+    };
   }, { scope: containerRef });
 
   return (

@@ -1,5 +1,3 @@
-'use client';
-
 import Header from '@/components/blog/Header';
 import Blogs from '@/components/blog/blogs/Blogs';
 import Navbar from '@/components/common/navbar/Navbar';
@@ -9,10 +7,17 @@ import Cursor from '@/components/common/Cursor';
 import LoadingScreen from '@/components/common/loading-screen/LoadingScreen';
 import SmoothScrollProvider from '@/components/common/smooth-scroll/SmoothScrollProvider';
 import { useMemo } from 'react';
+import { Post } from '@/lib/posts';
 
-export default function ClientBlogList({ allPosts, tag, searchQuery }) {
+interface ClientBlogListProps {
+  allPosts: Post[];
+  tag: string | null;
+  searchQuery: string | null;
+}
+
+export default function ClientBlogList({ allPosts, tag, searchQuery }: ClientBlogListProps) {
   const tagCounts = useMemo(() => {
-    return allPosts.reduce((acc, post) => {
+    return allPosts.reduce<Record<string, number>>((acc, post) => {
       post.tags.forEach((t) => {
         acc[t] = (acc[t] || 0) + 1;
       });
@@ -35,14 +40,13 @@ export default function ClientBlogList({ allPosts, tag, searchQuery }) {
               posts={allPosts}
               tagCounts={tagCounts}
               uniqueTags={uniqueTags}
-              tag={tag}
-              searchQuery={searchQuery}
             />
           ) : (
             <div className="no-results mt-80 text-center">
               <h3>
                 Nenalezeny žádné výsledky
                 {searchQuery ? <> obsahující &quot;{searchQuery}&quot;</> : null}.
+                
               </h3>
             </div>
           )}

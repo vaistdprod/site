@@ -1,6 +1,7 @@
 import { getAllPosts } from '@/lib/posts';
 import ClientBlogList from '@/components/blog/ClientBlogList';
 import React from 'react';
+import { Post } from '@/lib/posts';
 
 export const dynamic = 'force-dynamic';
 export const metadata = {
@@ -36,12 +37,18 @@ export const metadata = {
   }
 };
 
-export default async function BlogPage(props) {
-  const searchParams = await props.searchParams;
+interface BlogPageProps {
+  searchParams?: {
+    tag?: string;
+    search?: string;
+  };
+}
+
+export default async function BlogPage({ searchParams }: BlogPageProps) {
   const tag = searchParams?.tag || null;
   const searchQuery = searchParams?.search || null;
 
-  let allPosts = await getAllPosts();
+  let allPosts: Post[] = await getAllPosts();
 
   if (tag) {
     allPosts = allPosts.filter((post) => post.tags.includes(tag));

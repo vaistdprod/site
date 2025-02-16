@@ -11,14 +11,15 @@ import Intro from "@/components/services-details/intro/Intro";
 import Feat from "@/components/services-details/feat/Feat";
 import SmoothScrollProvider from '@/components/common/smooth-scroll/SmoothScrollProvider';
 import React from "react";
+import type { ServiceProps } from '@/types';
 
 export async function generateStaticParams() {
   const lightServices = await import("@/data/mergedServices.json");
   return Object.keys(lightServices.default).map((service) => ({ service }));
 }
 
-export async function generateMetadata({ params }) {
-  const { service } = await params;
+export async function generateMetadata({ params }: ServiceProps) {
+  const { service } = params;
   const serviceData = getHeavyService(service);
 
   if (!serviceData) {
@@ -78,11 +79,11 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function ServicePage({ params }) {
-  const { service } = await params;
+export default async function ServicePage({ params }: ServiceProps) {
+  const { service } = params;
   const serviceData = getHeavyService(service);
 
-  if (!serviceData) notFound();
+  if (!serviceData) return notFound();
 
   return (
     <>
