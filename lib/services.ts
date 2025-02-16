@@ -1,17 +1,19 @@
 import mergedServices from '@/data/mergedServices.json';
 
-interface Service {
+export interface Service {
   title: string;
   icon: string;
   desc: string;
   link: string;
   tags: string[];
-  // Additional properties can be allowed:
+  img: string;
+  bullets: string[];
+  stats: { value: string; label: string }[];
+  feat: { step: string; title: string; desc: string }[];
+  intro2: { whyTitle: string; accordion: { title: string; desc: string }[] };
 }
 
-// Cast the imported JSON data to our defined type.
-// This assumes mergedServices is an object with string keys and Service values.
-const services = mergedServices as { [key: string]: Service };
+const services: { [key: string]: Service } = mergedServices;
 
 export function getLightServices() {
   const lightServices: { [key: string]: Pick<Service, 'title' | 'icon' | 'desc' | 'link' | 'tags'> } = {};
@@ -33,12 +35,10 @@ export function getHeavyService(serviceKey: string): Service | null {
 }
 
 export function getAllHeavyServices() {
-  const heavyServices: { [key: string]: Partial<Service> } = {};
-  for (const [key, service] of Object.entries(services)) {
-    // Exclude light properties to get only heavy data:
-    // Using rest to capture extra properties is now safe because service has a known object type.
-    const { title, icon, link, tags, ...heavyData } = service;
-    heavyServices[key] = heavyData;
-  }
-  return heavyServices;
+    const heavyServices: { [key: string]: Omit<Service, 'title' | 'icon' | 'link' | 'tags' | 'desc'> } = {};
+    for (const [key, service] of Object.entries(services)) {
+      const { title, icon, link, tags, desc, ...heavyData } = service;
+      heavyServices[key] = heavyData;
+    }
+    return heavyServices;
 }

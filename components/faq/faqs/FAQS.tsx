@@ -5,11 +5,16 @@ import Head from 'next/head';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import faqData from '@/data/faqData';
+import faqData from '@/data/faqData.json';
 import FAQSContent from './FAQSContent';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
+}
+
+interface FaqItem {
+  question: string;
+  answer: string;
 }
 
 export default function FAQS() {
@@ -17,8 +22,8 @@ export default function FAQS() {
 
   useGSAP(
     (context) => {
-      const secHead = context.selector('.sec-head');
-      const accordionItems = context.selector('.accordion .item');
+      const secHead = context.selector?.('.sec-head');
+      const accordionItems = context.selector?.('.accordion .item');
 
       gsap.timeline({
         scrollTrigger: {
@@ -48,21 +53,34 @@ export default function FAQS() {
     { scope: containerRef }
   );
 
-  function openAccordion(event) {
+    function openAccordion(event: React.MouseEvent<HTMLDivElement>) {
     document.querySelectorAll('.accordion-info').forEach((element) => {
       element.classList.remove('active');
-      element.style.maxHeight = 0;
-      element.parentElement.classList.remove('active');
+      if (element instanceof HTMLElement) {
+        element.style.maxHeight = '0';
+      }
+      if (element.parentElement) {
+        element.parentElement.classList.remove('active');
+      }
     });
-    event.currentTarget.parentElement.classList.add('active');
-    event.currentTarget.nextElementSibling.style.maxHeight = '300px';
-    event.currentTarget.nextElementSibling.classList.add('active');
+
+    const currentTarget = event.currentTarget as HTMLDivElement;
+    const parentElement = currentTarget.parentElement;
+    const nextElementSibling = currentTarget.nextElementSibling as HTMLElement;
+
+    if (parentElement) {
+      parentElement.classList.add('active');
+    }
+    if (nextElementSibling) {
+      nextElementSibling.style.maxHeight = '300px';
+      nextElementSibling.classList.add('active');
+    }
   }
 
-  const faqSchema = {
+    const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqData.map((item) => ({
+    "mainEntity": faqData.map((item: FaqItem) => ({
       "@type": "Question",
       "name": item.question,
       "acceptedAnswer": {

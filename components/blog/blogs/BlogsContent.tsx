@@ -2,15 +2,28 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCommentAlt, faArrowRight, faSearch } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCommentAlt,
+  faArrowRight,
+  faSearch,
+} from '@fortawesome/free-solid-svg-icons';
+import { Post } from '@/lib/posts';
+
+interface BlogsContentProps {
+  posts: Post[];
+  tagCounts: { [key: string]: number };
+  uniqueTags: string[];
+  onSearchSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  generateShareUrl: (platform: string, post: Post) => string
+}
 
 export default function BlogsContent({
   posts,
   tagCounts,
   uniqueTags,
   onSearchSubmit,
-  generateShareUrl,
-}) {
+  generateShareUrl
+}: BlogsContentProps) {
   return (
     <section className="blog-main section-padding">
       <div className="container">
@@ -33,10 +46,6 @@ export default function BlogsContent({
                       <div className="post-date fz-12 radius-30 uppercase">
                         {new Date(post.date).toLocaleDateString()}
                       </div>
-                      <div className="opacity-7 fz-13">
-                        <FontAwesomeIcon icon={faCommentAlt} className="mr-10" />
-                        {post.comments} komentářů
-                      </div>
                     </div>
                     <h3 className="mb-15">
                       <Link href={`/blog/${post.slug}`}>
@@ -47,7 +56,10 @@ export default function BlogsContent({
                       </Link>
                     </h3>
                     <p>{post.excerpt}</p>
-                    <Link href={`/blog/${post.slug}`} className="flex align-center main-color mt-40">
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="flex align-center main-color mt-40"
+                    >
                       <span className="text mr-15">Přečíst</span>
                       <FontAwesomeIcon icon={faArrowRight} />
                     </Link>
@@ -96,7 +108,10 @@ export default function BlogsContent({
                   <div key={post.slug} className="item flex align-center">
                     <div>
                       <div className="img o-hidden radius-5 relative">
-                        <Link href={`/blog/${post.slug}`} className="relative full-size">
+                        <Link
+                          href={`/blog/${post.slug}`}
+                          className="relative full-size"
+                        >
                           <Image
                             src={post.coverImage}
                             alt={post.title}

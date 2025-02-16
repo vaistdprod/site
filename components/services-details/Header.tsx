@@ -3,11 +3,16 @@
 import React from 'react';
 import Image from 'next/image';
 import Header from '@/components/common/header/Header';
+import { Service } from '@/lib/services';
 
-const ServiceDataHeader = ({ serviceData }) => {
-  return (
-    <Header
-      delay={2}
+interface ServiceDataHeaderProps {
+    serviceData: Service;
+}
+
+const ServiceDataHeader: React.FC<ServiceDataHeaderProps> = ({ serviceData }) => {
+    return (
+        <Header
+            delay={2}
       overlayDark={5}
       className="header page-header section-padding flex align-center relative"
       bgContent={

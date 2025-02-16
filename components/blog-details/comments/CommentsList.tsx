@@ -10,12 +10,21 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function CommentsList({ slug }) {
-  const [comments, setComments] = useState([]);
+interface Comment {
+  id: number;
+  name: string;
+  email: string;
+  message: string;
+  slug: string;
+  date: string;
+}
+
+export default function CommentsList({ slug }: { slug: string }) {
+  const [comments, setComments] = useState<Comment[]>([]);
   const [loading, setLoading] = useState(true);
   const containerRef = useRef(null);
 
-  const fetchComments = useCallback(async () => {
+    const fetchComments = useCallback(async () => {
     try {
       const res = await fetch(`/api/comments?slug=${encodeURIComponent(slug)}`);
       const data = await res.json();

@@ -1,9 +1,23 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
-import { faFacebookF, faXTwitter, faLinkedinIn, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import {
+  faFacebookF,
+  faXTwitter,
+  faLinkedinIn,
+  faInstagram,
+} from '@fortawesome/free-brands-svg-icons';
+
+interface FooterContentProps {
+  email: string;
+  agreed: boolean;
+  msg: string | null;
+  handleSubscribe: (e: React.FormEvent) => void;
+  setEmail: React.Dispatch<React.SetStateAction<string>>;
+  setAgreed: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
 export default function FooterContent({
   email,
@@ -12,7 +26,7 @@ export default function FooterContent({
   handleSubscribe,
   setEmail,
   setAgreed,
-}) {
+}: FooterContentProps) {
   return (
     <footer className="clean-footer crev relative">
       <div className="container pb-40 pt-40 relative z-7">
@@ -76,7 +90,9 @@ export default function FooterContent({
                   <Link href="/nase-sluzby/webove-aplikace">Webové aplikace</Link>
                 </li>
                 <li className="mb-15">
-                  <Link href="/nase-sluzby/digitalni-marketing">Digitální marketing</Link>
+                  <Link href="/nase-sluzby/digitalni-marketing">
+                    Digitální marketing
+                  </Link>
                 </li>
                 <li className="mb-15">
                   <Link href="/nase-sluzby/implementace-ai">Implementace AI</Link>
@@ -136,7 +152,11 @@ export default function FooterContent({
                       onChange={() => setAgreed(!agreed)}
                     />
                     <label htmlFor="agree" className="fz-12 p-color underline">
-                      Souhlasím se <Link href="/ochrana-osobnich-udaju">zpracováním osobních údajů</Link>.
+                      Souhlasím se{" "}
+                      <Link href="/ochrana-osobnich-udaju">
+                        zpracováním osobních údajů
+                      </Link>
+                      .
                     </label>
                   </div>
                   {msg && <p>{msg}</p>}

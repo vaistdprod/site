@@ -6,12 +6,13 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import BlogsContent from './BlogsContent';
+import { Post } from '@/lib/posts';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-function generateShareUrl(platform, post) {
+function generateShareUrl(platform: string, post: Post) {
   const currentUrl = `https://tdprod.cz/blog/${post.slug}`;
   const encodedUrl = encodeURIComponent(currentUrl);
   const encodedTitle = encodeURIComponent(post.title);
@@ -27,13 +28,21 @@ function generateShareUrl(platform, post) {
   }
 }
 
-export default function Blogs({ posts, tagCounts, uniqueTags }) {
+interface BlogsProps {
+  posts: Post[];
+  tagCounts: { [key: string]: number };
+  uniqueTags: string[];
+}
+
+export default function Blogs({ posts, tagCounts, uniqueTags }: BlogsProps) {
   const router = useRouter();
   const containerRef = useRef(null);
 
-  const onSearchSubmit = (e) => {
+  const onSearchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const query = e.target.elements['search-post'].value;
+    const query = (e.currentTarget.elements.namedItem(
+      'search-post'
+    ) as HTMLInputElement).value;
     router.push(`/blog?search=${encodeURIComponent(query)}`);
   };
 

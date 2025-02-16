@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 import { LoopsClient } from "loops";
 
-const loops = new LoopsClient(process.env.LOOPS_API_KEY);
+const loops = new LoopsClient(process.env.LOOPS_API_KEY as string);
 
-export async function POST(request) {
+export async function POST(request: Request) {
   try {
     const { email } = await request.json();
 
@@ -19,10 +19,10 @@ export async function POST(request) {
     });
 
     return NextResponse.json({ success: resp.success });
-  } catch (error) {
+  } catch (error: any) {
     return NextResponse.json(
       { success: false, message: error.message },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

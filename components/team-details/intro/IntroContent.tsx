@@ -1,12 +1,13 @@
 import React from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { 
-  faFacebookF, 
-  faXTwitter, 
-  faInstagram, 
-  faLinkedinIn 
+import {
+  faFacebookF,
+  faXTwitter,
+  faInstagram,
+  faLinkedinIn
 } from "@fortawesome/free-brands-svg-icons";
+import type { Member } from '@/lib/team';
 
 const SOCIAL_MEDIA = {
   facebook: { icon: faFacebookF, label: "Facebook" },
@@ -15,7 +16,11 @@ const SOCIAL_MEDIA = {
   linkedin: { icon: faLinkedinIn, label: "LinkedIn" }
 };
 
-export default function IntroContent({ memberData }) {
+interface IntroContentProps {
+  memberData: Member;
+}
+
+export default function IntroContent({ memberData }: IntroContentProps) {
   return (
     <section className="team-single section-padding pb-0">
       <div className="container">
@@ -62,7 +67,11 @@ export default function IntroContent({ memberData }) {
               <p>{memberData.about}</p>
               <ul className="rest mt-30 social-icon flex align-center">
                 {Object.entries(SOCIAL_MEDIA).map(([platformKey, { icon, label }]) => {
-                  const link = memberData[platformKey];
+                  const validKeys: (keyof Member)[] = ['instagram', 'facebook', 'email', 'phone'];
+                  if (!validKeys.includes(platformKey as keyof Member)) {
+                    return null;
+                  }
+                  const link = memberData[platformKey as keyof Member];
                   if (!link) return null;
                   return (
                     <li key={platformKey} className="hover-this cursor-pointer ml-10">
@@ -90,7 +99,7 @@ export default function IntroContent({ memberData }) {
                       {skill.name} {skill.value}
                     </h5>
                     <div className="skill-progress relative">
-                      <div className="progres absolute" data-value={skill.value}></div>
+                      <div className="progres absolute" data-value={String(skill.value)}></div>
                     </div>
                   </div>
                 ))

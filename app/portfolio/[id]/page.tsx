@@ -11,7 +11,7 @@ export async function generateStaticParams() {
   return [];
 }
 
-export default async function ProjectDetail({ params }) {
+export default async function ProjectDetail({ params }: { params: { id: string } }) {
   return (
     <>
       <LoadingScreen />

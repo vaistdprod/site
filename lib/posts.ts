@@ -6,18 +6,18 @@ import parse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 
-import authors from './authors';
+import authors, { Author } from './authors';
 
 // Define a Post interface
 export interface Post {
 slug: string;
 title: string;
 date: string;
-author: any; // You can refine this type later
-tags: any;
-excerpt: any;
-coverImage: any;
-comments: any;
+author: Author;
+tags: string[];
+excerpt: string;
+coverImage: string;
+comments: number;
 keywords: string[];
 content: string;
 }

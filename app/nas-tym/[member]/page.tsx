@@ -15,7 +15,7 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ member: slug }));
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }: { params: { member: string } }) {
   const { member } = await params;
   const data = getMemberBySlug(member);
   if (!data) {
@@ -59,7 +59,7 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default async function MemberPage({ params }) {
+export default async function MemberPage({ params }: { params: { member: string } }) {
   const { member } = await params;
   const memberData = getMemberBySlug(member);
 

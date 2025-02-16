@@ -1,6 +1,6 @@
 import { supabase } from '@/lib/supabaseClient';
 
-export async function POST(request) {
+export async function POST(request: Request) {
   try {
     const { name, email, message, slug } = await request.json();
 
@@ -33,7 +33,7 @@ export async function POST(request) {
   }
 }
 
-export async function GET(request) {
+export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
     const slug = searchParams.get('slug');
@@ -68,7 +68,7 @@ export async function GET(request) {
   }
 }
 
-export async function DELETE(request) {
+export async function DELETE(request: Request) {
   try {
     const adminHeader = request.headers.get('x-admin-key');
     if (!adminHeader || adminHeader !== process.env.ADMIN_DELETE_KEY) {

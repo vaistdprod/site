@@ -10,10 +10,24 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function Header({ children, delay = 2, overlayDark = 5, className, bgContent }) {
-  const headerRef = useRef(null);
+interface HeaderProps {
+  children: React.ReactNode;
+  delay?: number;
+  overlayDark?: number;
+  className?: string;
+  bgContent?: React.ReactNode;
+}
 
-  useGSAP(
+export default function Header({
+  children,
+  delay = 2,
+  overlayDark = 5,
+  className,
+  bgContent,
+}: HeaderProps) {
+  const headerRef = useRef<HTMLDivElement>(null);
+
+    useGSAP(
     (context) => {
       const header = headerRef.current;
       if (!header) return;

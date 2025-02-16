@@ -3,8 +3,14 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
+import { Post } from '@/lib/posts';
 
-export default function BlogContent({ posts = [] }) {
+interface Props {
+  posts: Post[];
+}
+
+export default function BlogContent({ posts }: Props) {
+  if (!posts) return null;
   if (!posts.length) return null;
   const topPosts = posts.slice(0, 2);
 
@@ -32,6 +38,7 @@ export default function BlogContent({ posts = [] }) {
         </div>
         <div className="row">
           {topPosts.map((post, idx) => (
+            post && post.slug && post.coverImage && post.title && post.author && post.date ?
             <div key={post.slug} className={`col-lg-6 ${idx === 0 ? 'md-mb50' : ''}`}>
               <div className="item">
                 <div className="img fit-img o-hidden relative">
@@ -65,7 +72,7 @@ export default function BlogContent({ posts = [] }) {
                   </Link>
                 </div>
               </div>
-            </div>
+            </div> : null
           ))}
         </div>
       </div>

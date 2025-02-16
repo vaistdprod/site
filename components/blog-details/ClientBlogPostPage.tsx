@@ -9,8 +9,15 @@ import Header from '@/components/blog-details/Header';
 import Blog from '@/components/blog-details/blog/Blog';
 import SmoothScrollProvider from '@/components/common/smooth-scroll/SmoothScrollProvider';
 import React from 'react';
+import { Post } from '@/lib/posts';
 
-export default function ClientBlogPostPage({ post, latestPosts }) {
+export default function ClientBlogPostPage({
+  post,
+  latestPosts,
+}: {
+  post: Post;
+  latestPosts: Post[];
+}) {
   return (
     <>
       <LoadingScreen />

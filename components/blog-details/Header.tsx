@@ -6,11 +6,21 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment } from '@fortawesome/free-solid-svg-icons';
 import Header from '@/components/common/header/Header';
+import { Author } from '@/lib/authors';
 
-const DetailedBlogHeader = ({ title, author, date, comments, coverImage, tags }) => {
-  return (
-    <Header
-      delay={2}
+interface DetailedBlogHeaderProps {
+    title: string;
+    author: Author;
+    date: string;
+    comments: number;
+    coverImage: string;
+    tags: string[];
+}
+
+const DetailedBlogHeader: React.FC<DetailedBlogHeaderProps> = ({ title, author, date, comments, coverImage, tags }) => {
+    return (
+        <Header
+            delay={2}
       overlayDark={5}
       className="header blog-header section-padding pb-0"
       bgContent={

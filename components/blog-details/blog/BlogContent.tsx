@@ -1,13 +1,31 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faLinkedinIn, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import {
+  faFacebookF,
+  faLinkedinIn,
+  faXTwitter,
+} from '@fortawesome/free-brands-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import CommentsList from '../comments/CommentsList';
 import styles from '../ClientBlogPostPage.module.css';
+import { Post } from '@/lib/posts';
+
+interface BlogContentProps {
+  post: Post;
+  latestPosts: Post[];
+  formData: {
+    name: string;
+    email: string;
+    message: string;
+  };
+  status: string | null;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  handleSubmit: (e: React.FormEvent) => void;
+  generateShareUrl: (platform: string, post: Post) => string;
+  handleSearch: (e: React.FormEvent<HTMLFormElement>) => void;
+}
 
 export default function BlogContent({
   post,
@@ -18,7 +36,7 @@ export default function BlogContent({
   handleSubmit,
   generateShareUrl,
   handleSearch,
-}) {
+}: BlogContentProps) {
   return (
     <section className="blog section-padding">
       <div className="container">
@@ -27,7 +45,10 @@ export default function BlogContent({
             <div className="main-post">
               <div className="item pb-60">
                 <article>
-                  <div className={`text ${styles.blogContent}`} dangerouslySetInnerHTML={{ __html: post.content }} />
+                  <div
+                    className={`text ${styles.blogContent}`}
+                    dangerouslySetInnerHTML={{ __html: post.content }}
+                  />
                 </article>
                 <div className="info-area mt-30 flex pt-50 bord-thin-top">
                   <div>
@@ -37,7 +58,11 @@ export default function BlogContent({
                       </div>
                       <div>
                         {post.tags.map((tag) => (
-                          <Link key={tag} href={`/blog?tag=${encodeURIComponent(tag)}`} className="tag-link">
+                          <Link
+                            key={tag}
+                            href={`/blog?tag=${encodeURIComponent(tag)}`}
+                            className="tag-link"
+                          >
                             {tag}
                           </Link>
                         ))}
@@ -50,13 +75,28 @@ export default function BlogContent({
                         <span>Sdílet:</span>
                       </div>
                       <div>
-                        <a className="text-center" href={generateShareUrl('facebook', post)} target="_blank" rel="noopener noreferrer">
+                        <a
+                          className="text-center"
+                          href={generateShareUrl('facebook', post)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <FontAwesomeIcon icon={faFacebookF} />
                         </a>
-                        <a className="text-center" href={generateShareUrl('linkedin', post)} target="_blank" rel="noopener noreferrer">
+                        <a
+                          className="text-center"
+                          href={generateShareUrl('linkedin', post)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <FontAwesomeIcon icon={faLinkedinIn} />
                         </a>
-                        <a className="text-center" href={generateShareUrl('twitter', post)} target="_blank" rel="noopener noreferrer">
+                        <a
+                          className="text-center"
+                          href={generateShareUrl('twitter', post)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <FontAwesomeIcon icon={faXTwitter} />
                         </a>
                       </div>
@@ -67,7 +107,8 @@ export default function BlogContent({
                   <div className="flex">
                     <div className="author-img mr-30">
                       <div className="img o-hidden radius-10 relative">
-                        <Image
+                        {/* @ts-ignore */}
+                          <Image
                           src={post.author.avatar}
                           alt={post.author.name}
                           width={60}
@@ -126,7 +167,7 @@ export default function BlogContent({
                           id="form_message"
                           name="message"
                           placeholder="Komentář"
-                          rows="4"
+                          rows={4}
                           value={formData.message}
                           onChange={handleChange}
                           required
@@ -134,8 +175,13 @@ export default function BlogContent({
                       </div>
                       <div className="text-center">
                         <div className="mt-30">
-                          <button className="relative o-hidden ls1 radius-5 w-full backdrop-2 uppercase fz-13" type="submit">
-                            <span className="relative z-4 text">Publikovat komentář</span>
+                          <button
+                            className="relative o-hidden ls1 radius-5 w-full backdrop-2 uppercase fz-13"
+                            type="submit"
+                          >
+                            <span className="relative z-4 text">
+                              Publikovat komentář
+                            </span>
                           </button>
                         </div>
                       </div>
@@ -190,7 +236,11 @@ export default function BlogContent({
                   <div key={latestPost.slug} className="item flex align-center">
                     <div>
                       <div className="img o-hidden radius-5 relative">
-                        <Link href={`/blog/${latestPost.slug}`} className="relative full-size">
+                        <Link
+                          href={`/blog/${latestPost.slug}`}
+                          className="relative full-size"
+                        >
+                        {/* @ts-ignore */}
                           <Image
                             src={latestPost.coverImage}
                             alt={latestPost.title}
@@ -201,9 +251,12 @@ export default function BlogContent({
                           <span className="date text-center backdrop-10 absolute size-50 circle z-3 fz-14">
                             <span>
                               {new Date(latestPost.date).getDate()} /{' '}
-                              {new Date(latestPost.date).toLocaleString('default', {
-                                month: 'short',
-                              })}
+                              {new Date(latestPost.date).toLocaleString(
+                                'default',
+                                {
+                                  month: 'short',
+                                }
+                              )}
                             </span>
                           </span>
                         </Link>
@@ -245,7 +298,6 @@ export default function BlogContent({
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </section>

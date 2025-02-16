@@ -6,12 +6,13 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import BlogContent from './BlogContent';
+import { Post } from '@/lib/posts';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-function generateShareUrl(platform, post) {
+function generateShareUrl(platform: string, post: Post) {
   const currentUrl = `https://tdprod.cz/blog/${post.slug}`;
   const encodedUrl = encodeURIComponent(currentUrl);
   const encodedTitle = encodeURIComponent(post.title);
@@ -27,21 +28,31 @@ function generateShareUrl(platform, post) {
   }
 }
 
-export default function Blog({ post, latestPosts }) {
+export default function Blog({
+  post,
+  latestPosts,
+}: {
+  post: Post;
+  latestPosts: Post[];
+}) {
   const router = useRouter();
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{
+    name: string;
+    email: string;
+    message: string;
+  }>({
     name: '',
     email: '',
     message: '',
   });
-  const [status, setStatus] = useState(null);
+  const [status, setStatus] = useState<string | null>(null);
   const containerRef = useRef(null);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('Publikuji...');
     try {
@@ -63,30 +74,41 @@ export default function Blog({ post, latestPosts }) {
     }
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    const query = e.target.elements['search-post'].value;
-    router.push(`/blog?search=${encodeURIComponent(query)}`);
-  };
+ const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+   e.preventDefault();
+   const query = (e.currentTarget.elements.namedItem(
+     'search-post'
+   ) as HTMLInputElement).value;
+   router.push(`/blog?search=${encodeURIComponent(query)}`);
+ };
 
-  useGSAP(
+    useGSAP(
     (context) => {
       if (!containerRef.current) return;
-      const mainContent = context.selector('.main-post, .comments-form');
-      gsap.from(mainContent, {
-        opacity: 0,
-        y: 50,
-        duration: 0.8,
-        ease: 'power3.out',
-        stagger: 0.2,
+
+      gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
           start: 'top 80%',
+          onEnter: () => {
+            if (containerRef.current) {
+              const mainContent = containerRef.current.querySelectorAll('.main-post, .comments-form');
+              if (mainContent) {
+                gsap.from(mainContent, {
+                  opacity: 0,
+                  y: 50,
+                  duration: 0.8,
+                  ease: 'power3.out',
+                  stagger: 0.2,
+                });
+              }
+            }
+          },
         },
       });
     },
-    { scope: containerRef }
-  );
+    {}
+);
 
   return (
     <section ref={containerRef} className="blog section-padding">

@@ -1,7 +1,20 @@
 import React from 'react';
 import Image from 'next/image';
 
-export default function CommentsListContent({ comments }) {
+interface Comment {
+  id: number;
+  name: string;
+  email: string;
+  message: string;
+  slug: string;
+  date: string;
+}
+
+interface CommentsListContentProps {
+  comments: Comment[];
+}
+
+export default function CommentsListContent({ comments }: CommentsListContentProps) {
   return (
     <div className="comments-list mt-40">
       {comments.map((comment) => (

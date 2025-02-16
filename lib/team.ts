@@ -76,16 +76,31 @@ const members = {
   }
 };
 
-export function getMemberList() {
-  return Object.values(members).map(({ slug, name, image, role, instagram, phone, email }) => ({ slug, name, image, role, instagram, phone, email }));
+export interface Member {
+  slug: string;
+  image: string;
+  instagram: string;
+  facebook: string;
+  email: string;
+  phone: string;
+  name: string;
+  role: string;
+  about: string;
+  skills: { name: string; value: string }[];
 }
 
-export function getMemberBySlug(slug) {
-  return members[slug] || null;
+const typedMembers: { [key: string]: Member } = members;
+
+export function getMemberList() {
+  return Object.values(typedMembers).map((member) => ({ ...member }));
+}
+
+export function getMemberBySlug(slug: string): Member | null {
+  return typedMembers[slug] || null;
 }
 
 export function getAllSlugs() {
-  return Object.keys(members);
+  return Object.keys(typedMembers);
 }
 
-export default members;  
+export default typedMembers;

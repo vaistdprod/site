@@ -4,12 +4,12 @@ import ClientBlogPostPage from '@/components/blog-details/ClientBlogPostPage';
 import React from 'react';
 
 export async function generateStaticParams() {
-  const slugs = getAllSlugs(); 
+  const slugs = getAllSlugs();
   return slugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }) {
-  const { slug } = await params;
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const post = await getPostBySlug(slug);
 
   if (!post) {
@@ -20,9 +20,9 @@ export async function generateMetadata({ params }) {
   }
 
   const dynamicKeywords =
-  post.keywords && post.keywords.length > 0
-    ? post.keywords
-    : ["TD Productions", "Blog"];
+    post.keywords && post.keywords.length > 0
+      ? post.keywords
+      : ['TD Productions', 'Blog'];
 
   return {
     title: `${post.title} | TD Productions`,
@@ -37,24 +37,24 @@ export async function generateMetadata({ params }) {
           url: post.coverImage,
           width: 1200,
           height: 630,
-          alt: post.title
-        }
-      ]
+          alt: post.title,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
-      images: [post.coverImage]
+      images: [post.coverImage],
     },
     alternates: {
-      canonical: `https://tdprod.cz/blog/${slug}`
-    }
+      canonical: `https://tdprod.cz/blog/${slug}`,
+    },
   };
 }
 
-export default async function BlogPostPage({ params }) {
-  const { slug } = await params;
+export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const post = await getPostBySlug(slug);
 
   if (!post) notFound();
@@ -63,9 +63,6 @@ export default async function BlogPostPage({ params }) {
   const latestPosts = allPosts.slice(0, 3);
 
   return (
-    <ClientBlogPostPage 
-      post={post}
-      latestPosts={latestPosts}
-    />
+    <ClientBlogPostPage post={post} latestPosts={latestPosts} />
   );
 }

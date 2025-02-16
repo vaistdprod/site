@@ -12,20 +12,25 @@ if (typeof window !== 'undefined') {
 
 export default function ContactForm() {
   const containerRef = useRef(null);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{
+    jmeno: string;
+    email: string;
+    potrebuji: string[];
+    zprava: string;
+  }>({
     jmeno: '',
     email: '',
     potrebuji: [],
     zprava: '',
   });
-  const [status, setStatus] = useState(null);
-  const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState<string | null>(null);
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   useGSAP(
     (context) => {
       const leftCol = context.selector('.col-lg-4');
-      const rightCol = context.selector('.col-lg-7');
-      const formGroups = context.selector('.form-group');
+      const rightCol = context.selector?.('.col-lg-7');
+      const formGroups = context.selector?.('.form-group');
 
       gsap.timeline({
         scrollTrigger: {
@@ -65,9 +70,12 @@ export default function ContactForm() {
     { scope: containerRef }
   );
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    if (type === 'checkbox') {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value, type } = e.target;
+    if (type === 'checkbox' && 'checked' in e.target) {
+      const { checked } = e.target as HTMLInputElement;
       let updatedPotrebuji = [...formData.potrebuji];
       if (checked) {
         updatedPotrebuji.push(value);
@@ -96,7 +104,7 @@ export default function ContactForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus(null);
     if (!validateForm()) {
@@ -112,7 +120,12 @@ export default function ContactForm() {
       const data = await res.json();
       if (res.ok) {
         setStatus('Zpráva úspěšně odeslána!');
-        setFormData({ jmeno: '', email: '', potrebuji: [], zprava: '' });
+        setFormData({
+          jmeno: '',
+          email: '',
+          potrebuji: [],
+          zprava: '',
+        });
       } else {
         setStatus(data.message || 'Nepodařilo se odeslat zprávu.');
       }
@@ -126,7 +139,7 @@ export default function ContactForm() {
     <div ref={containerRef}>
       <ContactFormContent
         formData={formData}
-        status={status}
+        status={status || ""}
         errors={errors}
         handleChange={handleChange}
         handleSubmit={handleSubmit}

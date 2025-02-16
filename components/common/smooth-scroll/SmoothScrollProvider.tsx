@@ -10,55 +10,59 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function SmoothScrollProvider({ children }) {
-  const wrapperRef = useRef(null);
+interface SmoothScrollProviderProps {
+  children: React.ReactNode;
+}
 
-  useGSAP(
-    (context) => {
-      const isTouchDevice =
-        'ontouchstart' in window ||
-        navigator.maxTouchPoints > 0 ||
-        navigator.msMaxTouchPoints > 0;
-      if (isTouchDevice) return;
+export default function SmoothScrollProvider({
+  children,
+}: SmoothScrollProviderProps) {
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
-      const wrapper = wrapperRef.current;
-      if (!wrapper) return;
+    useGSAP(
+        () => {
+            const isTouchDevice =
+                'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            if (isTouchDevice) {
+                return;
+            }
 
-      wrapper.style.backfaceVisibility = 'hidden';
-      wrapper.style.transformStyle = 'preserve-3d';
-      wrapper.style.willChange = 'transform';
-      wrapper.style.transform = 'translate3d(0,0,0)';
+            const wrapper = wrapperRef.current;
+            if (!wrapper) {
+                return;
+            }
 
-      ScrollTrigger.config({
-        limitCallbacks: true,
-        ignoreMobileResize: true,
-        autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load',
-      });
+            wrapper.style.backfaceVisibility = 'hidden';
+            wrapper.style.transformStyle = 'preserve-3d';
+            wrapper.style.willChange = 'transform';
+            wrapper.style.transform = 'translate3d(0,0,0)';
 
-      let resizeTimer;
-      const handleResize = () => {
-        if (resizeTimer) clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-          ScrollTrigger.refresh();
-        }, 150);
-      };
+            ScrollTrigger.config({
+                limitCallbacks: true,
+                ignoreMobileResize: true,
+                autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load',
+            });
 
-      window.addEventListener('resize', handleResize, { passive: true });
+            let resizeTimer: number;
+            function handleResize() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(ScrollTrigger.refresh, 150) as unknown as number;
+            }
 
-      return () => {
-        clearTimeout(resizeTimer);
-        window.removeEventListener('resize', handleResize);
-        ScrollTrigger.killAll();
-      };
-    },
-    { scope: wrapperRef }
-  );
+            window.addEventListener('resize', handleResize, { passive: true });
 
-  return (
-    <div id="smooth-wrapper" ref={wrapperRef}>
-      <div id="smooth-content">
-        {children}
-      </div>
-    </div>
-  );
+            return () => {
+                clearTimeout(resizeTimer);
+                window.removeEventListener('resize', handleResize);
+                ScrollTrigger.killAll();
+            };
+        },
+        { scope: wrapperRef }
+    );
+
+    return (
+        <div id="smooth-wrapper" ref={wrapperRef}>
+            <div id="smooth-content">{children}</div>
+        </div>
+    );
 }

@@ -16,7 +16,7 @@ export default function Footer() {
   const [msg, setMsg] = useState("");
   const containerRef = useRef(null);
 
-  const handleSubscribe = async (e) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!agreed) {
@@ -42,12 +42,16 @@ export default function Footer() {
       } else {
         setMsg(data.message || "Nastala chyba, zkuste to prosím znovu.");
       }
-    } catch (err) {
-      setMsg("Chyba serveru: " + err.message);
+    } catch (error) {
+      if (error instanceof Error) {
+        setMsg("Chyba serveru: " + error.message);
+      } else {
+        setMsg("Chyba serveru: " + String(error));
+      }
     }
   };
 
-  useGSAP(
+    useGSAP(
     (context) => {
       const cols = context.selector('.row > [class*="col-"]');
       gsap.from(cols, {
@@ -72,8 +76,8 @@ export default function Footer() {
         agreed={agreed}
         msg={msg}
         handleSubscribe={handleSubscribe}
-        setEmail={setEmail}
-        setAgreed={setAgreed}
+        setEmail={setEmail as React.Dispatch<React.SetStateAction<string>>}
+        setAgreed={setAgreed as React.Dispatch<React.SetStateAction<boolean>>}
       />
     </div>
   );

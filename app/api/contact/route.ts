@@ -7,14 +7,14 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // Initialize the Loops client with your API key
-const loops = new LoopsClient(process.env.LOOPS_API_KEY);
+const loops = new LoopsClient(process.env.LOOPS_API_KEY as string);
 
 const rateLimiter = new RateLimiterMemory({
   points: 100,
   duration: 900,
 });
 
-export async function POST(request) {
+export async function POST(request: Request) {
   if (request.method !== "POST") {
     return NextResponse.json(
       { message: "Metoda nepovolena" },
@@ -92,28 +92,22 @@ export async function POST(request) {
     };
 
     // Send transactional email to the sender (client)
-    await loops.sendTransactionalEmail(userPayload);
+    await loops.sendTransactionalEmail(userPayload as { transactionalId: string; email: string; addToAudience?: boolean | undefined; dataVariables?: any; attachments?: any; });
     // Send transactional email to the admin (site owner)
-    await loops.sendTransactionalEmail(adminPayload);
+    await loops.sendTransactionalEmail(adminPayload as { transactionalId: string; email: string; addToAudience?: boolean | undefined; dataVariables?: any; attachments?: any; });
 
     return NextResponse.json(
       { message: "Zpráva úspěšně odeslána." },
       { status: 200 }
     );
-  } catch (error) {
+  } catch (error: any) {
     // Instead of using instanceof (which fails), we check for a property typical of rate limiter errors.
     if (error && typeof error.msBeforeNext !== "undefined") {
-      return NextResponse.json(
-        {
-          message: "Příliš mnoho požadavků, zkuste to prosím později.",
-        },
-        { status: 429 }
-      );
+      return NextResponse.json({
+        message: "Příliš mnoho požadavků, zkuste to prosím později.",
+      }, { status: 429 });
     }
     console.error("Chyba při odesílání emailů:", error);
-    return NextResponse.json(
-      { message: "Chyba při odesílání emailů." },
-      { status: 500 }
-    );
+    return NextResponse.json({ message: "Chyba při odesílání emailů." }, { status: 500 });
   }
 }

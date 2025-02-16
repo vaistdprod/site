@@ -13,6 +13,7 @@ import Blog from '@/components/home/blog/Blog';
 import Header from '@/components/home/Header';
 import About from '@/components/home/about/About';
 import { getAllPosts } from '@/lib/posts';
+import { Post } from '@/lib/posts';
 import { getMemberList } from '@/lib/team';
 import { getLightServices } from '@/lib/services';
 import SmoothScrollProvider from '@/components/common/smooth-scroll/SmoothScrollProvider';
@@ -62,7 +63,7 @@ export const metadata = {
 };
 
 export default async function Home() {
-  const posts = await getAllPosts();
+  const posts: Post[] = await getAllPosts();
   const members = getMemberList();
   const services = getLightServices();
 

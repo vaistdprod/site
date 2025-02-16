@@ -1,19 +1,38 @@
 "use client";
-import React from "react";
+import React from 'react';
+import { Service } from '@/lib/services';
 
-function Intro2({ serviceData }) {
-  function openAccordion(event) {
-    document.querySelectorAll(".accordion-info").forEach((element) => {
-      element.classList.remove("active");
-      element.style.maxHeight = 0;
-      element.parentElement.classList.remove("active");
-    });
-    event.currentTarget.parentElement.classList.add("active");
-    event.currentTarget.nextElementSibling.style.maxHeight = "300px";
-    event.currentTarget.nextElementSibling.classList.add("active");
-  }
+interface Intro2Props {
+    serviceData: Service;
+}
 
-  return (
+function Intro2({ serviceData }: Intro2Props) {
+
+    function openAccordion(event: React.MouseEvent<HTMLDivElement>) {
+        document.querySelectorAll('.accordion-info').forEach((element) => {
+            element.classList.remove('active');
+            if (element instanceof HTMLElement) {
+                element.style.maxHeight = '0';
+            }
+            if (element.parentElement) {
+                element.parentElement.classList.remove('active');
+            }
+        });
+
+        const currentTarget = event.currentTarget as HTMLDivElement;
+        const parentElement = currentTarget.parentElement;
+        const nextElementSibling = currentTarget.nextElementSibling as HTMLElement;
+
+        if (parentElement) {
+            parentElement.classList.add('active');
+        }
+        if (nextElementSibling) {
+            nextElementSibling.style.maxHeight = '300px';
+            nextElementSibling.classList.add('active');
+        }
+    }
+
+    return (
     <section className="intro-accord relative">
       <div className="container relative z-7">
         <div className="row xlg-marg">

@@ -1,12 +1,20 @@
 import React from 'react';
 
+interface ContactFormContentProps {
+  formData: any;
+  status: string;
+  errors: any;
+  handleChange: (e: any) => void;
+  handleSubmit: (e: any) => void;
+}
+
 export default function ContactFormContent({
   formData,
   status,
   errors,
   handleChange,
   handleSubmit,
-}) {
+}: ContactFormContentProps) {
   return (
     <section className="contact section-padding">
       <div className="container">
@@ -125,7 +133,7 @@ export default function ContactFormContent({
                         id="formular_zprava"
                         name="zprava"
                         placeholder="Zpráva"
-                        rows="4"
+                        rows={4}
                         value={formData.zprava}
                         onChange={handleChange}
                         required
