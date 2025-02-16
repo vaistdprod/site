@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import React from 'react';
 
 export default function BlogContent({ posts = [] }) {
   if (!posts.length) return null;

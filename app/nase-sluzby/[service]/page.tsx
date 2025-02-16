@@ -10,7 +10,7 @@ import Header from "@/components/services-details/Header";
 import Intro from "@/components/services-details/intro/Intro";
 import Feat from "@/components/services-details/feat/Feat";
 import SmoothScrollProvider from '@/components/common/smooth-scroll/SmoothScrollProvider';
-
+import React from "react";
 
 export async function generateStaticParams() {
   const lightServices = await import("@/data/mergedServices.json");

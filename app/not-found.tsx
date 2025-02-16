@@ -1,8 +1,8 @@
 import ProgressScroll from '@/components/common/progress-scroll/ProgressScroll';
-
 import LoadingScreen from '@/components/common/loading-screen/LoadingScreen';
 import Navbar from '@/components/common/navbar/Navbar';
 import Error from '@/components/404/Error';
+import React from 'react';
 
 export const metadata = {
   title: 'Chyba 404 | TD Productions | Posouváme hranice digitální inovace',
@@ -36,7 +36,6 @@ export default function Home() {
   return (
     <>
       <LoadingScreen />
-
       <ProgressScroll />
       <Navbar />
       <div id="smooth-wrapper">

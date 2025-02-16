@@ -8,6 +8,7 @@ import Navbar from '@/components/common/navbar/Navbar';
 import Header from '@/components/blog-details/Header';
 import Blog from '@/components/blog-details/blog/Blog';
 import SmoothScrollProvider from '@/components/common/smooth-scroll/SmoothScrollProvider';
+import React from 'react';
 
 export default function ClientBlogPostPage({ post, latestPosts }) {
   return (

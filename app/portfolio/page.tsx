@@ -7,6 +7,7 @@ import Navbar from '@/components/common/navbar/Navbar';
 import Header from '@/components/portfolio/Header';
 import Portfolio from '@/components/portfolio/portfolio/PortfolioGrid';
 import SmoothScrollProvider from '@/components/common/smooth-scroll/SmoothScrollProvider';
+import React from 'react';
 
 export const metadata = {
   title: "Portfolio | TD Productions | Posouváme hranice digitální inovace",

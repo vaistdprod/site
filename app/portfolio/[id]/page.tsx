@@ -5,7 +5,7 @@ import Footer from '@/components/common/footer/Footer';
 import Navbar from '@/components/common/navbar/Navbar';
 import Construction from '@/components/common/static/Construction';
 import SmoothScrollProvider from '@/components/common/smooth-scroll/SmoothScrollProvider';
-
+import React from 'react';
 
 export async function generateStaticParams() {
   return [];

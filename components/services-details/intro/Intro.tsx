@@ -10,14 +10,20 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function Intro({ serviceData }) {
-  const containerRef = useRef(null);
+interface IntroProps {
+  // Replace 'any' with your actual serviceData type if available.
+  serviceData: any;
+}
+
+export default function Intro({ serviceData }: IntroProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     (context) => {
-      const textContent = context.selector(".row.lg-marg > .col-lg-8");
-      const numbers = context.selector(".numbers");
-      const imgBox = context.selector(".col-lg-4 .img-full");
+      // Use non-null assertions to indicate selector is defined.
+      const textContent = context.selector!(".row.lg-marg > .col-lg-8");
+      const numbers = context.selector!(".numbers");
+      const imgBox = context.selector!(".col-lg-4 .img-full");
 
       gsap.timeline({
         scrollTrigger: {

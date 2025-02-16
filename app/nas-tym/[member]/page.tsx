@@ -8,6 +8,7 @@ import Marq2 from "@/components/common/static/Marq2";
 import Navbar from "@/components/common/navbar/Navbar";
 import Intro from "@/components/team-details/intro/Intro";
 import SmoothScrollProvider from '@/components/common/smooth-scroll/SmoothScrollProvider';
+import React from "react";
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs();

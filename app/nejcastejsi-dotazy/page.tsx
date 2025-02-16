@@ -11,7 +11,6 @@ import Header from '@/components/faq/Header';
 import FAQS from '@/components/faq/faqs/FAQS';
 import SmoothScrollProvider from '@/components/common/smooth-scroll/SmoothScrollProvider';
 
-
 export const metadata = {
   title: "FAQ | TD Productions | Posouváme hranice digitální inovace",
   description: "Objevte odpovědi na nejčastější dotazy k webových stránkám, správě sociálních médií a dalším marketingovým službám společnosti TD Productions.",

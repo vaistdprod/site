@@ -16,6 +16,7 @@ import { getAllPosts } from '@/lib/posts';
 import { getMemberList } from '@/lib/team';
 import { getLightServices } from '@/lib/services';
 import SmoothScrollProvider from '@/components/common/smooth-scroll/SmoothScrollProvider';
+import React from 'react';
 
 export const metadata = {
   title: 'TD Productions | Posouváme hranice digitální inovace',

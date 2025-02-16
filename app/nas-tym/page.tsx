@@ -10,6 +10,7 @@ import Intro from '@/components/team/intro/Intro';
 import Numbers from '@/components/common/numbers/Numbers';
 import SmoothScrollProvider from '@/components/common/smooth-scroll/SmoothScrollProvider';
 import { getMemberList } from "@/lib/team";
+import React from 'react';
 
 export const metadata = {
   title: "Náš tým | TD Productions | Posouváme hranice digitální inovace",

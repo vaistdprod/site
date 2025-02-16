@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { getAllSlugs, getPostBySlug, getAllPosts } from '@/lib/posts';
 import ClientBlogPostPage from '@/components/blog-details/ClientBlogPostPage';
+import React from 'react';
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs(); 

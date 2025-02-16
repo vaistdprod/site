@@ -7,7 +7,7 @@ import Navbar from '@/components/common/navbar/Navbar';
 import Header from '@/components/gdpr/Header'
 import PrivacyPolicy from '@/components/gdpr/Gdpr';
 import SmoothScrollProvider from '@/components/common/smooth-scroll/SmoothScrollProvider';
-
+import React from 'react';
 
 export const metadata = {
   title: "Ochrana osobních údajů | TD Productions | Posouváme hranice digitální inovace",

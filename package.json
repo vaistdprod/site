@@ -27,6 +27,7 @@
     "lru-cache": "^11.0.2",
     "next": "^15.1.7",
     "nodemailer": "^6.10.0",
+    "prettier": "^3.5.1",
     "rate-limiter-flexible": "^5.0.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -36,11 +37,13 @@
     "sanitize-html": "^2.14.0",
     "supabase": "^2.12.1",
     "swiper": "^8.4.7",
+    "typescript": "^5.7.3",
     "unified": "^11.0.5"
   },
   "devDependencies": {
     "@eslint/config-array": "^0.19.2",
     "@eslint/object-schema": "^2.1.6",
+    "@types/react": "19.0.8",
     "eslint": "^9.20.1",
     "eslint-config-next": "^15.1.7",
     "glob": "^11.0.1",

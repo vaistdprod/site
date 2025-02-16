@@ -1,5 +1,6 @@
 import { getAllPosts } from '@/lib/posts';
 import ClientBlogList from '@/components/blog/ClientBlogList';
+import React from 'react';
 
 export const dynamic = 'force-dynamic';
 export const metadata = {

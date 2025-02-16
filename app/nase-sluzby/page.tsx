@@ -10,6 +10,7 @@ import Header from "@/components/services/Header";
 import Numbers from "@/components/services/numbers/Numbers";
 import SmoothScrollProvider from '@/components/common/smooth-scroll/SmoothScrollProvider';
 import { getLightServices } from '@/lib/services';
+import React from "react";
 
 export const metadata = {
   title: "Služby | TD Productions | Posouváme hranice digitální inovace",

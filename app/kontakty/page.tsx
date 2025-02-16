@@ -7,6 +7,7 @@ import Header from '@/components/contacts/Header';
 import Contact from '@/components/contacts/contact-form/ContactForm';
 import Map from '@/components/contacts/map/Map';
 import SmoothScrollProvider from '@/components/common/smooth-scroll/SmoothScrollProvider';
+import React from 'react';
 
 export const metadata = {
   title: "Kontakty | TD Productions | Posouváme hranice digitální inovace",

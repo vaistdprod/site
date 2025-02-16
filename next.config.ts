@@ -1,4 +1,5 @@
-const path = require('path');
+import type { NextConfig } from 'next'
+import path from 'path'
 
 const contentSecurityPolicy = `
   default-src 'self';
@@ -51,12 +52,12 @@ const contentSecurityPolicy = `
   base-uri 'self';
   form-action 'self';
   manifest-src 'self';
-`.replace(/\s{2,}/g, ' ').trim();
+`.replace(/\s{2,}/g, ' ').trim()
 
 const cspHeader = {
   key: 'Content-Security-Policy',
   value: contentSecurityPolicy,
-};
+}
 
 const securityHeaders = [
   cspHeader,
@@ -108,16 +109,16 @@ const securityHeaders = [
     key: 'Access-Control-Allow-Headers',
     value: 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
   },
-];
+]
 
 const cachingHeaders = [
   {
     key: 'Cache-Control',
     value: 'public, max-age=3600, must-revalidate',
   },
-];
+]
 
-const nextConfig = {
+const nextConfig: NextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'css')],
   },
@@ -139,8 +140,8 @@ const nextConfig = {
         source: '/((?!assets\\/email\\/).*)',
         headers: securityHeaders,
       },
-    ];
+    ]
   },
-};
+}
 
-module.exports = nextConfig;
+export default nextConfig
