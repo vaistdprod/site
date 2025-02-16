@@ -36,14 +36,7 @@ export const metadata = {
   }
 };
 
-interface Props {
-  searchParams?: {
-    tag?: string;
-    search?: string;
-  };
-}
-
-export default async function BlogPage(props: Props) {
+export default async function BlogPage(props) {
   const searchParams = await props.searchParams;
   const tag = searchParams?.tag || null;
   const searchQuery = searchParams?.search || null;
