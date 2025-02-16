@@ -8,7 +8,33 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+type Metadata = {
+  title: string;
+  description: string;
+  keywords?: string[];
+  openGraph?: {
+    title: string;
+    description: string;
+    url: string;
+    images: {
+      url: string;
+      width: number;
+      height: number;
+      alt: string;
+    }[];
+  };
+  twitter?: {
+    card: string;
+    title: string;
+    description: string;
+    images: string[];
+  };
+  alternates?: {
+    canonical: string;
+  };
+};
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const { slug } = params;
   const post = await getPostBySlug(slug);
 
