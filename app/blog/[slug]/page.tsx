@@ -3,6 +3,10 @@ import { getAllSlugs, getPostBySlug, getAllPosts } from '@/lib/posts';
 import ClientBlogPostPage from '@/components/blog-details/ClientBlogPostPage';
 import React from 'react';
 
+interface PageProps {
+  params: { slug: string };
+}
+
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
   return slugs.map((slug) => ({ slug }));
@@ -38,26 +42,18 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const { slug } = params;
   const post = await getPostBySlug(slug);
 
-  if (!post) {
-    return {
-      title: 'TD Productions',
-      description: 'Tento článek na našem webu neexistuje. Zkontrolujte prosím URL adresu, případně nám napište, pokud myslíte, že jde o chybu.',
-    };
-  }
+  if (!post) notFound();
 
-  const dynamicKeywords =
-    post.keywords && post.keywords.length > 0
-      ? post.keywords
-      : ['TD Productions', 'Blog'];
+  if (!post) notFound();
 
   return {
-    title: `${post.title} | TD Productions`,
-    description: post.excerpt,
-    keywords: dynamicKeywords,
+    title: post.title,
+    description: post.content.substring(0, 160), // Limit description to 160 characters
+    keywords: post.tags,
     openGraph: {
       title: post.title,
-      description: post.excerpt,
-      url: `https://tdprod.cz/blog/${slug}`,
+      description: post.content.substring(0, 160),
+      url: `/blog/${slug}`,
       images: [
         {
           url: post.coverImage,
@@ -70,25 +66,23 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     twitter: {
       card: 'summary_large_image',
       title: post.title,
-      description: post.excerpt,
+      description: post.content.substring(0, 160),
       images: [post.coverImage],
     },
     alternates: {
-      canonical: `https://tdprod.cz/blog/${slug}`,
+      canonical: `/blog/${slug}`,
     },
   };
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
-  const post = await getPostBySlug(slug);
+export default async function BlogPostPage({ params }: PageProps) {
+    const { slug } = params;
+    const post = await getPostBySlug(slug);
 
-  if (!post) notFound();
+    if (!post) notFound();
 
-  const allPosts = await getAllPosts();
-  const latestPosts = allPosts.slice(0, 3);
+    const allPosts = await getAllPosts();
+    const latestPosts = allPosts.slice(0, 3);
 
-  return (
-    <ClientBlogPostPage post={post} latestPosts={latestPosts} />
-  );
+    return <ClientBlogPostPage post={post} latestPosts={latestPosts} />;
 }
