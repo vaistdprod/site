@@ -20,12 +20,12 @@ export default function PortfolioGrid() {
   const gridItemsData = showcaseIds.map((id) => items.find((obj) => obj.id === id));
 
   const [activeFilter, setActiveFilter] = useState('*');
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const layoutGrid = () => {
     const container = containerRef.current;
     if (!container) return;
-    const itemsEls = container.querySelectorAll('.grid-item');
+    const itemsEls = container.querySelectorAll<HTMLDivElement>('.grid-item');
     if (itemsEls.length === 0) return;
     const containerWidth = container.clientWidth;
     let columns;
@@ -41,7 +41,7 @@ export default function PortfolioGrid() {
     const colHeights = new Array(columns).fill(0);
     itemsEls.forEach((item) => {
       if (item.classList.contains('filtered-out')) {
-        item.style.opacity = 0;
+        item.style.opacity = '0';
         return;
       }
       item.style.width = `${computedWidth}px`;
@@ -50,7 +50,7 @@ export default function PortfolioGrid() {
       const left = minColIndex * computedWidth + offsetX;
       const top = colHeights[minColIndex];
       item.style.transform = `translate(${left}px, ${top}px)`;
-      item.style.opacity = 1;
+      item.style.opacity = '1';
       colHeights[minColIndex] += itemHeight;
     });
     container.style.height = `${Math.max(...colHeights)}px`;
@@ -65,7 +65,7 @@ export default function PortfolioGrid() {
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
-    const itemsEls = container.querySelectorAll('.grid-item');
+    const itemsEls = container.querySelectorAll<HTMLDivElement>('.grid-item');
     const filterClass = activeFilter === '*' ? '*' : activeFilter.replace(/^\./, '');
     itemsEls.forEach((item) => {
       const itemCategory = item.getAttribute('data-category');
@@ -78,8 +78,11 @@ export default function PortfolioGrid() {
     layoutGrid();
   }, [activeFilter]);
 
-  useGSAP((context) => {
-    const gridItemInners = context.selector('.grid-item-inner');
+  useGSAP(({ context }) => {
+    if (!context) return;
+    const gridItemInners = gsap.utils.toArray<HTMLElement>(context.current.querySelectorAll('.grid-item-inner'));
+    if (gridItemInners.length === 0) return;
+
     gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,

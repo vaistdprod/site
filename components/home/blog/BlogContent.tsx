@@ -28,7 +28,9 @@ export default function BlogContent({ posts }: Props) {
               <Link href="/blog" className="btn btn-sm btn-bord radius-30">
                 <span>Zobrazit vše</span>
               </Link>
-              <FontAwesomeIcon icon={faArrowRight} className="icon" />
+              <Link href="/blog">
+                <FontAwesomeIcon icon={faArrowRight} className="icon" />
+              </Link>
             </div>
           </div>
           <h6 className="sub-title main-color flex align-center">
@@ -42,13 +44,15 @@ export default function BlogContent({ posts }: Props) {
             <div key={post.slug} className={`col-lg-6 ${idx === 0 ? 'md-mb50' : ''}`}>
               <div className="item">
                 <div className="img fit-img o-hidden relative">
-                  <Image
-                    fill
-                    src={post.coverImage}
-                    alt={post.title}
-                    className="img-fluid object-cover object-center full-size"
-                    sizes="(max-width: 575px) 100vw, (max-width: 991px) 75vw, 43vw"
-                  />
+                  <Link href={`/blog/${post.slug}`} style={{ display: 'block', width: '100%', height: '100%', position: 'relative' }}>
+                    <Image
+                      fill
+                      src={post.coverImage}
+                      alt={post.title}
+                      className="img-fluid object-cover object-center full-size"
+                      sizes="(max-width: 575px) 100vw, (max-width: 991px) 75vw, 43vw"
+                    />
+                  </Link>
                 </div>
                 <div className="cont pt-40">
                   <div className="info sub-title p-color flex align-center mb-15">
@@ -61,7 +65,9 @@ export default function BlogContent({ posts }: Props) {
                       {new Date(post.date).toLocaleDateString()}
                     </div>
                   </div>
-                  <h4>{post.title}</h4>
+                  <Link href={`/blog/${post.slug}`}>
+                    <h4>{post.title}</h4>
+                  </Link>
                   <Link href={`/blog/${post.slug}`} className="btn-crev flex align-center mt-40">
                     <span className="hover-this">
                       <span className="circle hover-anim">

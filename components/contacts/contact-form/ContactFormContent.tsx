@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF, faXTwitter, faLinkedinIn, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 interface ContactFormContentProps {
   formData: any;
@@ -41,17 +43,17 @@ export default function ContactFormContent({
                 <a href="mailto:info@tdprod.cz">info@tdprod.cz</a>
               </div>
               <div className="social-icon mt-50">
-                <a href="https://facebook.com/tdprod.cz/" aria-label="Navštivte náš Facebook">
-                  <i className="fab fa-facebook-f"></i>
+                <a href="https://facebook.com/tdprod.cz/" aria-label="Navštivte náš Facebook" className="mr-10">
+                  <FontAwesomeIcon icon={faFacebookF} />
                 </a>
-                <a href="https://x.com/tdprodcz/" aria-label="Navštivte naše X">
-                  <i className="fab fa-x-twitter"></i>
+                <a href="https://x.com/tdprodcz/" aria-label="Navštivte naše X" className="mr-10">
+                  <FontAwesomeIcon icon={faXTwitter} />
                 </a>
-                <a href="https://linkedin.com/in/tdprod.cz/" aria-label="Navštivte náš LinkedIn">
-                  <i className="fab fa-linkedin"></i>
+                <a href="https://linkedin.com/in/tdprod.cz/" aria-label="Navštivte náš LinkedIn" className="mr-10">
+                  <FontAwesomeIcon icon={faLinkedinIn} />
                 </a>
                 <a href="https://instagram.com/tdprod.cz/" aria-label="Navštivte náš Instagram">
-                  <i className="fab fa-instagram"></i>
+                  <FontAwesomeIcon icon={faInstagram} />
                 </a>
               </div>
             </div>

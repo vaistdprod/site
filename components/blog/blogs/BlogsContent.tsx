@@ -33,13 +33,15 @@ export default function BlogsContent({
               {posts.map((post) => (
                 <div key={post.slug} className="item mb-80">
                   <div className="img relative">
-                    <Image
-                      src={post.coverImage}
-                      alt={post.title}
-                      fill
-                      className="img-fluid object-cover"
-                      sizes="(max-width: 575px) 100vw, (max-width: 991px) 75vw, 60vw"
-                    />
+                    <Link href={`/blog/${post.slug}`} style={{ display: 'block', width: '100%', height: '100%', position: 'relative' }}>
+                      <Image
+                        src={post.coverImage}
+                        alt={post.title}
+                        fill
+                        className="img-fluid object-cover"
+                        sizes="(max-width: 575px) 100vw, (max-width: 991px) 75vw, 60vw"
+                      />
+                    </Link>
                   </div>
                   <div className="content">
                     <div className="flex align-center mb-15">
@@ -56,13 +58,14 @@ export default function BlogsContent({
                       </Link>
                     </h3>
                     <p>{post.excerpt}</p>
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="flex align-center main-color mt-40"
-                    >
-                      <span className="text mr-15">Přečíst</span>
-                      <FontAwesomeIcon icon={faArrowRight} />
-                    </Link>
+                    <div className="flex align-center main-color mt-40">
+                      <Link href={`/blog/${post.slug}`} className="text mr-15">
+                        <span>Přečíst</span>
+                      </Link>
+                      <Link href={`/blog/${post.slug}`}>
+                        <FontAwesomeIcon icon={faArrowRight} />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               ))}

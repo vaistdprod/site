@@ -26,12 +26,12 @@ export default function IntroContent({ memberData }: IntroContentProps) {
       <div className="container">
         <div className="row md-marg justify-around bord relative">
           <div className="col-lg-5">
-            <div className="img md-mb50 relative">
+            <div className="img md-mb50 relative" style={{ height: '600px' }}>
               <Image
                 src={memberData.image}
                 alt={memberData.name}
                 fill
-                className="object-cover"
+                className="object-cover full-size"
                 sizes="(max-width: 575px) 85vw, (max-width: 991px) 65vw, 33vw"
                 priority
               />
@@ -92,6 +92,24 @@ export default function IntroContent({ memberData }: IntroContentProps) {
                   );
                 })}
               </ul>
+            </div>
+          </div>
+          <div className="col-lg-5">
+            <div className="skills-box">
+              {memberData.skills && memberData.skills.length > 0 ? (
+                memberData.skills.map((skill, index) => (
+                  <div className="skill-item mb-30" key={index}>
+                    <h5 className="sub-title mb-15">
+                      {skill.name} {skill.value}
+                    </h5>
+                    <div className="skill-progress relative">
+                      <div className="progres absolute" data-value={skill.value}></div>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <p>Žádný obsah</p>
+              )}
             </div>
           </div>
         </div>

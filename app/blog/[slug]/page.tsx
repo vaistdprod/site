@@ -2,15 +2,21 @@ import { notFound } from 'next/navigation';
 import { getAllSlugs, getPostBySlug, getAllPosts } from '@/lib/posts';
 import ClientBlogPostPage from '@/components/blog-details/ClientBlogPostPage';
 import React from 'react';
+import { Metadata } from 'next';
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs(); 
   return slugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const { slug } = await params;
-  const post = await getPostBySlug(slug);
+interface PageProps {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const resolvedParams = await params;
+  const post = await getPostBySlug(resolvedParams.slug);
 
   if (!post) {
     return {
@@ -31,7 +37,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `https://tdprod.cz/blog/${slug}`,
+      url: `https://tdprod.cz/blog/${resolvedParams.slug}`,
       images: [
         {
           url: post.coverImage,
@@ -48,14 +54,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       images: [post.coverImage]
     },
     alternates: {
-      canonical: `https://tdprod.cz/blog/${slug}`
+      canonical: `https://tdprod.cz/blog/${resolvedParams.slug}`
     }
   };
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const { slug } = await params;
-  const post = await getPostBySlug(slug);
+export default async function BlogPostPage({ params, searchParams }: PageProps) {
+  const resolvedParams = await params;
+  const post = await getPostBySlug(resolvedParams.slug);
 
   if (!post) notFound();
 

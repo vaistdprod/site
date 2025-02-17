@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import type { Swiper as SwiperType } from 'swiper';
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import type { SwiperOptions } from '@/types';
 
@@ -20,9 +21,9 @@ interface PortfolioItem {
 interface PortfolioContentProps {
   swiperItems: (PortfolioItem | undefined)[];
   swiperOptions: SwiperOptions;
-  arrowPrevRef: React.RefObject<HTMLDivElement>;
-  arrowNextRef: React.RefObject<HTMLDivElement>;
-  paginationRef: React.RefObject<HTMLDivElement>;
+  arrowPrevRef: React.RefObject<HTMLDivElement | null>;
+  arrowNextRef: React.RefObject<HTMLDivElement | null>;
+  paginationRef: React.RefObject<HTMLDivElement | null>;
 }
 
 export default function PortfolioContent({
@@ -32,6 +33,8 @@ export default function PortfolioContent({
   arrowNextRef,
   paginationRef
 }: PortfolioContentProps) {
+  const swiperRef = useRef<SwiperType | null>(null);
+
   return (
     <section className="work-crev section-padding">
       <div className="container relative pb-80">
@@ -45,18 +48,36 @@ export default function PortfolioContent({
             </div>
             <div className="ml-auto">
               <div className="swiper-arrow-control">
-                <div ref={arrowPrevRef} className="swiper-button-prev">
-                  <FontAwesomeIcon icon={faArrowRight} />
+                <div
+                  ref={arrowPrevRef}
+                  className="swiper-button-prev circle-button cursor-pointer flex justify-center align-center"
+                  onClick={() => swiperRef.current?.slidePrev()}
+                >
+                  <span className="circle hover-anim">
+                    <FontAwesomeIcon icon={faArrowLeft} />
+                  </span>
                 </div>
-                <div ref={arrowNextRef} className="swiper-button-next">
-                  <FontAwesomeIcon icon={faArrowRight} />
+                <div
+                  ref={arrowNextRef}
+                  className="swiper-button-next circle-button cursor-pointer flex justify-center align-center"
+                  onClick={() => swiperRef.current?.slideNext()}
+                >
+                  <span className="circle hover-anim">
+                    <FontAwesomeIcon icon={faArrowRight} />
+                  </span>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="work-swiper out-right">
-          <Swiper {...swiperOptions} className="swiper-container">
+          <Swiper 
+            {...swiperOptions} 
+            className="swiper-container"
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+          >
             {swiperItems.map((item) => {
               if (!item) return null;
               return (

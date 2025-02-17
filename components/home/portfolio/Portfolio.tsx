@@ -6,10 +6,10 @@ import portfolioData from '@/data/portfolioData.json';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { Swiper as SwiperType } from 'swiper';
+import type { NavigationOptions, PaginationOptions } from 'swiper/types';
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { SwiperOptions } from 'swiper';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -26,36 +26,31 @@ export default function Portfolio() {
   const swiperItems = showcaseIds.map((id) => items.find((obj) => obj.id === id));
   const [realIndex, setRealIndex] = useState(0);
 
-  const swiperOptions: SwiperOptions = {
-    slidesPerView: 'auto',
+  const handleSlideChange = (swiper: SwiperType) => {
+    setRealIndex(swiper.realIndex);
+    const activeSlideCont = swiper.slides[swiper.activeIndex].querySelector('.item .cont');
+    if (activeSlideCont) {
+      gsap.fromTo(
+        activeSlideCont,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }
+      );
+    }
+  };
+
+  const swiperOptions = {
+    slidesPerView: 'auto' as const,
     spaceBetween: 80,
     loop: true,
     touchRatio: 0.2,
     speed: 1500,
+    modules: [],
+    navigation: false,
     pagination: {
-      el: paginationRef.current,
-      type: 'progressbar',
-    },
-    navigation: {
-      nextEl: nextRef.current,
-      prevEl: prevRef.current,
-    },
-    onBeforeInit: (swiper) => {
-      swiper.params.navigation.prevEl = prevRef.current;
-      swiper.params.navigation.nextEl = nextRef.current;
-      swiper.params.pagination.el = paginationRef.current;
-    },
-    onSlideChange: (swiper) => {
-      setRealIndex(swiper.realIndex);
-      const activeSlideCont = swiper.slides[swiper.activeIndex].querySelector('.item .cont');
-      if (activeSlideCont) {
-        gsap.fromTo(
-          activeSlideCont,
-          { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }
-        );
-      }
-    },
+      el: paginationRef.current ?? undefined,
+      type: 'progressbar' as const,
+    } satisfies PaginationOptions,
+    onSlideChange: handleSlideChange
   };
 
   useGSAP(() => {

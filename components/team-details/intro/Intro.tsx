@@ -5,8 +5,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import IntroContent from "./IntroContent";
-import isInView from "@/common/isInView";
 import type { Member } from '@/lib/team';
+import isInView from "@/common/isInView";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -52,20 +52,19 @@ export default function Intro({ memberData }: IntroProps) {
   );
 
     useEffect(() => {
-        function handleShowProgressValues() {
-            isInView({
-                selector: ".skill-progress .progres",
-                isElements: true,
-                callback: (element: HTMLElement) => {
-                    element.style.width = element.getAttribute("data-value")!;
-                }
-            });
-        }
-        window.addEventListener("scroll", handleShowProgressValues);
-        handleShowProgressValues();
-        return () => window.removeEventListener("scroll", handleShowProgressValues);
+      function handleShowProgressValues() {
+        isInView({
+          selector: ".skill-progress .progres",
+          isElements: true,
+          callback: (element: HTMLElement) => {
+            element.style.width = element.getAttribute("data-value")!;
+          }
+        });
+      }
+      window.addEventListener("scroll", handleShowProgressValues);
+      handleShowProgressValues();
+      return () => window.removeEventListener("scroll", handleShowProgressValues);
     }, []);
-
 
     return (
         <div ref={containerRef}>

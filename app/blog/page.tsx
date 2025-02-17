@@ -37,16 +37,17 @@ export const metadata = {
   }
 };
 
-interface BlogPageProps {
-  searchParams?: {
+interface PageProps {
+  searchParams: Promise<{
     tag?: string;
     search?: string;
-  };
+  }>;
 }
 
-export default async function BlogPage({ searchParams }: BlogPageProps) {
-  const tag = searchParams?.tag || null;
-  const searchQuery = searchParams?.search || null;
+export default async function BlogPage({ searchParams }: PageProps) {
+  const resolvedParams = await searchParams;
+  const tag = resolvedParams?.tag || null;
+  const searchQuery = resolvedParams?.search || null;
 
   let allPosts: Post[] = await getAllPosts();
 

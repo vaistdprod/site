@@ -19,8 +19,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: ServiceProps) {
-  const { service } = params;
-  const serviceData = getHeavyService(service);
+  const resolvedParams = await params;
+  const serviceData = getHeavyService(resolvedParams.service);
 
   if (!serviceData) {
     return {
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: ServiceProps) {
     keywords: dynamicKeywords,
     openGraph: {
       type: "website",
-      url: `https://tdprod.cz/nase-sluzby/${service}`,
+      url: `https://tdprod.cz/nase-sluzby/${resolvedParams.service}`,
       title: `${serviceData.title} | TD Productions`,
       description: `${serviceData.title} v Ostravě, profesionálně a pod hlavičkou expertů. Kontaktujte nás ještě dnes a získejte nabídku.`,
       images: [
@@ -74,14 +74,14 @@ export async function generateMetadata({ params }: ServiceProps) {
       images: ["https://tdprod.cz/assets/imgs/og-image.jpg"]
     },
     alternates: {
-      canonical: `https://tdprod.cz/nase-sluzby/${service}`
+      canonical: `https://tdprod.cz/nase-sluzby/${resolvedParams.service}`
     }
   };
 }
 
 export default async function ServicePage({ params }: ServiceProps) {
-  const { service } = params;
-  const serviceData = getHeavyService(service);
+  const resolvedParams = await params;
+  const serviceData = getHeavyService(resolvedParams.service);
 
   if (!serviceData) return notFound();
 

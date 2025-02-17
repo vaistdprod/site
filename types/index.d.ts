@@ -2,27 +2,27 @@ import { Swiper as SwiperType } from 'swiper';
 import { SwiperProps } from 'swiper/react';
 
 export interface PageProps {
-  params: Record<string, string>;
-  searchParams?: Record<string, string | string[] | undefined>;
+  params: Promise<Record<string, string>>;
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
 }
 
 export interface BlogPageProps extends PageProps {
-  searchParams?: {
+  searchParams?: Promise<{
     tag?: string;
     search?: string;
-  };
+  }>;
 }
 
 export interface TeamProps extends PageProps {
-  params: {
+  params: Promise<{
     member: string;
-  };
+  }>;
 }
 
 export interface ServiceProps extends PageProps {
-  params: {
+  params: Promise<{
     service: string;
-  };
+  }>;
 }
 
 export interface Service {
@@ -63,8 +63,10 @@ export type SwiperOptions = Omit<SwiperProps, 'children' | 'ref'> & {
   pagination?: PaginationOptions;
   navigation?: NavigationOptions;
   onSlideChange?: (swiper: SwiperType) => void;
+  onInit?: (swiper: SwiperType) => void;
   slidesPerView?: number | 'auto';
   spaceBetween?: number;
   loop?: boolean;
   speed?: number;
+  touchRatio?: number;
 };

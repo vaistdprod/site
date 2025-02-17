@@ -17,8 +17,9 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: TeamProps) {
-  const { member } = params;
-  const data = getMemberBySlug(member);
+  const resolvedParams = await params;
+  const data = getMemberBySlug(resolvedParams.member);
+  
   if (!data) {
     return {
       title: "Náš tým | TD Productions | Posouváme hranice digitální inovace",
@@ -36,7 +37,7 @@ export async function generateMetadata({ params }: TeamProps) {
     ],
     openGraph: {
       type: "profile",
-      url: `https://tdprod.cz/nas-tym/${member}`,
+      url: `https://tdprod.cz/nas-tym/${resolvedParams.member}`,
       title: `${data.name} | TD Productions | Posouváme hranice digitální inovace`,
       description: `${data.about}`,
       images: [
@@ -55,14 +56,14 @@ export async function generateMetadata({ params }: TeamProps) {
       images: ["https://tdprod.cz/assets/imgs/og-image.jpg"]
     },
     alternates: {
-      canonical: `https://tdprod.cz/nas-tym/${member}`
+      canonical: `https://tdprod.cz/nas-tym/${resolvedParams.member}`
     }
   }
 }
 
 export default async function MemberPage({ params }: TeamProps) {
-  const { member } = params;
-  const memberData = getMemberBySlug(member);
+  const resolvedParams = await params;
+  const memberData = getMemberBySlug(resolvedParams.member);
 
   if (!memberData) return notFound();
 
