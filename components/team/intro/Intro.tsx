@@ -5,17 +5,11 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import IntroContent from "./IntroContent";
-import type { Member } from '@/lib/team';
-
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-interface IntroProps {
-  memberData: Member;
-}
-
-export default function Intro({ memberData }: IntroProps) {
+export default function Intro() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -54,7 +48,7 @@ export default function Intro({ memberData }: IntroProps) {
 
   return (
     <div ref={containerRef}>
-      <IntroContent memberData={memberData} />
+      <IntroContent />
     </div>
   );
 }

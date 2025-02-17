@@ -7,7 +7,7 @@ import {
   faInstagram,
   faLinkedinIn
 } from "@fortawesome/free-brands-svg-icons";
-import type { Member } from '@/lib/team';
+import { Member } from '@/types';
 
 const SOCIAL_MEDIA = {
   facebook: { icon: faFacebookF, label: "Facebook" },
@@ -46,14 +46,18 @@ export default function IntroContent({ memberData }: IntroContentProps) {
               </div>
               <div className="info mt-30">
                 <ul className="rest">
-                  <li className="mb-25 fz-18">
-                    <span className="sub-title mr-15">Email:</span>
-                    <a href={`mailto:${memberData.email}`}>{memberData.email}</a>
-                  </li>
-                  <li className="fz-18">
-                    <span className="sub-title mr-15">Telefon:</span>
-                    <a href={`tel:${memberData.phone}`}>{memberData.phone}</a>
-                  </li>
+                  {memberData.email && (
+                    <li className="mb-25 fz-18">
+                      <span className="sub-title mr-15">Email:</span>
+                      <a href={`mailto:${memberData.email}`}>{memberData.email}</a>
+                    </li>
+                  )}
+                  {memberData.phone && (
+                    <li className="fz-18">
+                      <span className="sub-title mr-15">Telefon:</span>
+                      <a href={`tel:${memberData.phone}`}>{memberData.phone}</a>
+                    </li>
+                  )}
                 </ul>
               </div>
             </div>
@@ -67,7 +71,7 @@ export default function IntroContent({ memberData }: IntroContentProps) {
               <p>{memberData.about}</p>
               <ul className="rest mt-30 social-icon flex align-center">
                 {Object.entries(SOCIAL_MEDIA).map(([platformKey, { icon, label }]) => {
-                  const validKeys: (keyof Member)[] = ['instagram', 'facebook', 'email', 'phone'];
+                  const validKeys: (keyof Member)[] = ['instagram', 'facebook'];
                   if (!validKeys.includes(platformKey as keyof Member)) {
                     return null;
                   }
@@ -76,7 +80,7 @@ export default function IntroContent({ memberData }: IntroContentProps) {
                   return (
                     <li key={platformKey} className="hover-this cursor-pointer ml-10">
                       <a
-                        href={link}
+                        href={typeof link === 'string' ? link : '#'}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover-anim"
@@ -88,24 +92,6 @@ export default function IntroContent({ memberData }: IntroContentProps) {
                   );
                 })}
               </ul>
-            </div>
-          </div>
-          <div className="col-lg-5">
-            <div className="skills-box">
-              {memberData.skills && memberData.skills.length > 0 ? (
-                memberData.skills.map((skill, index) => (
-                  <div className="skill-item mb-30" key={index}>
-                    <h5 className="sub-title mb-15">
-                      {skill.name} {skill.value}
-                    </h5>
-                    <div className="skill-progress relative">
-                      <div className="progres absolute" data-value={String(skill.value)}></div>
-                    </div>
-                  </div>
-                ))
-              ) : (
-                <p>Žádný obsah</p>
-              )}
             </div>
           </div>
         </div>

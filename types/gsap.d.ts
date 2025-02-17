@@ -1,50 +1,25 @@
-interface GSAPAnimation {
-    kill: () => void;
+import { Context } from 'gsap';
+
+import { Context } from 'gsap';
+
+export interface GSAPContext {
+  selector: (selector: string) => NodeListOf<Element>;
+  add(callback: () => void): void;
+  revert(revertOption?: boolean): void;
+  kill(): void;
+}
+
+declare module '@gsap/react' {
+  export interface useGSAPConfig {
+    scope?: React.RefObject<Element>;
+    dependencies?: any[];
   }
-  
-  interface GSAPTimelineVars extends GSAPTweenVars {
-    scrollTrigger?: {
-      trigger: Element;
-      start?: string;
-      end?: string;
-      toggleActions?: string;
-      markers?: boolean;
-      scrub?: boolean | number;
-      pin?: boolean | string | Element;
-      anticipatePin?: number;
-      snap?: number | number[] | object;
-    };
+
+  export type ContextFunc = () => void;
+}
+
+declare module 'gsap' {
+  export interface Context {
+    selector(selector: string): NodeListOf<Element>;
   }
-  
-  interface GSAPTweenVars {
-    x?: number | string;
-    y?: number | string;
-    opacity?: number;
-    duration?: number;
-    ease?: string;
-    stagger?: number;
-    delay?: number;
-    [key: string]: any;
-  }
-  
-  interface GSAPUtils {
-    selector: (scope: Element) => (selector: string) => Element[];
-    toArray: (targets: string | Element | Element[]) => Element[];
-  }
-  
-  declare module 'gsap' {
-    export function timeline(vars?: GSAPTimelineVars): GSAPTimeline;
-    export function from(targets: string | Element | Element[], vars: GSAPTweenVars): GSAPAnimation;
-    export function to(targets: string | Element | Element[], vars: GSAPTweenVars): GSAPAnimation;
-    export const utils: GSAPUtils;
-  }
-  
-  declare module '@gsap/react' {
-    export function useGSAP(
-      callback: () => void | (() => void),
-      config?: { 
-        scope?: React.RefObject<Element> | null;
-        dependencies?: any[];
-      }
-    ): void;
-  }
+}

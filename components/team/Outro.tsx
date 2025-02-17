@@ -7,8 +7,8 @@ function Outro() {
     isInView({
       selector: '.skill-progress .progres',
       isElements: true,
-      callback: (element) => {
-        element.style.width = element.getAttribute('data-value');
+      callback: (element: HTMLElement) => {
+        element.style.width = element.getAttribute('data-value') || '0%';
       },
     });
   }

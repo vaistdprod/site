@@ -3,8 +3,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { Service } from '@/types';
 
-export default function ServicesContent({ services }) {
+interface ServicesContentProps {
+  services: Record<string, Pick<Service, 'title' | 'icon' | 'desc' | 'link' | 'tags'>>;
+}
+
+export default function ServicesContent({ services }: ServicesContentProps) {
   return (
     <section className="services-class relative">
       <div className="container">

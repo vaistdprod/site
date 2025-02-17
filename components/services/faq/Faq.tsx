@@ -10,10 +10,6 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-interface AccordionEvent extends React.MouseEvent<HTMLDivElement> {
-  currentTarget: HTMLDivElement;
-}
-
 export default function Faq() {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -59,26 +55,27 @@ export default function Faq() {
     };
   }, { scope: containerRef });
 
-  function openAccordion(event: AccordionEvent) {
-    const accordionInfos = document.querySelectorAll<HTMLElement>('.accordion-info');
+  const openAccordion = (index: number) => {
+    if (!containerRef.current) return;
+
+    const accordionInfos = containerRef.current.querySelectorAll<HTMLElement>('.accordion-info');
+    const accordionItems = containerRef.current.querySelectorAll<HTMLElement>('.accordion .item');
     
     // Reset all accordions
-    accordionInfos.forEach((element) => {
-      element.classList.remove('active');
+    accordionInfos.forEach((element, i) => {
       element.style.maxHeight = '0';
-      element.parentElement?.classList.remove('active');
+      accordionItems[i]?.classList.remove('active');
     });
 
     // Activate clicked accordion
-    const parent = event.currentTarget.parentElement;
-    const content = event.currentTarget.nextElementSibling as HTMLElement;
+    const content = accordionInfos[index];
+    const parent = accordionItems[index];
     
     if (parent && content) {
       parent.classList.add('active');
-      content.style.maxHeight = '300px';
-      content.classList.add('active');
+      content.style.maxHeight = `${content.scrollHeight}px`;
     }
-  }
+  };
 
   return (
     <div ref={containerRef}>

@@ -12,7 +12,7 @@ if (typeof window !== 'undefined') {
 }
 
 interface ServicesProps {
-  services: Record<string, Service>;
+  services: Record<string, Pick<Service, 'title' | 'icon' | 'desc' | 'link' | 'tags'>>;
 }
 
 export default function Services({ services }: ServicesProps) {

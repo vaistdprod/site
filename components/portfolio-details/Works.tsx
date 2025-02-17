@@ -1,11 +1,13 @@
 import React from 'react';
 
-function Works({ data }) {
+import { PortfolioDetailProps } from '@/types/portfolio';
+
+function Works({ data }: PortfolioDetailProps) {
   return (
     <div className="img-column">
       <div className="container">
         <div className="row">
-          {data.images.slice(1, 3).map((imgSrc, index) => (
+          {data.images.slice(1, 3).map((imgSrc: string, index: number) => (
             <div key={index} className="col-lg-6">
               <div className="img vh-100 md-mb30">
                 <img className="full-size object-cover object-center" src={imgSrc} alt={`Project Image ${index + 2}`} />

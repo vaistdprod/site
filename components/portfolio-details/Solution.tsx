@@ -1,6 +1,8 @@
 import React from 'react';
 
-function Solution({ data }) {
+import { PortfolioDetailProps } from '@/types/portfolio';
+
+function Solution({ data }: PortfolioDetailProps) {
   return (
     <section className="section-padding">
       <div className="container">
@@ -13,7 +15,7 @@ function Solution({ data }) {
               <div className="col-lg-7">
                 <div className="text">
                   <p className="fz-18">
-                    {data.solution.description}
+                    {data.solution.desc}
                   </p>
                 </div>
               </div>

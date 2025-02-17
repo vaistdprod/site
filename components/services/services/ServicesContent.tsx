@@ -5,7 +5,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { Service } from '@/lib/services';
 
 interface ServicesContentProps {
-  services: Record<string, Service>;
+  services: Record<string, Pick<Service, 'title' | 'icon' | 'desc' | 'link' | 'tags'>>;
 }
 
 export default function ServicesContent({ services }: ServicesContentProps) {

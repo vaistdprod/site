@@ -10,15 +10,26 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function Services({ services }) {
-  const containerRef = useRef(null);
+import { Service } from '@/types';
+import { ContextFunc, useGSAPConfig } from '@gsap/react';
+import { GSAPContext } from '@/types/gsap';
 
-  useGSAP(
-    (context) => {
-      const tdZarukaHeading = context.selector('.title-border');
-      const partnerHeading = context.selector('.animated-heading');
-      const rotateHeadings = context.selector('.rotate-heading');
-      const serviceItems = context.selector('.item');
+interface ServicesProps {
+  services: Record<string, Pick<Service, 'title' | 'icon' | 'desc' | 'link' | 'tags'>>;
+}
+
+export default function Services({ services }: ServicesProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+      if (!containerRef.current) return;
+
+      const elements = {
+        tdZarukaHeading: gsap.utils.selector(containerRef.current)('.title-border'),
+        partnerHeading: gsap.utils.selector(containerRef.current)('.animated-heading'),
+        rotateHeadings: gsap.utils.selector(containerRef.current)('.rotate-heading'),
+        serviceItems: gsap.utils.selector(containerRef.current)('.item')
+      };
 
       gsap.timeline({
         scrollTrigger: {
@@ -27,14 +38,14 @@ export default function Services({ services }) {
           toggleActions: 'play none none none',
         },
       })
-        .from(tdZarukaHeading, {
+        .from(elements.tdZarukaHeading, {
           y: 50,
           opacity: 0,
           duration: 0.8,
           ease: 'power3.out',
         })
         .from(
-          partnerHeading,
+          elements.partnerHeading,
           {
             y: 50,
             opacity: 0,
@@ -44,7 +55,7 @@ export default function Services({ services }) {
           '-=0.5'
         )
         .from(
-          rotateHeadings,
+          elements.rotateHeadings,
           {
             opacity: 0,
             rotationX: -45,
@@ -59,7 +70,7 @@ export default function Services({ services }) {
           '-=0.3'
         )
         .from(
-          serviceItems,
+          elements.serviceItems,
           {
             opacity: 0,
             y: 50,

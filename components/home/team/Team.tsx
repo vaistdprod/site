@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useRef } from "react";
-import TeamContent from "./TeamContent";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import type { Member } from '@/lib/team';
+import React, { useRef } from 'react';
+import TeamContent from './TeamContent';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+import { Member } from '@/types';
 
-if (typeof window !== "undefined") {
+if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
@@ -21,20 +21,19 @@ export default function Team({ members }: TeamProps) {
   useGSAP(() => {
     if (!containerRef.current) return;
 
+    const selector = gsap.utils.selector(containerRef.current);
     const elements = {
-      secHead: '.sec-head',
-      teamItems: '.item'
+      secHead: selector('.sec-head'),
+      teamItems: selector('.item')
     };
 
-    const tl = gsap.timeline({
+    gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
         start: 'top 80%',
-        toggleActions: 'play none none none',
       },
-    });
-
-    tl.from(elements.secHead, {
+    })
+    .from(elements.secHead, {
       y: 50,
       opacity: 0,
       duration: 0.8,
@@ -46,11 +45,7 @@ export default function Team({ members }: TeamProps) {
       duration: 0.8,
       ease: 'power3.out',
       stagger: 0.2,
-    }, '-=0.4');
-
-    return () => {
-      tl.kill();
-    };
+    }, '-=0.3');
   }, { scope: containerRef });
 
   return (

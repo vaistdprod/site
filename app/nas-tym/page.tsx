@@ -60,7 +60,7 @@ export default function Home() {
       <SmoothScrollProvider>
           <main className="main-bg o-hidden">
             <Header />
-            <Intro memberData={members[0]} />
+            <Intro />
             <Numbers />
             <Team members={members} />
             <Marq2 />

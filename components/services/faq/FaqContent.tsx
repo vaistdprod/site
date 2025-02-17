@@ -1,7 +1,46 @@
 import React from "react";
 import Image from "next/image";
 
-export default function FaqContent({ onAccordionClick }) {
+interface FaqContentProps {
+  onAccordionClick: (index: number) => void;
+}
+
+const faqs = [
+  {
+    question: "Jak dlouho trvá vytvoření webových stránek?",
+    answer: "Doba realizace webových stránek se odvíjí od rozsahu projektu a požadavků klienta. Jednodušší prezentační web můžeme vytvořit během 2-3 týdnů, komplexnější projekty mohou trvat 2-3 měsíce."
+  },
+  {
+    question: "Kolik stojí vytvoření webových stránek?",
+    answer: "Cena webových stránek závisí na mnoha faktorech - rozsahu, funkcionalitě, designu a dalších požadavcích. Pro přesnou kalkulaci nás kontaktujte s vaší představou a my vám připravíme nezávaznou nabídku."
+  },
+  {
+    question: "Poskytujete servis a údržbu webových stránek?",
+    answer: "Ano, poskytujeme kompletní servis a údržbu webových stránek. Zajišťujeme aktualizace, monitoring, zálohování a technickou podporu."
+  },
+  {
+    question: "Vytváříte responzivní webové stránky?",
+    answer: "Ano, všechny naše webové stránky jsou plně responzivní a optimalizované pro všechna zařízení - počítače, tablety i mobilní telefony."
+  },
+  {
+    question: "Jaké technologie používáte?",
+    answer: "Využíváme moderní technologie jako React, Next.js, TypeScript a další. Pro každý projekt vybíráme nejvhodnější technologický stack podle požadavků a potřeb."
+  },
+  {
+    question: "Jak probíhá spolupráce?",
+    answer: "Spolupráce začíná úvodní konzultací, kde si ujasníme vaše požadavky a představy. Následně připravíme návrh řešení a cenovou kalkulaci. Po schválení začneme s realizací projektu, během které s vámi budeme v pravidelném kontaktu."
+  },
+  {
+    question: "Poskytujete i SEO optimalizaci?",
+    answer: "Ano, SEO optimalizace je součástí našich služeb. Pomůžeme vám s optimalizací pro vyhledávače, aby vaše stránky byly dobře viditelné a dosahovaly lepších výsledků ve vyhledávání."
+  },
+  {
+    question: "Jak dlouho trvá dodání fotografií a videí?",
+    answer: "Doba dodání závisí na rozsahu zakázky. Menší focení nebo natáčení jsme schopni dodat do týdne, větší projekty mohou trvat 2-3 týdny. Vždy se snažíme dodržet dohodnuté termíny."
+  }
+];
+
+export default function FaqContent({ onAccordionClick }: FaqContentProps) {
   return (
     <section className="intro-accord relative">
       <div className="container relative z-7">
@@ -21,51 +60,24 @@ export default function FaqContent({ onAccordionClick }) {
           <div className="col-lg-6 flex align-center">
             <div>
               <div className="sec-head mb-50">
-                <h6 className="sub-title main-color mb-15">Proč zvolit TD Productions?</h6>
+                <h6 className="sub-title main-color mb-15">Nejčastější dotazy</h6>
                 <h3>
-                  Spolupráce s námi<br />
+                  Odpovědi na vaše otázky<br />
                 </h3>
               </div>
 
               <div className="accordion bord">
-                <div className="item active fadeInUp">
-                  <div onClick={onAccordionClick} className="title">
-                    <h6>Expertní tým s přesahem do sousedících oborů</h6>
-                    <span className="ico ti-plus"></span>
+                {faqs.map((faq, index) => (
+                  <div key={index} className={`item ${index === 0 ? 'active' : ''} fadeInUp`}>
+                    <div onClick={() => onAccordionClick(index)} className="title">
+                      <h6>{faq.question}</h6>
+                      <span className="ico ti-plus"></span>
+                    </div>
+                    <div className={`accordion-info accordion-content-${index}`} style={{ maxHeight: index === 0 ? 'auto' : 0 }}>
+                      <p>{faq.answer}</p>
+                    </div>
                   </div>
-                  <div className="accordion-info">
-                    <p>
-                      Díky našemu expertnímu týmu a vazbám na zkušené externí dodavatele dokážeme
-                      zajistit efektivní spolupráci a špičkové výsledky u projektů menšího, středního i velkého rozsahu.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="item fadeInUp">
-                  <div onClick={onAccordionClick} className="title">
-                    <h6>Spolehlivost a odpovědnost</h6>
-                    <span className="ico ti-plus"></span>
-                  </div>
-                  <div className="accordion-info">
-                    <p>
-                      Ve spolupráci s TD Productions získáváte kromě inovativního a precizního produktu také
-                      spolehlivý a odpovědný přístup. To, na čem se domluvíme pro vás vždy zajistíme.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="item fadeInUp">
-                  <div onClick={onAccordionClick} className="title">
-                    <h6>Partneři na dlouhou trať</h6>
-                    <span className="ico ti-plus"></span>
-                  </div>
-                  <div className="accordion-info">
-                    <p>
-                      Kvalitní produkt vyžaduje pravidelnou správu a údržbu.
-                      V našem případě se můžete spolehnout, že se Vám o výsledný projekt dlouhodobě postaráme a udržíme jej ve výborné kondici.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>

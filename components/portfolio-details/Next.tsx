@@ -5,7 +5,9 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-function Next({ nextProject, prevProject }) {
+import { PortfolioNavigationProps } from '@/types/portfolio';
+
+function Next({ nextProject, prevProject }: PortfolioNavigationProps) {
   return (
     <section className="next-project relative sub-bg">
       <div className="container-fluid rest">

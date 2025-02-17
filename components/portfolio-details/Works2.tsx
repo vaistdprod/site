@@ -1,6 +1,8 @@
 import React from 'react';
 
-function Works2({ data }) {
+import { PortfolioDetailProps } from '@/types/portfolio';
+
+function Works2({ data }: PortfolioDetailProps) {
   return (
     <div className="section-padding pt-0">
       <div className="container">

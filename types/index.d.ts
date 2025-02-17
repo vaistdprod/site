@@ -1,38 +1,15 @@
-export {};
-
-declare module '@/data/mergedServices.json' {
-  const value: { [key: string]: any }; // Replace `any` with a more specific type if possible
-  export default value;
-}
-
-declare module '@/data/testimonials' {
-  interface Testimonial {
-    img: string;
-    name: string;
-    subName: string;
-    desc: string;
-  }
-
-  const testimonials: Testimonial[];
-  export default testimonials;
-}
+import { Swiper as SwiperType } from 'swiper';
+import { SwiperProps } from 'swiper/react';
 
 export interface PageProps {
-  params: {
-    [key: string]: string;
-  };
-  searchParams?: { [key: string]: string | string[] | undefined };
+  params: Record<string, string>;
+  searchParams?: Record<string, string | string[] | undefined>;
 }
 
-export interface BlogProps extends PageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export interface PortfolioProps extends PageProps {
-  params: {
-    id: string;
+export interface BlogPageProps extends PageProps {
+  searchParams?: {
+    tag?: string;
+    search?: string;
   };
 }
 
@@ -48,40 +25,46 @@ export interface ServiceProps extends PageProps {
   };
 }
 
-export interface GSAPContext {
-  selector: (selector: string) => NodeListOf<Element>;
-}
-
-export interface SwiperInstance {
-  realIndex: number;
-  slides: Element[];
-  activeIndex: number;
-  params: {
-    navigation: {
-      prevEl: Element | null;
-      nextEl: Element | null;
-    };
-    pagination: {
-      el: Element | null;
-    };
+export interface Service {
+  title: string;
+  icon: string;
+  desc: string;
+  link: string;
+  tags: string[];
+  img: string;
+  bullets: string[];
+  stats: Array<{ value: string; label: string }>;
+  feat: Array<{ step: string; title: string; desc: string }>;
+  intro2: {
+    whyTitle: string;
+    accordion: Array<{ title: string; desc: string }>;
   };
 }
 
-export interface SwiperOptions {
-  modules?: any[];
+export interface Member {
+  name: string;
+  role: string;
+  image: string;
+  slug: string;
+  instagram?: string;
+  facebook?: string;
+  phone?: string;
+  email?: string;
+  about: string;
+  skills?: Array<{
+    name: string;
+    value: string;
+  }>;
+}
+
+import type { NavigationOptions, PaginationOptions } from 'swiper/types';
+
+export type SwiperOptions = Omit<SwiperProps, 'children' | 'ref'> & {
+  pagination?: PaginationOptions;
+  navigation?: NavigationOptions;
+  onSlideChange?: (swiper: SwiperType) => void;
   slidesPerView?: number | 'auto';
   spaceBetween?: number;
   loop?: boolean;
-  touchRatio?: number;
   speed?: number;
-  pagination?: {
-    el: Element | null;
-    type?: string;
-  };
-  navigation?: {
-    nextEl: Element | null;
-    prevEl: Element | null;
-  };
-  onBeforeInit?: (swiper: SwiperInstance) => void;
-  onSlideChange?: (swiper: SwiperInstance) => void;
-}
+};

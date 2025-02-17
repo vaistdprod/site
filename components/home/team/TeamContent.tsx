@@ -1,12 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { TeamMember } from "./Team";
+import { Member } from '@/types';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faFacebookF } from "@fortawesome/free-brands-svg-icons";
 
-export default function TeamContent({ members = [] }: { members: TeamMember[] }) {
+export default function TeamContent({ members = [] }: { members: Member[] }) {
   const validMembers = Array.isArray(members) ? members : [];
 
   return (

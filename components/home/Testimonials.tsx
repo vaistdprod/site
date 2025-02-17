@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import data from '@/data/testimonials';
+import { useEffect, useState } from 'react';
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,8 +8,16 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { Testimonial } from '@/types/testimonials';
 
 function Testimonials() {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+
+  useEffect(() => {
+    fetch('/data/testimonials.json')
+      .then(res => res.json())
+      .then(data => setTestimonials(data));
+  }, []);
   const swiperOptions = {
     modules: [Pagination, Navigation],
     spaceBetween: 30,
@@ -52,7 +60,7 @@ function Testimonials() {
                   className="swiper-container"
                   data-swiper="container"
                 >
-                  {data.slice(0, 2).map((item, i) => (
+                  {testimonials.slice(0, 2).map((item: Testimonial, i: number) => (
                     <SwiperSlide key={i}>
                       <div className="item">
                         <div className="content">

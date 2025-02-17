@@ -4,7 +4,9 @@ import React from 'react';
 import Image from 'next/image';
 import Header from '@/components/common/header/Header';
 
-const ProjectHeader = ({ data }) => {
+import { PortfolioDetailProps } from '@/types/portfolio';
+
+const ProjectHeader = ({ data }: PortfolioDetailProps) => {
   return (
     <Header
       delay={2}

@@ -1,6 +1,8 @@
 import React from 'react';
 
-function Challenge({ data }) {
+import { PortfolioDetailProps } from '@/types/portfolio';
+
+function Challenge({ data }: PortfolioDetailProps) {
   return (
     <section className="section-padding">
       <div className="container">
