@@ -15,10 +15,6 @@ const faqs = [
     answer: "Cena webových stránek závisí na mnoha faktorech - rozsahu, funkcionalitě, designu a dalších požadavcích. Pro přesnou kalkulaci nás kontaktujte s vaší představou a my vám připravíme nezávaznou nabídku."
   },
   {
-    question: "Poskytujete servis a údržbu webových stránek?",
-    answer: "Ano, poskytujeme kompletní servis a údržbu webových stránek. Zajišťujeme aktualizace, monitoring, zálohování a technickou podporu."
-  },
-  {
     question: "Vytváříte responzivní webové stránky?",
     answer: "Ano, všechny naše webové stránky jsou plně responzivní a optimalizované pro všechna zařízení - počítače, tablety i mobilní telefony."
   },
@@ -33,10 +29,6 @@ const faqs = [
   {
     question: "Poskytujete i SEO optimalizaci?",
     answer: "Ano, SEO optimalizace je součástí našich služeb. Pomůžeme vám s optimalizací pro vyhledávače, aby vaše stránky byly dobře viditelné a dosahovaly lepších výsledků ve vyhledávání."
-  },
-  {
-    question: "Jak dlouho trvá dodání fotografií a videí?",
-    answer: "Doba dodání závisí na rozsahu zakázky. Menší focení nebo natáčení jsme schopni dodat do týdne, větší projekty mohou trvat 2-3 týdny. Vždy se snažíme dodržet dohodnuté termíny."
   }
 ];
 
@@ -73,7 +65,7 @@ export default function FaqContent({ onAccordionClick }: FaqContentProps) {
                       <h6>{faq.question}</h6>
                       <span className="ico ti-plus"></span>
                     </div>
-                    <div className={`accordion-info accordion-content-${index}`} style={{ maxHeight: index === 0 ? 'auto' : 0 }}>
+                    <div className={`accordion-info accordion-content-${index}`} style={{ maxHeight: index === 0 ? '1000px' : '0', transition: 'max-height 0.3s ease' }}>
                       <p>{faq.answer}</p>
                     </div>
                   </div>

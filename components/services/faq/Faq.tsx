@@ -73,7 +73,7 @@ export default function Faq() {
     
     if (parent && content) {
       parent.classList.add('active');
-      content.style.maxHeight = `${content.scrollHeight}px`;
+      content.style.maxHeight = '1000px';
     }
   };
 
