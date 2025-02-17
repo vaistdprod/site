@@ -48,10 +48,10 @@ export default function PrivacyPolicy() {
             <p className="mb-20"><strong>Poslední aktualizace:</strong> 22.1.2025</p>
 
             <p className="mb-20">
-              Společnost <strong>Top Dog Enterprises, s.r.o.</strong> (dále jen „Společnost" či „my") 
+              Společnost <strong>Top Dog Enterprises, s.r.o.</strong> (dále jen „Společnost“ či „my“) 
               si váží vašeho soukromí a zavazuje se zpracovávat vaše osobní údaje v souladu s 
               příslušnými právními předpisy, zejména s Nařízením Evropského parlamentu a Rady 
-              (EU) 2016/679 (obecné nařízení o ochraně osobních údajů, „GDPR").
+              (EU) 2016/679 (obecné nařízení o ochraně osobních údajů, „GDPR“).
             </p>
 
             <p className="mb-20">

@@ -9,6 +9,7 @@ import { useGSAP } from '@gsap/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { SwiperOptions } from 'swiper';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
